@@ -1,1 +1,339 @@
-{Introduccion}
+\chapter{Clase 1}
+
+\section{Principio de Relatividad Galileana}
+
+El \textbf{Principio de Relatividad Galileana} establece que las leyes de la mecánica son invariantes ante cambios entre marcos de referencia inerciales. Esto significa que dichas leyes son las mismas para cualquier observador inercial, independientemente de su movimiento relativo.
+
+Los puntos clave de este principio son:
+
+\begin{itemize}
+    \item \textbf{Invarianza de las leyes:} La segunda ley de Newton, formulada matemáticamente como
+    \[
+        \vec{F}=m\vec{a},
+    \]
+    es válida en todos los marcos de referencia inerciales. Las leyes de la mecánica clásica no cambian al pasar de un sistema inercial a otro.
+
+    \item \textbf{Ausencia de reposo absoluto:} Como consecuencia de este principio, no existe el movimiento absoluto ni un marco de referencia preferido. No hay un punto fijo en el universo que pueda considerarse en reposo absoluto; todos los movimientos son relativos a algún marco de referencia.
+
+    \item \textbf{Movimiento compartido:} Un movimiento uniforme común a varios cuerpos no altera sus relaciones mecánicas internas; solo cambia su descripción respecto a objetos que no comparten ese movimiento.
+\end{itemize}
+
+\section{Transformaciones Galileanas}
+
+En la física clásica, las \textbf{transformaciones galileanas} constituyen el marco matemático fundamental para relacionar las observaciones realizadas desde distintos marcos de referencia inerciales. Estas transformaciones se apoyan en la premisa de que el espacio y el tiempo son magnitudes absolutas e independientes del observador.
+
+\subsection{Marco teórico y coordenadas}
+
+Consideremos dos sistemas de referencia inerciales, $S$ y $S'$, donde $S'$ se desplaza con velocidad constante $\vec{v}=v\hat{x}$ respecto a $S$. Un evento puntual es registrado en $S$ mediante las coordenadas $(x,y,z,t)$ y en $S'$ mediante $(x',y',z',t')$.
+
+\input{Clases/FigurasClase1/Fig1}
+
+Las transformaciones directas, que permiten obtener las coordenadas en el sistema móvil $S'$ a partir de las medidas realizadas en $S$, son
+
+\begin{align*}
+    x' &= x-vt, \\
+    y' &= y, \\
+    z' &= z, \\
+    t' &= t.
+\end{align*}
+
+Esta formulación se fundamenta en dos supuestos de la mecánica newtoniana:
+
+\begin{enumerate}
+    \item \textbf{Sincronización absoluta:} los relojes en ambos marcos transcurren de manera idéntica, $t=t'$, por lo que se supone la existencia de un tiempo universal.
+
+    \item \textbf{Reglas de medida invariantes:} las longitudes medidas en $S$ y $S'$ son iguales, de modo que el espacio se considera un escenario fijo y universal.
+\end{enumerate}
+
+\subsection{Transformaciones inversas}
+
+De acuerdo con el \textbf{Principio de Relatividad Galileana}, ningún marco inercial tiene preferencia sobre otro. Si $S'$ se mueve con velocidad $\vec{v}$ respecto a $S$, un observador en $S'$ describe a $S$ moviéndose con velocidad $-\vec{v}$.
+
+Para recuperar las coordenadas de $S$ a partir de las coordenadas de $S'$, se despejan las variables de las transformaciones directas, obteniendo
+
+\begin{align*}
+    x &= x'+vt', \\
+    y &= y', \\
+    z &= z', \\
+    t &= t'.
+\end{align*}
+
+Estas ecuaciones muestran que la descripción física es consistente en ambos marcos bajo la hipótesis de que la medición del tiempo no cambia con el movimiento.
+
+\subsection{Adición de velocidades}
+
+Las relaciones entre velocidades se obtienen diferenciando las transformaciones de posición respecto al tiempo. En la situación considerada, el marco $S'$ se mueve respecto a $S$ únicamente a lo largo del eje $x$, con velocidad $\vec{v}=v\hat{x}$. Por esta razón, el término $v$ solo aparece en la componente $x$ de la velocidad; las componentes transversales no cambian.
+
+Al diferenciar las transformaciones galileanas se obtiene
+
+\begin{align*}
+    u_x' &= u_x-v, \\
+    u_y' &= u_y, \\
+    u_z' &= u_z.
+\end{align*}
+
+En notación vectorial, y únicamente bajo la hipótesis de que el movimiento relativo ocurre sobre el eje $x$, esta relación puede escribirse como
+
+\[
+    \vec{u}=\vec{u}'+v\hat{x}.
+\]
+
+La adición galileana de velocidades es una buena aproximación cuando $u,v\ll c$, pero deja de ser válida en el régimen relativista.
+
+\subsection{Invarianza de las leyes de Newton}
+
+Un principio central de la física clásica es que las leyes de la mecánica conservan su forma bajo transformaciones galileanas. Para comprobar la \textbf{invarianza de la aceleración}, diferenciamos la transformación de velocidades. Como $dt'=dt$ y $v$ es constante, se obtiene
+
+\begin{align*}
+    a_x'
+    &= \frac{du_x'}{dt'} \\
+    &= \frac{d(u_x-v)}{dt} \\
+    &= \frac{du_x}{dt}-\frac{dv}{dt} \\
+    &= a_x.
+\end{align*}
+
+Por tanto, la aceleración medida es la misma en todos los marcos de referencia inerciales:
+
+\[
+    \vec{a}'=\vec{a}.
+\]
+
+Al aplicar la segunda ley de Newton, $\vec{F}=m\vec{a}$, y suponer que la masa es una propiedad intrínseca que no cambia con el movimiento, $m'=m$, se concluye que la fuerza también es invariante:
+
+\[
+    \vec{F}'=m'\vec{a}'=m\vec{a}=\vec{F}.
+\]
+
+Esto demuestra que las leyes de la mecánica tienen la misma forma en todos los marcos inerciales. Por ello, los experimentos realizados en un laboratorio que se mueve uniformemente, como un tren a velocidad constante, producen los mismos resultados que los realizados en reposo.
+
+\section{Electromagnetismo y crisis de la relatividad galileana}
+
+A finales del siglo XIX, la consolidación del electromagnetismo mediante las ecuaciones de Maxwell reveló un conflicto fundamental con la mecánica clásica. Mientras las leyes de Newton conservan su forma bajo transformaciones galileanas, las ecuaciones de Maxwell no son invariantes bajo dichas transformaciones. Esta incompatibilidad puso en duda la concepción newtoniana del espacio y del tiempo como magnitudes absolutas e independientes.
+
+\subsection{Ecuaciones de Maxwell-Heaviside}
+
+Las ecuaciones de Maxwell, en su formulación diferencial moderna y en unidades del Sistema Internacional, describen la relación entre el campo eléctrico $\vec{E}$, el campo magnético $\vec{B}$, la densidad de carga $\rho$ y la densidad de corriente $\vec{J}$:
+
+\begin{enumerate}
+    \item \textbf{Ley de Gauss para el campo eléctrico:}
+    \[
+        \nabla\cdot\vec{E}=\frac{\rho}{\varepsilon_0}.
+    \]
+
+    \item \textbf{Ley de Gauss para el campo magnético:}
+    \[
+        \nabla\cdot\vec{B}=0.
+    \]
+
+    \item \textbf{Ley de inducción de Faraday:}
+    \[
+        \nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}.
+    \]
+
+    \item \textbf{Ley de Ampère-Maxwell:}
+    \[
+        \nabla\times\vec{B}
+        =\mu_0\vec{J}
+        +\mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}.
+    \]
+\end{enumerate}
+
+La conservación local de la carga eléctrica se expresa mediante la \textbf{ecuación de continuidad}:
+
+\[
+    \nabla\cdot\vec{J}+\frac{\partial\rho}{\partial t}=0.
+\]
+
+En el vacío y en ausencia de fuentes, $\rho=0$ y $\vec{J}=\vec{0}$. En este caso, las ecuaciones de Maxwell implican ecuaciones de onda para los campos eléctrico y magnético:
+
+\begin{align*}
+    \nabla^2\vec{E}
+    -\frac{1}{c^2}\frac{\partial^2\vec{E}}{\partial t^2}
+    &=\vec{0}, \\
+    \nabla^2\vec{B}
+    -\frac{1}{c^2}\frac{\partial^2\vec{B}}{\partial t^2}
+    &=\vec{0},
+\end{align*}
+
+donde la rapidez de propagación es
+
+\[
+    c=\frac{1}{\sqrt{\mu_0\varepsilon_0}}.
+\]
+
+\paragraph{Demostración breve.}
+En ausencia de fuentes, las ecuaciones de Maxwell satisfacen $\nabla\cdot\vec{E}=0$, $\nabla\cdot\vec{B}=0$ y
+
+\[
+    \nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t},
+    \qquad
+    \nabla\times\vec{B}=\mu_0\varepsilon_0
+    \frac{\partial\vec{E}}{\partial t}.
+\]
+
+Tomando el rotacional de la ley de Faraday,
+
+\begin{align*}
+    \nabla\times(\nabla\times\vec{E})
+    &=-\frac{\partial}{\partial t}(\nabla\times\vec{B}) \\
+    &=-\mu_0\varepsilon_0\frac{\partial^2\vec{E}}{\partial t^2}.
+\end{align*}
+
+Como $\nabla\times(\nabla\times\vec{E})=\nabla(\nabla\cdot\vec{E})-\nabla^2\vec{E}=-\nabla^2\vec{E}$, resulta
+
+\[
+    \nabla^2\vec{E}
+    -\mu_0\varepsilon_0\frac{\partial^2\vec{E}}{\partial t^2}
+    =\vec{0}.
+\]
+
+El mismo procedimiento, tomando el rotacional de la ley de Ampère-Maxwell y usando $\nabla\cdot\vec{B}=0$, produce
+
+\[
+    \nabla^2\vec{B}
+    -\mu_0\varepsilon_0\frac{\partial^2\vec{B}}{\partial t^2}
+    =\vec{0}.
+\]
+
+Al comparar con la ecuación de onda estándar se identifica $1/c^2=\mu_0\varepsilon_0$, y por tanto $c=1/\sqrt{\mu_0\varepsilon_0}$.
+
+\subsection{Incompatibilidad con las transformaciones galileanas}
+
+Bajo una transformación galileana tridimensional,
+
+\[
+    \vec{x}'=\vec{x}-\vec{v}t,
+    \qquad
+    t'=t,
+\]
+
+las derivadas deben reescribirse en términos de las coordenadas primadas. El caso estudiado anteriormente se recupera tomando $\vec{v}=v\hat{x}$.
+
+\paragraph{Justificación mediante la regla de la cadena.}
+Sea $\psi(x,y,z,t)$ un campo escalar, que en el marco $S'$ se expresa como $\psi'(x',y',z',t')$. Ambas funciones representan el mismo campo físico evaluado en el mismo evento, por lo que
+
+\[
+    \psi(x,y,z,t)=\psi'(x',y',z',t').
+\]
+
+Para calcular la derivada temporal en $S$, se deriva manteniendo fijas las coordenadas $(x,y,z)$. La regla de la cadena proporciona
+
+\begin{align*}
+    \left.\frac{\partial \psi}{\partial t}\right|_{x,y,z}
+    &={}
+    \frac{\partial \psi'}{\partial t'}\frac{\partial t'}{\partial t}
+    +\sum_{i=1}^{3}
+        \frac{\partial \psi'}{\partial x_i'}
+        \frac{\partial x_i'}{\partial t}.
+\end{align*}
+
+Como $t'=t$ y $x_i'=x_i-v_i t$, se tiene
+
+\[
+    \frac{\partial t'}{\partial t}=1,
+    \qquad
+    \frac{\partial x_i'}{\partial t}=-v_i.
+\]
+
+Por tanto,
+
+\begin{align*}
+    \left.\frac{\partial \psi}{\partial t}\right|_{x,y,z}
+    =\frac{\partial \psi'}{\partial t'}
+    -\sum_{i=1}^{3}v_i\frac{\partial \psi'}{\partial x_i'}
+    =\frac{\partial \psi'}{\partial t'}
+    -(\vec{v}\cdot\nabla')\psi'.
+\end{align*}
+
+Esta igualdad equivale a la transformación del operador
+
+\[
+    \frac{\partial}{\partial t}
+    =\frac{\partial}{\partial t'}
+    -\vec{v}\cdot\nabla',
+\]
+
+donde
+
+\[
+    \vec{v}\cdot\nabla'
+    =v_x\frac{\partial}{\partial x'}
+    +v_y\frac{\partial}{\partial y'}
+    +v_z\frac{\partial}{\partial z'}.
+\]
+
+Para las derivadas espaciales, la regla de la cadena da
+
+\[
+    \frac{\partial}{\partial x_i}
+    =\sum_{j=1}^{3}
+        \frac{\partial x_j'}{\partial x_i}
+        \frac{\partial}{\partial x_j'}
+    =\frac{\partial}{\partial x_i'},
+\]
+
+porque $\partial x_j'/\partial x_i=\delta_{ij}$. En consecuencia, $\nabla=\nabla'$ y $\nabla^2=\nabla'^2$.
+
+\paragraph{Transformación explícita de la ecuación de onda.}
+Con la notación anterior, una componente genérica del campo eléctrico o magnético satisface en $S$
+
+\[
+    \left(
+        \nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}
+    \right)\psi(x,y,z,t)=0.
+\]
+
+Al elevar al cuadrado el operador temporal se obtiene
+
+\begin{align*}
+    \frac{\partial^2}{\partial t^2}
+    &=\left(
+        \frac{\partial}{\partial t'}
+        -\vec{v}\cdot\nabla'
+    \right)^2 \\
+    &=\frac{\partial^2}{\partial t'^2}
+      -\frac{\partial}{\partial t'}
+        (\vec{v}\cdot\nabla')
+      -(\vec{v}\cdot\nabla')
+        \frac{\partial}{\partial t'}
+      +(\vec{v}\cdot\nabla')^2 \\
+    &=\frac{\partial^2}{\partial t'^2}
+      -2(\vec{v}\cdot\nabla')
+        \frac{\partial}{\partial t'}
+      +(\vec{v}\cdot\nabla')^2.
+\end{align*}
+
+En la última igualdad se utilizó que $\vec{v}$ es constante y que las derivadas espaciales y temporales conmutan. Al sustituir esta expresión en la ecuación de onda resulta
+
+\[
+    \left[
+        \nabla'^2
+        -\frac{1}{c^2}\frac{\partial^2}{\partial t'^2}
+        +\frac{2}{c^2}(\vec{v}\cdot\nabla')
+            \frac{\partial}{\partial t'}
+        -\frac{1}{c^2}(\vec{v}\cdot\nabla')^2
+    \right]\psi'(x',y',z',t')=0.
+\]
+
+Para el movimiento considerado originalmente, $\vec{v}=v\hat{x}$, se cumple $\vec{v}\cdot\nabla'=v\,\partial/\partial x'$, y la ecuación anterior se reduce a
+
+\[
+    \left[
+        \nabla'^2
+        -\frac{1}{c^2}\frac{\partial^2}{\partial t'^2}
+        +\frac{2v}{c^2}\frac{\partial^2}{\partial x'\partial t'}
+        -\frac{v^2}{c^2}\frac{\partial^2}{\partial x'^2}
+    \right]\psi'(x',y',z',t')=0.
+\]
+
+Los dos últimos términos dependen explícitamente de la velocidad relativa. Por ello, salvo cuando $\vec{v}=\vec{0}$, la ecuación obtenida en $S'$ no conserva la forma de la ecuación original. Esta es la manifestación matemática de la incompatibilidad: el tiempo absoluto galileano hace que la derivada temporal mezcle variaciones temporales y espaciales.
+
+La misma contradicción puede verse directamente mediante la regla galileana de adición de velocidades. Para una señal luminosa que se propaga sobre el eje $x$, dicha regla predeciría
+
+\[
+    c'=c-v,
+\]
+
+mientras que las ecuaciones de Maxwell determinan una rapidez $c=1/\sqrt{\mu_0\varepsilon_0}$ que no depende del movimiento de la fuente ni del observador.
+
+Así, la relatividad galileana conduce simultáneamente a una ecuación de onda dependiente del observador y a una rapidez de la luz distinta en cada marco. Esta dificultad no implica que las líneas de campo magnético se rompan físicamente, sino que los campos eléctrico y magnético no pueden relacionarse mediante las reglas galileanas conservando la estructura de las ecuaciones de Maxwell. Históricamente, este conflicto motivó la búsqueda de nuevas transformaciones entre marcos inerciales y condujo a las transformaciones de Lorentz, en las cuales el espacio y el tiempo dejan de ser magnitudes absolutas e independientes.

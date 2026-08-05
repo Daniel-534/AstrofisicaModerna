@@ -1,0 +1,54 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.92]
+    \coordinate (O) at (0,0);
+    \coordinate (Op) at (2.6,0);
+    \coordinate (Q) at (7.1,0);
+    \coordinate (P) at (7.1,2.7);
+
+    \draw[->,very thick,black] (O) -- (8.8,0)
+        node[above right] {$x$};
+    \draw[->,very thick,black] (O) -- (0,3.55)
+        node[above] {$y$};
+    \fill[black] (O) circle (2.4pt);
+    \node[below left,black] at (O) {$O$};
+    \node[black,anchor=east] at (-0.15,3.0) {marco $S$};
+
+    \draw[->,very thick,blue!70!black] (Op) -- (8.8,0)
+        node[below right] {$x'$};
+    \draw[->,very thick,blue!70!black] (Op) -- (2.6,3.55)
+        node[above] {$y'$};
+    \fill[blue!70!black] (Op) circle (2.4pt);
+    \node[below right,blue!70!black] at (Op) {$O'$};
+    \node[blue!70!black,anchor=west] at (2.8,3.0) {marco $S'$};
+
+    \draw[->,very thick,blue!70!black]
+        ($(Op)+(0.15,0.38)$) -- ($(Op)+(1.55,0.38)$)
+        node[midway,above] {$\vec v=v\hat{x}$};
+
+    \draw[gray!65,densely dashed,thick] (P) -- (Q);
+    \draw[gray!65,densely dashed,thick] (0,2.7) -- (P);
+    \fill[red!75!black] (P) circle (3pt);
+    \node[right=5pt,red!75!black] at (P) {evento $P$};
+
+    \draw[->,thick,black] (O) -- (P)
+        node[pos=0.62,above left] {$\vec r$};
+    \draw[->,thick,blue!70!black] (Op) -- (P)
+        node[pos=0.58,below right] {$\vec r'$};
+
+    \node[fill=white,inner sep=2pt,font=\small] at (1.15,2.7)
+        {$y=y'$};
+
+    \draw[gray!55,densely dotted] (O) -- (0,-1.5);
+    \draw[gray!55,densely dotted] (Op) -- (2.6,-1.5);
+    \draw[gray!55,densely dotted] (Q) -- (7.1,-1.5);
+
+    \draw[<->,thick,blue!70!black] (0,-0.48) -- (2.6,-0.48)
+        node[midway,fill=white,inner sep=2pt] {$vt$};
+    \draw[<->,thick,blue!70!black] (2.6,-0.92) -- (7.1,-0.92)
+        node[midway,fill=white,inner sep=2pt] {$x'$};
+    \draw[<->,thick,black] (0,-1.36) -- (7.1,-1.36)
+        node[midway,fill=white,inner sep=2pt] {$x$};
+\end{tikzpicture}
+\caption{Dos marcos inerciales relacionados mediante una transformación galileana. El origen $O'$ del marco móvil se encuentra a una distancia $vt$ de $O$, mientras que ambos observadores asignan el mismo tiempo al evento $P$.}
+\end{figure}
