@@ -1,0 +1,83 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.92]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (0,3.35);
+    \coordinate (C) at (4.65,0);
+    \coordinate (S) at (-4.5,0);
+    \coordinate (D) at (0,-2.15);
+
+    % Dirección del movimiento respecto al éter
+    \draw[->,very thick,blue!75!black]
+        (-3.7,4.0) -- (2.3,4.0)
+        node[midway,above] {$\vec v$ respecto al éter};
+
+    % Fuente
+    \draw[black,very thick,fill=gray!25] (S) circle (0.34);
+    \draw[black,thick] ($(S)+(-0.18,-0.18)$) -- ($(S)+(0.18,0.18)$);
+    \draw[black,thick] ($(S)+(-0.18,0.18)$) -- ($(S)+(0.18,-0.18)$);
+    \node[below=5pt] at (S) {$S$};
+    \node[above=5pt,font=\small] at (S) {fuente};
+
+    % Divisor semitransparente
+    \draw[blue!75!black,line width=3pt]
+        ($(A)+(-0.42,-0.42)$) -- ($(A)+(0.42,0.42)$);
+    \fill[black] (A) circle (1.8pt);
+    \node[below right=5pt] at (A) {$A$};
+    \node[font=\small,align=right] at (-1.55,-0.8)
+        {divisor\\semitransparente};
+    \draw[->,gray!70!black,thin]
+        (-0.85,-0.62) -- (-0.22,-0.22);
+
+    % Espejos
+    \draw[black,line width=4pt] ($(B)+(-0.48,0)$) -- ($(B)+(0.48,0)$);
+    \draw[gray!70,line width=1.2pt] ($(B)+(-0.48,-0.08)$) -- ($(B)+(0.48,-0.08)$);
+    \node[above=5pt] at (B) {$B$};
+    \node[font=\small] at (1.2,3.05) {espejo};
+
+    \draw[black,line width=4pt] ($(C)+(0,-0.48)$) -- ($(C)+(0,0.48)$);
+    \draw[gray!70,line width=1.2pt] ($(C)+(-0.08,-0.48)$) -- ($(C)+(-0.08,0.48)$);
+    \node[right=6pt] at (C) {$C$};
+    \node[above=11pt,font=\small] at (C) {espejo};
+
+    % Haz incidente y haces en los brazos
+    \draw[->,red!75!black,very thick] ($(S)+(0.36,0)$) -- ($(A)+(-0.18,0)$);
+
+    \draw[->,red!75!black,very thick]
+        ($(A)+(0.18,0.09)$) -- ($(C)+(-0.15,0.09)$);
+    \draw[->,red!75!black,thick,dashed]
+        ($(C)+(-0.15,-0.09)$) -- ($(A)+(0.18,-0.09)$);
+
+    \draw[->,red!75!black,very thick]
+        ($(A)+(-0.09,0.18)$) -- ($(B)+(-0.09,-0.15)$);
+    \draw[->,red!75!black,thick,dashed]
+        ($(B)+(0.09,-0.15)$) -- ($(A)+(0.09,0.18)$);
+
+    % Haz recombinado hacia el detector
+    \draw[->,red!75!black,very thick]
+        ($(A)+(0,-0.18)$) -- ($(D)+(0,0.32)$);
+
+    % Detector con franjas
+    \draw[black,very thick,fill=gray!20]
+        ($(D)+(-0.62,-0.28)$) rectangle ($(D)+(0.62,0.28)$);
+    \foreach \x in {-0.42,-0.14,0.14,0.42}
+        \draw[black,thick] ($(D)+(\x,-0.25)$) -- ($(D)+(\x,0.25)$);
+    \node[below=5pt] at (D) {$O$};
+    \node[right=14pt,font=\small,align=left] at (D)
+        {detector\\de interferencia};
+
+    % Longitudes de los brazos
+    \draw[<->,thick,gray!75!black]
+        (0.55,0.58) -- (4.1,0.58)
+        node[midway,fill=white,inner sep=2pt] {$L$};
+    \draw[<->,thick,gray!75!black]
+        (-0.62,0.55) -- (-0.62,2.85)
+        node[midway,fill=white,inner sep=2pt] {$L$};
+
+    \node[blue!75!black,font=\small] at (2.85,-0.62)
+        {brazo paralelo a $\vec v$};
+    \node[blue!75!black,font=\small,align=center] at (-2.3,2.5)
+        {brazo perpendicular\\a $\vec v$};
+\end{tikzpicture}
+\caption{Esquema del interferómetro de Michelson y Morley. El divisor semitransparente $A$ separa el haz procedente de la fuente $S$ en dos recorridos perpendiculares de longitud $L$. Los haces se reflejan en $B$ y $C$, se recombinan en $A$ y llegan al detector $O$.}
+\end{figure}

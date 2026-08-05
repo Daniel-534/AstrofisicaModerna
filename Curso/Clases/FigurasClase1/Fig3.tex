@@ -1,0 +1,59 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.25]
+    \coordinate (A0) at (0,0);
+    \coordinate (B0) at (0,3.25);
+    \coordinate (B1) at (2.7,3.25);
+    \coordinate (A1) at (5.4,0);
+
+    % Ejes del marco en reposo
+    \draw[->,very thick,black] (-0.75,0) -- (6.8,0)
+        node[right] {$x$};
+    \draw[->,very thick,black] (0,-0.55) -- (0,3.85)
+        node[above] {$y$};
+
+    % Configuración inicial en t=0
+    \draw[gray!70,dashed,thick] (A0) -- (B0);
+    \draw[gray!70,dashed,line width=3pt]
+        ($(B0)+(-0.52,0)$) -- ($(B0)+(0.52,0)$);
+    \draw[gray!70,dashed,line width=2.4pt]
+        ($(A0)+(-0.34,-0.34)$) -- ($(A0)+(0.34,0.34)$);
+    \node[gray!70!black,below left=5pt] at (A0) {$A_0$};
+    \node[gray!70!black,left=7pt] at (B0) {$B_0$};
+
+    % Posiciones móviles del espejo y del divisor
+    \draw[black,line width=4pt]
+        ($(B1)+(-0.55,0)$) -- ($(B1)+(0.55,0)$);
+    \draw[blue!75!black,line width=3pt]
+        ($(A1)+(-0.36,-0.36)$) -- ($(A1)+(0.36,0.36)$);
+    \node[above=7pt] at (B1) {$B_1$};
+    \node[below right=6pt,blue!75!black] at (A1) {$A_{\perp}$};
+
+    % Movimiento del interferómetro
+    \draw[->,very thick,blue!75!black]
+        (0.25,-0.78) -- (5.15,-0.78)
+        node[midway,below] {$\vec v=v\hat{x}$};
+    \draw[->,blue!75!black,thick]
+        ($(B0)+(0,0.62)$) -- ($(B1)+(0,0.62)$)
+        node[midway,above,font=\small] {$v t_{\perp}/2$};
+    \draw[<->,blue!75!black,thick]
+        ($(A0)+(0,-0.38)$) -- ($(A1)+(0,-0.38)$)
+        node[midway,above,font=\small] {$v t_{\perp}$};
+
+    % Longitud del brazo
+    \draw[<->,gray!75!black,thick]
+        (-0.62,0.25) -- (-0.62,3.0)
+        node[midway,left] {$L$};
+
+    % Trayectorias de ida y regreso de la luz
+    \draw[->,red!75!black,very thick]
+        (A0) -- (B1);
+    \draw[->,red!75!black,thick,dashed]
+        (B1) -- (A1);
+
+    \node[red!75!black,font=\small,rotate=50]
+        at (1.48,1.52) {$c t_{\perp}/2$};
+
+\end{tikzpicture}
+\caption{Trayectoria del haz en el brazo perpendicular vista desde el marco en reposo del éter. En $t=0$, el divisor $A_0$ se encuentra en el origen y el espejo ocupa la posición $B_0$. La línea roja continua representa la ida hasta la posición desplazada $B_1$; la línea roja discontinua representa el regreso hasta $A_{\perp}$. Los desplazamientos horizontales se han exagerado para facilitar la visualización.}
+\end{figure}

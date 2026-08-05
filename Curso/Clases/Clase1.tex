@@ -161,7 +161,7 @@ donde la rapidez de propagación es
     c=\frac{1}{\sqrt{\mu_0\varepsilon_0}}.
 \]
 
-\paragraph{Demostración breve.}
+\paragraph{Demostración.}
 En ausencia de fuentes, las ecuaciones de Maxwell satisfacen $\nabla\cdot\vec{E}=0$, $\nabla\cdot\vec{B}=0$ y
 
 \[
@@ -337,3 +337,125 @@ La misma contradicción puede verse directamente mediante la regla galileana de 
 mientras que las ecuaciones de Maxwell determinan una rapidez $c=1/\sqrt{\mu_0\varepsilon_0}$ que no depende del movimiento de la fuente ni del observador.
 
 Así, la relatividad galileana conduce simultáneamente a una ecuación de onda dependiente del observador y a una rapidez de la luz distinta en cada marco. Esta dificultad no implica que las líneas de campo magnético se rompan físicamente, sino que los campos eléctrico y magnético no pueden relacionarse mediante las reglas galileanas conservando la estructura de las ecuaciones de Maxwell. Históricamente, este conflicto motivó la búsqueda de nuevas transformaciones entre marcos inerciales y condujo a las transformaciones de Lorentz, en las cuales el espacio y el tiempo dejan de ser magnitudes absolutas e independientes.
+
+\section{Experimento de Michelson y Morley}
+
+La incompatibilidad teórica anterior estaba estrechamente relacionada con una cuestión experimental: si la luz era una onda, ¿respecto a qué medio se propagaba con rapidez $c$? Durante el siglo XIX se propuso la existencia del \textit{éter luminífero}, un medio omnipresente y estacionario que actuaría como marco de referencia absoluto para la propagación de la luz, de forma análoga al papel del aire en la propagación del sonido.
+
+En 1887, Albert A. Michelson y Edward W. Morley realizaron un experimento destinado a detectar el movimiento de la Tierra respecto a ese supuesto medio. Si la Tierra atravesaba el éter con velocidad $\vec{v}$, un observador terrestre debería detectar un «viento de éter» y, según la adición galileana de velocidades, medir tiempos de propagación diferentes en distintas direcciones.
+
+\subsection{Objetivo y diseño experimental}
+
+El interferómetro divide un haz de luz en dos haces que recorren brazos perpendiculares de igual longitud efectiva $L$. Uno de ellos se orienta paralelamente a la velocidad $\vec{v}$ de la Tierra respecto al éter y el otro perpendicularmente. Después de reflejarse en los extremos de los brazos, ambos haces regresan al divisor y se recombinan en un detector, donde producen un patrón de interferencia.
+
+\input{Clases/FigurasClase1/Fig2}
+
+Si los tiempos de recorrido fueran diferentes, los haces regresarían con una diferencia de fase. Al rotar el aparato $90^\circ$, los papeles de los brazos se intercambiarían y el patrón de franjas debería desplazarse.
+
+\input{Clases/FigurasClase1/Fig3}
+
+\subsection{Tiempo en el brazo paralelo}
+
+Supongamos que el interferómetro se mueve con velocidad constante $\vec{v}=v\hat{x}$ respecto al éter. En el trayecto de ida por el brazo paralelo, la luz debe alcanzar un espejo que se aleja con velocidad $v$; de acuerdo con la cinemática galileana, su rapidez relativa es $c-v$. En el regreso, el divisor se aproxima al haz y la rapidez relativa es $c+v$.
+
+El tiempo total en el brazo paralelo es, por tanto,
+
+\begin{align*}
+    t_{\parallel}
+    &=\frac{L}{c-v}+\frac{L}{c+v} \\
+    &=\frac{2Lc}{c^2-v^2} \\
+    &=\frac{2L}{c}
+      \left(1-\frac{v^2}{c^2}\right)^{-1}.
+\end{align*}
+
+\subsection{Tiempo en el brazo perpendicular}
+
+En el brazo perpendicular, el espejo se desplaza horizontalmente mientras la luz lo alcanza. En el marco del éter, la trayectoria del haz es diagonal. Si $u_{\perp}$ es la componente de la velocidad de la luz a lo largo del brazo, el teorema de Pitágoras da
+
+\[
+    c^2=u_{\perp}^2+v^2,
+\]
+
+de donde
+
+\[
+    u_{\perp}=\sqrt{c^2-v^2}.
+\]
+
+Como la ida y el regreso son simétricos, el tiempo total es
+
+\begin{align*}
+    t_{\perp}
+    &=\frac{2L}{\sqrt{c^2-v^2}} \\
+    &=\frac{2L}{c}
+      \left(1-\frac{v^2}{c^2}\right)^{-1/2}.
+\end{align*}
+
+\subsection{Diferencia temporal y corrimiento de franjas}
+
+La diferencia entre los tiempos de recorrido predichos por la teoría del éter es
+
+\[
+    \Delta t=t_{\parallel}-t_{\perp}
+    =\frac{2L}{c}
+    \left[
+        \left(1-\frac{v^2}{c^2}\right)^{-1}
+        -\left(1-\frac{v^2}{c^2}\right)^{-1/2}
+    \right].
+\]
+
+Como $v\ll c$, basta conservar términos hasta orden $v^2/c^2$. Utilizando las aproximaciones binomiales
+
+\[
+    (1-x)^{-1}\approx 1+x,
+    \qquad
+    (1-x)^{-1/2}\approx 1+\frac{x}{2},
+\]
+
+con $x=v^2/c^2$, se obtiene
+
+\begin{align*}
+    \Delta t
+    &\approx\frac{2L}{c}
+      \left[
+          \left(1+\frac{v^2}{c^2}\right)
+          -\left(1+\frac{v^2}{2c^2}\right)
+      \right] \\
+    &=\frac{Lv^2}{c^3}.
+\end{align*}
+
+La diferencia de camino óptico correspondiente es
+
+\[
+    \Delta \ell=c\Delta t
+    \approx L\frac{v^2}{c^2},
+\]
+
+y la diferencia de fase entre los haces es
+
+\[
+    \Delta\phi
+    =\frac{2\pi}{\lambda}\Delta\ell
+    \approx\frac{2\pi L}{\lambda}
+    \left(\frac{v}{c}\right)^2.
+\]
+
+Al rotar el interferómetro $90^\circ$, la diferencia de camino cambia de signo. Por ello, el cambio total esperado en el número de franjas es
+
+\[
+    N=\frac{2\Delta\ell}{\lambda}
+    \approx\frac{2L}{\lambda}
+    \left(\frac{v}{c}\right)^2.
+\]
+
+\subsection{Resultado e interpretación}
+
+Para una longitud efectiva $L\approx 11\,\mathrm{m}$, una longitud de onda visible $\lambda\approx 500\,\mathrm{nm}$ y la rapidez orbital terrestre $v\approx 30\,\mathrm{km/s}$, la teoría predecía un desplazamiento cercano a
+
+\[
+    N\approx 0.4
+\]
+
+franjas. El corrimiento observado fue mucho menor que el esperado y compatible con un resultado nulo: no apareció la variación direccional predicha por un éter estacionario simple.
+
+El resultado impulsó distintas explicaciones. Entre ellas estuvieron el arrastre del éter y la hipótesis de contracción longitudinal de FitzGerald y Lorentz. Finalmente, la relatividad especial eliminó la necesidad de un marco absoluto: las transformaciones de Lorentz permiten que las leyes electromagnéticas conserven su forma y que todos los observadores inerciales midan la misma rapidez de la luz en el vacío. El experimento de Michelson y Morley no constituyó por sí solo una demostración completa de la relatividad especial, pero sí fue una evidencia decisiva contra el modelo clásico de un éter estacionario detectable.
