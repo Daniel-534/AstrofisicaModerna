@@ -1,0 +1,83 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.96]
+    % Panel (a): telescopio vacío
+    \begin{scope}[shift={(-4.0,0)}]
+        \node at (1.6,4.65) {\textbf{(a) Telescopio vacío}};
+        \coordinate (P) at (0,0);
+        \coordinate (Q) at (0.67,3.15);
+
+        \draw[gray!70,dashed,thick] (P) -- (0,4.05);
+        \node[gray!70!black,font=\small] at (-0.38,3.85) {cenit};
+        \node[red!75!black,font=\Large] at (0.67,4.05) {$\star$};
+        \draw[->,red!75!black,very thick] (0.67,3.82) -- (Q);
+
+        \draw[black,line width=10pt] (P) -- (Q);
+        \draw[gray!12,line width=7pt] (P) -- (Q);
+        \draw[black,line width=2.5pt]
+            ($(Q)+(-0.34,0.07)$) -- ($(Q)+(0.34,-0.07)$);
+        \draw[black,line width=2.5pt]
+            ($(P)+(-0.27,0.06)$) -- ($(P)+(0.27,-0.06)$);
+        \draw[->,red!75!black,thick] (Q) -- (P);
+
+        \draw[blue!75!black,thick]
+            (0,0.85) arc[start angle=90,end angle=78,radius=0.85];
+        \node[blue!75!black] at (0.16,1.08) {$\alpha$};
+
+        \draw[->,very thick,blue!75!black]
+            (-0.5,-0.65) -- (2.7,-0.65)
+            node[midway,below] {$\vec v$ de la Tierra};
+        \node[font=\small,align=center] at (1.85,1.35)
+            {aire\\$t=L/c$};
+    \end{scope}
+
+    % Separador central
+    \draw[gray!55,thick] (0,-0.9) -- (0,4.8);
+
+    % Panel (b): telescopio lleno de agua
+    \begin{scope}[shift={(1.0,0)}]
+        \node at (1.85,4.65) {\textbf{(b) Telescopio lleno de agua}};
+        \coordinate (P) at (0,0);
+        \coordinate (Q) at (0.67,3.15);
+        \coordinate (Qhyp) at (1.10,3.02);
+
+        \draw[gray!70,dashed,thick] (P) -- (0,4.05);
+        \node[gray!70!black,font=\small] at (-0.38,3.85) {cenit};
+        \node[red!75!black,font=\Large] at (0.67,4.05) {$\star$};
+        \draw[->,red!75!black,very thick] (0.67,3.82) -- (Q);
+
+        \draw[black,line width=10pt] (P) -- (Q);
+        \draw[blue!18,line width=7pt] (P) -- (Q);
+        \draw[black,line width=2.5pt]
+            ($(Q)+(-0.34,0.07)$) -- ($(Q)+(0.34,-0.07)$);
+        \draw[black,line width=2.5pt]
+            ($(P)+(-0.27,0.06)$) -- ($(P)+(0.27,-0.06)$);
+        \draw[->,red!75!black,thick] (Q) -- (P);
+
+        % Dirección hipotética si apareciera una desviación adicional
+        \draw[red!75!black,dashed,thick] (P) -- (Qhyp);
+        \node[red!75!black,font=\small,align=left] at (2.25,3.35)
+            {dirección hipotética\\con arrastre};
+        \draw[->,gray!70!black,thin] (1.85,3.15) -- (0.92,2.55);
+
+        \draw[blue!75!black,thick]
+            (0,0.85) arc[start angle=90,end angle=78,radius=0.85];
+        \node[blue!75!black] at (0.16,1.08) {$\alpha$};
+        \draw[red!75!black,thick]
+            ({0.72*cos(78)},{0.72*sin(78)})
+            arc[start angle=78,end angle=70,radius=0.72];
+        \node[red!75!black] at (0.27,0.72) {$\delta$};
+        \draw[->,very thick,blue!75!black]
+            (-0.5,-0.65) -- (2.7,-0.65)
+            node[midway,below] {$\vec v$ de la Tierra};
+        \node[blue!75!black,font=\small,align=center] at (2.15,1.65)
+            {agua\\$t=nL/c$};
+
+        \node[draw=blue!75!black,rounded corners,thick,
+            align=center,fill=blue!5,inner sep=5pt] at (3.25,0.25)
+            {resultado observado\\$\beta=\alpha$, $\delta=0$};
+    \end{scope}
+\end{tikzpicture}
+\caption{Representación del experimento de Airy. El telescopio debe inclinarse un ángulo $\alpha$ por la aberración estelar. Si el agua produjera un arrastre adicional del éter, se esperaría un ángulo $\beta=\alpha+\delta$. Airy observó la misma aberración con el telescopio vacío y lleno de agua, por lo que $\delta=0$.}
+\label{fig:airy}
+\end{figure}

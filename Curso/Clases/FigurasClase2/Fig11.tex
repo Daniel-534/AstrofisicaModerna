@@ -1,0 +1,44 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.98]
+    % Tren y puntos relevantes al inicio de T_1
+    \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+        (-4.8,-0.1) rectangle (4.8,1.15);
+    \draw[->,blue!75!black,very thick]
+        (1.2,2.48) -- (3.8,2.48)
+        node[midway,above] {$\vec v$};
+
+    \coordinate (M0) at (-2.15,0.45);
+    \coordinate (F0) at (4.2,0.78);
+    \coordinate (E) at (1.25,0.62);
+
+    \draw[gray!70!black,thick] (M0) -- ++(0,0.55);
+    \node[font=\small,align=center] at (-2.15,-0.72)
+        {posición inicial\\del vagón $m$};
+    \fill[red!75!black] (F0) circle (0.1);
+    \node[red!75!black,font=\small,align=center] at (4.05,-0.72)
+        {reflexión en\\el frente};
+
+    % Desplazamiento del vagón m y recorrido de la luz
+    \draw[->,blue!75!black,very thick]
+        (M0) -- (E)
+        node[midway,below=5pt] {$vT_1$};
+    \draw[->,red!75!black,very thick]
+        (F0) -- (E)
+        node[midway,above=5pt] {$cT_1$};
+    \draw[black,thick] (E) circle (0.2);
+    \fill[black] (E) circle (0.07);
+    \node[font=\scriptsize,align=center,fill=white,inner sep=1pt]
+        at (1.25,0.16) {encuentro en $m$};
+
+    % Separación geométrica fL
+    \draw[gray!65,densely dotted] (-2.15,1.0) -- (-2.15,2.02);
+    \draw[gray!65,densely dotted] (4.2,0.9) -- (4.2,2.02);
+    \draw[<->,black,thick]
+        (-2.15,1.88) -- (4.2,1.88)
+        node[midway,fill=white,inner sep=2pt]
+        {$fL=cT_1+vT_1$};
+\end{tikzpicture}
+\caption{Geometría del encuentro durante $T_1$. La luz recorre $cT_1$ hacia atrás mientras el vagón $m$ avanza $vT_1$; ambos recorridos suman la separación inicial $fL$.}
+\label{fig:tren-luz-t1}
+\end{figure}

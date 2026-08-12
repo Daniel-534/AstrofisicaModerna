@@ -1,0 +1,102 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.92]
+    \coordinate (A) at (-4.3,0);
+    \coordinate (S) at (-6.0,0);
+    \coordinate (D) at (-4.3,-2.15);
+    \coordinate (LT) at (-3.0,1.15);
+    \coordinate (RT) at (4.5,1.15);
+    \coordinate (LB) at (-3.0,-1.15);
+    \coordinate (RB) at (4.5,-1.15);
+
+    % Fuente, divisor y detector
+    \draw[black,very thick,fill=gray!20] (S) circle (0.3);
+    \draw[black,thick] ($(S)+(-0.16,-0.16)$) -- ($(S)+(0.16,0.16)$);
+    \draw[black,thick] ($(S)+(-0.16,0.16)$) -- ($(S)+(0.16,-0.16)$);
+    \node[above=5pt] at (S) {fuente};
+
+    \draw[blue!75!black,line width=3pt]
+        ($(A)+(-0.38,-0.38)$) -- ($(A)+(0.38,0.38)$);
+    \node[above left=4pt] at (A) {$A$};
+    \node[font=\small,align=center] at (-5.15,-0.85)
+        {divisor\\semitransparente};
+
+    \draw[black,very thick,fill=gray!15]
+        ($(D)+(-0.52,-0.24)$) rectangle ($(D)+(0.52,0.24)$);
+    \foreach \x in {-0.32,-0.1,0.12,0.34}
+        \draw[black,thin] ($(D)+(\x,-0.21)$) -- ($(D)+(\x,0.21)$);
+    \node[below=5pt] at (D) {detector};
+
+    % Tubos con agua
+    \draw[black,very thick,fill=blue!8]
+        ($(LT)+(0,-0.34)$) rectangle ($(RT)+(0,0.34)$);
+    \draw[black,very thick,fill=blue!8]
+        ($(LB)+(0,-0.34)$) rectangle ($(RB)+(0,0.34)$);
+    \node[blue!75!black,font=\small,fill=white,inner sep=1pt]
+        at (0.75,1.42) {agua};
+    \node[blue!75!black,font=\small,fill=white,inner sep=1pt]
+        at (0.75,-1.42) {agua};
+
+    % Flujo opuesto en los tubos
+    \foreach \x in {-2.3,-0.8,0.7,2.2,3.7}
+        \draw[->,blue!75!black,thick]
+            (\x,1.15) -- ++(0.75,0);
+    \foreach \x in {-1.55,-0.05,1.45,2.95,4.45}
+        \draw[->,blue!75!black,thick]
+            (\x,-1.15) -- ++(-0.75,0);
+    \node[blue!75!black,font=\small] at (4.05,1.7) {$\vec v$};
+    \node[blue!75!black,font=\small] at (-2.55,-1.7) {$-\vec v$};
+
+    % Espejos de retorno
+    \draw[black,line width=3.5pt]
+        ($(RT)+(0.18,-0.32)$) -- ($(RT)+(0.62,0.32)$);
+    \draw[black,line width=3.5pt]
+        ($(RB)+(0.18,0.32)$) -- ($(RB)+(0.62,-0.32)$);
+    \node[font=\small,align=center] at (5.85,0)
+        {espejos de\\retorno};
+
+    % Haz incidente y salida al detector
+    \draw[->,red!75!black,very thick]
+        ($(S)+(0.32,0)$) -- ($(A)+(-0.18,0)$);
+    \draw[->,red!75!black,very thick]
+        ($(A)+(0,-0.18)$) -- ($(D)+(0,0.26)$);
+
+    % Camino a favor del flujo (línea continua)
+    \draw[red!75!black,very thick]
+        ($(A)+(0.18,0.12)$) -- ($(LT)+(0,-0.12)$);
+    \draw[->,red!75!black,very thick]
+        ($(LT)+(0,-0.12)$) -- ($(RT)+(0,-0.12)$);
+    \draw[red!75!black,very thick]
+        ($(RT)+(0.38,-0.12)$) -- ($(RB)+(0.38,0.12)$);
+    \draw[->,red!75!black,very thick]
+        ($(RB)+(0,0.12)$) -- ($(LB)+(0,0.12)$);
+    \draw[red!75!black,very thick]
+        ($(LB)+(0,0.12)$) -- ($(A)+(0.18,-0.12)$);
+
+    % Camino en contra del flujo (línea discontinua)
+    \draw[red!75!black,thick,dashed]
+        ($(A)+(0.08,-0.2)$) -- ($(LB)+(0,-0.12)$);
+    \draw[->,red!75!black,thick,dashed]
+        ($(LB)+(0,-0.12)$) -- ($(RB)+(0,-0.12)$);
+    \draw[red!75!black,thick,dashed]
+        ($(RB)+(0.18,-0.12)$) -- ($(RT)+(0.18,0.12)$);
+    \draw[->,red!75!black,thick,dashed]
+        ($(RT)+(0,0.12)$) -- ($(LT)+(0,0.12)$);
+    \draw[red!75!black,thick,dashed]
+        ($(LT)+(0,0.12)$) -- ($(A)+(0.08,0.2)$);
+
+    \node[red!75!black,font=\small] at (0.8,2.05)
+        {haz a favor del flujo};
+    \node[red!75!black,font=\small] at (0.8,-2.05)
+        {haz en contra del flujo};
+
+    % Longitud útil
+    \draw[gray!65,densely dotted] (LT) -- (-3,2.55);
+    \draw[gray!65,densely dotted] (RT) -- (4.5,2.55);
+    \draw[<->,gray!75!black,thick]
+        (-3,2.4) -- (4.5,2.4)
+        node[midway,fill=white,inner sep=2pt] {$L$};
+\end{tikzpicture}
+\caption{Esquema del experimento de Fizeau de 1851. El agua circula en sentidos opuestos por dos tubos paralelos. Los dos haces recorren el mismo circuito óptico en direcciones contrarias: uno se propaga a favor del flujo y el otro en contra, produciendo una diferencia de fase al recombinarse.}
+\label{fig:fizeau1851}
+\end{figure}

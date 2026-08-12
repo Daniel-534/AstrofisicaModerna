@@ -1,0 +1,82 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.95]
+    \coordinate (S) at (-5.2,0.65);
+    \coordinate (A) at (-3.25,0.65);
+    \coordinate (R) at (0,0);
+    \coordinate (M) at (5.25,0.65);
+    \coordinate (O) at (-3.25,-1.55);
+
+    % Fuente y observador
+    \draw[black,very thick,fill=gray!20] (S) circle (0.32);
+    \draw[black,thick] ($(S)+(-0.17,-0.17)$) -- ($(S)+(0.17,0.17)$);
+    \draw[black,thick] ($(S)+(-0.17,0.17)$) -- ($(S)+(0.17,-0.17)$);
+    \node[above=5pt] at (S) {fuente};
+    \node[below=5pt] at (S) {$S$};
+
+    \draw[black,very thick,fill=gray!15]
+        ($(O)+(-0.38,-0.22)$) rectangle ($(O)+(0.38,0.22)$);
+    \draw[black,thick] ($(O)+(-0.2,-0.18)$) -- ($(O)+(0.2,0.18)$);
+    \node[below=5pt] at (O) {observador};
+
+    % Espejo semitransparente
+    \draw[blue!75!black,line width=3pt]
+        ($(A)+(-0.38,-0.38)$) -- ($(A)+(0.38,0.38)$);
+    \node[above left=5pt] at (A) {$A$};
+    \node[font=\small,align=center] at (-3.95,-0.35)
+        {espejo\\semitransparente};
+    \draw[->,gray!70!black,thin] (-3.55,-0.18) -- (-3.35,0.32);
+
+    % Rueda dentada
+    \draw[black,thick,fill=gray!10] (R) circle (0.72);
+    \foreach \ang in {0,20,...,340}
+        \draw[black,line width=2.4pt]
+            ($(R)+(\ang:0.66)$) -- ($(R)+(\ang:0.86)$);
+    \fill[black] (R) circle (0.09);
+    \node[align=center] at (0,-1.25)
+        {rueda dentada\\$N$ dientes y $N$ huecos};
+    \draw[->,blue!75!black,very thick]
+        ($(R)+(145:1.15)$) arc[start angle=145,end angle=-55,radius=1.15];
+    \node[blue!75!black] at (1.15,-0.45) {$\omega$};
+
+    % Espejo lejano
+    \draw[black,line width=4pt]
+        ($(M)+(0,-0.58)$) -- ($(M)+(0,0.58)$);
+    \draw[gray!70,line width=1.2pt]
+        ($(M)+(-0.08,-0.58)$) -- ($(M)+(-0.08,0.58)$);
+    \node[right=7pt] at (M) {$M$};
+    \node[above=9pt,font=\small] at (M) {espejo lejano};
+
+    % Haz de ida y retorno
+    \draw[->,red!75!black,very thick]
+        ($(S)+(0.34,0)$) -- ($(A)+(-0.18,0)$);
+    \draw[->,red!75!black,very thick]
+        ($(A)+(0.18,0.08)$) -- (-0.78,0.73);
+    \draw[red!75!black,very thick] (0.78,0.73) -- ($(M)+(-0.15,0.08)$);
+    \draw[->,red!75!black,thick,dashed]
+        ($(M)+(-0.15,-0.08)$) -- (0.78,0.57);
+    \draw[red!75!black,thick,dashed] (-0.78,0.57) -- ($(A)+(0.18,-0.08)$);
+    \draw[->,red!75!black,thick,dashed]
+        ($(A)+(0,-0.18)$) -- ($(O)+(0,0.24)$);
+
+    \node[red!75!black,font=\small] at (2.45,0.98) {ida};
+    \node[red!75!black,font=\small] at (2.45,0.35) {retorno};
+
+    % Distancia de propagación
+    \draw[gray!65,densely dotted] (0.85,-1.2) -- (0.85,-2.0);
+    \draw[gray!65,densely dotted] (M) -- (5.25,-2.0);
+    \draw[<->,gray!75!black,thick]
+        (0.85,-1.82) -- (5.25,-1.82)
+        node[midway,fill=white,inner sep=2pt] {$d$};
+    \node[font=\small] at (3.05,-2.25) {recorrido total: $2d$};
+
+    % Pequeña indicación del hueco atravesado
+    \draw[red!75!black,line width=2.2pt] (-0.83,0.65) -- (-0.62,0.65);
+    \draw[red!75!black,line width=2.2pt] (0.62,0.65) -- (0.83,0.65);
+    \node[font=\scriptsize,align=center] at (-1.4,1.45)
+        {el haz atraviesa\\un hueco};
+    \draw[->,gray!70!black,thin] (-1.05,1.22) -- (-0.7,0.77);
+\end{tikzpicture}
+\caption{Esquema del experimento de Fizeau de 1849. La rueda dentada modula el haz durante el recorrido de ida y vuelta entre la rueda y el espejo lejano. La primera extinción ocurre cuando un diente ocupa, al regresar la luz, la posición del hueco atravesado durante la ida.}
+\label{fig:fizeau1849}
+\end{figure}

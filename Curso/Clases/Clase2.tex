@@ -1,0 +1,311 @@
+\chapter{Clase 2}
+\section{Experimento de Fizeau para medir la velocidad de la luz, 1849}
+
+Hasta mediados del siglo XIX, todas las mediciones de la velocidad de la luz provenían de métodos astronómicos (Rømer, Bradley), dependientes de distancias planetarias. El físico francés Hippolyte Fizeau diseñó en 1849 el primer experimento de laboratorio capaz de medir la velocidad de la luz en la Tierra, mediante una rueda dentada giratoria que operaba como un obturador estroboscópico.
+
+\subsection{Montaje experimental}
+
+El dispositivo consiste en los siguientes elementos alineados:
+\begin{itemize}
+    \item Una fuente de luz intensa que produce un haz.
+    \item Un espejo semitransparente que dirige el haz hacia el camino largo y permite observar la luz retornante.
+    \item Una rueda dentada con $N$ dientes y $N$ espacios (huecos) iguales, colocada entre la fuente y el espejo lejano.
+    \item Un espejo fijo situado a una distancia $d$ de varios kilómetros, que refleja el haz de regreso hacia la rueda.
+\end{itemize}
+
+La luz sale de la fuente, atraviesa uno de los huecos de la rueda, recorre la distancia $d$ hasta el espejo lejano, se refleja, recorre de nuevo la distancia $d$ y regresa a la rueda. El observador mira la luz que retorna a través de la rueda.
+
+\subsection{Principio de funcionamiento: el efecto estroboscópico}
+
+Si la rueda está quieta o gira lentamente, la luz que regresa atraviesa el mismo hueco por el que salió y el observador la ve. Al aumentar la velocidad de rotación, llega un momento en que, durante el tiempo de vuelo de la luz, la rueda gira justo lo necesario para que el diente adyacente ocupe el lugar del hueco: la luz retornante queda bloqueada y el observador ve oscuridad (primera extinción). Si la velocidad aumenta aún más, la rueda gira un sector adicional y la luz vuelve a pasar por el hueco siguiente (primera reaparición).
+
+\subsection{Análisis matemático}
+
+Sea $d$ la distancia de la rueda al espejo lejano. La luz recorre en total $2d$, de modo que su tiempo de vuelo es
+$$
+t_{\text{luz}}=\frac{2d}{c}.
+$$
+
+La rueda posee $N$ dientes y $N$ huecos, es decir, $2N$ sectores iguales. Cada sector subtiende un ángulo
+$$
+\Delta\theta=\frac{2\pi}{2N}=\frac{\pi}{N}.
+$$
+
+Si la rueda gira con velocidad angular $\omega$ (o frecuencia de rotación $f$, con $\omega=2\pi f$), el tiempo que tarda en girar un sector completo es
+$$
+t_{\text{sector}}=\frac{\Delta\theta}{\omega}=\frac{\pi}{N\omega}.
+$$
+
+\textbf{Condición de primera extinción:} para que la luz retornante sea bloqueada por el diente adyacente, la rueda debe girar exactamente un sector durante el tiempo de vuelo de la luz:
+$$
+\frac{2d}{c}=\frac{\pi}{N\omega}.
+$$
+Despejando y usando $\omega=2\pi f$,
+$$
+c=\frac{2dN\omega}{\pi}=4dNf.
+$$
+
+\textbf{Condición general de extinción:} la $m$-ésima extinción ocurre cuando la rueda gira un número impar de semisectores,
+$$
+\frac{2d}{c}=(2m-1)\frac{\pi}{N\omega},\qquad m=1,2,3,\ldots
+$$
+
+\textbf{Condición de reaparición (máximo):} la luz vuelve a transmitirse cuando la rueda gira un número par de semisectores (es decir, un número entero de sectores completos),
+$$
+\frac{2d}{c}=2m\,\frac{\pi}{N\omega}.
+$$
+
+Conociendo $d$, $N$ y midiendo la velocidad de rotación $f$ a la que ocurre una extinción o un máximo, Fizeau calculó $c$ sin necesidad de recurrir a la luz de las estrellas. Su estimación resultó aproximadamente un $5\%$ más alta que el valor actualmente aceptado de $c$, pero constituyó la primera medición terrestre de la velocidad de la luz con precisión de laboratorio.
+
+\input{Clases/FigurasClase2/Fig1}
+
+\section{Experimento de Fizeau para medir la velocidad de la luz en un medio en movimiento, 1851}
+
+En 1851 Fizeau diseñó un segundo experimento, esta vez para medir la velocidad de la luz en un medio material que se encuentra en movimiento. El objetivo era verificar la hipótesis de Fresnel sobre el arrastre parcial del éter luminífero por parte de un medio en movimiento.
+
+\subsection{Montaje y procedimiento}
+
+Fizeau dirigió un haz de luz a través de un tubo por el que fluía agua a gran velocidad. El haz se hacía pasar dos veces por el tubo: una vez en la misma dirección del flujo del agua y otra vez en dirección opuesta (mediante espejos que plegaban el recorrido). Se comparaba entonces el comportamiento de la luz que viajaba a favor del flujo con el de la luz que viajaba en contra.
+
+\subsection{Resultado experimental}
+
+El experimento demostró que la luz que viajaba en la dirección del flujo de agua se movía más rápido que la luz que viajaba en contra del flujo. Esto confirmó que, contrariamente a las expectativas de la teoría del éter estacionario, la velocidad del medio a través del cual viaja la luz afecta la velocidad de propagación de esta. Sin embargo, la velocidad resultante era un poco menor que la suma directa entre la velocidad de la luz en el agua en reposo y la velocidad del agua.
+
+\subsection{Fórmula de arrastre de Fresnel}
+
+Fresnel había predicho este resultado mediante un coeficiente de arrastre parcial. Según Fresnel, la velocidad de la luz en un medio con índice de refracción $n$ que se mueve con velocidad $v$ es la suma galileana entre la velocidad de la luz en el medio, $c/n$, y la velocidad del medio, modificada por un coeficiente de arrastre proporcional a $n^{-2}$:
+$$
+w=\frac{c}{n}+v-\frac{v}{n^{2}}.
+$$
+Esta expresión coincide con el resultado medido por Fizeau, y se mantuvo vigente durante varias décadas como evidencia del arrastre parcial del éter. El efecto quedó definitivamente reinterpretado con la Relatividad Especial.
+
+\subsection{Explicación desde la Relatividad Especial}
+
+En la Relatividad Especial las velocidades no se suman de forma directa. Aplicando la fórmula relativista de adición de velocidades con $u'=c/n$ (velocidad de la luz en el agua en reposo) y $v$ la velocidad del agua, se obtiene
+$$
+w=\frac{\dfrac{c}{n}+v}{1+\dfrac{v}{cn}}.
+$$
+Desarrollando en serie de Taylor a primer orden en $v/c$, es decir $(1+v/cn)^{-1}\approx 1-v/cn$,
+$$
+w=\left(\frac{c}{n}+v\right)\left(1-\frac{v}{cn}+\cdots\right)
+=\frac{c}{n}+v-\frac{v}{cn}\left(\frac{c}{n}+v\right)+\cdots
+$$
+y, despreciando términos de orden $v^{2}$,
+$$
+w\approx \frac{c}{n}+v-\frac{v}{n^{2}},
+$$
+que es exactamente la fórmula de Fresnel. De este modo, el resultado de Fizeau, originalmente interpretado como arrastre parcial del éter, queda explicado sin éter alguno, como una consecuencia directa de la adición relativista de velocidades.
+
+\input{Clases/FigurasClase2/Fig2}
+
+\section{Experimento de Airy para verificar un potencial arrastre del éter por el agua, 1871}
+
+En 1871 el británico George Biddell Airy, profesor lucasiano de matemáticas de la Universidad de Cambridge y astrónomo real, llevó a cabo un experimento para poner a prueba la hipótesis del arrastre del éter por un medio material. La idea era comprobar si un medio en movimiento, como el agua, arrastraba consigo al éter luminífero.
+
+\subsection{Montaje y razonamiento}
+
+Airy llenó un telescopio con agua para observar si la velocidad del éter afectaba la posición observada de una estrella. El razonamiento era el siguiente: si el éter era arrastrado por el agua en movimiento, entonces la velocidad de la luz dentro del telescopio lleno de agua cambiaría respecto del caso vacío, y por lo tanto también lo haría el ángulo de refracción de la luz de la estrella, modificando su posición aparente en el plano focal.
+
+\subsection{Descripción geométrica del efecto buscado}
+
+\begin{itemize}
+    \item \textbf{Caso (a), telescopio vacío:} una estrella situada cerca del cenit se observa con el telescopio vacío. Debido a la aberración estelar (combinación del movimiento orbital de la Tierra con la velocidad finita de la luz), la estrella aparece desplazada un ángulo cenital $\alpha$ respecto de la vertical. En la aproximación clásica, $\tan\alpha\approx v/c$, con $v$ la velocidad de la Tierra.
+    \item \textbf{Caso (b), telescopio lleno de agua:} si el éter fuera arrastrado por el agua, la velocidad de la luz dentro del tubo sería distinta de $c/n$ (donde $n$ es el índice de refracción del agua), y aparecería una desviación adicional $\delta$, de modo que el ángulo de aberración pasaría a ser $\beta=\alpha+\delta>\alpha$.
+\end{itemize}
+
+El tiempo que la luz tarda en recorrer el tubo del telescopio depende de su velocidad dentro del medio. En el caso vacío, el tiempo de tránsito es $t=L/c$; con agua, sería $t=nL/c$ si no hay arrastre, o un valor modificado si el éter es parcialmente arrastrado. Un cambio en el tiempo de tránsito altera el desplazamiento lateral necesario para que la luz llegue al centro del ocular, y por tanto modifica el ángulo de inclinación del telescopio.
+
+\subsection{Resultado}
+
+Airy orientó el telescopio hacia una estrella y midió su posición aparente primero con el telescopio vacío y luego lleno de agua. El experimento no mostró ninguna diferencia en la posición de la estrella entre ambos escenarios; es decir, la desviación adicional fue
+$$
+\delta=\beta-\alpha=0.
+$$
+Esto indica que el agua no arrastraba el éter, o que el éter mismo no existía. El resultado del experimento de Airy fue una evidencia adicional en contra de la hipótesis del éter arrastrado y en favor de la constancia de la velocidad de la luz, que más tarde sería uno de los postulados de la Relatividad Especial.
+
+\input{Clases/FigurasClase2/Fig3}
+
+\section{Postulados de la Relatividad Especial}
+
+Einstein propuso la Relatividad Especial en su artículo de 1905 \textit{Sobre la electrodinámica de los cuerpos en movimiento}, con el objetivo de cerrar la brecha entre el electromagnetismo de Maxwell, los resultados experimentales sobre la naturaleza de la luz y los principios de la mecánica clásica. Einstein propuso que el principio de relatividad galileana debía generalizarse: no solo las leyes de la mecánica, sino \textit{toda} ley física debía ser la misma en todos los marcos de referencia inerciales. Esto se expresa en dos postulados fundamentales:
+
+\begin{enumerate}
+    \item \textbf{Principio de Relatividad:} Las leyes de la Física son las mismas en todos los marcos de referencia inerciales (Mecánica, Electrodinámica, Magnetismo, Termodinámica, Óptica, etc.).
+    \item \textbf{Invarianza de la velocidad de la luz:} La velocidad de propagación de la luz $c$ en el vacío es constante para todos los marcos de referencia inerciales, independiente del movimiento de la fuente de luz.
+\end{enumerate}
+
+Estos postulados reparan la incompatibilidad entre electromagnetismo y mecánica clásica, al precio de descartar los principios de la relatividad galileana. Una consecuencia directa es que todos los observadores inerciales son equivalentes: no se necesita el éter, no hay dirección preferente de movimiento (isotropía) y no existe ningún marco de referencia absoluto. Adicionalmente, los postulados no se aplican directamente en presencia de gravedad (se requiere la Relatividad General) y no existen experimentos puramente mecánicos, pues todos involucran luz.
+
+\subsection{Eventos y Marcos de Referencia Inerciales}
+
+En Relatividad Especial se abandona la noción de coordenadas puramente espaciales o temporales en favor del concepto de \textbf{evento}: un conjunto único de coordenadas $\{t, x\}$. La existencia de un objeto estático corresponde a una sucesión de eventos con las mismas coordenadas espaciales pero distintas coordenadas temporales; dos eventos simultáneos en lugares distintos son eventos diferentes.
+
+Los marcos de referencia inerciales se definen como sistemas de ejes coordenados con reglas para medir distancias y relojes ubicados en cada punto espacial para medir intervalos de tiempo, todos sincronizados entre sí. Un marco $S'$ con cierta velocidad respecto a $S$ medirá, en general, otro conjunto de coordenadas $\{t', x'\}$ para un mismo evento.
+
+Según el Principio de Relatividad, \textit{todo} evento físico debe ser observado por \textit{todos} los marcos inerciales. Si un marco observa que un evento ocurre, todos los demás deben observar que ocurre, aunque no necesariamente coincidan en las coordenadas asignadas.
+
+\subsection{Sincronización de Relojes}
+
+Para sincronizar relojes en distintas ubicaciones se envían señales de luz entre ellos, ajustando el tiempo registrado en cada reloj por el tiempo de tránsito de la luz. Si dos relojes en un mismo marco están separados una distancia $d$, la sincronización entre el tiempo $t_1$ del primer reloj y $t_2$ del segundo se logra mediante:
+
+$$
+t_2 = t_1 + \frac{d}{c}
+$$
+
+donde $d/c$ es el tiempo que tarda la luz en recorrer la distancia $d$ entre ambos relojes.
+
+
+\section{Simultaneidad en Relatividad Especial}
+
+En la relatividad Galileana se asume que el tiempo es absoluto, de modo que dos eventos que son simultáneos en un marco de referencia lo son en todos los marcos inerciales:
+
+$$ t' = t $$
+
+En la Relatividad Especial, en cambio, la invarianza de la velocidad de la luz en todos los marcos inerciales convierte la simultaneidad en un concepto relativo: dos eventos que son simultáneos para un observador pueden no serlo para otro que se mueve respecto al primero. Esto contradice la noción clásica de un tiempo universal y muestra que la medición del tiempo depende del estado de movimiento del observador.
+
+Para ilustrarlo se plantea un experimento mental con dos observadores: Alice, sentada en una estación de tren (marco $A$), y Bob, a bordo de un vagón que pasa frente a ella con velocidad constante $v$ (marco $B$). El vagón tiene dos bombillos, uno al frente y uno detrás, y un detector situado en la mitad que hace sonar una alarma sonora cuando la luz de ambos bombillos llega al mismo tiempo al centro del vagón.
+
+\input{Clases/FigurasClase2/Fig4}
+
+\subsection{Análisis en cada marco de referencia}
+
+En el marco de Bob, los bombillos se encienden al tiempo; los pulsos recorren distancias iguales y llegan simultáneamente al detector, que activa la alarma.
+
+\input{Clases/FigurasClase2/Fig5}
+
+En el marco de Alice, si los bombillos se encendieran también al tiempo para ella, el tren se acercaría al pulso delantero y se alejaría del trasero, por lo que los pulsos tardarían tiempos distintos en llegar al centro y la alarma no sonaría. Pero ``suena la alarma'' es un único evento físico y, por el Principio de Relatividad, todos los observadores deben estar de acuerdo en que ocurrió. Por lo tanto, Alice debe ver que los pulsos llegan al tiempo al centro del tren, lo cual sólo es posible si el bombillo trasero se encendió antes que el delantero.
+
+\input{Clases/FigurasClase2/Fig6}
+
+Así, los eventos 1 (se enciende el bombillo trasero) y 2 (se enciende el bombillo delantero) son simultáneos para Bob pero no para Alice: ella reporta primero el evento 1, luego el 2 y luego el 3 (suena la alarma). El Principio de Relatividad sólo exige que todos los observadores reporten la ocurrencia de los eventos, no que coincidan en su orden ni en su simultaneidad. Se concluye que la simultaneidad no es absoluta y que distintos observadores miden el tiempo de manera distinta: la Relatividad Especial no trata sólo sobre la luz. En la vida diaria no notamos este rompimiento porque, a velocidades pequeñas comparadas con $c$, el efecto es tan sutil que resulta imperceptible.
+
+\section{Adición de Velocidades en Relatividad Especial}
+
+La fórmula galileana de adición de velocidades debe abandonarse porque un rayo de luz emitido desde un vehículo con velocidad $v$ sería observado a $c' = c + v$, contradiciendo el Segundo Postulado. Se requiere una nueva derivación basada únicamente en los postulados de la Relatividad Especial, usando $c$ como referencia universal.
+
+\subsection{El experimento mental de la carrera}
+
+Se compara el movimiento de una pelota con el de un pulso de luz mediante una ``carrera'' a bordo de un tren de $n$ vagones que se mueve con velocidad $v$. La carrera inicia en el vagón $n$ (atrás) y termina en el vagón $m < n$. El pulso de luz se refleja en el frente del tren y regresa para encontrarse con la pelota, de modo que inicio y final son eventos únicos, evitando problemas de simultaneidad.
+
+\input{Clases/FigurasClase2/Fig7}
+
+\subsection{Análisis desde el marco del tren}
+
+Definiendo $f \equiv m/n$ como la fracción de la longitud del tren donde termina la carrera, la proporción entre distancias recorridas por la pelota y la luz es
+$$
+\frac{u}{c} = \frac{\text{vagones recorridos por la pelota}}{\text{vagones recorridos por la luz}} = \frac{(n-m)/n}{(n+m)/n} = \frac{1 - f}{1 + f}.
+$$
+De aquí se despeja $f$:
+\begin{equation*}
+    f = \frac{c-u}{c+u}.
+    \tag{2.1}
+\end{equation*}
+Bob deduce $u$ sin relojes ni reglas, solo observando en qué vagón terminó la carrera.
+
+\subsection{Análisis desde el marco de la estación}
+
+Alice, en la estación, ve al tren moverse con velocidad $v$ y mide la velocidad de la pelota como $w$. Se definen dos intervalos:
+\begin{itemize}
+    \item $T_0$: tiempo entre el inicio y la reflexión del pulso en el frente del tren.
+    \item $T_1$: tiempo entre la reflexión y el encuentro final con la pelota.
+\end{itemize}
+
+\input{Clases/FigurasClase2/Fig8}
+
+\textbf{Primer intervalo ($T_0$):} la pelota recorre $wT_0$ y el pulso recorre $cT_0$. La separación al final es
+$$
+D = cT_0 - wT_0 = T_0(c - w).
+$$
+
+\input{Clases/FigurasClase2/Fig9}
+
+\textbf{Segundo intervalo ($T_1$):} el pulso (hacia la izquierda) y la pelota (hacia la derecha) se acercan. Al encontrarse,
+$$
+cT_1 + wT_1 = D.
+$$
+Sustituyendo $D = T_0(c - w)$:
+$$
+T_1(c + w) = T_0(c - w),
+$$
+de donde
+\begin{equation*}
+    \frac{T_1}{T_0}=\frac{c-w}{c+w}.
+    \tag{2.2}
+\end{equation*}
+
+\subsection{Relación con el movimiento del tren}
+
+Ahora se analiza el recorrido del tren comparado con el del pulso de luz.
+
+\input{Clases/FigurasClase2/Fig10}
+
+Durante $T_0$, el tren avanza $vT_0$ y el pulso avanza $cT_0$. La diferencia es la longitud $L$ del tren medida por Alice:
+$$
+L = cT_0 - vT_0 = T_0(c - v).
+$$
+
+\input{Clases/FigurasClase2/Fig11}
+
+Durante $T_1$, el tren avanza $vT_1$ hacia la derecha y el pulso recorre $cT_1$ hacia la izquierda. La suma debe igualar la distancia $fL$ entre el frente del tren y el vagón final:
+$$
+fL = cT_1 + vT_1 = T_1(c + v).
+$$
+Sustituyendo $L = T_0(c - v)$:
+$$
+f\,T_0(c - v) = T_1(c + v),
+$$
+de donde
+\begin{equation*}
+    \frac{T_1}{T_0}=f\,\frac{c-v}{c+v}.
+    \tag{*}
+\end{equation*}
+
+\subsection{Obtención de la fórmula de adición}
+
+Igualando la ec. (2.2) con la expresión $(*)$:
+$$
+\frac{c - w}{c + w} = f\,\frac{c - v}{c + v}.
+$$
+Como $f$ es el número del vagón final (acordado por todos los observadores según el Principio de Relatividad), se sustituye $f$ de la ec. (2.1):
+\begin{equation*}
+    \frac{c-w}{c+w}
+    =\left(\frac{c-u}{c+u}\right)
+    \left(\frac{c-v}{c+v}\right).
+    \tag{2.3}
+\end{equation*}
+Para despejar $w$, se define $R$ como el lado derecho y se resuelve:
+$$
+c - w = R(c + w) \implies c(1 - R) = w(1 + R) \implies w = c\,\frac{1 - R}{1 + R}.
+$$
+Calculando explícitamente:
+$$
+1 - R = \frac{(c+u)(c+v) - (c-u)(c-v)}{(c+u)(c+v)} = \frac{2c(u+v)}{(c+u)(c+v)},
+$$
+$$
+1 + R = \frac{(c+u)(c+v) + (c-u)(c-v)}{(c+u)(c+v)} = \frac{2(c^2 + uv)}{(c+u)(c+v)}.
+$$
+Por tanto,
+\begin{equation*}
+    w=c\cdot\frac{2c(u+v)}{2(c^2+uv)}
+    =\frac{u+v}{1+\dfrac{uv}{c^2}}.
+    \tag{2.4}
+\end{equation*}
+
+\subsection{Forma convencional y consecuencias}
+
+Usando la convención $S'$ (tren) y $S$ (estación), con $u'$ la velocidad medida en $S'$:
+\begin{equation*}
+    w=\frac{u'+v}{1+\dfrac{u'v}{c^2}}.
+    \tag{2.5}
+\end{equation*}
+
+\textbf{Verificación del Segundo Postulado:} si $u' = c$,
+$$
+w = \frac{c + v}{1 + \dfrac{cv}{c^2}} = \frac{c + v}{1 + v/c} = \frac{c(c + v)}{c + v} = c.
+$$
+
+\textbf{Cota superior:} si $u' < c$ y $v < c$, se cumple $w < c$. Por ejemplo, con $u' = 3c/4$ y $v = c/2$:
+$$
+w = \frac{\dfrac{3c}{4} + \dfrac{c}{2}}{1 + \dfrac{(3c/4)(c/2)}{c^2}} = \frac{\dfrac{5c}{4}}{1 + \dfrac{3}{8}} = \frac{5c/4}{11/8} = \frac{10c}{11} \approx 0.909\,c < c.
+$$
+La velocidad de la luz es la máxima velocidad posible: ningún objeto con velocidad inicial menor que $c$ puede superar este límite.

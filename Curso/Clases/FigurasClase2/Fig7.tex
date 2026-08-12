@@ -1,0 +1,67 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.9]
+    % Primera etapa
+    \node[anchor=west] at (-5.45,4.45)
+        {\textbf{(a) Salida y reflexión en el frente}};
+    \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+        (-5.35,2.65) rectangle (5.35,3.85);
+    \foreach \x in {-4.02,-2.68,-1.34,0,1.34,2.68,4.02}
+        \draw[gray!70!black,thick] (\x,2.65) -- (\x,3.85);
+
+    \fill[black] (-4.68,3.28) circle (0.08);
+    \node[font=\scriptsize,anchor=west] at (-4.5,3.27) {inicio común};
+
+    \draw[->,red!75!black,very thick]
+        (-4.58,3.55) -- (4.58,3.55)
+        node[midway,above=3pt] {pulso de luz, rapidez $c$};
+    \fill[red!75!black] (4.68,3.55) circle (0.09);
+    \node[red!75!black,font=\scriptsize,align=center] at (4.62,4.08)
+        {reflexión};
+
+    \draw[->,blue!75!black,very thick]
+        (-4.58,3.05) -- (-0.72,3.05);
+    \draw[blue!75!black,very thick,fill=blue!10] (-0.58,3.1) circle (0.12);
+    \node[blue!75!black,font=\scriptsize] at (-2.55,2.84)
+        {pelota, rapidez $u$};
+
+    % Segunda etapa
+    \node[anchor=west] at (-5.45,2.18)
+        {\textbf{(b) Retorno y encuentro final}};
+    \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+        (-5.35,0.4) rectangle (5.35,1.6);
+    \foreach \x in {-4.02,-2.68,-1.34,0,1.34,2.68,4.02}
+        \draw[gray!70!black,thick] (\x,0.4) -- (\x,1.6);
+
+    \node[font=\small] at (-4.68,0.63) {$n$};
+    \node[font=\small] at (4.68,0.63) {$1$};
+
+    \draw[->,red!75!black,very thick]
+        (4.62,1.3) -- (2.2,1.3)
+        node[midway,above=3pt] {pulso reflejado};
+    \draw[->,blue!75!black,very thick]
+        (-0.45,0.88) -- (1.76,0.88)
+        node[midway,below=4pt] {pelota};
+    \draw[black,thick] (1.98,1.08) circle (0.22);
+    \fill[black] (1.98,1.08) circle (0.07);
+    \node[font=\scriptsize,align=center,fill=white,inner sep=1pt]
+        at (1.98,0.63) {encuentro en $m$};
+
+    % Recorridos totales
+    \draw[gray!60,densely dotted] (-4.68,0.38) -- (-4.68,-0.65);
+    \draw[gray!60,densely dotted] (1.98,0.38) -- (1.98,-0.65);
+    \draw[<->,blue!75!black,thick]
+        (-4.68,-0.28) -- (1.98,-0.28)
+        node[midway,fill=white,inner sep=2pt] {$(1-f)L$};
+    \node[blue!75!black,font=\scriptsize] at (-1.35,-0.72)
+        {recorrido total de la pelota};
+
+    \node[red!75!black,font=\scriptsize] at (3.25,-0.82)
+        {recorrido total de la luz: $(1+f)L$};
+
+    \node[blue!75!black,font=\small] at (0,-1.35)
+        {marco de Bob: el tren permanece en reposo};
+\end{tikzpicture}
+\caption{Carrera observada desde el tren. En la primera etapa, la pelota y el pulso parten del vagón $n$ y la luz se refleja en el frente. En la segunda, el pulso regresa y encuentra a la pelota en el vagón $m$.}
+\label{fig:carrera-marco-tren}
+\end{figure}

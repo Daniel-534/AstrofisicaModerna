@@ -1,0 +1,86 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.92]
+    % Línea temporal superior
+    \draw[->,gray!75!black,thick] (-5.9,3.15) -- (5.9,3.15);
+    \node[gray!75!black,font=\small] at (0,4.0)
+        {evolución temporal en el marco de Alice};
+    \foreach \x/\lab in {-4.55/$t_1$,0/$t_2$,4.55/$t_3$}{
+        \fill[gray!75!black] (\x,3.15) circle (0.055);
+        \node[above=2pt] at (\x,3.15) {\lab};
+    }
+
+    % Panel 1: emisión trasera
+    \begin{scope}[shift={(-4.55,0)}]
+        \node[font=\small] at (0,2.62) {\textbf{evento 1}};
+        \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+            (-1.8,0.15) rectangle (1.8,1.7);
+        \draw[->,blue!75!black,very thick] (0.35,2.12) -- (1.55,2.12)
+            node[midway,above] {$\vec v$};
+
+        \draw[red!75!black,very thick,fill=red!12] (-1.42,0.93) circle (0.17);
+        \foreach \ang in {0,45,...,315}
+            \draw[red!75!black,thick]
+                (-1.42,0.93) ++(\ang:0.22) -- ++(\ang:0.13);
+        \draw[gray!70!black,thick,fill=gray!12] (1.42,0.93) circle (0.16);
+        \draw[black,very thick,fill=blue!8]
+            (-0.22,0.65) rectangle (0.22,1.18);
+        \node[red!75!black,font=\scriptsize,align=center] at (0,-0.45)
+            {se enciende primero\\el bombillo trasero};
+    \end{scope}
+
+    % Panel 2: emisión delantera
+    \begin{scope}[shift={(0,0)}]
+        \node[font=\small] at (0,2.62) {\textbf{evento 2}};
+        \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+            (-1.8,0.15) rectangle (1.8,1.7);
+        \draw[->,blue!75!black,very thick] (0.35,2.12) -- (1.55,2.12)
+            node[midway,above] {$\vec v$};
+
+        \draw[gray!70!black,thick,fill=gray!12] (-1.42,0.93) circle (0.16);
+        \draw[red!75!black,very thick,fill=red!12] (1.42,0.93) circle (0.17);
+        \foreach \ang in {0,45,...,315}
+            \draw[red!75!black,thick]
+                (1.42,0.93) ++(\ang:0.22) -- ++(\ang:0.13);
+        \draw[black,very thick,fill=blue!8]
+            (-0.22,0.65) rectangle (0.22,1.18);
+
+        \draw[->,red!75!black,very thick]
+            (-1.28,0.93) -- (-0.38,0.93);
+        \fill[red!75!black] (-0.38,0.93) circle (0.07);
+        \node[red!75!black,font=\scriptsize,align=center] at (0,-0.45)
+            {el pulso trasero ya avanzó;\\se enciende el delantero};
+    \end{scope}
+
+    % Panel 3: encuentro en el detector
+    \begin{scope}[shift={(4.55,0)}]
+        \node[font=\small] at (0,2.62) {\textbf{evento 3}};
+        \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+            (-1.8,0.15) rectangle (1.8,1.7);
+        \draw[->,blue!75!black,very thick] (0.35,2.12) -- (1.55,2.12)
+            node[midway,above] {$\vec v$};
+
+        \draw[gray!70!black,thick,fill=gray!12] (-1.42,0.93) circle (0.16);
+        \draw[gray!70!black,thick,fill=gray!12] (1.42,0.93) circle (0.16);
+        \draw[black,very thick,fill=blue!8]
+            (-0.22,0.65) rectangle (0.22,1.18);
+        \fill[red!75!black] (0,0.93) circle (0.1);
+        \draw[black,thick] (0,1.18) -- (0,1.43);
+        \draw[blue!75!black,very thick]
+            (-0.25,1.43) arc[start angle=180,end angle=0,radius=0.25];
+
+        \draw[->,red!75!black,very thick] (-1.25,0.93) -- (-0.25,0.93);
+        \draw[->,red!75!black,very thick] (1.25,0.93) -- (0.25,0.93);
+        \node[red!75!black,font=\scriptsize,align=center] at (0,-0.45)
+            {ambos pulsos llegan juntos;\\se activa la alarma};
+    \end{scope}
+
+    % Referencia espacial
+    \draw[->,gray!75!black,thick] (-6.35,-1.05) -- (6.35,-1.05)
+        node[right] {$x_A$};
+    \node[blue!75!black,font=\small] at (0,-1.48)
+        {el vagón se desplaza hacia la derecha respecto a la estación};
+\end{tikzpicture}
+\caption{Secuencia observada por Alice. El encendido trasero ocurre antes que el delantero; de este modo los dos pulsos pueden coincidir posteriormente en el detector móvil, produciendo el evento común en el que suena la alarma.}
+\label{fig:simultaneidad-alice}
+\end{figure}

@@ -1,0 +1,36 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.96]
+    % Tren inicial y final
+    \draw[gray!65,dashed,thick,rounded corners=2pt]
+        (-5.0,-0.05) rectangle (1.1,1.15);
+    \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+        (-2.15,-0.05) rectangle (4.65,1.15);
+    \node[font=\small] at (1.25,-0.43) {tren al final de $T_0$};
+
+    \fill[black] (-4.65,0.5) circle (0.08);
+    \node[font=\small] at (-4.65,-0.48) {posición inicial};
+
+    % Recorrido del tren y de la luz
+    \draw[->,blue!75!black,very thick]
+        (-4.65,1.65) -- (-2.15,1.65)
+        node[midway,above] {$vT_0$};
+    \draw[->,red!75!black,very thick]
+        (-4.65,0.72) -- (4.55,0.72)
+        node[midway,above=3pt] {$cT_0$};
+    \fill[red!75!black] (4.55,0.72) circle (0.09);
+
+    % Longitud final del tren
+    \draw[gray!65,densely dotted] (-2.15,-0.08) -- (-2.15,-1.12);
+    \draw[gray!65,densely dotted] (4.65,-0.08) -- (4.65,-1.12);
+    \draw[<->,black,thick]
+        (-2.15,-0.92) -- (4.65,-0.92)
+        node[midway,fill=white,inner sep=2pt]
+        {$L=cT_0-vT_0$};
+
+    \node[red!75!black,font=\small,align=center] at (4.45,1.55)
+        {el pulso alcanza\\el frente};
+\end{tikzpicture}
+\caption{Comparación entre el desplazamiento del tren y el recorrido de la luz durante $T_0$. La diferencia $cT_0-vT_0$ es la longitud $L$ del tren medida por Alice.}
+\label{fig:tren-luz-t0}
+\end{figure}

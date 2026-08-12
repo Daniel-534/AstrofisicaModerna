@@ -1,0 +1,58 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.96]
+    % Vagón y movimiento
+    \draw[black,very thick,rounded corners=3pt,fill=gray!8]
+        (-5.2,0) rectangle (5.2,2.35);
+    \draw[black,thick] (-4.8,0) -- (-4.45,-0.45);
+    \draw[black,thick] (4.8,0) -- (4.45,-0.45);
+    \draw[black,very thick,fill=gray!35] (-4.45,-0.48) circle (0.28);
+    \draw[black,very thick,fill=gray!35] (4.45,-0.48) circle (0.28);
+    \draw[->,blue!75!black,very thick]
+        (2.4,3.05) -- (5.1,3.05)
+        node[midway,above] {$\vec v$};
+    \node[blue!75!black,font=\small] at (3.75,2.62)
+        {marco del tren $B$};
+
+    % Bombillos
+    \foreach \x/\name in {-4.2/trasero,4.2/delantero}{
+        \draw[red!75!black,very thick,fill=red!12] (\x,1.25) circle (0.22);
+        \foreach \ang in {0,45,...,315}
+            \draw[red!75!black,thick]
+                (\x,1.25) ++(\ang:0.29) -- ++(\ang:0.18);
+        \node[font=\small,align=center] at (\x,0.55)
+            {bombillo\\\name};
+    }
+
+    % Detector y alarma
+    \draw[black,very thick,fill=blue!8] (-0.48,0.72) rectangle (0.48,1.35);
+    \fill[red!75!black] (0,1.04) circle (0.1);
+    \draw[black,thick] (0,1.35) -- (0,1.72);
+    \draw[blue!75!black,very thick] (-0.3,1.72) arc[start angle=180,end angle=0,radius=0.3];
+    \node[font=\small,align=center] at (0,0.35)
+        {detector y\\alarma};
+
+    % Bob
+    \draw[black,thick] (1.35,1.33) circle (0.18);
+    \draw[black,thick] (1.35,1.15) -- (1.35,0.68);
+    \draw[black,thick] (1.35,1.02) -- (1.05,0.82);
+    \draw[black,thick] (1.35,1.02) -- (1.65,0.82);
+    \draw[black,thick] (1.35,0.68) -- (1.1,0.35);
+    \draw[black,thick] (1.35,0.68) -- (1.6,0.35);
+    \node[font=\small] at (1.35,1.72) {Bob};
+
+    % Andén y Alice
+    \draw[gray!70!black,very thick] (-5.8,-1.15) -- (5.8,-1.15);
+    \foreach \x in {-5.2,-4.4,...,5.2}
+        \draw[gray!65,thick] (\x,-1.15) -- ++(-0.25,-0.35);
+    \draw[black,thick] (-1.9,-0.45) circle (0.2);
+    \draw[black,thick] (-1.9,-0.65) -- (-1.9,-1.15);
+    \draw[black,thick] (-1.9,-0.8) -- (-2.25,-0.98);
+    \draw[black,thick] (-1.9,-0.8) -- (-1.55,-0.98);
+    \node[font=\small] at (-1.9,-0.08) {Alice};
+    \node[blue!75!black,font=\small] at (3.75,-1.65)
+        {marco de la estación $A$};
+\end{tikzpicture}
+\caption{Montaje del experimento mental. Bob permanece en el centro del vagón junto al detector, mientras Alice observa desde la estación el movimiento del tren. Los bombillos están situados a igual distancia del centro en el marco del vagón.}
+\label{fig:simultaneidad-montaje}
+\end{figure}

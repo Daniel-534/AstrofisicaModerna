@@ -1,0 +1,43 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.95]
+    % Posiciones inicial y final del tren durante T_0
+    \draw[gray!65,dashed,thick,rounded corners=2pt]
+        (-5.0,-0.1) rectangle (1.1,1.15);
+    \node[gray!70!black,font=\small] at (-1.95,-0.48) {tren en $t=0$};
+
+    \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+        (-2.15,-0.1) rectangle (4.65,1.15);
+    \node[font=\small] at (1.25,-0.48) {tren en $t=T_0$};
+    \draw[->,blue!75!black,very thick]
+        (-0.2,1.62) -- (2.45,1.62)
+        node[midway,above] {$\vec v$};
+
+    % Punto de salida
+    \fill[black] (-4.65,0.52) circle (0.09);
+    \node[font=\small] at (-4.65,-0.82) {inicio};
+
+    % Recorridos
+    \draw[->,red!75!black,very thick]
+        (-4.58,0.72) -- (4.52,0.72);
+    \fill[red!75!black] (4.52,0.72) circle (0.09);
+    \node[red!75!black,font=\small] at (0.0,0.94) {$cT_0$};
+    \node[red!75!black,font=\small,align=center] at (4.5,1.45)
+        {reflexión en\\el frente};
+
+    \draw[->,blue!75!black,very thick]
+        (-4.58,0.28) -- (1.25,0.28);
+    \draw[blue!75!black,very thick,fill=blue!10] (1.25,0.28) circle (0.12);
+    \node[blue!75!black,font=\small] at (-1.65,0.06) {$wT_0$};
+
+    % Separación D
+    \draw[gray!65,densely dotted] (1.25,0.38) -- (1.25,2.55);
+    \draw[gray!65,densely dotted] (4.52,0.82) -- (4.52,2.55);
+    \draw[<->,black,thick]
+        (1.25,2.35) -- (4.52,2.35)
+        node[midway,fill=white,inner sep=2pt]
+        {$D=cT_0-wT_0$};
+\end{tikzpicture}
+\caption{Primer intervalo visto por Alice. Desde el evento inicial hasta la reflexión, la pelota recorre $wT_0$ y el pulso recorre $cT_0$; la diferencia entre ambos recorridos es la separación $D$.}
+\label{fig:carrera-alice-t0}
+\end{figure}

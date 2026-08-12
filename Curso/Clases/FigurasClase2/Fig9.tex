@@ -1,0 +1,42 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.98]
+    % Tren durante el segundo intervalo
+    \draw[black,very thick,rounded corners=2pt,fill=gray!8]
+        (-4.8,-0.15) rectangle (4.8,1.2);
+    \draw[->,blue!75!black,very thick]
+        (1.2,1.68) -- (3.7,1.68)
+        node[midway,above] {$\vec v$};
+
+    % Posiciones al comienzo de T_1
+    \draw[blue!75!black,very thick,fill=blue!10] (-2.35,0.48) circle (0.13);
+    \node[blue!75!black,font=\small,align=center] at (-2.35,-0.78)
+        {pelota al iniciar\\el intervalo $T_1$};
+    \fill[red!75!black] (4.25,0.8) circle (0.1);
+    \node[red!75!black,font=\small,align=center] at (4.1,-0.78)
+        {pulso reflejado\\en el frente};
+
+    % Recorridos hasta el encuentro
+    \coordinate (E) at (1.15,0.64);
+    \draw[->,blue!75!black,very thick]
+        (-2.18,0.48) -- (E)
+        node[midway,below=5pt] {$wT_1$};
+    \draw[->,red!75!black,very thick]
+        (4.15,0.8) -- (E)
+        node[midway,above=5pt] {$cT_1$};
+    \draw[black,thick] (E) circle (0.2);
+    \fill[black] (E) circle (0.07);
+    \node[font=\scriptsize,align=center,fill=white,inner sep=1pt]
+        at (1.15,0.18) {encuentro};
+
+    % Separación inicial
+    \draw[gray!65,densely dotted] (-2.35,0.65) -- (-2.35,2.02);
+    \draw[gray!65,densely dotted] (4.25,0.9) -- (4.25,2.02);
+    \draw[<->,black,thick]
+        (-2.35,1.88) -- (4.25,1.88)
+        node[midway,fill=white,inner sep=2pt]
+        {$D=cT_1+wT_1$};
+\end{tikzpicture}
+\caption{Segundo intervalo visto por Alice. Después de la reflexión, el pulso avanza hacia la izquierda y la pelota continúa hacia la derecha; la suma de ambos recorridos cubre la separación inicial $D$.}
+\label{fig:carrera-alice-t1}
+\end{figure}
