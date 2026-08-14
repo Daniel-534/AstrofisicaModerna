@@ -1,0 +1,223 @@
+\chapter{Clase 3}
+\section{Adición de Velocidades en Relatividad Especial}
+
+La fórmula galileana de adición de velocidades debe abandonarse porque un rayo de luz emitido desde un vehículo con velocidad $v$ sería observado a $c' = c + v$, contradiciendo el Segundo Postulado. Se requiere una nueva derivación basada únicamente en los postulados de la Relatividad Especial, usando $c$ como referencia universal.
+
+\subsection{El experimento mental de la carrera}
+
+Se compara el movimiento de una pelota con el de un pulso de luz mediante una ``carrera'' a bordo de un tren de $n$ vagones que se mueve con velocidad $v$. La carrera inicia en el vagón $n$ (atrás) y termina en el vagón $m < n$. El pulso de luz se refleja en el frente del tren y regresa para encontrarse con la pelota, de modo que inicio y final son eventos únicos, evitando problemas de simultaneidad.
+
+\input{Clases/FigurasClase3/Fig1}
+
+\subsection{Análisis desde el marco del tren}
+
+Definiendo $f \equiv m/n$ como la fracción de la longitud del tren donde termina la carrera, la proporción entre distancias recorridas por la pelota y la luz es
+$$
+\frac{u}{c} = \frac{\text{vagones recorridos por la pelota}}{\text{vagones recorridos por la luz}} = \frac{(n-m)/n}{(n+m)/n} = \frac{1 - f}{1 + f}.
+$$
+De aquí se despeja $f$:
+\begin{equation*}
+    f = \frac{c-u}{c+u}.
+    \tag{3.1}
+\end{equation*}
+Bob deduce $u$ sin relojes ni reglas, solo observando en qué vagón terminó la carrera.
+
+\subsection{Análisis desde el marco de la estación}
+
+Alice, en la estación, ve al tren moverse con velocidad $v$ y mide la velocidad de la pelota como $w$. Se definen dos intervalos:
+\begin{itemize}
+    \item $T_0$: tiempo entre el inicio y la reflexión del pulso en el frente del tren.
+    \item $T_1$: tiempo entre la reflexión y el encuentro final con la pelota.
+\end{itemize}
+
+\input{Clases/FigurasClase3/Fig2}
+
+\textbf{Primer intervalo ($T_0$):} la pelota recorre $wT_0$ y el pulso recorre $cT_0$. La separación al final es
+$$
+D = cT_0 - wT_0 = T_0(c - w).
+$$
+
+\input{Clases/FigurasClase3/Fig3}
+
+\textbf{Segundo intervalo ($T_1$):} el pulso (hacia la izquierda) y la pelota (hacia la derecha) se acercan. Al encontrarse,
+$$
+cT_1 + wT_1 = D.
+$$
+Sustituyendo $D = T_0(c - w)$:
+$$
+T_1(c + w) = T_0(c - w),
+$$
+de donde
+\begin{equation*}
+    \frac{T_1}{T_0}=\frac{c-w}{c+w}.
+    \tag{3.2}
+\end{equation*}
+
+\subsection{Relación con el movimiento del tren}
+
+Ahora se analiza el recorrido del tren comparado con el del pulso de luz.
+
+\input{Clases/FigurasClase3/Fig4}
+
+Durante $T_0$, el tren avanza $vT_0$ y el pulso avanza $cT_0$. La diferencia es la longitud $L$ del tren medida por Alice:
+$$
+L = cT_0 - vT_0 = T_0(c - v).
+$$
+
+\input{Clases/FigurasClase3/Fig5}
+
+Durante $T_1$, el tren avanza $vT_1$ hacia la derecha y el pulso recorre $cT_1$ hacia la izquierda. La suma debe igualar la distancia $fL$ entre el frente del tren y el vagón final:
+$$
+fL = cT_1 + vT_1 = T_1(c + v).
+$$
+Sustituyendo $L = T_0(c - v)$:
+$$
+f\,T_0(c - v) = T_1(c + v),
+$$
+de donde
+\begin{equation*}
+    \frac{T_1}{T_0}=f\,\frac{c-v}{c+v}.
+    \tag{*}
+\end{equation*}
+
+\subsection{Obtención de la fórmula de adición}
+
+Igualando la ec. (3.2) con la expresión $(*)$:
+$$
+\frac{c - w}{c + w} = f\,\frac{c - v}{c + v}.
+$$
+Como $f$ es el número del vagón final (acordado por todos los observadores según el Principio de Relatividad), se sustituye $f$ de la ec. (3.1):
+\begin{equation*}
+    \frac{c-w}{c+w}
+    =\left(\frac{c-u}{c+u}\right)
+    \left(\frac{c-v}{c+v}\right).
+    \tag{3.3}
+\end{equation*}
+Para despejar $w$, se define $R$ como el lado derecho y se resuelve:
+$$
+c - w = R(c + w) \implies c(1 - R) = w(1 + R) \implies w = c\,\frac{1 - R}{1 + R}.
+$$
+Calculando explícitamente:
+$$
+1 - R = \frac{(c+u)(c+v) - (c-u)(c-v)}{(c+u)(c+v)} = \frac{2c(u+v)}{(c+u)(c+v)},
+$$
+$$
+1 + R = \frac{(c+u)(c+v) + (c-u)(c-v)}{(c+u)(c+v)} = \frac{2(c^2 + uv)}{(c+u)(c+v)}.
+$$
+Por tanto,
+\begin{equation*}
+    w=c\cdot\frac{2c(u+v)}{2(c^2+uv)}
+    =\frac{u+v}{1+\dfrac{uv}{c^2}}.
+    \tag{3.4}
+\end{equation*}
+
+\subsection{Forma convencional y consecuencias}
+
+Usando la convención $S'$ (tren) y $S$ (estación), con $u'$ la velocidad medida en $S'$:
+\begin{equation*}
+    w=\frac{u'+v}{1+\dfrac{u'v}{c^2}}.
+    \tag{3.5}
+\end{equation*}
+
+\textbf{Verificación del Segundo Postulado:} si $u' = c$,
+$$
+w = \frac{c + v}{1 + \dfrac{cv}{c^2}} = \frac{c + v}{1 + v/c} = \frac{c(c + v)}{c + v} = c.
+$$
+
+\textbf{Cota superior:} si $u' < c$ y $v < c$, se cumple $w < c$. Por ejemplo, con $u' = 3c/4$ y $v = c/2$:
+$$
+w = \frac{\dfrac{3c}{4} + \dfrac{c}{2}}{1 + \dfrac{(3c/4)(c/2)}{c^2}} = \frac{\dfrac{5c}{4}}{1 + \dfrac{3}{8}} = \frac{5c/4}{11/8} = \frac{10c}{11} \approx 0.909\,c < c.
+$$
+La velocidad de la luz es la máxima velocidad posible: ningún objeto con velocidad inicial menor que $c$ puede superar este límite.
+
+\section{Transformaciones de Lorentz}
+
+Dado que la fórmula de adición de velocidades de la relatividad Galileana ya no es válida, las transformaciones Galileanas también fallan frente a los postulados de la Relatividad Especial. Por esta razón se necesita un nuevo conjunto de transformaciones entre marcos de referencia inerciales: las transformaciones de Lorentz.
+
+Estas transformaciones tienen sus raíces en el trabajo del físico holandés Hendrik Lorentz (Premio Nobel de Física 1902), profesor de la Universidad de Leiden, pero su historia se remonta a finales de la década de 1880, con los trabajos de Waldemar Voigt, Olivier Heaviside, J. J. Thomson y George Searle, quienes buscaban explicar fenómenos como el efecto Doppler y los campos generados por cargas eléctricas en movimiento. Las transformaciones fueron desarrolladas por Lorentz, Larmor y Poincaré para explicar los resultados negativos del experimento de Michelson-Morley y la invarianza de las ecuaciones de Maxwell. Lorentz propuso que, a través de estas transformaciones, las dimensiones se contraen y el tiempo se dilata cuando un objeto se mueve a velocidades cercanas a la de la luz (contracción de Lorentz-FitzGerald), aunque aún trabajaba bajo el supuesto de un éter luminífero como medio de propagación de la luz; sus transformaciones serían más tarde reinterpretadas de manera revolucionaria por Einstein, eliminando la necesidad de dicho éter.
+
+Joseph Larmor desarrolló una versión temprana de las transformaciones en su trabajo sobre electrones en movimiento, introduciendo la idea de que el tiempo puede considerarse como una cuarta dimensión que se transforma con el espacio cuando un objeto se mueve, con lo cual fue el primero en predecir el efecto de la dilatación temporal. Henri Poincaré exploró las implicaciones matemáticas de las transformaciones, propuso la relatividad del tiempo como consecuencia natural de estas, refinó el marco matemático de Lorentz añadiendo la invarianza de las leyes físicas como principio fundamental, y bautizó las transformaciones con el nombre de Lorentz. Sin embargo, fue Einstein quien utilizó sus postulados de la Relatividad Especial para explicar la forma de estas transformaciones desde primeros principios, razonamiento que se sigue a continuación.
+
+\subsection{Determinando la Forma de las Transformaciones de Lorentz}
+
+La forma más general de escribir la transformación de coordenadas de un marco $S$ a otro $S'$ es:
+
+$$t' = f_1(t, x, y, z), \quad x' = f_2(t, x, y, z), \quad y' = f_3(t, x, y, z), \quad z' = f_4(t, x, y, z).$$
+
+Para construir la forma analítica de estas transformaciones se deben tener en cuenta las siguientes consideraciones:
+
+\begin{enumerate}
+    \item \textbf{Homogeneidad e isotropía:} todos los experimentos y observaciones astronómicas implican que el espacio y el tiempo son homogéneos e isótropos, lo que equivale a poder escoger arbitrariamente el origen y el sentido de las coordenadas, sin pérdida de generalidad (Principio de Relatividad).
+    \item \textbf{Linealidad (inercialidad):} si un marco inercial ve un objeto en estado inercial (reposo o movimiento rectilíneo uniforme), las transformaciones no pueden hacer que otro marco inercial reporte un movimiento no inercial. Por tanto, las transformaciones no pueden contener términos polinomiales de las coordenadas de orden superior a 1.
+    \item \textbf{Espacio plano:} para preservar la inercialidad, el espacio debe ser plano y regirse por la geometría euclideana, $\Delta D^2 = \Delta x^2 + \Delta y^2 + \Delta z^2$. (Las trayectorias curvas causadas por la gravedad requieren geometría diferencial, base de la Relatividad General.)
+    \item \textbf{Eventos:} un evento es un conjunto de coordenadas espaciales y temporales que ocurre independientemente de los observadores.
+    \item \textbf{Sincronización:} los relojes de cada marco pueden sincronizarse, conociendo su separación espacial y haciendo la corrección correspondiente.
+    \item \textbf{Invertibilidad:} debe ser posible analizar el problema como si el marco ``quieto'' fuera $S'$, observando a $S$ moverse con velocidad $-v$; las transformaciones deben preservar la misma forma funcional, excepto por el cambio $v \to -v$ (Principio de Relatividad).
+    \item \textbf{Principio de correspondencia:} a bajas velocidades, las nuevas transformaciones deben reducirse a la forma Galileana.
+\end{enumerate}
+
+La consideración 1 permite escoger el eje $x$ como la dirección del movimiento relativo y alinear los ejes $x, y, z$ con $x', y', z'$, con orígenes coincidentes en $t = t' = 0$; así, los términos de orden 0 de una expansión polinomial pueden ignorarse. La consideración 2 restringe la forma analítica a términos lineales. Conviene entonces pasar de las coordenadas $\{t, x, y, z\}$ a las \textbf{coordenadas espacio-temporales}:
+
+$$x^{\mu} := (ct, x, y, z), \quad \mu = 0, 1, 2, 3,$$
+
+donde $x^0 = ct$ tiene unidades de distancia y representa la distancia que recorre la luz en un tiempo $t$ (por ejemplo, $x^0 = 1$ m corresponde al tiempo que le toma a la luz recorrer 1 m). Las transformaciones lineales quedan:
+
+$$x'^0 = \Lambda_{00}x^0 + \Lambda_{01}x^1 + \Lambda_{02}x^2 + \Lambda_{03}x^3,$$
+$$x'^1 = \Lambda_{10}x^0 + \Lambda_{11}x^1 + \Lambda_{12}x^2 + \Lambda_{13}x^3,$$
+$$x'^2 = \Lambda_{20}x^0 + \Lambda_{21}x^1 + \Lambda_{22}x^2 + \Lambda_{23}x^3,$$
+$$x'^3 = \Lambda_{30}x^0 + \Lambda_{31}x^1 + \Lambda_{32}x^2 + \Lambda_{33}x^3.$$
+
+El conjunto de coeficientes $\Lambda_{\mu\nu}$ (que no dependen explícitamente de las demás coordenadas) se representa como una matriz $4 \times 4$, de modo que las transformaciones se expresan como una multiplicación entre la matriz de Lorentz y el vector (cuadrivector) de coordenadas espacio-temporales medidas por $S$:
+
+$$\left(\begin{array}{c} x'^0 \\ x'^1 \\ x'^2 \\ x'^3 \end{array}\right) = \left(\begin{array}{cccc} \Lambda_{00} & \Lambda_{01} & \Lambda_{02} & \Lambda_{03} \\ \Lambda_{10} & \Lambda_{11} & \Lambda_{12} & \Lambda_{13} \\ \Lambda_{20} & \Lambda_{21} & \Lambda_{22} & \Lambda_{23} \\ \Lambda_{30} & \Lambda_{31} & \Lambda_{32} & \Lambda_{33} \end{array}\right) \left(\begin{array}{c} x^0 \\ x^1 \\ x^2 \\ x^3 \end{array}\right),$$
+
+o, de forma simplificada:
+
+$$x'^{\mu} = \sum_{\nu=0}^{3} \Lambda_{\mu\nu} x^{\nu}.$$
+
+Estas transformaciones incluyen también rotaciones espaciales; sin embargo, como se escogieron los ejes alineados entre $S$ y $S'$, no se incluye ninguna rotación. Una matriz de Lorentz sin rotaciones espaciales se denomina \textbf{Lorentz boost} o rotación espacio-temporal.
+
+La isotropía y homogeneidad implican que no hay mezcla entre las coordenadas transversales durante la transformación: un movimiento a lo largo de $x$ no afecta los valores de $y, z$, y el paso del tiempo no las afecta tampoco. Por tanto, los términos cruzados se anulan:
+
+$$\Lambda_{20}, \Lambda_{21}, \Lambda_{23}, \Lambda_{30}, \Lambda_{31}, \Lambda_{32}, \Lambda_{02}, \Lambda_{03}, \Lambda_{12}, \Lambda_{13} = 0.$$
+
+Por ejemplo, para el origen de coordenadas ($x^0 = x'^0 = 0$, $x^1 = x'^1 = 0$) se cumpliría $0 = \Lambda_{12}x^2 + \Lambda_{13}x^3$; como el origen es arbitrario por homogeneidad, $\Lambda_{12}, \Lambda_{13} = 0$. Además, el Principio de Relatividad asegura que un evento que ocurre en cierta ubicación $y$ o $z$ debe observarse en la misma ubicación en $S'$, pues no hay movimiento relativo en esas direcciones; así, los términos diagonales transversales quedan como la identidad:
+
+$$\Lambda_{22} = \Lambda_{33} = 1.$$
+
+Por tanto, la transformación matricial se reduce explícitamente a
+
+\[
+\begin{pmatrix}
+    x'^0 \\
+    x'^1 \\
+    x'^2 \\
+    x'^3
+\end{pmatrix}
+=
+\begin{pmatrix}
+    \Lambda_{00} & \Lambda_{01} & 0 & 0 \\
+    \Lambda_{10} & \Lambda_{11} & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    x^0 \\
+    x^1 \\
+    x^2 \\
+    x^3
+\end{pmatrix}.
+\]
+
+Esta forma muestra que el boost solo mezcla las coordenadas temporal $x^0=ct$ y longitudinal $x^1=x$, mientras que las coordenadas transversales permanecen invariantes: $x'^2=x^2$ y $x'^3=x^3$. Solo quedan por determinar los cuatro coeficientes del bloque superior izquierdo:
+
+$$x'^0 = \Lambda_{00}x^0 + \Lambda_{01}x^1,$$
+$$x'^1 = \Lambda_{10}x^0 + \Lambda_{11}x^1.$$
+
+Para fijarlos, se analiza la posición del origen del marco $S'$ vista desde $S$: según $S'$, el origen está en $x' = 0$; según $S$, se mueve como $x = vt$ (pues ambos orígenes coinciden en $t = t' = 0$). Sustituyendo en la transformación de $x'^1$:
+
+$$0 = x'^1 = \Lambda_{10}x^0 + \Lambda_{11}x^1 = \Lambda_{10}ct + \Lambda_{11}vt \quad \Rightarrow \quad \frac{\Lambda_{10}}{\Lambda_{11}} = -\frac{v}{c}.$$
+
+Al factor $v/c$ se le asocia el símbolo $\beta$. Sustituyendo en la transformación y factorizando $\Lambda_{11}$:
+
+$$x'^1 = \Lambda_{11}\left(\frac{\Lambda_{10}}{\Lambda_{11}}x^0 + x^1\right) = \Lambda_{11}(-\beta x^0 + x^1).$$

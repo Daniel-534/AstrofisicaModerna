@@ -1,0 +1,81 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.96]
+    % Estado inicial
+    \node[anchor=west] at (-5.35,4.72)
+        {\textbf{(a) Evento inicial: $t=t'=0$}};
+
+    \draw[->,black,very thick] (-4.8,3.62) -- (4.9,3.62)
+        node[right] {$x$};
+    \draw[->,blue!75!black,thick] (-4.8,3.36) -- (4.9,3.36)
+        node[right] {$x'$};
+
+    \draw[black,very thick] (0,3.48) -- (0,4.0);
+    \node[above=2pt] at (0,4.0) {$O=O'$};
+
+    \draw[red!75!black,very thick,fill=red!12] (0,3.49) circle (0.17);
+    \foreach \ang in {0,45,...,315}
+        \draw[red!75!black,thick]
+            (0,3.49) ++(\ang:0.23) -- ++(\ang:0.16);
+    \node[gray!70!black,font=\scriptsize] at (-2.15,4.05)
+        {orígenes coincidentes};
+    \draw[->,gray!70!black,thin] (-1.35,3.96) -- (-0.25,3.62);
+    \node[red!75!black,font=\small,align=center] at (2.35,4.02)
+        {emisión del pulso\\de luz};
+    \draw[->,gray!70!black,thin] (1.75,3.86) -- (0.28,3.58);
+
+    % Estado posterior
+    \node[anchor=west] at (-5.35,2.88)
+        {\textbf{(b) Instante posterior}};
+
+    \coordinate (O) at (-4.55,1.52);
+    \coordinate (Op) at (-0.75,1.52);
+    \coordinate (P) at (4.65,1.52);
+
+    % Ejes espaciales de cada marco
+    \draw[->,black,very thick] (-5.05,1.52) -- (5.15,1.52)
+        node[right] {$x$};
+    \draw[->,blue!75!black,thick] (-1.2,1.25) -- (5.15,1.25)
+        node[right] {$x'$};
+
+    \draw[black,very thick] (O) -- ++(0,0.52);
+    \node[above=2pt] at ($(O)+(0,0.52)$) {$S$};
+    \node[below=5pt] at (O) {$O$};
+
+    \draw[blue!75!black,very thick] ($(Op)+(0,-0.27)$) -- ++(0,0.79);
+    \node[blue!75!black,above=2pt] at ($(Op)+(0,0.52)$) {$S'$};
+    \node[blue!75!black,below=5pt] at ($(Op)+(0,-0.27)$) {$O'$};
+    \draw[->,blue!75!black,very thick]
+        ($(Op)+(0.35,0.78)$) -- ++(2.1,0)
+        node[midway,above] {$\vec v$};
+
+    % Pulso en el evento P
+    \draw[red!75!black,very thick,fill=red!12] (P) circle (0.17);
+    \foreach \ang in {0,45,...,315}
+        \draw[red!75!black,thick]
+            (P) ++(\ang:0.23) -- ++(\ang:0.16);
+    \node[red!75!black,font=\small,align=center] at (4.25,2.17)
+        {evento $P$};
+
+    % Guías verticales
+    \draw[gray!60,densely dotted] (O) -- ($(O)+(0,-2.15)$);
+    \draw[gray!60,densely dotted] (Op) -- ($(Op)+(0,-2.15)$);
+    \draw[gray!60,densely dotted] (P) -- ($(P)+(0,-2.15)$);
+
+    % Mediciones espaciales
+    \draw[<->,black,thick]
+        ($(O)+(0,-0.82)$) -- ($(P)+(0,-0.82)$)
+        node[midway,fill=white,inner sep=2pt] {$x=ct$};
+    \draw[<->,blue!75!black,thick]
+        ($(Op)+(0,-1.38)$) -- ($(P)+(0,-1.38)$)
+        node[midway,fill=white,inner sep=2pt] {$x'=ct'$};
+    \draw[<->,gray!75!black,thick]
+        ($(O)+(0,-1.94)$) -- ($(Op)+(0,-1.94)$)
+        node[midway,fill=white,inner sep=2pt] {$vt$};
+
+    \node[gray!70!black,font=\scriptsize] at (0,-0.88)
+        {esquema espacial; las escalas de ambos marcos se indican de forma conceptual};
+\end{tikzpicture}
+\caption{Observación de un mismo pulso de luz desde dos marcos inerciales. En el evento inicial coinciden los orígenes y se emite el pulso. Posteriormente, $O'$ se ha desplazado respecto a $O$, mientras ambos observadores asignan al evento $P$ las posiciones $x=ct$ y $x'=ct'$.}
+\label{fig:calibrador-luz}
+\end{figure}

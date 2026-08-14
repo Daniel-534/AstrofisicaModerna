@@ -1,0 +1,192 @@
+\chapter{Clase 4}
+
+\section{Determinación del factor de Lorentz}
+
+\subsection{El factor \texorpdfstring{$\gamma$}{gamma} de Lorentz}
+
+Al coeficiente $\Lambda_{11}$ se le asigna el símbolo $\gamma$, llamado \textbf{factor de Lorentz}. El principio de correspondencia obliga a que $\gamma \to 1$ cuando $v/c \to 0$, para preservar las transformaciones Galileanas a bajas velocidades; por tanto, $\gamma$ debe depender de la velocidad relativa. De hecho, depende únicamente de ella (que es constante, preservando la inercialidad), ya que el Principio de Relatividad asegura que no puede depender de las condiciones específicas del sistema (temperatura, presión, energía, etc.): todos los marcos inerciales deben llegar a las mismas conclusiones. Con el factor de Lorentz, la transformación para $x^1$ queda:
+
+$$x'^1 = \gamma(v)(-\beta x^0 + x^1) \quad \Longrightarrow \quad x' = \gamma(v)(x - vt).$$
+
+Según la consideración 6 (Principio de Relatividad), esta misma fórmula debe servir para la transformación inversa ($v \to -v$):
+
+$$x = \gamma(-v)(x' + vt').$$
+
+Dado que la fórmula debe aplicar de forma idéntica en ambos casos (directo $S \to S'$ o inverso $S' \to S$), $\gamma$ debe ser una función par de la velocidad relativa: $\gamma(v) = \gamma(-v)$. Solo resta determinar su forma analítica.
+
+Para ello se analiza un experimento mental que usa la luz como ``calibrador'' para hacer coincidir las observaciones de dos marcos distintos (Fig.~\ref{fig:calibrador-luz}).
+
+\input{Clases/FigurasClase4/Fig1}
+
+Un pulso de luz es emitido en $t=t'=0$, instante elegido para que los orígenes de $S$ y $S'$ coincidan. El marco $S'$ se mueve con velocidad constante $v$ hacia la derecha respecto a $S$. El desplazamiento del pulso es registrado por ambos marcos mediante $x=ct$ y $x'=ct'$, ya que ambos miden la misma rapidez $c$. Estas conclusiones deben sostenerse al aplicar la transformación directa y la inversa (tomando $\gamma(v)=\gamma(-v)=\gamma$):
+
+$$x' = \gamma(x - vt) \quad \Rightarrow \quad ct' = \gamma(ct - vt),$$
+$$x = \gamma(x' + vt') \quad \Rightarrow \quad ct = \gamma(ct' + vt').$$
+
+Multiplicando las dos expresiones se llega a:
+
+$$c^2 tt' = \gamma^2 (c^2 - v^2) tt'.$$
+
+Eliminando el factor $tt'$ y despejando el factor de Lorentz:
+
+$$\gamma = \gamma(v) = \frac{1}{\sqrt{1 - v^2/c^2}},$$
+
+o, en términos de $\beta$:
+
+$$\gamma = \gamma(\beta) = \frac{1}{\sqrt{1 - \beta^2}}.$$
+
+La Tabla~\ref{tab:factor-lorentz} muestra los valores que toma el factor de Lorentz según la velocidad relativa. Para velocidades pequeñas, $\gamma$ se aproxima a 1 y se recupera el límite galileano, en concordancia con el \textbf{Principio de Correspondencia}. A medida que $v$ se acerca a $c$, $\gamma$ crece sin límite y no está definido en $v=c$ (Fig.~\ref{fig:factor-lorentz}).
+
+%---------------------------------------------------------------
+\begin{table}[H]
+\centering
+\caption{Valores del factor de Lorentz $\gamma$ para diferentes velocidades $v$ (en unidades de $c$).}
+\label{tab:factor-lorentz}
+\begin{tabular}{ll}
+\hline
+Velocidad ($v/c$) & Factor de Lorentz $\gamma$ \\
+\hline
+$0.000027$ (velocidad típica de un satélite artificial) & $\approx 1.00000000036$ \\
+$0.1$   & $\approx 1.005$ \\
+$0.2$   & $\approx 1.021$ \\
+$0.3$   & $\approx 1.048$ \\
+$0.4$   & $\approx 1.091$ \\
+$0.5$   & $\approx 1.155$ \\
+$0.6$   & $\approx 1.250$ \\
+$0.7$   & $\approx 1.400$ \\
+$0.8$   & $\approx 1.667$ \\
+$0.9$   & $\approx 2.294$ \\
+$0.95$  & $\approx 3.202$ \\
+$0.99$  & $\approx 7.089$ \\
+$0.999$ & $\approx 22.366$ \\
+$0.999999999$ & $\approx 22360.68$ \\
+$1$ & Indefinido (el límite $\to \infty$) \\
+\hline
+\end{tabular}
+\end{table}
+%---------------------------------------------------------------
+
+\input{Clases/FigurasClase4/Fig2}
+
+\section{Forma final de las transformaciones de Lorentz}
+
+Con el factor $\gamma$ ya determinado, es posible completar la forma explícita de las transformaciones entre los marcos $S$ y $S'$, y analizar cómo se componen los movimientos relativistas de manera general.
+
+Hasta este punto se tiene la transformación de la posición $x \to x'$, pero aún no se sabe cómo se transforma el tiempo. Para encontrarlo, se sustituye la transformación directa $x'=\gamma(x-vt)$ en la transformación inversa $x=\gamma(x'+vt')$, recordando que $\gamma(v)=\gamma(-v)=\gamma$:
+
+$$
+x = \gamma(x' + vt') \quad \Rightarrow \quad x = \gamma\big(\gamma(x - vt) + vt'\big).
+$$
+
+Despejando $t'$ se obtiene:
+
+$$
+t' = \gamma\left(t - \frac{vx}{c^2}\right).
+$$
+
+Con este resultado se llega a las \textbf{transformaciones de Lorentz} de la Relatividad Especial:
+
+$$
+\begin{array}{ll}
+t' = \gamma\left(t - \dfrac{vx}{c^2}\right), & \quad x' = \gamma(x - vt), \\[3mm]
+y' = y, & \quad z' = z,
+\end{array}
+$$
+
+y las correspondientes transformaciones inversas son:
+
+$$
+\begin{array}{ll}
+t = \gamma\left(t' + \dfrac{vx'}{c^2}\right), & \quad x = \gamma(x' + vt'), \\[3mm]
+y = y', & \quad z = z'.
+\end{array}
+$$
+
+En términos del boost de Lorentz, la matriz correspondiente queda:
+
+$$
+\Lambda := \left(\begin{array}{cccc}
+\gamma & -\beta\gamma & 0 & 0 \\
+-\beta\gamma & \gamma & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right).
+$$
+
+Es importante resaltar que $\Lambda$ es una función de $\beta$, de manera que, según el Principio de Relatividad, las transformaciones inversas se obtienen cambiando las coordenadas primadas por las no primadas y reemplazando $\Lambda(v)$ por $\Lambda(-v)$. Analizado matricialmente, esto se resume en:
+
+$$
+\Lambda^{-1}(v) = \Lambda(-v).
+$$
+
+\subsection{Adición de velocidades en general}
+
+Con las transformaciones de Lorentz se puede demostrar la fórmula de adición de velocidades considerando transformaciones sobre intervalos infinitesimalmente pequeños ($x \to dx$). Si un objeto tiene velocidad $u'_x = dx'/dt'$ medida en $S'$, que se mueve hacia la derecha con velocidad $v$ respecto a $S$, se aplican las transformaciones inversas a los intervalos:
+
+$$
+dt = \gamma\left(dt' + \frac{v\,dx'}{c^2}\right), \quad dx = \gamma(dx' + v\,dt'), \quad dy = dy', \quad dz = dz'.
+$$
+
+Dividiendo las expresiones correspondientes se obtiene:
+
+$$
+u_x = \frac{dx}{dt} = \frac{u'_x + v}{1 + \dfrac{u'_x v}{c^2}}, \quad
+u_y = \frac{u'_y}{\gamma\left(1 + \dfrac{u'_x v}{c^2}\right)}, \quad
+u_z = \frac{u'_z}{\gamma\left(1 + \dfrac{u'_x v}{c^2}\right)}.
+$$
+
+De esta forma se recupera la fórmula de adición de velocidades en la dirección del movimiento relativo y se obtienen además las transformaciones para las otras dos dimensiones. Nótese que, aunque lo que ocurre en los ejes $y, z$ no es afectado por el movimiento relativo en cuanto a la medición de distancias, las velocidades transversales \textit{no} son invariantes, porque su medición involucra el tiempo, el cual sí cambia con las transformaciones de Lorentz.
+
+Para analizar la composición de movimientos, se considera un tercer marco $S''$, asociado con el objeto en movimiento (Fig.~\ref{fig:tres-marcos}).
+
+\input{Clases/FigurasClase4/Fig3}
+
+Sean $S'$ moviéndose con velocidad $v$ respecto a $S$, $S''$ con velocidad $v'$ respecto a $S'$, y $S''$ con velocidad $v'' = w$ respecto a $S$. Para simplificar la notación se toma $\beta = v/c$, $\beta' = v'/c$, $\beta'' = w/c$, con $\gamma = \gamma(\beta)$, $\gamma' = \gamma(\beta')$, $\gamma'' = \gamma(\beta'')$. La fórmula de adición de velocidades en términos de $\beta$ es:
+
+$$
+\beta'' = \frac{\beta + \beta'}{1 + \beta\beta'}.
+$$
+
+Expandiendo $\gamma''$ con esta expresión:
+
+$$
+\gamma'' = \frac{1}{\sqrt{1 - (\beta'')^2}} = \frac{1}{\sqrt{1 - \left(\frac{\beta + \beta'}{1 + \beta\beta'}\right)^2}} = \frac{1 + \beta\beta'}{\sqrt{(1 - \beta^2)(1 - \beta'^2)}},
+$$
+
+de donde, usando las definiciones de $\gamma$ y $\gamma'$, se obtiene la relación:
+
+$$
+\gamma'' = \gamma\gamma'(1 + \beta\beta').
+$$
+
+Ahora se verifica que la composición de transformaciones sea consistente. En coordenadas espacio-temporales, ir de $S$ a $S'$ corresponde a:
+
+$$
+x'^0 = \gamma(x^0 - \beta x^1), \quad x'^1 = \gamma(x^1 - \beta x^0),
+$$
+
+y de $S'$ a $S''$:
+
+$$
+x''^0 = \gamma'(x'^0 - \beta' x'^1), \quad x''^1 = \gamma'(x'^1 - \beta' x'^0).
+$$
+
+Sustituyendo las primeras en la expresión para $x''^0$:
+
+$$
+x''^0 = \gamma'\big(\gamma(x^0 - \beta x^1) - \beta'\gamma(x^1 - \beta x^0)\big) = x^0\,\gamma\gamma'(1 + \beta\beta') - x^1\,\gamma\gamma'(\beta + \beta').
+$$
+
+Usando que $\beta + \beta' = (1 + \beta\beta')\beta''$:
+
+$$
+x''^0 = \gamma\gamma'(1 + \beta\beta')\big(x^0 - \beta'' x^1\big),
+$$
+
+y recordando la relación para $\gamma''$:
+
+$$
+x''^0 = \gamma''(x^0 - \beta'' x^1).
+$$
+
+Esto demuestra que la combinación de dos transformaciones de Lorentz ($S \to S' \to S''$) es en sí misma una transformación de Lorentz $S \to S''$, con la velocidad compuesta dada por la ley de adición (la demostración para $x''^1$ es prácticamente idéntica). De esta manera, la adición relativista de velocidades garantiza que las transformaciones conserven su forma al componerse, manteniendo la estructura de la teoría.
