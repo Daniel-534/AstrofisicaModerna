@@ -1,0 +1,58 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.0]
+    \coordinate (E) at (0,0);
+
+    % Superficies de los conos futuro y pasado
+    \fill[blue!9] (E) -- (-2.8,3.25)
+        arc[start angle=180,end angle=360,x radius=2.8,y radius=0.72]
+        -- cycle;
+    \fill[blue!9] (E) -- (-2.8,-3.25)
+        arc[start angle=180,end angle=0,x radius=2.8,y radius=0.72]
+        -- cycle;
+
+    % Ejes espacio-temporales
+    \draw[->,black,very thick] (-4.8,0) -- (4.9,0)
+        node[right] {$x$};
+    \draw[->,black,very thick] (0,-4.15) -- (0,4.25)
+        node[above] {$ct$};
+    \draw[->,black,very thick] (2.7,-1.15) -- (-2.8,1.2)
+        node[above left] {$y$};
+
+    % Bordes y frentes de onda
+    \draw[blue!75!black,very thick] (E) -- (-2.8,3.25);
+    \draw[blue!75!black,very thick] (E) -- (2.8,3.25);
+    \draw[blue!75!black,very thick] (E) -- (-2.8,-3.25);
+    \draw[blue!75!black,very thick] (E) -- (2.8,-3.25);
+    \draw[blue!75!black,very thick] (0,3.25) ellipse (2.8 and 0.72);
+    \draw[blue!75!black,very thick] (0,-3.25) ellipse (2.8 and 0.72);
+    \draw[blue!60,densely dashed] (0,1.65) ellipse (1.42 and 0.37);
+    \draw[blue!60,densely dashed] (0,-1.65) ellipse (1.42 and 0.37);
+
+    % Evento y etiquetas
+    \filldraw[red!75!black] (E) circle (2.5pt);
+    \node[below right=4pt] at (E) {evento $E$};
+    \node[blue!75!black,align=center] at (0,2.35)
+        {futuro causal};
+    \node[blue!75!black,align=center] at (0,-2.35)
+        {pasado causal};
+    \node[gray!70!black,anchor=east,align=right,font=\small]
+        at (-3.05,2.15)
+        {exterior: eventos\\causalmente desconectados};
+    \node[gray!70!black,anchor=west,align=left,font=\small]
+        at (3.05,-2.15)
+        {exterior: eventos\\causalmente desconectados};
+
+    \node[blue!65!black,anchor=west,font=\small]
+        at (2.0,1.35) {frente de luz en expansión};
+    \draw[->,blue!65!black,thin] (1.9,1.28) -- (1.25,1.62);
+    \node[blue!65!black,anchor=east,font=\small]
+        at (-2.0,-1.35) {frente de luz convergente};
+    \draw[->,blue!65!black,thin] (-1.9,-1.28) -- (-1.25,-1.62);
+
+    \draw[->,red!75!black,thick] (0.25,0.15) -- (1.45,1.62)
+        node[midway,right,font=\small] {$c$};
+\end{tikzpicture}
+\caption{Cono de luz de un evento $E$ considerando dos dimensiones espaciales. Cada sección horizontal representa un frente de onda circular; al apilar estos frentes en la dirección temporal se forman el cono futuro y el cono pasado. El interior contiene los eventos causalmente conectados con $E$, mientras que el exterior contiene separaciones tipo espacio.}
+\label{fig:cono_luz}
+\end{figure}

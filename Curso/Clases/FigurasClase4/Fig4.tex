@@ -1,0 +1,42 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.0]
+    \coordinate (E) at (0,0);
+
+    \fill[blue!10] (E) -- (-3.7,3.7) -- (3.7,3.7) -- cycle;
+    \fill[blue!10] (E) -- (-3.7,-3.7) -- (3.7,-3.7) -- cycle;
+
+    \draw[->,black,very thick] (-5.4,0) -- (5.4,0)
+        node[right] {$x$};
+    \draw[->,black,very thick] (0,-4.3) -- (0,4.3)
+        node[above] {$ct$};
+    \draw[red!75!black,very thick,dashed] (-4.0,-4.0) -- (4.0,4.0);
+    \draw[red!75!black,very thick,dashed] (-4.0,4.0) -- (4.0,-4.0);
+
+    \filldraw[black] (E) circle (2.3pt);
+    \node[below left=7pt] at (E) {evento $E$};
+
+    \node[blue!70!black,align=center] at (0,2.65)
+        {futuro causal\\$\Delta S^2>0$};
+    \node[blue!70!black,align=center] at (0,-2.65)
+        {pasado causal\\$\Delta S^2>0$};
+    \node[gray!70!black,align=center] at (-3.9,1.25)
+        {separación tipo espacio\\$\Delta S^2<0$};
+    \node[gray!70!black,align=center] at (3.9,-1.25)
+        {separación tipo espacio\\$\Delta S^2<0$};
+
+    \node[red!75!black,rotate=45,above=2pt] at (2.75,2.75)
+        {$x=ct$};
+    \node[red!75!black,rotate=-45,above=2pt] at (-2.75,2.75)
+        {$x=-ct$};
+    \node[font=\small,above=3pt] at (4.35,0)
+        {presente de $E$};
+
+    \node[blue!70!black,font=\small,align=center] at (0,1.15)
+        {conexión causal\\posible};
+    \node[blue!70!black,font=\small,align=center] at (0,-1.15)
+        {conexión causal\\posible};
+\end{tikzpicture}
+\caption{Diagrama espacio-temporal de la estructura causal respecto al evento $E$. Las líneas de luz $x=\pm ct$ delimitan el cono causal: los eventos interiores tienen separación tipo tiempo y pueden estar causalmente conectados con $E$; los eventos exteriores tienen separación tipo espacio y no pueden conectarse con él sin superar la rapidez de la luz.}
+\label{fig:cono-causal}
+\end{figure}

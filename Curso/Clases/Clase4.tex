@@ -78,10 +78,27 @@ $$
 x = \gamma(x' + vt') \quad \Rightarrow \quad x = \gamma\big(\gamma(x - vt) + vt'\big).
 $$
 
-Despejando $t'$ se obtiene:
+Para despejar $t'$, se divide primero por $\gamma$ y se agrupan los términos:
+
+\begin{align*}
+    \frac{x}{\gamma}
+    &= \gamma(x-vt)+vt', \\
+    t'
+    &= \gamma t+\frac{x}{v}\left(\frac{1}{\gamma}-\gamma\right).
+\end{align*}
+
+Usando la identidad
 
 $$
-t' = \gamma\left(t - \frac{vx}{c^2}\right).
+\frac{1}{\gamma}-\gamma
+=-\gamma\beta^2
+=-\gamma\frac{v^2}{c^2},
+$$
+
+se obtiene finalmente
+
+$$
+t'=\gamma\left(t-\frac{vx}{c^2}\right).
 $$
 
 Con este resultado se llega a las \textbf{transformaciones de Lorentz} de la Relatividad Especial:
@@ -190,3 +207,141 @@ x''^0 = \gamma''(x^0 - \beta'' x^1).
 $$
 
 Esto demuestra que la combinación de dos transformaciones de Lorentz ($S \to S' \to S''$) es en sí misma una transformación de Lorentz $S \to S''$, con la velocidad compuesta dada por la ley de adición (la demostración para $x''^1$ es prácticamente idéntica). De esta manera, la adición relativista de velocidades garantiza que las transformaciones conserven su forma al componerse, manteniendo la estructura de la teoría.
+
+
+\section{Espacio-Tiempo Minkowskiano}
+
+Hermann Minkowski, matemático y profesor de Einstein, introdujo en 1908 una nueva formulación del espacio-tiempo que descartó la idea del tiempo imaginario $ict$ propuesta por Poincaré, considerándola artificiosa. En su lugar, Minkowski propuso que el espacio y el tiempo no son entidades separadas, sino aspectos interconectados de un único concepto: el \emph{espacio-tiempo}. En palabras del propio Minkowski, pronunciadas en su célebre conferencia ``Espacio y Tiempo'' (1909):
+
+\emph{``A partir de ahora, el espacio y el tiempo están condenados a convertirse en meras sombras, y sólo una especie de unión de ambos preservará una realidad independiente.''}
+
+Este enfoque geométrico permitió una visualización más intuitiva y matemáticamente elegante de cómo las transformaciones de Lorentz afectan las coordenadas de un evento, y proporcionó el lenguaje necesario para el desarrollo posterior de la relatividad general.
+
+La propuesta de Minkowski consiste en calcular el intervalo espacio-temporal mediante la forma matricial
+
+$$
+\Delta S^2 =
+\begin{pmatrix} c\Delta t & \Delta x & \Delta y & \Delta z \end{pmatrix}
+\begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{pmatrix}
+\begin{pmatrix} c\Delta t \\ \Delta x \\ \Delta y \\ \Delta z \end{pmatrix},
+$$
+
+lo cual produce
+
+$$
+\Delta S^2 = c^2\Delta t^2 - \Delta x^2 - \Delta y^2 - \Delta z^2.
+$$
+
+La matriz que aparece en el centro de esta expresión se denomina \emph{tensor métrico de Minkowski} (o simplemente \emph{métrica de Minkowski}), y se denota generalmente como $\eta_{\mu\nu}$, con $\mu, \nu = 0, 1, 2, 3$. Se llama ``tensor'' porque pertenece a una familia de entidades matemáticas asociadas a espacios vectoriales que pueden representarse en distintas bases y experimentar cambios de coordenadas siguiendo las reglas de cada espacio. En el contexto de la relatividad, un tensor es una cantidad que mantiene su forma y las leyes que describe independientemente del sistema de coordenadas o del observador, siempre que el movimiento sea inercial.
+
+La forma matricial del tensor métrico es
+
+$$
+\eta :=
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}.
+$$
+
+Este tensor define cómo se miden las distancias y los intervalos de tiempo entre eventos en el espacio-tiempo cuadridimensional, sin necesidad de recurrir a un tiempo imaginario. Con él, el intervalo espacio-temporal puede escribirse en forma abreviada como
+
+$$
+\Delta S^2 = \sum_{\mu,\nu=0}^{3} \eta_{\mu\nu}\, \Delta x^\mu\, \Delta x^\nu.
+$$
+
+Esta forma de medir la separación entre eventos espacio-temporales se llama \emph{norma} o \emph{distancia de Minkowski}. Si se consideran cambios infinitesimales ($\Delta \to d$), el intervalo espacio-temporal se convierte en un \emph{elemento de línea de Minkowski}, el cual es invariante ante transformaciones de Lorentz. En notación matricial, para un 4-vector $x$, esto se expresa como
+
+$$
+\Delta S^2 = (\Delta x)^T\eta\,(\Delta x)
+= \text{invariante ante transformaciones de Lorentz}.
+$$
+
+De forma equivalente, la invariancia de la norma de Minkowski bajo transformaciones de Lorentz puede verificarse mediante la condición matricial
+
+$$
+\Lambda^T \eta\, \Lambda = \eta.
+$$
+
+En este texto se adopta la signatura $(+1,-1,-1,-1)$. Los cálculos son equivalentes si se elige la convención opuesta, $(-1,+1,+1,+1)$, pues ambas métricas difieren únicamente por un signo global. Cualquiera de las dos opciones es válida, pero debe elegirse una \emph{signatura} y mantenerse de forma consistente en todos los cálculos. La elección de una u otra convención depende del área de la física y de la preferencia del autor. La Tabla~\ref{tab:signatura} resume las principales convenciones.
+
+\begin{table}[h]
+\centering
+\caption{Convenciones de signatura de la métrica de Minkowski.}
+\label{tab:signatura}
+\begin{tabular}{l|c|c}
+ & $(+,-,-,-)$ & $(-,+,+,+)$ \\ \hline
+Propuesta por: & Minkowski (1908) & Poincaré (1906) \\
+Textos clásicos: & Landau \& Lifshitz & Misner et al. \\
+Lugar geográfico: & West Coast (Berkeley) & East Coast (Princeton) \\
+Área de la física: & Física de partículas & Relatividad general \\
+Nombre físico: & ``time-like'' & ``space-like'' \\
+Signo del intervalo e-t: & $\Delta t = 0 \Rightarrow \Delta S^2 < 0$ & $\Delta t = 0 \Rightarrow \Delta S^2 > 0$
+\end{tabular}
+\end{table}
+
+Con la convención $(+,-,-,-)$, los intervalos tipo tiempo son positivos, los intervalos tipo espacio son negativos y los intervalos luminosos son nulos. Esta convención se mantendrá en las secciones subsiguientes.
+
+El tensor métrico de Minkowski tiene dos utilidades fundamentales. La primera es que permite determinar la norma invariante de cualquier cantidad física que se construya en el contexto de los 4-vectores (por ejemplo, el 4-momentum, la 4-velocidad o la 4-fuerza). La segunda es que, si bien en relatividad especial el espacio subyacente es plano (euclidiano en las componentes espaciales), la estructura del tensor métrico permite generalizar a geometrías curvas mediante otra métrica que represente la curvatura del sistema. Esta generalización abre la puerta a la Relatividad General, donde la gravitación se analiza desde la geometría no euclidiana.
+
+\section{Intervalo Espacio-Temporal y Causalidad}
+
+El intervalo espacio-temporal entre dos eventos $P_1 := (x^0_1, x^1_1, x^2_1, x^3_1)$ y $P_2 := (x^0_2, x^1_2, x^2_2, x^3_2)$ se define como
+
+$$
+\Delta S^2_{12} := (x^0_2 - x^0_1)^2 - (x^1_2 - x^1_1)^2 - (x^2_2 - x^2_1)^2 - (x^3_2 - x^3_1)^2.
+$$
+
+Como se estableció en la sección anterior, $\Delta S^2_{12}$ es invariante ante transformaciones de Lorentz. Sin embargo, a pesar de que su construcción es similar a la de una norma, el intervalo espacio-temporal puede tomar valores negativos, lo que lo hace matemáticamente distinto a una norma en el sentido estricto.
+
+Para entender qué estamos midiendo al calcular el intervalo espacio-temporal entre dos eventos, podemos ignorar sin pérdida de generalidad los ejes $y$ y $z$, y considerar un pulso de luz que viaja en línea recta de un punto del espacio a otro, separados por una distancia $\Delta x$ y tardando un tiempo $\Delta t = \Delta x/c$ en hacer el recorrido. Según esto, el intervalo resulta ser nulo:
+
+$$
+\Delta S^2_{12} = c^2\Delta t^2 - \Delta x^2 = 0.
+$$
+
+A partir del signo que tome el intervalo espacio-temporal, es posible clasificar la relación entre dos eventos y determinar si pueden estar causalmente conectados. Las tres categorías posibles son:
+
+\begin{itemize}
+    \item \textbf{Space-like (espacialoide o como de espacio):} Ocurre cuando la separación ``temporal'' es menor que la separación espacial, es decir, $(\Delta x^0_{12})^2 < (\Delta \vec{x}_{12})^2$, lo que resulta en $\Delta S^2_{12} < 0$. Esto implica que $c\Delta t < \Delta x$, o equivalentemente,
+    $$
+    \frac{\Delta x_{12}}{\Delta t_{12}} > c.
+    $$
+    Dos eventos con esta separación no pueden estar causalmente conectados, ya que la velocidad requerida para conectarlos superaría la velocidad de la luz. Un ejemplo de esto es cualquier evento que ocurra en el ``presente'' ($\Delta t_{12} = 0$) respecto a otro.
+
+    \item \textbf{Time-like (temporaloide o como de tiempo):} Ocurre cuando la separación ``temporal'' es mayor que la separación espacial, es decir, $(\Delta x^0_{12})^2 > (\Delta \vec{x}_{12})^2$, lo que resulta en $\Delta S^2_{12} > 0$. Esto implica que $c\Delta t_{12} > \Delta x_{12}$, o equivalentemente,
+    $$
+    \frac{\Delta x_{12}}{\Delta t_{12}} < c.
+    $$
+    En este caso, los eventos sí pueden estar causalmente conectados, pues una partícula o señal con masa (que viaja a $v < c$) puede trasladarse de un evento al otro.
+
+    \item \textbf{Light-like (nulo o como de luz):} Ocurre cuando $\Delta S^2_{12} = 0$. Agrupa a los eventos que únicamente pueden ser conectados por una señal que viaje exactamente a la velocidad de la luz.
+\end{itemize}
+
+La Figura~\ref{fig:cono-causal} resume geométricamente esta clasificación. Las líneas de luz delimitan el conjunto de eventos que pueden influir sobre $E$ o recibir su influencia sin requerir una señal superlumínica.
+
+\input{Clases/FigurasClase4/Fig4}
+
+Vale la pena destacar que, gracias a la invariancia del intervalo espacio-temporal, el estado de conexión causal entre dos eventos es también invariante. Es decir, si dos eventos están causalmente conectados (time-like o light-like), todos los marcos de referencia inerciales los verán causalmente conectados. De igual manera, si están desconectados causalmente (space-like), todos los marcos de referencia los verán desconectados. La estructura causal del espacio-tiempo es, por tanto, una propiedad absoluta e independiente del observador.
+
+La invariancia del intervalo también puede visualizarse mediante las curvas $c^2t^2-x^2=\text{constante}$. En el plano $(x,ct)$ estas curvas son hipérbolas: las transformaciones de Lorentz desplazan las coordenadas de un evento a lo largo de ellas, de manera análoga a como una rotación euclidiana desplaza un punto sobre una circunferencia sin cambiar su distancia al origen. La Figura~\ref{fig:hiperbolas-minkowski} muestra el caso $\Delta S^2=1$.
+
+\input{Clases/FigurasClase4/Fig5}
+
+\subsection{Conos de Luz y Líneas de Universo}
+
+Hasta ahora hemos considerado pulsos de luz que viajan en una única dimensión espacial (el eje $x$). Sin embargo, si permitimos que la luz se propague también en otra dimensión espacial, por ejemplo $y$, un pulso de luz que sale isotrópicamente de un evento $E$ ya no forma líneas sino circunferencias en el plano $x$–$y$ que se expanden gradualmente a medida que avanza el tiempo. Estas circunferencias apiladas en la dirección temporal forman un cono, llamado \emph{cono de luz}, que delimita las regiones del espacio-tiempo conectadas causalmente con $E$ (Fig.~\ref{fig:cono_luz}).
+
+Todos los puntos que están \emph{dentro} del cono de luz están causalmente conectados con $E$, mientras que todos los puntos que están \emph{por fuera} del cono están causalmente desconectados de $E$. Si se consideran las tres dimensiones espaciales, la superficie luminosa adopta la forma de un \emph{hiper-cono} de luz en cuatro dimensiones.
+
+\input{Clases/FigurasClase4/Fig6}
+
+Si queremos analizar la trayectoria y la historia temporal de un objeto en el espacio-tiempo, con el fin de estudiar su movimiento y sus interacciones causales, ya no nos referimos a uno o dos eventos aislados, sino a una serie continua de eventos que representa la evolución temporal y el desplazamiento del objeto. Esta serie continua se denomina \emph{línea de universo}, y es la trayectoria en el espacio-tiempo que recoge la historia completa de un objeto o partícula, mostrando todos los eventos por los que pasa a lo largo del tiempo.
+
+Dependiendo del tipo de movimiento del objeto, la línea de universo tendrá formas diferentes (Fig.~\ref{fig:lineas_universo}, izquierda): una partícula en reposo tiene una línea de universo vertical (paralela al eje temporal); una partícula en movimiento rectilíneo uniforme tiene una línea inclinada con pendiente constante; una partícula acelerada tiene una línea curva; y un pulso de luz tiene una línea que forma $45^\circ$ con ambos ejes, pues avanza una distancia $c\,\Delta t$ en cada intervalo $\Delta t$.
+
+En general, cada punto de la línea de universo de una partícula tiene asociado su propio cono de luz, mediante el cual se conecta con distintas regiones del espacio-tiempo (Fig.~\ref{fig:lineas_universo}, derecha). Puesto que ninguna partícula masiva puede viajar más rápido que la luz, todos los puntos de su línea de universo deben estar circunscritos al interior del cono de luz de cada uno de los eventos que la conforman. En otras palabras, la línea de universo de una partícula masiva nunca puede salir del cono de luz local; si lo hiciera, implicaría una velocidad superlumínica, lo cual está prohibido por la relatividad especial.
+
+\input{Clases/FigurasClase4/Fig7}
