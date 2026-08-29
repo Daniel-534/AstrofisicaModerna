@@ -1,0 +1,31 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.12cm,y=1.02cm]
+    \coordinate (O) at (0,0);
+    \draw[mink axis] (-3.65,0) -- (3.82,0)
+        node[below] {\contour{white}{$x$}};
+    \draw[mink axis] (0,-0.30) -- (0,3.65)
+        node[left] {\contour{white}{$ct$}};
+
+    \draw[mink photon] (-3.15,3.15) -- (O);
+    \draw[mink photon] (O) -- (3.15,3.15);
+    \node[minkorange,font=\small,anchor=south west] at (2.35,2.42)
+        {\contour{white}{frente de luz}};
+
+    \draw[mink dashed,minkdarkblue,line width=1.2pt] (-3.10,2.35) -- (3.10,2.35);
+    \node[minkdarkblue,font=\scriptsize,anchor=east] at (-3.15,2.35)
+        {\contour{white}{instante $t$}};
+    \coordinate (P) at (2.35,2.35);
+    \fill[minkorange] (P) circle (3pt);
+    \draw[mink dashed,gray!65] (P) -- (2.35,0);
+
+    \draw[{Latex}-{Latex},minkdarkblue,line width=1.5pt]
+        (0,1.92) -- (2.35,1.92)
+        node[midway,below=4pt] {\contour{white}{distancia recorrida}};
+    \fill[minkdarkred] (O) circle (2.7pt);
+    \node[minkdarkred,font=\scriptsize,anchor=north east] at (O)
+        {\contour{white}{emisión}};
+\end{tikzpicture}
+\caption{Frente luminoso observado desde $S$. El destello parte del origen y su trayectoria delimita las líneas de luz del diagrama espacio-temporal.}
+\label{fig:taller2-luz-S}
+\end{figure}

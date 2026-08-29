@@ -1,0 +1,46 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.0cm,y=1.0cm]
+    \draw[gray!65,very thick] (-4.75,-1.10) -- (4.75,-1.10);
+    \draw[gray!65,very thick] (-4.75,-1.32) -- (4.75,-1.32);
+
+    \filldraw[fill=minklightblue,draw=minkdarkblue,line width=1.3pt,rounded corners=2pt]
+        (-3.05,-0.72) rectangle (2.15,0.92);
+    \foreach \x in {-2.35,-0.90,0.55}
+        \draw[minkdarkblue,thick] (\x,-0.48) rectangle ++(0.88,1.02);
+    \foreach \x in {-2.25,1.35}
+        \filldraw[fill=white,draw=black,thick] (\x,-0.98) circle (0.27);
+    \node[minkdarkblue,font=\bfseries,anchor=west] at (-2.92,0.72)
+        {\contour{white}{tren}};
+
+    % Pasajero caminando dentro del vagón
+    \filldraw[fill=white,draw=black,thick] (-0.05,0.30) circle (0.10);
+    \draw[black,line width=1.2pt] (-0.05,0.20) -- (-0.05,-0.16);
+    \draw[black,line width=1.2pt] (-0.05,0.08) -- (-0.34,-0.08);
+    \draw[black,line width=1.2pt] (-0.05,0.08) -- (0.27,-0.02);
+    \draw[black,line width=1.2pt] (-0.05,-0.16) -- (-0.30,-0.45);
+    \draw[black,line width=1.2pt] (-0.05,-0.16) -- (0.29,-0.39);
+
+    \draw[-{Latex},minkdarkblue,line width=1.8pt] (-3.45,1.50) -- (0.45,1.50)
+        node[midway,above=3pt]
+        {\contour{white}{$v_{\text{tren}}=30\ \mathrm{m/s}$}};
+    \draw[-{Latex},minkdarkred,line width=1.8pt] (0.22,0.28) -- (1.45,0.28)
+        node[midway,above=3pt] {\contour{white}{$u=2\ \mathrm{m/s}$}};
+
+    % Observador en la estación
+    \filldraw[fill=white,draw=minkpurple,thick] (3.65,-0.30) circle (0.11);
+    \draw[minkpurple,line width=1.2pt] (3.65,-0.41) -- (3.65,-0.78);
+    \draw[minkpurple,line width=1.2pt] (3.65,-0.52) -- (3.35,-0.67);
+    \draw[minkpurple,line width=1.2pt] (3.65,-0.52) -- (3.95,-0.67);
+    \draw[minkpurple,line width=1.2pt] (3.65,-0.78) -- (3.40,-1.08);
+    \draw[minkpurple,line width=1.2pt] (3.65,-0.78) -- (3.90,-1.08);
+    \node[minkpurple,font=\scriptsize] at (3.65,-1.55)
+        {\contour{white}{observador}};
+
+    \draw[-{Latex},minkpurple,line width=2.1pt] (-3.45,-1.92) -- (3.35,-1.92)
+        node[midway,below=4pt]
+        {\contour{white}{velocidad respecto a la estación}};
+\end{tikzpicture}
+\caption{El pasajero avanza dentro de un tren que se mueve en el mismo sentido. El observador de la estación mide el movimiento combinado del tren y del pasajero.}
+\label{fig:taller1-tren}
+\end{figure}

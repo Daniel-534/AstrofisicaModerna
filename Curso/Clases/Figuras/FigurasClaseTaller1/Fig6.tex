@@ -1,0 +1,30 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.25cm,y=1.0cm]
+    \fill[minklightblue] (-4.15,-1.15) rectangle (4.15,1.75);
+    \draw[minkdarkblue,very thick] (-4.15,-0.82) -- (4.15,-0.82);
+
+    \draw[black,very thick] (-3.05,-1.18) -- (-3.05,1.58);
+    \draw[black,very thick] (-3.42,1.58) -- (-2.68,1.58);
+    \node[font=\small,anchor=south] at (-3.05,1.62)
+        {\contour{white}{puente}};
+
+    \draw[-{Latex},minkdarkblue,line width=2.1pt] (-1.60,1.20) -- (1.45,1.20)
+        node[midway,above=4pt] {\contour{white}{corriente $u$}};
+
+    \fill[minkdarkblue] (-3.05,-0.52) circle (3.2pt);
+    \node[minkdarkblue,font=\small,anchor=south east] at (-3.18,-0.40)
+        {\contour{white}{caída, $t=0$}};
+    \fill[minkgreen] (2.65,-0.52) circle (3.2pt);
+    \node[minkgreen,font=\small,anchor=west] at (2.78,-0.52)
+        {\contour{white}{rescate}};
+
+    \draw[{Latex}-{Latex},minkgreen,line width=1.8pt]
+        (-2.95,0.12) -- (2.55,0.12)
+        node[midway,above=5pt] {\contour{white}{$D$}};
+    \node[font=\small,align=center] at (0,-1.55)
+        {\contour{white}{desplazamiento del marinero respecto a la ribera}};
+\end{tikzpicture}
+\caption{Descripción en el marco de la ribera. Durante el viaje del barco, la corriente transporta al marinero desde el puente hasta el punto de rescate, separado una distancia $D$.}
+\label{fig:taller1-rio-ribera}
+\end{figure}

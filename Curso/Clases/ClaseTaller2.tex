@@ -11,6 +11,13 @@ Un destello se produce en el origen común de los sistemas inerciales $S$ y $S'$
     \item $x= vt$
 \end{enumerate}
 
+\input{Clases/Figuras/FigurasClaseTaller2/Fig1}
+
+Como la luz se propaga con rapidez $c$, después de un tiempo $t$ la posición del frente que avanza hacia la derecha es
+\[
+x=ct.
+\]
+
 \textbf{2. Avance de un frente de luz en S'}
 Un destello se produce en el origen común de los sistemas inerciales $S$ y $S'$ cuando ambos coinciden ($t= t'= 0$). A un tiempo $t$ la onda luminosa se ha expandido como una esfera. ¿Cuál es la coordenada que describe la ubicación del frente de onda del destello según $S'$?
 \begin{enumerate}[a)]
@@ -19,6 +26,13 @@ Un destello se produce en el origen común de los sistemas inerciales $S$ y $S'$
     \item $x'= ct+ vt$
     \item \textcolor{red}{$x'= ct'$}
 \end{enumerate}
+
+\input{Clases/Figuras/FigurasClaseTaller2/Fig2}
+
+El segundo postulado exige que $S'$ también mida la rapidez $c$. Por tanto, para el frente que avanza hacia $+x'$:
+\[
+x'=ct'.
+\]
 
 \textbf{3. Destello observado por S y S'}
 Siguiendo con el mismo problema, consideremos la Transformación de Lorentz (TL) directa e inversa:
@@ -62,6 +76,27 @@ En el sistema $S$ un destello ocurre en $x= 100$ km, $y= 10$ km, $z= 1$ km, $t= 
     \item $x' \approx 120$ km, $y'= 12$ km, $z'= 2$ km, $t' \approx 0.8$ ms
 \end{enumerate}
 
+\input{Clases/Figuras/FigurasClaseTaller2/Fig3}
+
+Para $\beta=-0.8$ se tiene $\gamma=1/\sqrt{1-\beta^2}=5/3$. Además,
+\[
+ct=(299\,792.458\ \mathrm{km/s})(0.5\times10^{-3}\ \mathrm{s})
+\approx149.9\ \mathrm{km}.
+\]
+Aplicando las transformaciones de Lorentz:
+\[
+\begin{aligned}
+x'&=\gamma(x-\beta ct)
+\approx\frac53\,[100-(-0.8)(149.9)]
+\approx366.5\ \mathrm{km},\\
+ct'&=\gamma(ct-\beta x)
+\approx\frac53\,[149.9-(-0.8)(100)]
+\approx383.2\ \mathrm{km},\\
+t'&=\frac{ct'}{c}\approx1.278\ \mathrm{ms}.
+\end{aligned}
+\]
+Las coordenadas transversales no cambian: $y'=10$ km y $z'=1$ km.
+
 \textbf{7. Transformaciones de Lorentz}
 En el sistema $S$ ocurre una explosión en $x= 5$ km, $t= 1$ ms. Para el observador $S'$ el evento está en $x'= 35.354$ km. Encuentre la velocidad relativa entre $S$ y $S'$ y el tiempo del evento medido en $S'$.
 \begin{enumerate}[a)]
@@ -70,3 +105,24 @@ En el sistema $S$ ocurre una explosión en $x= 5$ km, $t= 1$ ms. Para el observa
     \item $v= -0.800 c$, $t'= 1.278$ ms
     \item \textcolor{red}{$v= -0.10065 c$, $t'= 1.0068$ ms}
 \end{enumerate}
+
+\input{Clases/Figuras/FigurasClaseTaller2/Fig4}
+
+Como $ct\approx299.792$ km, la ecuación espacial permite determinar $\beta$:
+\[
+35.354
+=\frac{5-299.792\beta}{\sqrt{1-\beta^2}}
+\qquad\Longrightarrow\qquad
+\beta\approx-0.10065.
+\]
+Por tanto,
+\[
+v=\beta c\approx-0.10065c.
+\]
+Finalmente, al transformar la coordenada temporal,
+\[
+\begin{aligned}
+ct'&=\gamma(ct-\beta x),\\
+t'&=\frac{ct'}{c}\approx\boxed{1.0068\ \mathrm{ms}}.
+\end{aligned}
+\]

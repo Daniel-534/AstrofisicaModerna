@@ -1,0 +1,27 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.15cm,y=1.0cm]
+    \fill[minklightblue] (-4.15,-1.30) rectangle (4.15,1.45);
+    \foreach \y in {-0.90,-0.30,0.30,0.90}
+        \draw[minkdarkblue!45,thin] (-4.05,\y) -- (4.05,\y);
+
+    \filldraw[fill=orange!14,draw=minkdarkred,line width=1.3pt]
+        (-3.35,-0.55) -- (-0.85,-0.55) -- (-1.15,0.38) -- (-2.95,0.38) -- cycle;
+    \node[minkdarkred,font=\small] at (-2.10,-0.12)
+        {\contour{white}{remolcador}};
+
+    \filldraw[fill=gray!16,draw=black,line width=1.3pt]
+        (-0.72,-0.70) rectangle (3.30,0.52);
+    \node[font=\small] at (1.30,-0.40) {\contour{white}{barcaza}};
+
+    \draw[-{Latex},minkdarkred,line width=2.2pt] (-0.62,-0.02) -- (1.45,-0.02)
+        node[midway,above=5pt] {\contour{white}{$F_{\text{net}}$}};
+    \draw[-{Latex},minkdarkblue,line width=2.0pt] (0.15,1.12) -- (3.00,1.12)
+        node[midway,above=4pt]
+        {\contour{white}{$a=0.20\ \mathrm{m/s^2}$}};
+    \node[font=\small,anchor=east] at (4.00,-1.02)
+        {\contour{white}{$m=5.0\times10^4\ \mathrm{kg}$}};
+\end{tikzpicture}
+\caption{El remolcador ejerce una fuerza neta horizontal sobre la barcaza, que adquiere la aceleración indicada. Se desprecia la resistencia del agua.}
+\label{fig:taller1-barcaza}
+\end{figure}

@@ -1,0 +1,62 @@
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\contour{white}{\textbf{(a) Marco de la carretera $S$}}\par\medskip
+\begin{tikzpicture}[>=Latex,x=0.76cm,y=0.76cm]
+    \draw[gray!60,thick] (-3.25,-0.85) -- (3.25,-0.85);
+    \draw[->,black,thick] (-3.25,-1.18) -- (3.35,-1.18)
+        node[right] {\contour{white}{$x$}};
+
+    \filldraw[fill=minklightred,draw=minkdarkred,thick,rounded corners=1pt]
+        (-2.82,-0.58) rectangle (-1.55,0.05);
+    \node[minkdarkred,font=\scriptsize] at (-2.18,-0.27)
+        {\contour{white}{carro}};
+    \draw[-{Latex},minkdarkred,line width=1.8pt] (-2.72,0.42) -- (-0.62,0.42)
+        node[midway,above=3pt] {\contour{white}{$20\ \mathrm{m/s}$}};
+
+    % Bicicleta y ciclista
+    \draw[minkdarkblue,thick] (1.05,-0.55) circle (0.23);
+    \draw[minkdarkblue,thick] (2.05,-0.55) circle (0.23);
+    \draw[minkdarkblue,thick] (1.05,-0.55) -- (1.48,-0.12) -- (1.82,-0.55) -- cycle;
+    \draw[minkdarkblue,thick] (1.48,-0.12) -- (1.88,-0.12) -- (2.05,-0.55);
+    \filldraw[fill=white,draw=minkdarkblue,thick] (1.48,0.25) circle (0.10);
+    \draw[minkdarkblue,line width=1.2pt] (1.48,0.15) -- (1.48,-0.12);
+    \draw[minkdarkblue,line width=1.2pt] (1.48,0.04) -- (1.88,-0.12);
+    \draw[minkdarkblue,line width=1.2pt] (1.48,-0.12) -- (1.82,-0.55);
+    \draw[-{Latex},minkdarkblue,line width=1.8pt] (0.95,0.65) -- (2.55,0.65)
+        node[midway,above=3pt] {\contour{white}{$10\ \mathrm{m/s}$}};
+    \node[minkdarkblue,font=\scriptsize] at (1.55,-0.98)
+        {\contour{white}{ciclista}};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\contour{white}{\textbf{(b) Marco del ciclista $S'$}}\par\medskip
+\begin{tikzpicture}[>=Latex,x=0.76cm,y=0.76cm]
+    \draw[gray!60,thick] (-3.25,-0.85) -- (3.25,-0.85);
+    \draw[->,black,thick] (-3.25,-1.18) -- (3.35,-1.18)
+        node[right] {\contour{white}{$x'$}};
+
+    \filldraw[fill=minklightred,draw=minkdarkred,thick,rounded corners=1pt]
+        (-2.82,-0.58) rectangle (-1.55,0.05);
+    \node[minkdarkred,font=\scriptsize] at (-2.18,-0.27)
+        {\contour{white}{carro}};
+    \draw[-{Latex},minkdarkred,line width=1.9pt] (-2.72,0.52) -- (-0.35,0.52)
+        node[midway,above=3pt] {\contour{white}{$u'_x$}};
+
+    \draw[minkdarkblue,thick] (1.05,-0.55) circle (0.23);
+    \draw[minkdarkblue,thick] (2.05,-0.55) circle (0.23);
+    \draw[minkdarkblue,thick] (1.05,-0.55) -- (1.48,-0.12) -- (1.82,-0.55) -- cycle;
+    \draw[minkdarkblue,thick] (1.48,-0.12) -- (1.88,-0.12) -- (2.05,-0.55);
+    \filldraw[fill=white,draw=minkdarkblue,thick] (1.48,0.25) circle (0.10);
+    \draw[minkdarkblue,line width=1.2pt] (1.48,0.15) -- (1.48,-0.12);
+    \draw[minkdarkblue,line width=1.2pt] (1.48,0.04) -- (1.88,-0.12);
+    \draw[minkdarkblue,line width=1.2pt] (1.48,-0.12) -- (1.82,-0.55);
+    \node[minkdarkblue,font=\scriptsize,align=center] at (1.55,-1.02)
+        {\contour{white}{ciclista en reposo}};
+\end{tikzpicture}
+\end{minipage}
+\caption{La misma situación descrita desde dos marcos. En el marco del ciclista, la bicicleta permanece en reposo y el carro conserva una velocidad relativa hacia la derecha.}
+\label{fig:taller1-ciclista}
+\end{figure}

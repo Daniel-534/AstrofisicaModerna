@@ -1,0 +1,33 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.25cm,y=1.05cm]
+    \draw[->,black,thick] (-3.25,-1.65) -- (3.45,-1.65)
+        node[right] {\contour{white}{$\xi$}};
+    \draw[->,black,thick] (0,-1.85) -- (0,2.65)
+        node[above] {\contour{white}{$t$}};
+
+    \draw[minkdarkblue,line width=2.2pt] (0,-1.65) -- (0,2.20);
+    \node[minkdarkblue,font=\small,anchor=east] at (-0.15,1.72)
+        {\contour{white}{marinero}};
+
+    \draw[minkdarkred,line width=2.5pt] (0,-1.65) -- (2.35,0.28) -- (0,2.20);
+    \fill[minkdarkred] (2.35,0.28) circle (3pt);
+    \node[minkdarkred,font=\small,anchor=west] at (2.47,0.28)
+        {\contour{white}{giro}};
+    \node[minkdarkred,font=\small,rotate=39] at (1.35,-0.80)
+        {\contour{white}{ida}};
+    \node[minkdarkred,font=\small,rotate=-39] at (1.38,1.38)
+        {\contour{white}{regreso}};
+
+    \draw[mink dashed,gray!70] (-0.08,0.28) -- (2.35,0.28);
+    \node[font=\small,anchor=east] at (-0.15,0.28)
+        {\contour{white}{$\tau$}};
+    \node[font=\small,anchor=east] at (-0.15,2.20)
+        {\contour{white}{$2\tau$}};
+    \node[font=\small,align=center] at (-2.00,0.30)
+        {\contour{white}{el marinero está}\\
+         \contour{white}{en reposo en $\xi=0$}};
+\end{tikzpicture}
+\caption{Descripción en el marco del agua. El marinero permanece en una posición fija, mientras el barco se aleja, gira y regresa hasta encontrarlo.}
+\label{fig:taller1-rio-agua}
+\end{figure}

@@ -1,0 +1,33 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.02cm,y=0.88cm]
+    \draw[->,black,thick] (-4.65,-1.35) -- (4.72,-1.35)
+        node[right] {\contour{white}{$x$}};
+    \draw[minkdarkblue,very thick] (-4.55,-1.02) -- (4.55,-1.02);
+    \node[minkdarkblue,font=\scriptsize,anchor=north west] at (-4.50,-1.05)
+        {\contour{white}{costa}};
+
+    \foreach \x/\op in {-3.25/0.35,0/0.62,3.25/1}{
+        \begin{scope}[xshift=\x cm,opacity=\op]
+            \filldraw[fill=gray!15,draw=black,thick]
+                (-0.72,-0.90) -- (0.72,-0.90) -- (0.50,-0.48) -- (-0.50,-0.48) -- cycle;
+            \draw[black,thick] (0,-0.48) -- (0,1.18);
+            \draw[black,thick] (-0.38,1.18) -- (0.38,1.18);
+        \end{scope}
+    }
+
+    \draw[minkdarkred,line width=2.1pt,samples=70,smooth,domain=-3.25:3.25]
+        plot (\x,{1.18-0.0521*(\x+3.25)^2});
+    \foreach \x/\y in {-3.25/1.18,0/0.63,3.25/-1.02}
+        \fill[minkdarkred] (\x,\y) circle (2.6pt);
+    \foreach \x/\y in {-3.25/1.18,0/0.63,3.25/-1.02}
+        \draw[mink dashed,gray!65] (\x,\y) -- (\x,-1.02);
+
+    \draw[-{Latex},minkdarkblue,line width=1.7pt] (-3.02,-0.02) -- (-1.35,-0.02)
+        node[midway,above=3pt] {\contour{white}{$v_0$}};
+    \node[minkdarkred,font=\small,anchor=west] at (1.18,1.62)
+        {\contour{white}{trayectoria parabólica}};
+\end{tikzpicture}
+\caption{Vista desde la costa. La piedra conserva la velocidad horizontal $v_0$ del barco mientras cae por acción de la gravedad; la superposición de ambos movimientos produce una trayectoria parabólica.}
+\label{fig:taller1-piedra}
+\end{figure}

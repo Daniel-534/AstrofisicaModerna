@@ -1,0 +1,61 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.08cm,y=0.92cm]
+    \def\betaval{-0.10065}
+    \pgfmathsetmacro{\gam}{1/sqrt(1-\betaval*\betaval)}
+
+    \fill[gray!4] (-4.25,-0.78) rectangle (4.25,3.72);
+
+    \begin{scope}
+        \clip (-4.25,-0.78) rectangle (4.25,3.72);
+
+        \foreach \x in {-4,-3,...,4}
+            \draw[mink grid x] (\x,-0.78) -- (\x,3.72);
+        \foreach \y in {0,0.5,...,3.5}
+            \draw[mink grid t] (-4.25,\y) -- (4.25,\y);
+
+        \foreach \i in {-6,-5,...,6}{
+            \pgfmathsetmacro{\xp}{0.68*\i}
+            \draw[minkdarkred!48,line width=0.36pt]
+                ({\gam*(\xp+\betaval*(-5))},{\gam*((-5)+\betaval*\xp)}) --
+                ({\gam*(\xp+\betaval*(5))},{\gam*((5)+\betaval*\xp)});
+        }
+        \foreach \i in {-6,-5,...,6}{
+            \pgfmathsetmacro{\ctp}{0.68*\i}
+            \draw[minkdarkred!48,line width=0.36pt]
+                ({\gam*((-5)+\betaval*\ctp)},{\gam*(\ctp+\betaval*(-5))}) --
+                ({\gam*((5)+\betaval*\ctp)},{\gam*(\ctp+\betaval*(5))});
+        }
+
+        \draw[minkorange!65,mink dashed] (-3.72,3.72) -- (0.78,-0.78);
+        \draw[minkorange!65,mink dashed] (3.72,3.72) -- (-0.78,-0.78);
+    \end{scope}
+
+    \draw[mink axis] (-4.25,0) -- (4.38,0)
+        node[below] {\contour{white}{$x$}};
+    \draw[mink axis] (0,-0.78) -- (0,3.84)
+        node[right] {\contour{white}{$ct$}};
+
+    \draw[mink axis prime] (-4.25,0.428) -- (4.25,-0.428)
+        node[below right] {\contour{white}{$x'$}};
+    \draw[mink axis prime] (0.079,-0.78) -- (-0.374,3.72)
+        node[left] {\contour{white}{$ct'$}};
+
+    \coordinate (P) at (0.06,2.62);
+    \fill[minkpurple] (P) circle (3.5pt);
+    \node[minkpurple,font=\small,above right=2pt] at (P)
+        {\contour{white}{$P$}};
+    \draw[mink dashed,minkdarkblue] (P) -- (0.06,0);
+    \draw[mink dashed,minkdarkblue] (P) -- (0,2.62);
+
+    \node[minkdarkblue,font=\small,align=left,anchor=east] at (4.00,3.42)
+        {\contour{white}{$x=5\ \mathrm{km}$}\\
+         \contour{white}{$t=1\ \mathrm{ms}$}};
+    \node[minkdarkred,font=\small,align=left,anchor=west] at (-4.00,3.42)
+        {\contour{white}{$x'=35.354\ \mathrm{km}$}\\
+         \contour{white}{$v$ por determinar}};
+
+\end{tikzpicture}
+\caption{Diagrama de Minkowski para el evento con coordenadas conocidas parcialmente. La pequeña velocidad relativa produce una inclinación moderada: la malla de $S'$ se deforma, aunque menos que en la figura anterior.}
+\label{fig:taller2-transformacion-2}
+\end{figure}

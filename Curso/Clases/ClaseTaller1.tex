@@ -47,6 +47,16 @@ Un barco navega en línea recta con velocidad constante $v_0$ respecto a la cost
     \item Diagonal hacia atrás
 \end{enumerate}
 
+\input{Clases/Figuras/FigurasClaseTaller1/Fig1}
+
+La trayectoria se obtiene al combinar el movimiento horizontal uniforme con la caída libre:
+\[
+x(t)=v_0t,
+\qquad
+y(t)=h-\frac12gt^2.
+\]
+Al eliminar el tiempo se obtiene una función cuadrática de $x$, por lo que la trayectoria observada desde la costa es una parábola.
+
 \textbf{6. Composición de velocidades}
 Un tren viaja en línea recta con rapidez constante $v_{\text{tren}} = 30$ m/s respecto a la estación. Un pasajero camina por el pasillo del vagón en el mismo sentido de avance con velocidad relativa $u = 2$ m/s (medida desde el tren). ¿Qué velocidad total del pasajero mide la persona que espera en la estación (referencia terrestre)?
 \begin{enumerate}[a)]
@@ -55,6 +65,16 @@ Un tren viaja en línea recta con rapidez constante $v_{\text{tren}} = 30$ m/s r
     \item \textcolor{red}{32 m s$^{-1}$}
     \item 60 m s$^{-1}$
 \end{enumerate}
+
+\input{Clases/Figuras/FigurasClaseTaller1/Fig2}
+
+La composición galileana de velocidades proporciona
+\[
+u_{\text{estación}}
+=v_{\text{tren}}+u
+=30\ \mathrm{m/s}+2\ \mathrm{m/s}
+=\boxed{32\ \mathrm{m/s}}.
+\]
 
 \textbf{7. Fuerza en barcaza}
 Un barco remolcador empuja una barcaza de carga que se desplaza en línea recta sobre un río. Su masa es $m = 5.0 \times 10^4$ kg. Durante la maniobra, la barcaza adquiere una aceleración constante medida respecto al agua de $a = 0.20$ m/s$^2$. Ignorando la resistencia del agua, ¿cuál es el valor de la fuerza neta que actúa sobre la barcaza según un observador en la ribera del río?
@@ -65,6 +85,16 @@ Un barco remolcador empuja una barcaza de carga que se desplaza en línea recta 
     \item 0.2 N
 \end{enumerate}
 
+\input{Clases/Figuras/FigurasClaseTaller1/Fig3}
+
+Aplicando la segunda ley de Newton:
+\[
+F_{\text{net}}=ma
+=(5.0\times10^4\ \mathrm{kg})(0.20\ \mathrm{m/s^2})
+=1.0\times10^4\ \mathrm{N}
+=\boxed{10\ \mathrm{kN}}.
+\]
+
 \textbf{8. Encuentro carro--ciclista}
 En una carretera, un carro parte del origen $x=0$ con velocidad constante $v_{\text{carro}} = 20$ m/s en dirección positiva. Al mismo instante, un ciclista se encuentra en $x=100$ m y avanza en el mismo sentido con velocidad $v_{\text{cic}} = 10$ m/s. Considera ahora el sistema de referencia del ciclista ($S'$). ¿Cuál es la velocidad del carro medida desde $S'$ ($u'_x$)?
 \begin{enumerate}[a)]
@@ -74,6 +104,15 @@ En una carretera, un carro parte del origen $x=0$ con velocidad constante $v_{\t
     \item \textcolor{red}{10 m s$^{-1}$}
 \end{enumerate}
 
+\input{Clases/Figuras/FigurasClaseTaller1/Fig4}
+
+La velocidad del carro en el marco del ciclista es
+\[
+u'_x=v_{\text{carro}}-v_{\text{ciclista}}
+=20\ \mathrm{m/s}-10\ \mathrm{m/s}
+=\boxed{10\ \mathrm{m/s}}.
+\]
+
 \textbf{9. Problema del río de Gamow}
 Un barco pasa bajo un puente en $t=0$. Justo en ese instante un marinero se cae al río. El barco navega corriente abajo con rapidez constante $v$ (respecto al agua). Tras un intervalo de tiempo $\tau$, el capitán se da cuenta que falta un marinero y el barco gira instantáneamente, regresando corriente arriba con la misma rapidez $v$ relativa al agua. El marinero es rescatado una distancia $D$ corriente abajo del puente. El marinero no nada sino que se deja arrastrar por la corriente del río, que es uniforme y fluye con velocidad $u$. ¿Cuál es la velocidad del río $u$?
 \begin{enumerate}[a)]
@@ -82,3 +121,14 @@ Un barco pasa bajo un puente en $t=0$. Justo en ese instante un marinero se cae 
     \item $u = v - \frac{D}{\tau}$
     \item $u = v$
 \end{enumerate}
+
+\input{Clases/Figuras/FigurasClaseTaller1/Fig5}
+
+\input{Clases/Figuras/FigurasClaseTaller1/Fig6}
+
+En el marco del agua, el barco tarda $\tau$ en alejarse y el mismo tiempo $\tau$ en regresar, de modo que el rescate ocurre después de $2\tau$. Durante ese intervalo la corriente desplaza al marinero una distancia $D$ respecto a la ribera:
+\[
+D=u(2\tau)
+\qquad\Longrightarrow\qquad
+u=\boxed{\frac{D}{2\tau}}.
+\]
