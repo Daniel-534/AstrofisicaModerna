@@ -1,0 +1,50 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.96]
+    \fill[blue!4] (-5,-3.0) rectangle (5,3.8);
+    \fill[blue!12] (-5,-3.0) rectangle (5,-2.35);
+    \draw[green!50!black,very thick] (-5,-2.35) -- (5,-2.35);
+    \node[green!40!black,font=\small,anchor=west] at (-4.8,-2.72)
+        {superficie terrestre};
+    \draw[gray!55,densely dashed] (-5,2.5) -- (5,2.5);
+    \node[gray!70!black,font=\small,anchor=west] at (-4.8,2.75)
+        {atmósfera superior};
+
+    \draw[->,red!75!black,very thick] (-3.6,4.1) -- (-1.25,2.15)
+        node[midway,above right,font=\small] {rayo cósmico};
+    \filldraw[orange!85!black] (-1.18,2.08) circle (4pt);
+    \foreach \ang in {0,45,...,315}
+        \draw[orange!85!black,thick] (-1.18,2.08) ++(\ang:0.12) -- ++(\ang:0.18);
+    \node[orange!70!black,font=\small,anchor=west] at (-0.75,2.15)
+        {colisión};
+
+    \draw[gray!75,thick,->] (-1.18,1.95) -- (-3.0,0.65);
+    \draw[gray!75,thick,->] (-1.18,1.95) -- (-1.65,0.35);
+    \draw[gray!75,thick,->] (-1.18,1.95) -- (0.2,0.55);
+    \draw[gray!75,thick,->] (-1.18,1.95) -- (2.0,0.9);
+    \node[gray!75!black,font=\small] at (0.25,1.25) {partículas secundarias};
+
+    \draw[purple!75!black,very thick,->] (-3.0,0.65) -- (-3.7,-2.25);
+    \draw[purple!75!black,very thick,->] (-1.65,0.35) -- (-1.15,-2.25);
+    \draw[purple!75!black,very thick,->] (0.2,0.55) -- (1.25,-2.25);
+    \draw[purple!75!black,very thick,->] (2.0,0.9) -- (3.65,-2.25);
+    \foreach \x in {-3.7,-1.15,1.25,3.65}
+        \fill[purple!75!black] (\x,-2.25) circle (2pt);
+    \node[purple!75!black,font=\small,anchor=west] at (2.0,-0.8)
+        {muones relativistas};
+
+    % Arreglo de detectores integrado en la superficie
+    \foreach \x in {-0.65,0,0.65}{
+        \draw[fill=gray!35,gray!80!black,thick]
+            (\x-0.24,-2.34) -- (\x+0.24,-2.34)
+            -- (\x+0.17,-2.55) -- (\x-0.17,-2.55) -- cycle;
+    }
+    \draw[gray!80!black,thick] (-0.65,-2.55) -- (0.65,-2.55);
+    \filldraw[white,gray!80!black,thick] (0,-2.68) circle (0.12);
+    \draw[gray!80!black,thick] (0,-2.55) -- (0,-2.56);
+    \draw[<->,black,thick] (4.55,-2.32) -- (4.55,2.48)
+        node[midway,right,font=\small] {$\sim10\,\mathrm{km}$};
+\end{tikzpicture}
+\caption{Esquema de una lluvia de partículas atmosférica. Un rayo cósmico de alta energía colisiona con la atmósfera superior y produce partículas secundarias, entre ellas muones relativistas. La dilatación temporal permite que una fracción de ellos alcance detectores situados en la superficie.}
+\label{fig:muones}
+\end{figure}

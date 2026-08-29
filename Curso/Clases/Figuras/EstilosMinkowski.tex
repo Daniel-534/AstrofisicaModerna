@@ -1,0 +1,25 @@
+% Lenguaje visual común para diagramas espacio-temporales y relativistas.
+\colorlet{minkred}{red!92!black}
+\colorlet{minkdarkred}{red!72!black}
+\colorlet{minklightred}{red!85!black!10}
+\colorlet{minkfieldred}{red!55!black!5}
+\colorlet{minkblue}{blue!90!black}
+\colorlet{minkdarkblue}{blue!68!black}
+\colorlet{minklightblue}{blue!50!black!10}
+\colorlet{minkpurple}{blue!48!red!88!black}
+\colorlet{minklightpurple}{blue!45!red!10}
+\colorlet{minkgreen}{green!65!black}
+\colorlet{minkorange}{orange!45!yellow!90!black}
+
+\tikzset{
+    mink axis/.style={-{Latex},black,very thick},
+    mink axis prime/.style={-{Latex},minkdarkred,very thick},
+    mink grid x/.style={minkblue!55,line width=0.36pt},
+    mink grid t/.style={minkpurple!50,line width=0.36pt},
+    mink grid prime/.style={minkdarkred!52,line width=0.36pt},
+    mink vector/.style={-{Latex},line width=1.5pt,line cap=round},
+    mink dashed/.style={dash pattern=on 3pt off 3pt},
+    mink small arrow/.style={-{Latex[length=3pt,width=2pt]},semithick},
+    mink photon/.style={-{Latex[length=5pt,width=4pt]},minkorange,line width=1.05pt,
+        decorate,decoration={snake,amplitude=1pt,segment length=5pt,post length=5pt}}
+}

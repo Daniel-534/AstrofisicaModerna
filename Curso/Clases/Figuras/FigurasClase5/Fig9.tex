@@ -1,0 +1,46 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=0.96cm,y=0.82cm]
+    \def\ang{20}
+    \clip (-5.05,-0.65) rectangle (5.3,6.45);
+
+    \fill[minkfieldred]
+        (\ang:-5.8) -- (\ang:5.8) -- ++(90-\ang:7.2)
+        -- ($(\ang:-5.8)+(90-\ang:7.2)$) -- cycle;
+    \foreach \x in {-5,-4,...,5}
+        \draw[mink grid x] (\x,-0.45) -- (\x,6.25);
+    \foreach \y in {0,1,...,6}
+        \draw[mink grid t] (-5.0,\y) -- (5.15,\y);
+    \foreach \i in {-7,-6,...,7}{
+        \draw[mink grid prime] (\ang:{\i*0.72}) -- ++(90-\ang:7.5);
+        \draw[mink grid prime] (90-\ang:{\i*0.72}) -- ++(\ang:7.5);
+    }
+
+    \draw[mink dashed,gray!65] (0,0) -- (4.9,4.9)
+        node[above right,font=\scriptsize] {$x=ct$};
+    \draw[mink axis] (-4.95,0) -- (5.1,0) node[below] {$x$};
+    \draw[mink axis] (0,-0.5) -- (0,6.15) node[left] {$ct$};
+    \draw[mink axis prime] (\ang:-5.0) -- (\ang:5.15) node[below right] {$x'$};
+    \draw[mink axis prime] (90-\ang:-0.55) -- (90-\ang:6.3) node[right] {$ct'$};
+
+    \coordinate (P) at (2.15,4.35);
+    \fill[minkdarkblue] (P) circle (2.8pt);
+    \node[minkdarkblue,above right=-1pt] at (P) {$P$};
+    \draw[mink dashed,black!60] (P) -- (2.15,0)
+        node[below,font=\scriptsize] {$x_P$};
+    \draw[mink dashed,black!60] (P) -- (0,4.35)
+        node[left,font=\scriptsize] {$ct_P$};
+    \draw[mink dashed,minkdarkred] (P) -- ++(200:4.2);
+    \draw[mink dashed,minkdarkred] (P) -- ++(250:4.2);
+
+    \draw[->,minkdarkred,thick] (1.15,0.08)
+        arc[start angle=4,end angle=20,radius=1.15];
+    \node[minkdarkred,font=\scriptsize] at (1.55,0.42)
+        {$\tan^{-1}\!\beta$};
+    \node[minkdarkred,font=\scriptsize,align=left] at (-2.95,5.30)
+        {\contour{white}{$S'\!:\ v=+\beta c$}\\
+         \contour{white}{los ejes se acercan a la luz}};
+\end{tikzpicture}
+\caption{Transformación de Lorentz directa de $S$ a $S'$. Los ejes primados y su rejilla se inclinan simétricamente hacia la línea de luz. Las proyecciones del evento $P$ permiten comparar sus coordenadas en ambos marcos.}
+\label{fig:minkowski_directa}
+\end{figure}

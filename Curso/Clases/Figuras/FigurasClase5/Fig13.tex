@@ -1,0 +1,48 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=0.98cm,y=0.82cm]
+    \def\ang{20}
+    \clip (-5.05,-0.55) rectangle (5.25,6.25);
+    \fill[minkfieldred]
+        (\ang:-5.8) -- (\ang:5.8) -- ++(90-\ang:7.0)
+        -- ($(\ang:-5.8)+(90-\ang:7.0)$) -- cycle;
+    \foreach \x in {-5,-4,...,5}
+        \draw[mink grid x] (\x,-0.35) -- (\x,6.1);
+    \foreach \y in {0,1,...,6}
+        \draw[mink grid t] (-5.0,\y) -- (5.1,\y);
+    \foreach \i in {-7,-6,...,7}
+        \draw[mink grid prime] (\ang:{\i*0.72}) -- ++(90-\ang:7.1);
+
+    \draw[mink axis] (-4.95,0) -- (5.1,0) node[below] {$x$};
+    \draw[mink axis] (0,-0.4) -- (0,6.05) node[left] {$ct$};
+    \draw[mink axis prime] (\ang:-4.9) -- (\ang:5.0) node[below right] {$x'$};
+    \draw[mink axis prime] (90-\ang:-0.5) -- (90-\ang:6.15) node[right] {$ct'$};
+
+    \fill[minklightblue] (-4.75,2.8) rectangle (4.85,3.35);
+    \fill[minklightred]
+        (-4.65,1.55) -- (0.15,3.30) -- (4.65,4.61) -- (-0.15,2.86) -- cycle;
+    \draw[minkdarkblue,very thick] (-4.8,3.08) -- (4.9,3.08);
+    \node[minkdarkblue,font=\scriptsize,above left=1pt] at (4.50,3.08)
+        {$t=\mathrm{cte}$};
+    \coordinate (Pone) at (-3.05,3.08);
+    \coordinate (Ptwo) at (3.05,3.08);
+    \fill[minkdarkblue] (Pone) circle (2.8pt);
+    \fill[minkdarkblue] (Ptwo) circle (2.8pt);
+    \node[minkdarkblue,above=3pt] at (Pone) {$P_1$};
+    \node[minkdarkblue,above=3pt] at (Ptwo) {$P_2$};
+
+    \draw[minkdarkred,mink dashed,very thick] (-4.65,1.55) -- (0.15,3.30)
+        node[above left,font=\scriptsize] {$t'_1=\mathrm{cte}$};
+    \draw[minkdarkred,mink dashed,very thick] (-0.15,2.86) -- (4.65,4.61);
+    \node[minkdarkred,font=\scriptsize,above left=1pt] at (4.30,4.48)
+        {$t'_2=\mathrm{cte}$};
+    \draw[{Latex}-{Latex},minkdarkred,line width=1.25pt] (0.55,3.15) -- (0.55,4.05)
+        node[midway,right=5pt,font=\small] {$c\Delta t'$};
+
+    \node[minkpurple,font=\small,align=left] at (-3.15,5.25)
+        {\contour{white}{$\Delta t=0$ en $S$}\\
+         \contour{white}{pero $\Delta t'\neq0$ en $S'$}};
+\end{tikzpicture}
+\caption{Relatividad de la simultaneidad. $P_1$ y $P_2$ pertenecen a la misma franja horizontal de tiempo constante en $S$, pero caen sobre dos líneas de simultaneidad diferentes en $S'$.}
+\label{fig:simultaneidad}
+\end{figure}

@@ -1,0 +1,45 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=0.96cm,y=0.82cm]
+    \def\ang{-20}
+    \clip (-5.25,-0.65) rectangle (5.05,6.45);
+
+    \fill[minklightblue]
+        (\ang:-5.8) -- (\ang:5.8) -- ++(90-\ang:7.2)
+        -- ($(\ang:-5.8)+(90-\ang:7.2)$) -- cycle;
+    \foreach \x in {-5,-4,...,5}
+        \draw[mink grid prime] (\x,-0.45) -- (\x,6.25);
+    \foreach \y in {0,1,...,6}
+        \draw[mink grid prime] (-5.15,\y) -- (5.0,\y);
+    \foreach \i in {-7,-6,...,7}{
+        \draw[mink grid x] (\ang:{\i*0.72}) -- ++(90-\ang:7.5);
+        \draw[mink grid t] (90-\ang:{\i*0.72}) -- ++(\ang:7.5);
+    }
+
+    \draw[mink dashed,gray!65] (0,0) -- (-4.9,4.9)
+        node[above left,font=\scriptsize] {$x'=-ct'$};
+    \draw[mink axis prime] (-5.1,0) -- (4.95,0) node[below] {$x'$};
+    \draw[mink axis prime] (0,-0.5) -- (0,6.15) node[right] {$ct'$};
+    \draw[mink axis] (\ang:-5.0) -- (\ang:5.15) node[below left] {$x$};
+    \draw[mink axis] (90-\ang:-0.55) -- (90-\ang:6.3) node[left] {$ct$};
+
+    \coordinate (P) at (-2.15,4.35);
+    \fill[minkdarkblue] (P) circle (2.8pt);
+    \node[minkdarkblue,above left=-1pt] at (P) {$P$};
+    \draw[mink dashed,minkdarkred] (P) -- (-2.15,0)
+        node[below,font=\scriptsize] {$x'_P$};
+    \draw[mink dashed,minkdarkred] (P) -- (0,4.35)
+        node[right,font=\scriptsize] {$ct'_P$};
+    \draw[mink dashed,black!60] (P) -- ++(-20:4.2);
+    \draw[mink dashed,black!60] (P) -- ++(-70:4.2);
+
+    \draw[->,black,thick] (-1.15,0.08)
+        arc[start angle=176,end angle=160,radius=1.15];
+    \node[font=\scriptsize] at (-1.55,0.42) {$-\tan^{-1}\!\beta$};
+    \node[font=\scriptsize,align=left,anchor=east] at (4.40,5.30)
+        {\contour{white}{$S\!:\ v=-\beta c$}\\
+         \contour{white}{misma geometría, sentido opuesto}};
+\end{tikzpicture}
+\caption{Transformación inversa tomando $S'$ como marco base. El cambio $v\to -v$ inclina los ejes de $S$ en sentido opuesto, sin alterar las líneas de luz ni el evento físico representado.}
+\label{fig:minkowski_inversa}
+\end{figure}

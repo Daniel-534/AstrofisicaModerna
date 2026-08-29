@@ -1,0 +1,46 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.02cm,y=0.82cm]
+    \def\ang{20}
+    \clip (-5.05,-0.55) rectangle (5.25,6.25);
+    \fill[minkfieldred]
+        (\ang:-5.8) -- (\ang:5.8) -- ++(90-\ang:7.0)
+        -- ($(\ang:-5.8)+(90-\ang:7.0)$) -- cycle;
+    \foreach \x in {-4,-2,0,2,4}
+        \draw[mink grid x] (\x,-0.35) -- (\x,6.1);
+    \foreach \y in {0,1,...,6}
+        \draw[mink grid t] (-5.0,\y) -- (5.1,\y);
+    \foreach \i in {-6,-5,...,6}
+        \draw[mink grid prime] (\ang:{\i*0.8}) -- ++(90-\ang:7.0);
+
+    \fill[minklightblue] (-4.85,2.15) rectangle (4.95,2.75);
+    \draw[mink axis] (-4.95,0) -- (5.1,0) node[below] {$x$};
+    \draw[mink axis] (0,-0.4) -- (0,6.05) node[left] {$ct$};
+    \draw[mink axis prime] (\ang:-4.9) -- (\ang:5.0) node[below right] {$x'$};
+    \draw[mink axis prime] (90-\ang:-0.5) -- (90-\ang:6.15) node[right] {$ct'$};
+
+    \draw[minkdarkblue,very thick] (-4.85,2.45) -- (4.95,2.45);
+    \node[minkdarkblue,font=\scriptsize,above left=1pt] at (4.55,2.45)
+        {$t=\mathrm{cte}$};
+    \foreach \x in {-3,0,3}{
+        \draw[black!45,thick] (\x,0) -- (\x,5.8);
+        \node[draw=minkdarkblue,fill=white,line width=0.8pt,
+            rounded corners=1.5pt,inner xsep=3pt,inner ysep=1.5pt,
+            font=\scriptsize,text=minkdarkblue] at (\x,2.45)
+            {$12{:}00$};
+    }
+
+    \draw[minkdarkred,mink dashed,very thick] (-4.6,0.8) -- (4.6,4.15);
+    \node[minkdarkred,font=\scriptsize,above left=1pt] at (4.25,4.02)
+        {$t'=\mathrm{cte}$};
+    \foreach \x/\y/\time in {-3/1.38/11{:}58,3/3.56/12{:}02}{
+        \fill[minkdarkred] (\x,\y) circle (2.2pt);
+        \node[minkdarkred,font=\scriptsize,above=2pt] at (\x,\y) {$\time$};
+    }
+    \node[minkdarkblue,font=\small,align=left] at (-3.25,5.25)
+        {\contour{white}{sincronizados en $S$}\\
+         \contour{white}{desincronizados para $S'$}};
+\end{tikzpicture}
+\caption{Relojes estacionarios y sincronizados en $S$. La franja azul representa un instante común de $S$, mientras que una línea de simultaneidad de $S'$ corta las mismas líneas de universo en lecturas diferentes.}
+\label{fig:relojes_S}
+\end{figure}

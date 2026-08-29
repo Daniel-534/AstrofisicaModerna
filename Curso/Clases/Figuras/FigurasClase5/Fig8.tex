@@ -1,0 +1,46 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.02cm,y=0.82cm]
+    \def\ang{20}
+    \clip (-5.05,-0.65) rectangle (5.25,6.35);
+
+    \fill[minkfieldred]
+        (\ang:-5.8) -- (\ang:5.8) -- ++(90-\ang:7.1)
+        -- ($(\ang:-5.8)+(90-\ang:7.1)$) -- cycle;
+
+    \foreach \x in {-5,-4,...,5}
+        \draw[mink grid x] (\x,-0.45) -- (\x,6.2);
+    \foreach \y in {0,1,...,6}
+        \draw[mink grid t] (-5.0,\y) -- (5.15,\y);
+    \foreach \i in {-7,-6,...,7}{
+        \draw[mink grid prime] (\ang:{\i*0.72}) -- ++(90-\ang:7.4);
+        \draw[mink grid prime] (90-\ang:{\i*0.72}) -- ++(\ang:7.4);
+    }
+
+    \draw[mink dashed,gray!65] (-4.65,4.65) -- (4.65,-4.65);
+    \draw[mink dashed,gray!65] (-4.65,-4.65) -- (4.65,4.65);
+    \node[gray!65!black,font=\scriptsize,rotate=45] at (3.55,3.8)
+        {línea de luz};
+
+    \draw[mink axis] (-4.95,0) -- (5.1,0) node[below] {$x$};
+    \draw[mink axis] (0,-0.5) -- (0,6.15) node[left] {$ct$};
+    \draw[mink axis prime] (\ang:-5.0) -- (\ang:5.15) node[below right] {$x'$};
+    \draw[mink axis prime] (90-\ang:-0.55) -- (90-\ang:6.3) node[right] {$ct'$};
+
+    \coordinate (P) at (2.0,4.15);
+    \fill[minkdarkred] (P) circle (2.8pt);
+    \node[minkdarkred,above right=-1pt] at (P) {$P$};
+    \draw[mink dashed,black!55] (P) -- (2.0,0)
+        node[below,font=\scriptsize] {$x_P$};
+    \draw[mink dashed,black!55] (P) -- (0,4.15)
+        node[left,font=\scriptsize] {$ct_P$};
+    \draw[mink dashed,minkdarkred] (P) -- ++(200:4.0);
+    \draw[mink dashed,minkdarkred] (P) -- ++(250:4.0);
+
+    \node[font=\small,align=left] at (-3.15,5.3)
+        {\contour{white}{un evento, dos pares}\\
+         \contour{white}{de coordenadas}};
+\end{tikzpicture}
+\caption{Diagrama de Minkowski con dos sistemas inerciales superpuestos. La rejilla azul corresponde a $S$ y la rejilla roja inclinada a $S'$. Las líneas de luz permanecen como fronteras comunes, mientras que el evento $P$ recibe coordenadas diferentes en cada marco.}
+\label{fig:minkowski_original}
+\end{figure}

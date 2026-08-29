@@ -1,0 +1,86 @@
+\chapter{Clase 6}
+
+\section{Contracción de Longitudes}
+
+La contracción de longitudes, también conocida como contracción de Lorentz-FitzGerald, surgió históricamente como una explicación \emph{ad hoc} al resultado nulo del experimento de Michelson y Morley. FitzGerald y Lorentz propusieron que los aparatos de medición se encogían físicamente al moverse contra el éter debido a alteraciones en las fuerzas moleculares. Sin embargo, Einstein demostró que la contracción no es un efecto mecánico ni molecular, sino una consecuencia directa de los postulados de la relatividad especial y, fundamentalmente, de la relatividad de la simultaneidad.
+
+Para entender este fenómeno, primero se debe definir la longitud como la distancia física entre dos puntos medida \emph{en el mismo instante de tiempo}. Dado que la simultaneidad es relativa, ``el mismo instante'' significa pares de eventos distintos para diferentes marcos de referencia. La \emph{longitud propia} ($L_0$) se define como la longitud de un objeto medida en su marco de referencia propio, donde el objeto está en reposo. La Fig.~\ref{fig:contraccion} representa geométricamente esta diferencia entre las mediciones realizadas en $S$ y $S'$.
+
+\input{Clases/Figuras/FigurasClase6/Fig1}
+
+\subsection{Contracción de Longitudes Desde las Transformaciones de Lorentz}
+
+El efecto de contracción puede cuantificarse rigurosamente utilizando las transformaciones de Lorentz. Consideremos un objeto cuya longitud propia es $L_0$, medida simultáneamente en su marco de referencia propio $S'$:
+$$
+L_0 = L' = x'_2 - x'_1.
+$$
+
+Para un observador en un marco $S$ que ve al objeto moverse con velocidad $v$, la longitud medida es $L = x_2 - x_1$. Aplicando las transformaciones de Lorentz para la coordenada espacial ($x' = \gamma(x - vt)$) a la ecuación de la longitud propia, obtenemos:
+$$
+L_0 = x'_2 - x'_1 = \gamma(x_2 - vt_2) - \gamma(x_1 - vt_1) = \gamma(x_2 - x_1 - v(t_2 - t_1)).
+$$
+
+Dado que la longitud en el marco $S$ debe medirse de forma simultánea, se cumple que $t_2 = t_1$. Por lo tanto, el término que involucra el tiempo se anula:
+$$
+L_0 = \gamma(x_2 - x_1) = \gamma L.
+$$
+
+Despejando $L$, llegamos a la expresión final para la contracción de longitudes:
+$$
+L = \frac{L_0}{\gamma}.
+$$
+
+Este resultado demuestra que la contracción de longitudes funciona de manera complementaria a la dilatación temporal: el factor que dilata el tiempo ($\gamma$) es exactamente el inverso del que contrae las longitudes. Esto implica que las mediciones espaciales no son absolutas, sino que dependen del estado de movimiento del observador.
+
+\subsection{Revisitando los Muones Relativistas}
+
+La contracción de longitudes ofrece la explicación perfecta, desde el marco de referencia del muón, de por qué estas partículas creadas en la atmósfera superior logran alcanzar la superficie terrestre antes de desintegrarse. 
+
+Desde el marco de referencia de la Tierra (Fig.~\ref{fig:muones_tierra}), la atmósfera tiene su longitud propia ($L_0 \approx 10$ km), pero el tiempo de vida del muón se observa dilatado por el factor $\gamma$, permitiéndole recorrer esa distancia. Por el contrario, desde el marco de referencia propio del muón (Fig.~\ref{fig:muones_muon}), su tiempo de vida es el tiempo propio ($\tau \approx 2.2\ \mu$s), el cual es demasiado corto para recorrer 10 km. Sin embargo, en este marco, es la atmósfera terrestre la que se mueve a velocidades relativistas hacia el muón, por lo que su grosor experimenta contracción de longitudes ($L_0/\gamma \approx 0.66$ km). Esta distancia contraída sí puede ser atravesada por la atmósfera en el breve tiempo de vida del muón.
+
+\input{Clases/Figuras/FigurasClase6/Fig2}
+
+\input{Clases/Figuras/FigurasClase6/Fig3}
+
+Ambas descripciones son equivalentes y consistentes, ilustrando que la dilatación temporal y la contracción de longitudes son dos caras de la misma moneda relativista.
+
+\section{Efecto Doppler Relativista}
+
+El efecto Doppler, descrito originalmente por Christian Doppler en 1842 y de forma independiente por Fizeau en 1843, es un fenómeno que ocurre cuando hay movimiento relativo entre una fuente de ondas y un observador, resultando en un cambio percibido en la frecuencia de la onda. Las Figs.~\ref{fig:doppler_reposo} y~\ref{fig:doppler_acercamiento} comparan los frentes emitidos por una fuente en reposo y por una fuente que se aproxima al observador.
+
+\input{Clases/Figuras/FigurasClase6/Fig4}
+
+\input{Clases/Figuras/FigurasClase6/Fig5}
+
+En el régimen clásico, si una fuente se acerca a un observador a una velocidad $v_s$ y emite ondas con una frecuencia $\nu_s = 1/T_s$ (donde $T_s$ es el periodo nativo de la onda) y la onda se propaga a velocidad $c$, la longitud de onda efectiva percibida por el observador se reduce a $\lambda_o = (c - v_s)T$. Dado que $\nu_o = c/\lambda_o$, la frecuencia observada clásicamente es:
+$$
+\nu_o = \left(\frac{c}{c - v_s}\right)\nu_s.
+$$
+
+Con el desarrollo de la relatividad especial, Einstein reformuló este efecto para incorporar la dilatación temporal cuando las velocidades involucradas se acercan a la velocidad de la luz. Este efecto fue verificado experimentalmente por primera vez por Ives y Stilwell en 1938 midiendo el corrimiento de líneas espectrales en iones de hidrógeno molecular.
+
+Para incluir la relatividad, consideramos un intervalo de tiempo propio entre emisiones sucesivas de la onda $\delta\tau = T_s$. Debido al movimiento relativo, el periodo observado en el laboratorio no es solo el periodo clásico, sino que está afectado por la dilatación temporal, de modo que el periodo percibido es $T = \gamma T_s$. Esto significa que la frecuencia nativa se percibe inicialmente como $\nu_s/\gamma$. 
+
+Incorporando este factor de dilatación temporal en la fórmula clásica para una fuente que se acerca, obtenemos el efecto Doppler relativista:
+$$
+\nu_o = \nu_s \sqrt{\frac{1 + v_s/c}{1 - v_s/c}} = \nu_s \sqrt{\frac{1 + \beta}{1 - \beta}}.
+$$
+
+Como la frecuencia aumenta, la longitud de onda se hace más corta, lo que en el espectro visible corresponde a un corrimiento hacia el azul (\emph{blueshift}). Al factor que modifica la frecuencia emitida se le conoce como \emph{factor de Doppler} ($\delta$):
+$$
+\delta = \frac{\nu_o}{\nu_s} = \sqrt{\frac{1 + \beta}{1 - \beta}}.
+$$
+
+Por otro lado, en el caso de que la fuente se aleje del observador, la velocidad relativa cambia de signo ($v_s \to -v_s$), resultando en:
+$$
+\nu_o = \nu_s \sqrt{\frac{1 - v_s/c}{1 + v_s/c}} = \nu_s \sqrt{\frac{1 - \beta}{1 + \beta}}.
+$$
+
+En este escenario, la frecuencia disminuye y la longitud de onda se alarga, produciendo un corrimiento hacia el rojo (\emph{redshift}).
+
+Finalmente, existe un caso puramente relativista que no tiene análogo clásico: cuando la fuente se mueve perpendicularmente a la línea de visión del observador. En esta configuración, la acumulación o separación de frentes de onda clásica no aplica, pero la dilatación temporal sigue presente. Por lo tanto, la frecuencia observada es:
+$$
+\nu_o = \frac{\nu_s}{\gamma}.
+$$
+
+Dado que $\gamma > 1$, la frecuencia siempre disminuye, lo que significa que incluso sin movimiento radial, la luz experimenta un corrimiento hacia el rojo puramente debido a la dilatación del tiempo de la fuente en movimiento.

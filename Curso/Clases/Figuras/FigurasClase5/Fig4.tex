@@ -1,0 +1,55 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.02]
+    % Panel (a): marco propio
+    \begin{scope}[xshift=-3.7cm]
+        \node[font=\bfseries] at (0,2.25) {(a) Marco propio $S'$};
+
+        \draw[gray!85,very thick] (-1.8,-1.25) -- (1.8,-1.25);
+        \draw[gray!85,very thick] (-1.8,1.25) -- (1.8,1.25);
+        \node[gray!70!black,font=\scriptsize,anchor=east] at (-1.9,1.25) {espejo};
+        \node[gray!70!black,font=\scriptsize,anchor=east] at (-1.9,-1.25) {espejo};
+
+        \draw[-{Latex},minkred,line width=1.7pt] (-0.12,-1.13) -- (-0.12,1.1);
+        \draw[-{Latex},minkred,line width=1.7pt] (0.12,1.1) -- (0.12,-1.13);
+        \fill[minkorange] (0,-1.13) circle (2.4pt);
+
+        \draw[decorate,decoration={brace,amplitude=5pt},thick]
+            (2.05,-1.25) -- (2.05,1.25)
+            node[midway,right=7pt] {$d$};
+        \node[minkdarkred,font=\small,anchor=west] at (0.35,0)
+            {luz};
+        \node[font=\small] at (0,-1.75) {$\Delta\tau=2d/c$};
+    \end{scope}
+
+    % Separador visual
+    \draw[gray!55,line width=0.55pt] (0,-2.0) -- (0,2.05);
+
+    % Panel (b): reloj visto en movimiento
+    \begin{scope}[xshift=3.35cm]
+        \node[font=\bfseries] at (0,2.25) {(b) Observado desde $S$};
+
+        \foreach \x in {-2.7,0,2.7}{
+            \draw[gray!85,very thick] (\x-0.62,-1.15) -- (\x+0.62,-1.15);
+            \draw[gray!85,very thick] (\x-0.62,1.15) -- (\x+0.62,1.15);
+        }
+        \draw[gray!55,densely dashed] (-2.7,-1.15) -- (2.7,-1.15);
+
+        \draw[-{Latex},minkred,line width=1.7pt] (-2.7,-1.05) -- (-0.08,1.08);
+        \draw[-{Latex},minkred,line width=1.7pt] (0.08,1.08) -- (2.7,-1.05);
+        \fill[minkorange] (-2.7,-1.05) circle (2.4pt);
+
+        \draw[-{Latex},minkdarkblue,line width=1.6pt] (-0.9,1.55) -- (0.9,1.55)
+            node[midway,above] {$v$};
+        \draw[{Latex}-{Latex},minkdarkblue,line width=1.2pt] (-2.7,-1.52) -- (0,-1.52)
+            node[midway,below] {$v\Delta t/2$};
+        \draw[decorate,decoration={brace,amplitude=5pt},thick]
+            (3.48,-1.15) -- (3.48,1.15)
+            node[midway,right=7pt] {$d$};
+        \node[minkdarkred,font=\small,rotate=39] at (-1.45,0.18)
+            {$c\Delta t/2$};
+    \end{scope}
+\end{tikzpicture}
+\caption{Reloj de luz. (a) En su marco propio $S'$, el pulso recorre verticalmente la separación $d$ entre los espejos. (b) Desde un marco $S$ que ve el reloj moverse con velocidad $v$, el pulso sigue una trayectoria diagonal más larga. La geometría del triángulo conduce a $\Delta t=\gamma\Delta\tau$.}
+\label{fig:reloj_luz}
+\end{figure}

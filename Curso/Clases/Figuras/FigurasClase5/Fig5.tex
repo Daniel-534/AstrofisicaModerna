@@ -1,0 +1,62 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.20cm,y=0.80cm]
+    \coordinate (O) at (0,0);
+    \coordinate (Giro) at (3.25,4.0);
+    \coordinate (F) at (0,8.0);
+    \coordinate (Puno) at (0,1.8);
+    \coordinate (Pdos) at (0,6.2);
+
+    \foreach \x in {-2,-1,...,6}
+        \draw[mink grid x] (\x,0) -- (\x,8.25);
+    \foreach \y in {1,...,8}
+        \draw[mink grid t] (-2.25,\y) -- (6.15,\y);
+
+    \fill[minklightred] (Puno) -- (Giro) -- (Pdos) -- cycle;
+    \draw[mink axis] (0,-0.25) -- (0,8.55) node[left] {$ct$};
+    \draw[mink axis] (-2.35,0) -- (6.35,0) node[below] {$x$};
+
+    \draw[mink vector,minkred] (O) -- (F);
+    \draw[mink vector,minkblue] (O) -- (Giro);
+    \draw[mink vector,minkpurple] (Giro) -- (F);
+
+    \foreach \y in {0.6,1.2,1.8,2.4,3.0}{
+        \draw[minkdarkblue,mink dashed,line width=0.55pt]
+            (-0.65,{\y-0.32}) -- (3.75,{\y+1.88});
+        \fill[minkdarkblue] (0,\y) circle (1.3pt);
+    }
+    \foreach \y in {5.0,5.6,6.2,6.8,7.4}{
+        \draw[minkpurple,mink dashed,line width=0.55pt]
+            (-0.65,{\y+0.32}) -- (3.75,{\y-1.88});
+        \fill[minkpurple] (0,\y) circle (1.3pt);
+    }
+
+    \draw[minkdarkblue,mink dashed,very thick] (Puno) -- (Giro);
+    \draw[minkpurple,mink dashed,very thick] (Giro) -- (Pdos);
+    \draw[{Latex}-{Latex},minkdarkred,line width=1.15pt] (-0.62,1.85) -- (-0.62,6.15)
+        node[midway,left=6pt,align=right,font=\small]
+        {salto de simultaneidad\\durante el giro};
+
+    \fill[minkdarkred] (O) circle (2.5pt);
+    \fill[minkdarkblue] (Giro) circle (2.8pt);
+    \fill[minkdarkred] (F) circle (2.5pt);
+    \node[below left,font=\small] at (O) {partida: 20 años};
+    \node[minkdarkblue,right=5pt,align=left,font=\small] at (Giro)
+        {Speedy cambia de rumbo\\y de marco inercial};
+    \node[above right=1pt,align=left,font=\small] at (F)
+        {reencuentro\\Lento: 60 años\\{\color{minkdarkblue}Speedy: $54.6$ años}};
+
+    \node[minkdarkred,font=\small,rotate=90] at (0.22,4.0)
+        {\contour{white}{Lento}};
+    \node[minkdarkblue,font=\small,rotate=51] at (1.42,1.72)
+        {\contour{white}{ida de Speedy}};
+    \node[minkpurple,font=\small,rotate=-51] at (1.48,6.28)
+        {\contour{white}{regreso de Speedy}};
+    \node[minkdarkblue,font=\scriptsize,align=left,anchor=west] at (4.05,2.15)
+        {planos de simultaneidad\\durante la ida};
+    \node[minkpurple,font=\scriptsize,align=left,anchor=west] at (4.05,5.85)
+        {planos de simultaneidad\\durante el regreso};
+\end{tikzpicture}
+\caption{Paradoja de los gemelos representada mediante líneas de universo y planos de simultaneidad. Lento permanece en un marco aproximadamente inercial; Speedy usa una familia de planos durante la ida y otra durante el regreso. El cambio entre ambas familias en el punto de giro rompe la aparente simetría.}
+\label{fig:gemelos}
+\end{figure}

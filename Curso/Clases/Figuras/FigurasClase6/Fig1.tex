@@ -1,0 +1,66 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.08cm,y=0.90cm]
+    \def\ang{24}
+    \clip (-4.8,-0.55) rectangle (5.35,6.15);
+
+    \fill[minkfieldred]
+        (\ang:-5.8) -- (\ang:5.8) -- ++(90-\ang:7.0)
+        -- ($(\ang:-5.8)+(90-\ang:7.0)$) -- cycle;
+    \foreach \x in {-4,-3,...,5}
+        \draw[mink grid x] (\x,-0.4) -- (\x,6.0);
+    \foreach \y in {0,1,...,6}
+        \draw[mink grid t] (-4.7,\y) -- (5.2,\y);
+    \foreach \i in {-7,-6,...,7}{
+        \draw[mink grid prime] (\ang:{\i*0.72}) -- ++(90-\ang:7.0);
+        \draw[mink grid prime] (90-\ang:{\i*0.72}) -- ++(\ang:7.0);
+    }
+
+    \draw[mink axis] (-4.65,0) -- (5.15,0) node[below] {$x$};
+    \draw[mink axis] (0,-0.45) -- (0,6.0) node[left] {$ct$};
+    \draw[mink axis prime] (\ang:-4.7) -- (\ang:5.0) node[below right] {$x'$};
+    \draw[mink axis prime] (90-\ang:-0.5) -- (90-\ang:6.0) node[right] {$ct'$};
+
+    \path[name path=rear] (90-\ang:-0.65) -- (90-\ang:6.0);
+    \path[name path=front]
+        ($(90-\ang:-0.65)+(\ang:3.20)$) --
+        ($(90-\ang:6.0)+(\ang:3.20)$);
+    \coordinate (C) at (90-\ang:2.20);
+    \coordinate (B) at ($(C)+(\ang:3.20)$);
+    \path[name path=throughC] ($(C)+(-4.5,0)$) -- ($(C)+(4.5,0)$);
+    \path[name path=throughB] ($(B)+(-4.5,0)$) -- ($(B)+(4.5,0)$);
+    \path[name intersections={of=front and throughC,by=D}];
+    \path[name intersections={of=rear and throughB,by=A}];
+
+    \fill[minkred,opacity=0.06]
+        (90-\ang:-0.65) -- (90-\ang:6.0) --
+        ($(90-\ang:6.0)+(\ang:3.20)$) --
+        ($(90-\ang:-0.65)+(\ang:3.20)$) -- cycle;
+    \draw[minkdarkred,line width=1.5pt] (90-\ang:-0.65) -- (90-\ang:6.0);
+    \draw[minkdarkred,line width=1.5pt]
+        ($(90-\ang:-0.65)+(\ang:3.20)$) --
+        ($(90-\ang:6.0)+(\ang:3.20)$);
+
+    \draw[minkdarkred,line width=2.4pt,line cap=round] (C) -- (B)
+        node[pos=0.56,sloped,above=5pt] {\contour{white}{$L_0=\Delta x'$}};
+    \draw[minkdarkblue,line width=2.0pt,line cap=round] (C) -- (D)
+        node[pos=0.58,below=6pt] {\contour{white}{$L=\Delta x$}};
+    \draw[minkdarkblue,mink dashed,line width=1.5pt,line cap=round] (A) -- (B);
+
+    \foreach \point/\position in {A/above left,D/below right}{
+        \fill[minkdarkblue] (\point) circle (2.4pt);
+        \node[minkdarkblue,\position=2pt] at (\point) {$\point$};
+    }
+    \fill[minkdarkred] (B) circle (2.5pt);
+    \fill[minkdarkred] (C) circle (2.5pt);
+    \node[minkdarkred,below right=4pt] at (B) {$B$};
+    \node[minkdarkred,left=5pt] at (C) {$C$};
+
+    \node[minkdarkblue,font=\small,align=left,anchor=west] at (-4.35,5.20)
+        {mediciones simultáneas\\en el marco $S$};
+    \node[minkdarkred,font=\small,align=left,anchor=west] at (-4.35,3.95)
+        {extremos del carro\\en reposo en $S'$};
+\end{tikzpicture}
+\caption{Diagrama de Minkowski para la contracción de longitudes. Los eventos $C$ y $B$ son simultáneos en el marco propio $S'$ y determinan la longitud propia $L_0$. En $S$, las mediciones simultáneas deben realizarse horizontalmente, mediante $C$--$D$ o $A$--$B$, y proporcionan la longitud contraída $L=L_0/\gamma$.}
+\label{fig:contraccion}
+\end{figure}

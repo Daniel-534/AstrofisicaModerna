@@ -1,0 +1,30 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.05]
+    \draw[->,black,thick] (-3.35,-2.65) -- (3.25,-2.65)
+        node[below left] {$x$};
+
+    \draw[minkdarkblue,line width=1.45pt] (-0.90,0) circle (2.40);
+    \draw[minkdarkblue,line width=1.45pt] (-0.55,0) circle (1.60);
+    \draw[minkdarkblue,line width=1.45pt] (-0.20,0) circle (0.80);
+    \foreach \x in {-0.90,-0.55,-0.20}
+        \fill[minkdarkred!60] (\x,0) circle (1.8pt);
+
+    \fill[minkdarkred] (0.20,0) circle (3pt);
+    \node[minkdarkred,below=5pt,font=\small] at (0.20,0) {fuente};
+    \draw[-{Latex},minkdarkred,line width=1.8pt] (-0.35,0.78) -- (1.05,0.78)
+        node[midway,above=4pt] {$v_s$};
+
+    \draw[black,line width=1.4pt] (2.65,-0.48) -- (2.65,0.68);
+    \fill[black] (2.65,0.86) circle (2.6pt);
+    \node[font=\small,above] at (2.65,0.86) {observador};
+
+    \draw[{Latex}-{Latex},minkdarkred,line width=1.25pt]
+        (1.20,1.72) -- (1.68,1.72)
+        node[midway,above=4pt] {$\lambda_o$};
+    \node[minkdarkred,font=\small] at (0,-3.02)
+        {$\lambda_o=(c-v_s)T<\lambda_0$};
+\end{tikzpicture}
+\caption{Fuente acercándose al observador. Cada frente se emite desde una posición más avanzada, por lo que la separación frontal disminuye a $\lambda_o=(c-v_s)T$ y la frecuencia observada aumenta.}
+\label{fig:doppler_acercamiento}
+\end{figure}

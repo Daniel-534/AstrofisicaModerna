@@ -1,0 +1,24 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.05]
+    \draw[->,black,thick] (-3.35,-2.65) -- (3.25,-2.65)
+        node[below left] {$x$};
+
+    \foreach \radius in {0.80,1.60,2.40}
+        \draw[minkdarkblue,line width=1.45pt] (-0.65,0) circle (\radius);
+    \fill[minkdarkred] (-0.65,0) circle (3pt);
+    \node[minkdarkred,below=5pt,font=\small] at (-0.65,0) {fuente en reposo};
+
+    \draw[black,line width=1.4pt] (2.65,-0.48) -- (2.65,0.68);
+    \fill[black] (2.65,0.86) circle (2.6pt);
+    \node[font=\small,above] at (2.65,0.86) {observador};
+
+    \draw[{Latex}-{Latex},minkdarkblue,line width=1.25pt]
+        (0.95,1.72) -- (1.75,1.72)
+        node[midway,above=4pt] {$\lambda_0=cT$};
+    \node[minkdarkblue,font=\small] at (0,-3.02)
+        {frentes de onda igualmente espaciados};
+\end{tikzpicture}
+\caption{Fuente en reposo. Los frentes emitidos cada periodo $T$ permanecen igualmente espaciados, de modo que la longitud de onda observada es $\lambda_0=cT$.}
+\label{fig:doppler_reposo}
+\end{figure}

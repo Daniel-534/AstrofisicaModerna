@@ -1,0 +1,223 @@
+\chapter{Clase 5}
+
+\section{Tiempo Propio}
+
+En las secciones anteriores vimos que objetos con diferentes trayectorias tienen distintas líneas de universo, y que distintos marcos de referencia inerciales miden el tiempo de forma distinta. Para entender mejor esta diferencia, analizamos cómo se mide el tiempo a lo largo de la línea de universo de un objeto.
+
+Supongamos que ocurren dos eventos cualesquiera $P_1$ y $P_2$. ¿Existe siempre una línea de universo que los una? La respuesta es no: si los eventos están causalmente desconectados, ni siquiera la luz puede ir de $P_1$ a $P_2$. En cambio, si están causalmente conectados, sí puede existir una línea de universo que los una; de forma equivalente, puede existir un marco de referencia inercial $S'$ que vea los eventos ocurrir en el mismo lugar (aunque en momentos distintos). Cuando este marco $S'$ existe, se le llama el \emph{marco de referencia propio} de los eventos. (Es la diferencia entre enterarse de que habrá dos conciertos en dos ciudades distintas, y viajar a ambas ciudades: en el segundo caso somos el marco que está presente en ambos eventos.)
+
+El marco propio puede encontrarse desde cualquier otro marco $S$, construyendo $S'$ con una velocidad (respecto a $S$) dada por,
+
+$$
+\beta = \frac{v}{c} = \frac{x^1_2 - x^1_1}{x^0_2 - x^0_1} = \frac{\Delta x}{c\,\Delta t}.
+$$
+
+Si los dos eventos están causalmente conectados, siempre se cumple que $\beta < 1$. Es importante aclarar que $P_1$ y $P_2$ no necesariamente deben pertenecer a la línea de universo de un mismo objeto: pueden ser dos eventos causalmente conectados sin que ningún objeto físico esté presente en ambos. Sin embargo, por lo general asociamos el marco propio a objetos físicos, tomando cualquier par de eventos de su línea de universo. Si el objeto no tiene un movimiento inercial, podemos construir un marco propio para cualquier par de eventos $P_1$ y $P_2$ de su línea de universo, pero no se garantiza que el marco propio acompañe al objeto en todo su recorrido (sólo coincidirá con él en $P_1$ y $P_2$).
+
+Dado que desde el marco de referencia propio $S'$ la separación espacial entre los eventos es cero,
+
+$$
+(\Delta x'_{12})^2 + (\Delta y'_{12})^2 + (\Delta z'_{12})^2 = 0,
+$$
+
+el intervalo espacio-temporal medido en $S'$ es siempre,
+
+$$
+\Delta S'^{\,2}_{12} = c^2(\Delta t_{12})^2 > 0.
+$$
+
+Al tiempo medido desde este marco de referencia propio se le denomina \emph{tiempo propio} y se representa con el símbolo $\tau$,
+
+$$
+\Delta S'^{\,2}_{12} = c^2(\Delta \tau)^2 > 0.
+$$
+
+Gracias a la invarianza del intervalo espacio-temporal, el tiempo propio puede calcularse desde cualquier marco de referencia (no sólo desde el marco propio),
+
+$$
+\Delta \tau = \sqrt{\frac{\Delta S^2}{c^2}}.
+$$
+
+En esencia, el tiempo propio es la medida del tiempo según lo experimenta un observador que se mueve a lo largo de una trayectoria inercial en el espacio-tiempo, y permanece invariante independientemente del marco de referencia de otros observadores.
+
+Valga aclarar que el tiempo propio sólo está definido para $\Delta S^2 > 0$ (eventos causalmente conectados) y no está definido para $\Delta S^2 < 0$ (eventos causalmente desconectados). Esto quiere decir que la medición del tiempo únicamente está bien definida para objetos que viajen más lento que la luz: si bien se puede especular sobre cómo ``mediría el tiempo'' un pulso de luz, en realidad el tiempo sólo existe para objetos físicos más lentos que la luz.
+
+\section{Implicaciones Cosmológicas de la Causalidad}
+
+La causalidad y la estructura del espacio-tiempo minkowskiano implican que ningún efecto puede preceder a su causa y que ninguna información o materia puede viajar más rápido que la luz, limitando así la comunicación y la influencia entre eventos distantes en el universo. Esto tiene consecuencias sobre nuestro entendimiento de la cosmología, la rama de la astrofísica que estudia la evolución y la estructura del universo a gran escala, desde su origen hasta la actualidad.
+
+\subsection{El Problema del Horizonte}
+
+Si consideramos la historia del universo en el contexto de los diagramas espacio-temporales y los conos de luz, se podría pensar que en el pasado causal de cualquier punto del universo en su estado actual encontraremos muchos eventos que están tan separados mutuamente que se encuentran causalmente desconectados. A su vez, esos puntos tendrían en su pasado regiones completas de eventos que no están causalmente conectados entre ellos. Esta situación se manifestaría en las observaciones astronómicas del universo a gran escala, en las que encontraríamos grandes diferencias al observar regiones en distintas direcciones. Sin embargo, las observaciones muestran un alto grado de isotropía del fondo cósmico de microondas (CMB), la radiación térmica remanente del Big Bang dispersa uniformemente por todo el universo. El \emph{problema del horizonte} se refiere precisamente a la cuestión de cómo regiones del universo que están muy alejadas entre sí y que, en teoría, nunca han estado en contacto causal, pueden exhibir temperaturas similares y otras propiedades físicas homogéneas.
+
+Este problema motivó el desarrollo de la teoría de la inflación cósmica, una rápida expansión en el universo temprano que alisó cualquier heterogeneidad inicial a una escala muy pequeña, llevando regiones que estaban inicialmente en contacto causal a distancias mucho mayores de lo que la luz podría haber viajado desde entonces. Esta expansión masiva ayuda a explicar la uniformidad observada en la temperatura del CMB a través de vastas regiones del espacio que no parecen tener conexión causal en el modelo de Big Bang sin inflación. Luego de esta inflación inicial comienza la fase de expansión más gradual (expansión de Hubble), seguida por la etapa de expansión acelerada que experimentamos en la actualidad (Fig.~\ref{fig:expansion}), cuya causa exacta no se conoce pero recibe el nombre de energía oscura.
+
+\input{Clases/Figuras/FigurasClase5/Fig1}
+
+Como se mencionó en la sección pasada, cuando estudiamos el universo a distancias cada vez más grandes vemos cómo era el universo anteriormente. Más o menos hasta una distancia de mil millones de años luz encontramos que el universo es muy parecido a como lo conocemos en la actualidad: la distribución, forma y tipo de galaxias es muy similar en todas las direcciones que miremos. A esta región observable dentro de un radio de mil millones de años luz la llamamos el \emph{universo local}, en el que las galaxias y la formación estelar se comportan siempre de la misma manera, manteniendo un estado estacionario. Más allá de estas distancias comenzamos a ver los efectos de los procesos de formación y evolución de estructura a gran escala que llevaron al universo a ser como lo vemos hoy: estos procesos hacen que el universo en esa época sea muy distinto al universo local respecto a la distribución, morfología y composición de galaxias, la tasa de formación estelar, la abundancia de cuásares, etc. Esto nos muestra que el universo evolucionó desde un estado caliente, denso y casi uniforme hasta la altamente estructurada red de galaxias que observamos en la actualidad (Fig.~\ref{fig:web}).
+
+\input{Clases/Figuras/FigurasClase5/Fig2}
+
+\subsection{El Tamaño Angular de las Galaxias}
+
+El hecho de que la solución al problema del horizonte sea un modelo de Big Bang inflacionario seguido de la expansión del universo hasta su estado actual implica que, cuando miramos hacia regiones cada vez más lejanas, debe llegar un punto en el que comenzamos a notar que el universo era más pequeño en el pasado. Pero si el universo era más pequeño y las galaxias tenían tamaños similares a los que tienen en la actualidad, el tamaño angular de las galaxias relativo al resto del universo debe variar en el tiempo.
+
+La situación al estudiar el diámetro angular de las galaxias para distancias cada vez más grandes es que primero, como lo indica la intuición, las galaxias se ven angularmente más pequeñas entre más lejos están. Esto se cumple hasta que observamos galaxias cuya luz viene de cuando el universo tenía unos 4\,100 millones de años (comparado con los 13\,800 millones de años de la actualidad). A partir de este punto (Fig.~\ref{fig:angular}), galaxias más lejanas se empiezan a ver cada vez más grandes, debido a que su tamaño comparado con el tamaño del universo en esa época era más grande que en la actualidad. Esto causa que una galaxia en esa época cubra una región angular del cielo mucho mayor que la que cubre una galaxia en el universo local.
+
+\input{Clases/Figuras/FigurasClase5/Fig3}
+
+\section{Dilatación Temporal}
+
+En la sección sobre tiempo propio definimos esta cantidad entre dos eventos $P_1$ y $P_2$. Ahora analizamos cómo transcurre el tiempo entre esos mismos dos eventos, pero reportado por otro marco de referencia distinto al marco de referencia propio. Desde cualquier otro marco $S$ se observa que $P_1$ y $P_2$ ocurren en dos puntos distintos del espacio, digamos separados por una distancia $d$. Por lo tanto, el intervalo espacio-temporal medido desde $S$ es,
+
+$$
+c^2\Delta\tau^2 = \Delta S'^{\,2} = \Delta S^2 = c^2\Delta t^2 - d^2 \;<\; c^2\Delta t^2 .
+$$
+
+De aquí se deduce que
+
+$$
+c^2\Delta\tau^2 < c^2\Delta t^2 \quad\longrightarrow\quad \Delta\tau < \Delta t .
+$$
+
+Esto significa que el tiempo propio mide la mínima duración posible entre dos eventos en la línea de universo de algún observador inercial. Como esto se cumple para cualquier $S$ que no sea el marco propio, todos los demás observadores miden un tiempo más largo que el tiempo propio. A este fenómeno se le llama \emph{dilatación temporal}.
+
+Para obtener una fórmula, consideremos un experimento mental con un \emph{reloj de luz} compuesto por dos espejos paralelos separados por una distancia $d$ (Fig.~\ref{fig:reloj_luz}, arriba). Un pulso de luz se refleja entre los espejos, y el tiempo de un viaje de ida y vuelta se mide como el tiempo propio $\Delta\tau$. En el marco propio del reloj,
+
+$$
+\Delta\tau = \frac{2d}{c}.
+$$
+
+Ahora consideremos un marco $S$ que observa el reloj en movimiento con velocidad $v$, perpendicular a la línea que conecta los espejos (Fig.~\ref{fig:reloj_luz}, abajo). Desde este marco la trayectoria del pulso no es vertical sino diagonal: recorre una distancia mayor $D$. Si el pulso tarda $\Delta t$ (medido por $S$),
+
+$$
+\Delta t = \frac{D}{c}.
+$$
+
+Cada diagonal se recorre en $\Delta t/2$. Por el teorema de Pitágoras, el cateto horizontal es lo que el reloj avanza en $\Delta t/2$, es decir $v\Delta t/2$, y el cateto vertical es $d$, que se preserva por medirse perpendicular al movimiento ($y'=y$). Entonces,
+
+$$
+\left(\frac{c\Delta t}{2}\right)^2 = \left(\frac{v\Delta t}{2}\right)^2 + d^2 ,
+$$
+
+$$
+\left(\frac{\Delta t}{2}\right)^2\left(c^2 - v^2\right) = d^2 .
+$$
+
+Despejando $\Delta t$,
+
+$$
+\Delta t = \frac{2d}{c}\,\frac{1}{\sqrt{1-\frac{v^2}{c^2}}} ,
+$$
+
+o, en términos más familiares,
+
+$$
+\Delta t = \gamma\,\Delta\tau .
+$$
+
+Esta relación muestra que el tiempo medido en el marco ``estático'' está dilatado respecto al medido en el marco propio del reloj: los relojes en movimiento marchan más lento que los relojes en reposo. Aunque el ejemplo usa un reloj de luz, el resultado aplica al tiempo en general, ya que cualquier otro reloj puede calibrarse con uno de luz.
+
+\input{Clases/Figuras/FigurasClase5/Fig4}
+
+Si el Principio de Relatividad aplica, ¿no debería concluirse lo mismo a la inversa? Si un observador en el marco del reloj ($S'$) mira un reloj en el marco ``estático'' $S$, ¿mediría un tiempo más lento? La respuesta es sí: cada reloj mide su propio tiempo propio y, al mirar el otro reloj en movimiento, concluye que va más lento. No hay contradicción, porque los dos relojes sólo pueden encontrarse una vez; no se pueden comparar dos eventos ``tic'' y ``tac'' que ocurran en el mismo punto e instante en dos marcos distintos. Si se quisiera reunirlos para ver cuál va más lento, habría que devolver al menos uno, lo cual lo saca de un marco inercial; por eso cada observador puede ver al otro más lento sin inconsistencia. Este razonamiento es la clave de la paradoja de los gemelos.
+
+Finalmente, ¿por qué no notamos esta discrepancia en la vida diaria? En un día normal, lo más rápido que una persona se mueve con un reloj es a unos $90$~km/h, para lo cual $\gamma=1.0000000000000036$, es decir $3.6$ partes en mil billones ($10^{15}$). Para notar una discrepancia de $1$~s habría que viajar a $90$~km/h durante unos 8 millones de años.
+
+\subsection{Paradoja de los Gemelos}
+
+Supongamos dos gemelos de 20 años, Speedy y Lento. Speedy viaja en una nave a $0.5c$ hasta un planeta situado a 10 años luz y luego regresa; Lento se queda en la Tierra. Para Lento transcurren $\Delta t = 40$ años. El tiempo para Speedy es,
+
+$$
+\Delta\tau = \frac{\Delta t}{\gamma} = \sqrt{1-\frac{v^2}{c^2}}\,\Delta t = \sqrt{1-\frac{1}{4}}\,(40~\text{yr}) \approx 34.6~\text{yr}.
+$$
+
+Así, al regresar Speedy tiene 54.6 años mientras Lento tiene 60. ¿No debería Speedy llegar a la conclusión simétrica? Esa es la aparente paradoja.
+
+La solución es que, para volver, Speedy debe frenar y acelerar de nuevo hasta $0.5c$ (Fig.~\ref{fig:gemelos}), mientras Lento permanece en un marco prácticamente inercial. Los dos marcos no son equivalentes y no pueden sacar conclusiones simétricas; no hay paradoja: Lento envejece más.
+
+\input{Clases/Figuras/FigurasClase5/Fig5}
+
+\subsection{Verificación Experimental de la Dilatación Temporal}
+
+Las pruebas experimentales han sido fundamentales para validar la Relatividad Especial. La detección de partículas subatómicas provenientes de lluvias de partículas fue una de las primeras evidencias: partículas creadas en la atmósfera superior con un tiempo de vida muy corto logran sobrevivir y llegar a detectores en la superficie. Otro experimento célebre es el de Hafele y Keating (1971), en el que relojes atómicos fueron transportados en aviones comerciales alrededor del mundo, hacia el este y hacia el oeste, mostrando que los relojes se atrasaban y adelantaban respectivamente según lo predicho. Una evidencia adicional proviene de los relojes atómicos en satélites GPS, que deben corregirse por dilatación temporal debida tanto a su velocidad como a la menor gravedad orbital.
+
+\subsubsection{Desintegración de Muones Producidos en Lluvias de Partículas}
+
+Los rayos cósmicos (protones y núcleos de alta energía, principalmente de remanentes de supernova) impactan la atmósfera superior y producen partículas subatómicas que se desintegran rápidamente: una \emph{lluvia de (astro-)partículas} (Fig.~\ref{fig:muones}). Entre las partículas secundarias están los \emph{muones}, descubiertos en laboratorio por Neddermeyer y Anderson (1937), cuyo tiempo de vida medido a bajas velocidades es $\tau_\mu \approx 2.2~\mu\text{s}$.
+
+\input{Clases/Figuras/FigurasClase5/Fig6}
+
+Aun a la velocidad de la luz, un muón recorrería como máximo
+
+$$
+d = c\,\tau_\mu = 0.66~\text{km}.
+$$
+
+Dado que la atmósfera tiene un grosor típico de $10$~km, no debería ser posible detectar en tierra muones creados en la atmósfera superior; sin embargo se detectan constantemente (Rossi y Hall, 1941). La explicación es la dilatación temporal: el laboratorio mide un tiempo de vida dilatado $t_\mu = \gamma\tau_\mu$. Si exigimos que el muón alcance a recorrer los $10$~km,
+
+$$
+\frac{10~\text{km}}{v} = \frac{\tau_\mu}{\sqrt{1-\frac{v^2}{c^2}}} ,
+$$
+
+de donde se obtiene $v \approx 0.998\,c$: el muón debe viajar al $99.8\%$ de la velocidad de la luz.
+
+Desde el punto de vista del muón, que en su marco propio vive sólo $2.2~\mu$s, la única manera de llegar a la superficie es que vea el grosor de la atmósfera contraído de $10$~km a $0.66$~km. El muón ``vería'' un planeta rocoso acercándose a $0.998c$ y recorriendo $0.66$~km hasta alcanzarlo. Esto ilustra que la dilatación temporal y la contracción de longitudes son dos caras de la misma moneda.
+
+\subsubsection{Dilatación Temporal en Aviones}
+
+En 1971, Hafele y Keating (Fig.~\ref{fig:hafele}) transportaron relojes atómicos en aviones que dieron la vuelta al mundo dos veces y, al aterrizar, los compararon con otros que permanecieron en tierra. Los resultados, publicados en 1972, mostraron discrepancias del orden de decenas de nanosegundos y confirmaron las predicciones relativistas.
+
+\input{Clases/Figuras/FigurasClase5/Fig7}
+
+\section{Diagramas de Minkowski}
+
+En el capítulo anterior introdujimos los diagramas espacio-temporales, en los que se dibuja $x^0=ct$ frente a $x^1=x$ para ilustrar aspectos de causalidad. Los \emph{diagramas de Minkowski} (Fig.~\ref{fig:minkowski_original}) son una herramienta poderosa para visualizar las transformaciones de Lorentz y explicar las mediciones discrepantes entre marcos de referencia.
+
+\input{Clases/Figuras/FigurasClase5/Fig8}
+
+El poder de estos diagramas radica en representar simultáneamente los marcos $S$ y $S'$, relacionados gráficamente por las transformaciones de Lorentz. Recordemos que al dibujar ejes $x$, $y$ en un plano, en realidad se dibuja la recta $y=0$ para el eje $x$ y la recta $x=0$ para el eje $y$. Tomando las transformaciones de Lorentz directas en términos de $\beta$ e imponiendo $x'_0=0$ y $x'_1=0$,
+
+$$
+x'_0 = \gamma(x_0 - \beta x_1) \;\longrightarrow\; x_0 = \beta x_1 , \qquad
+x'_1 = \gamma(x_1 - \beta x_0) \;\longrightarrow\; x_1 = \beta x_0 .
+$$
+
+La recta obtenida para $x'_0=0$ corresponde al eje $x'_1$ (el eje espacial de $S'$), y la recta para $x'_1=0$ corresponde al eje $x'_0$ (el eje temporal de $S'$). Así, el eje espacial de $S'$ es una recta de pendiente $\beta$ y el eje temporal una recta de pendiente $\beta^{-1}$ (Fig.~\ref{fig:minkowski_directa}). El ángulo entre $x_1$ y $x'_1$ es $\tan^{-1}\beta$, igual que el ángulo entre $x_0$ y $x'_0$. Entre más rápido se mueva $S'$, el ángulo aumenta hasta el límite $\pi/4$, ya que $\beta<1$. Ambos marcos reportan coordenadas distintas del mismo evento $P$.
+
+\input{Clases/Figuras/FigurasClase5/Fig9}
+
+Las transformaciones inversas se grafican tomando como ``quieto'' a $S'$, del cual $S$ se aleja con velocidad $-v$. Al imponer $x_0=0$ y $x_1=0$ en dichas transformaciones,
+
+$$
+x_0 = \gamma(x'_0 + \beta x'_1) \;\longrightarrow\; x'_0 = -\beta x'_1 , \qquad
+x_1 = \gamma(x'_1 + \beta x'_0) \;\longrightarrow\; x'_1 = -\beta x'_0 .
+$$
+
+El eje espacial de $S$ es entonces una recta de pendiente $-\beta$ y el eje temporal de $S$ una recta de pendiente $-\beta^{-1}$ (Fig.~\ref{fig:minkowski_inversa}). Los ángulos son ahora $-\tan^{-1}\beta$. Esta es la manera apropiada de representar gráficamente el marco de referencia propio de un objeto inercial.
+
+\input{Clases/Figuras/FigurasClase5/Fig10}
+
+\subsection{Discrepancia en la Medición del Tiempo}
+
+En un diagrama de transformación directa (Fig.~\ref{fig:minkowski_directa}), las líneas de tiempo constante para $S$ son horizontales, pero para $S'$ son diagonales. Si ubicamos relojes en cada punto de estas líneas, un observador en $S'$, que mira sus propias líneas diagonales, encuentra que los relojes de $S$ no están sincronizados con los suyos (Fig.~\ref{fig:relojes_S}), y viceversa (Fig.~\ref{fig:relojes_Sp}). Esto ilustra por qué dos marcos distintos miden el tiempo de forma diferente: los relojes de $S$ y $S'$ sólo pueden sincronizarse en el punto donde ambos marcos coinciden ($x=x'=0$, $t=t'=0$).
+
+\input{Clases/Figuras/FigurasClase5/Fig11}
+
+\input{Clases/Figuras/FigurasClase5/Fig12}
+
+\subsection{Relatividad de la Simultaneidad}
+
+Si dos eventos $P_1$ y $P_2$ ocurren al tiempo en $S$, desde $S'$ cada uno tiene coordenadas temporales distintas (Fig.~\ref{fig:simultaneidad}). Así, eventos que $S$ percibe como simultáneos ocurren, para $S'$, uno después del otro.
+
+\input{Clases/Figuras/FigurasClase5/Fig13}
+
+\subsection{Dilatación Temporal}
+
+Consideremos el marco propio $S'$ de un reloj que mide el tiempo entre dos eventos $P_1$ (``tic'') y $P_2$ (``toc'') que ocurren en el mismo lugar, con separación espacial cero. Al hacer el diagrama con las transformaciones inversas (Fig.~\ref{fig:dilatacion_Sp}), las coordenadas temporales medidas desde $S$ indican un intervalo más largo que el propio. $S$ ve al reloj en movimiento, de modo que el ``tic'' ocurre en un lugar distinto del ``toc''.
+
+\input{Clases/Figuras/FigurasClase5/Fig14}
+
+El efecto complementario se observa con la transformación directa, cuando el reloj está quieto en $S$ (siendo $S$ su marco propio). Las coordenadas temporales del ``tic'' y el ``toc'' medidas desde $S'$ indican un intervalo más largo que el medido en $S$ (Fig.~\ref{fig:dilatacion_S}). Además, $S'$ ve el ``toc'' más atrás que el ``tic'', lo cual es lógico pues $S'$ se está alejando del reloj de $S$.
+
+\input{Clases/Figuras/FigurasClase5/Fig15}

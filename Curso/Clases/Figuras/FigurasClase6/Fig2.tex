@@ -1,0 +1,30 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.05]
+    \fill[blue!8] (-4.1,-1.9) rectangle (4.1,2.0);
+    \fill[green!18!black!8] (-4.1,-2.15) rectangle (4.1,-1.9);
+    \draw[gray!70,dashed] (-4.1,1.65) -- (4.1,1.65);
+    \draw[green!55!black,very thick] (-4.1,-1.9) -- (4.1,-1.9);
+    \node[gray!70!black,font=\scriptsize,anchor=west] at (-4.0,1.80)
+        {atmósfera superior};
+    \node[green!45!black,font=\scriptsize,anchor=west] at (-4.0,-2.04)
+        {superficie terrestre};
+
+    \coordinate (creation) at (-1.10,1.65);
+    \coordinate (detection) at (0.80,-1.90);
+    \fill[minkorange] (creation) circle (3pt);
+    \fill[minkgreen] (detection) circle (3pt);
+    \draw[-{Latex},minkdarkred,line width=2.2pt] (creation) -- (detection)
+        node[midway,right=7pt,font=\small] {muón, $v\simeq c$};
+    \node[minkdarkred,above right,font=\small] at (creation) {creación};
+    \node[minkgreen,below right,font=\small] at (detection) {detección};
+
+    \draw[{Latex}-{Latex},black,line width=1.2pt]
+        (3.50,-1.85) -- (3.50,1.60)
+        node[midway,right=6pt] {$L_0$};
+    \node[minkdarkblue,font=\small,align=center] at (-2.55,-0.20)
+        {$t_\mu=\gamma\tau_\mu$\\vida media dilatada};
+\end{tikzpicture}
+\caption{Descripción desde el marco terrestre. La atmósfera tiene su longitud propia $L_0$, mientras que la vida media del muón se observa dilatada, $t_\mu=\gamma\tau_\mu$, permitiéndole alcanzar la superficie.}
+\label{fig:muones_tierra}
+\end{figure}

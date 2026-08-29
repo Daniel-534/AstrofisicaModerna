@@ -1,0 +1,45 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.98]
+    \shade[ball color=blue!35] (0,0) circle (2.25);
+    \draw[blue!55!black,thick] (0,0) circle (2.25);
+    \draw[white!80,thick] (-2.05,0.25) arc[start angle=174,end angle=366,x radius=2.08,y radius=0.63];
+    \node[white,font=\bfseries] at (0,0) {Tierra};
+
+    \draw[->,red!75!black,very thick]
+        (-3.8,0.75) arc[start angle=165,end angle=25,x radius=3.9,y radius=2.0];
+    \draw[->,orange!85!black,very thick]
+        (3.8,-0.8) arc[start angle=-15,end angle=-155,x radius=3.9,y radius=2.0];
+    \node[red!75!black,font=\small] at (0,2.65) {vuelo hacia el este};
+    \node[orange!85!black,font=\small] at (0,-2.75) {vuelo hacia el oeste};
+
+    \begin{scope}[shift={(3.15,1.55)},rotate=-12]
+        \draw[fill=gray!15,thick] (-0.55,-0.12) -- (0.55,-0.12) -- (0.8,0)
+            -- (0.55,0.12) -- (-0.55,0.12) -- cycle;
+        \draw[thick] (-0.1,0.12) -- (-0.55,0.48);
+        \draw[thick] (-0.1,-0.12) -- (-0.55,-0.48);
+    \end{scope}
+    \begin{scope}[shift={(-3.1,-1.55)},rotate=168]
+        \draw[fill=gray!15,thick] (-0.55,-0.12) -- (0.55,-0.12) -- (0.8,0)
+            -- (0.55,0.12) -- (-0.55,0.12) -- cycle;
+        \draw[thick] (-0.1,0.12) -- (-0.55,0.48);
+        \draw[thick] (-0.1,-0.12) -- (-0.55,-0.48);
+    \end{scope}
+
+    \foreach \x/\y/\label in {-4.2/2.7/reloj en vuelo,4.1/-2.8/reloj en vuelo,0/-3.65/reloj en tierra}{
+        \draw[fill=white,gray!80!black,very thick] (\x,\y) circle (0.38);
+        \draw[gray!45,thin] (\x,\y) circle (0.29);
+        \draw[gray!80!black,thick] (\x,\y) -- ++(90:0.2);
+        \draw[gray!80!black,thick] (\x,\y) -- ++(25:0.16);
+        \fill[blue!75!black] (\x,\y) circle (1.4pt);
+        \begin{scope}[shift={(\x,\y-0.17)},scale=0.32]
+            \draw[blue!65!black,thin,rotate=25] (0,0) ellipse (0.42 and 0.15);
+            \draw[blue!65!black,thin,rotate=-25] (0,0) ellipse (0.42 and 0.15);
+            \fill[red!70!black] (0,0) circle (1.2pt);
+        \end{scope}
+        \node[font=\scriptsize] at (\x,\y-0.58) {\label};
+    }
+\end{tikzpicture}
+\caption{Representación esquemática del experimento de Hafele y Keating. Relojes atómicos transportados en vuelos alrededor del mundo, hacia el este y hacia el oeste, se comparan al regresar con un reloj que permaneció en tierra. Las diferencias acumuladas combinan efectos cinemáticos y gravitacionales.}
+\label{fig:hafele}
+\end{figure}

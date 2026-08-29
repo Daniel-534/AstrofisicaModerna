@@ -1,0 +1,49 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,x=1.10cm,y=0.95cm]
+    \def\ang{24}
+    \coordinate (O) at (0,0);
+    \coordinate (Xp) at (\ang:4.75);
+    \coordinate (Tp) at (90-\ang:4.75);
+
+    \fill[minkfieldred] (O) -- (Xp) -- ($(Xp)+(Tp)$) -- (Tp) -- cycle;
+    \foreach \i in {-4,-3,...,5}{
+        \draw[mink grid x] (\i*0.7,-0.8) -- (\i*0.7,5.0);
+        \draw[mink grid t] (-4.15,\i*0.7) -- (4.85,\i*0.7);
+        \draw[mink grid prime] (\ang:{\i*0.66}) -- ++(90-\ang:4.65);
+        \draw[mink grid prime] (90-\ang:{\i*0.66}) -- ++(\ang:4.65);
+    }
+    \draw[mink axis] (0,-0.85) -- (0,5.15) node[left] {$ct$};
+    \draw[mink axis] (-4.2,0) -- (5.0,0) node[below] {$x$};
+    \draw[mink axis prime] (90-\ang:-0.8) -- (Tp) node[right] {$ct'$};
+    \draw[mink axis prime] (\ang:-0.8) -- (Xp) node[below right] {$x'$};
+
+    \coordinate (A) at (0.70,0.75);
+    \coordinate (B) at (0.70,3.65);
+    \path[name path=constantxprime] (A) -- ($(A)+(90-\ang:6.0)$);
+    \path[name path=constanttprime] (B) -- ($(B)+(\ang:6.0)$);
+    \path[name intersections={of=constantxprime and constanttprime,by=C}];
+
+    \fill[minkpurple,opacity=0.10] (A) -- (B) -- (C) -- cycle;
+    \draw[minkdarkblue,line width=2.2pt,line cap=round] (A) -- (B)
+        node[midway,left=5pt] {\contour{white}{$c\Delta\tau$}};
+    \draw[minkdarkred,line width=1.8pt,line cap=round] (B) -- (C)
+        node[midway,above=5pt] {\contour{white}{$\Delta x'$}};
+    \draw[minkdarkred,line width=1.8pt,line cap=round] (C) -- (A)
+        node[midway,right=5pt] {\contour{white}{$c\Delta t'$}};
+
+    \fill[minkdarkblue] (A) circle (2.3pt)
+        node[below left=2pt] {\contour{white}{tic}};
+    \fill[minkdarkblue] (B) circle (2.3pt)
+        node[above left=2pt] {\contour{white}{toc}};
+    \filldraw[fill=white,draw=minkdarkred,line width=1pt] (C) circle (2.1pt);
+
+    \node[minkdarkblue,font=\small,align=left,anchor=west] at (-3.85,4.55)
+        {reloj fijo en $S$\\$\Delta x=0$};
+    \draw[mink small arrow,minkdarkblue] (-2.05,4.15) -- (B);
+    \node[minkdarkred,font=\small,align=left,anchor=west] at (2.85,4.55)
+        {$\Delta t'=\gamma\Delta\tau$\\el intervalo de $S'$ es mayor};
+\end{tikzpicture}
+\caption{Caso complementario. El reloj está en reposo en $S$, por lo que el segmento vertical entre tic y toc representa el tiempo propio $\Delta\tau$. En la rejilla móvil, esos eventos presentan una separación espacial $\Delta x'$ y un intervalo temporal mayor $\Delta t'$.}
+\label{fig:dilatacion_S}
+\end{figure}

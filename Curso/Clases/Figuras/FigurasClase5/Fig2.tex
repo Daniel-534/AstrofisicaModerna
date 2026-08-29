@@ -1,0 +1,61 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.0]
+    \clip (0,0) circle (4.65);
+
+    % Cascarones de distancia alrededor de la Vía Láctea
+    \foreach \r in {0.8,1.55,2.3,3.05,3.8,4.55}
+        \draw[gray!35,densely dotted] (0,0) circle (\r);
+
+    % Nodos principales de la red
+    \coordinate (A) at (-3.8,1.5);
+    \coordinate (B) at (-2.6,3.2);
+    \coordinate (C) at (-1.7,0.7);
+    \coordinate (D) at (-3.0,-2.3);
+    \coordinate (E) at (-0.9,-3.6);
+    \coordinate (F) at (0.7,-1.5);
+    \coordinate (G) at (1.2,1.0);
+    \coordinate (H) at (2.7,3.0);
+    \coordinate (I) at (3.8,0.8);
+    \coordinate (J) at (3.1,-2.7);
+    \coordinate (K) at (0.2,3.9);
+    \coordinate (L) at (4.3,-0.9);
+
+    % Filamentos principales y secundarios
+    \foreach \u/\v in {A/B,A/C,A/D,B/C,B/K,C/G,C/F,C/D,D/E,D/F,E/F,E/J,F/G,F/J,G/H,G/I,G/K,H/I,H/K,I/J,I/L,J/L}
+        \draw[gray!65,very thick] (\u) -- (\v);
+
+    \foreach \u/\v in {A/K,B/H,C/E,D/J,E/I,F/H,G/J,K/I,B/F,D/G}
+        \draw[gray!45,thin] (\u) -- (\v);
+
+    % Cúmulos en intersecciones de filamentos
+    \foreach \p in {A,B,C,D,E,F,G,H,I,J,K,L}
+        \filldraw[gray!80!black] (\p) circle (2.8pt);
+
+    % Galaxias trazadoras distribuidas sobre la red
+    \foreach \x/\y in {
+        -3.45/1.98,-3.05/2.52,-2.22/2.38,-2.08/1.62,
+        -3.42/0.87,-2.92/0.25,-2.48/-0.15,-2.12/-1.12,
+        -2.62/-2.63,-2.05/-3.05,-1.45/-3.48,-0.72/-2.92,
+        -0.18/-2.25,0.18/-1.92,0.65/-0.48,0.92/0.25,
+        1.48/1.42,2.05/2.05,2.35/2.55,3.02/2.35,
+        3.42/1.65,3.58/0.05,3.34/-0.72,3.18/-1.68,
+        2.45/-2.45,1.82/-2.05,1.22/-1.72,0.35/2.82,
+        -0.18/3.43,-1.12/3.72,-2.95/-1.45,2.08/0.72
+    }
+        \fill[red!75!black] (\x,\y) circle (1.45pt);
+
+    % Vía Láctea en el centro
+    \filldraw[blue!75!black] (0,0) circle (4pt);
+    \foreach \ang in {0,45,...,315}
+        \draw[blue!75!black,thick] (0,0) ++(\ang:0.12) -- ++(\ang:0.16);
+    \node[blue!75!black,font=\small,anchor=south west] at (0.15,0.12)
+        {Vía Láctea};
+
+    \node[gray!70!black,font=\scriptsize,align=center] at (1.55,4.15)
+        {cascarones\\de distancia};
+    \draw[->,gray!70!black,thin] (2.05,3.98) -- (2.62,3.58);
+\end{tikzpicture}
+\caption{Representación esquemática de la red cósmica en el universo local. Los filamentos grises conectan regiones de alta densidad asociadas con grupos y cúmulos; los puntos rojos representan galaxias trazadoras y las circunferencias punteadas indican cascarones de distancia alrededor de la Vía Láctea. La figura ilustra la geometría filamentaria, pero no reproduce datos de una simulación específica.}
+\label{fig:web}
+\end{figure}

@@ -1,0 +1,29 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.08]
+    \fill[blue!8] (-4.1,-1.25) rectangle (4.1,1.35);
+    \fill[green!18!black!8] (-4.1,-1.50) rectangle (4.1,-1.25);
+    \draw[gray!70,dashed] (-4.1,1.05) -- (4.1,1.05);
+    \draw[green!55!black,very thick] (-4.1,-1.25) -- (4.1,-1.25);
+    \node[gray!70!black,font=\scriptsize,anchor=west] at (-4.0,1.20)
+        {atmósfera superior};
+    \node[green!45!black,font=\scriptsize,anchor=west] at (-4.0,-1.39)
+        {superficie terrestre};
+
+    \filldraw[fill=minklightblue,draw=minkdarkblue,line width=1.2pt]
+        (-0.75,1.05) circle (0.23);
+    \node[minkdarkblue,font=\bfseries] at (-0.75,1.05) {$\mu$};
+    \node[minkdarkblue,font=\small,align=center] at (-2.45,-0.15)
+        {$\tau_\mu$\\vida media propia};
+
+    \draw[-{Latex},minkgreen,line width=2.2pt] (-0.75,-1.05) -- (-0.75,0.60)
+        node[midway,right=7pt,font=\small] {la Tierra se acerca};
+    \draw[{Latex}-{Latex},black,line width=1.2pt]
+        (3.50,-1.20) -- (3.50,1.00)
+        node[midway,right=6pt] {$L_0/\gamma$};
+    \node[minkdarkred,font=\small] at (1.45,-0.45)
+        {atmósfera contraída};
+\end{tikzpicture}
+\caption{Descripción desde el marco propio del muón. Su vida media es $\tau_\mu$, pero el grosor de la atmósfera se reduce a $L_0/\gamma$; por ello la superficie, que se aproxima al muón, lo alcanza antes de su desintegración.}
+\label{fig:muones_muon}
+\end{figure}
