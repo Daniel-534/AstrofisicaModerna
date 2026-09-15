@@ -1,0 +1,188 @@
+\chapter{Clase Taller 4}
+
+\section{Preguntas Think--Pair--Share Efecto Doppler Dinámica Relativista}
+
+\textbf{1. Quasar SDSS 1030+0524}
+La línea Lyman-$\alpha$ de H en reposo está en $\lambda_{rest}= 121.6$ nm. Desde la Tierra se observa la emisión de esa línea de un quásar llamado SDSS 1030+0524, pero está ubicada en $\lambda_{obs}= 885.2$ nm. Use la definición de redshift
+$z= \frac{\lambda_{obs} - \lambda_{rest}}{\lambda_{rest}} = \delta^{-1} -1, \delta=\sqrt{\frac{1 - \beta}{1+ \beta}}$
+para hallar la rapidez de recesión $v_r/c$ del quásar.
+\begin{enumerate}[a)]
+    \item $v_r/c \simeq 0.900$
+    \item $v_r/c \simeq 0.850$
+    \item \textcolor{red}{$v_r/c \simeq 0.963$}
+    \item $v_r/c \simeq 0.991$
+\end{enumerate}
+
+\textbf{Justificación.} De la relación Doppler indicada en el enunciado se obtiene
+\[
+1+z=\frac{885.2}{121.6}\approx7.2796,
+\qquad
+(1+z)^2=\frac{1+\beta}{1-\beta}.
+\]
+Despejando,
+\[
+\frac{v_r}{c}=\beta=\frac{(1+z)^2-1}{(1+z)^2+1}\approx0.963.
+\]
+Esta es la velocidad Doppler equivalente bajo el modelo supuesto en el ejercicio.
+
+\textbf{2. Moméntum relativista de un protón}
+Un protón se mueve con rapidez $v= 0.86 c$. Usando $m_p c^2= 938$ MeV, ¿cuál es su moméntum $p$?(da la respuesta en MeV/c y su equivalente en SI).
+\begin{enumerate}[a)]
+    \item $p= 8.06 \times 10^2$ MeV/c($\approx 4.30 \times 10^{-19}$ kg m/s)
+    \item $p= 9.38 \times 10^2$ MeV/c($\approx 5.01 \times 10^{-19}$ kg m/s)
+    \item $p= 1.84 \times 10^3$ MeV/c($\approx 9.81 \times 10^{-19}$ kg m/s)
+    \item \textcolor{red}{$p= 1.58 \times 10^3$ MeV/c($\approx 8.44 \times 10^{-19}$ kg m/s)}
+\end{enumerate}
+
+\textbf{Justificación.} El moméntum relativista es $p=\gamma m_pv$, con $\gamma=(1-0.86^2)^{-1/2}\approx1.960$. Por tanto,
+\[
+pc=\gamma\beta m_pc^2\approx(1.960)(0.86)(938\ \mathrm{MeV})
+\approx1.58\times10^3\ \mathrm{MeV}.
+\]
+Usando $1\ \mathrm{MeV}/c\approx5.34\times10^{-22}\ \mathrm{kg\,m/s}$ y el valor redondeado de $p$, se obtiene $p\approx8.44\times10^{-19}\ \mathrm{kg\,m/s}$.
+
+\textbf{3. Electrón relativista}
+Un electrón tiene energía cinética $K= 10.0$ MeV. Con $m_e c^2= 0.511$ MeV encuentre su moméntum $p$(en MeV/c).
+\begin{enumerate}[a)]
+    \item \textcolor{red}{$p= 10.5$ MeV/c}
+    \item $p= 9.4$ MeV/c
+    \item $p= 10.0$ MeV/c
+    \item $p= 3.2$ MeV/c
+\end{enumerate}
+
+\textbf{Justificación.} La energía total es $E=K+m_ec^2$, no solo la energía cinética. A partir de $E^2=p^2c^2+m_e^2c^4$,
+\[
+pc=\sqrt{(K+m_ec^2)^2-m_e^2c^4}
+=\sqrt{K^2+2Km_ec^2}
+=\sqrt{10.0^2+2(10.0)(0.511)}\ \mathrm{MeV}.
+\]
+Así, $p\approx10.4986\ \mathrm{MeV}/c\approx10.5\ \mathrm{MeV}/c$.
+
+\textbf{4. Stanford Linear Collider}
+En el Stanford Linear Collider, electrones se aceleran a una energía cinética $K= 50$ GeV. Con $m_e c^2= 0.511$ MeV$= 0.511 \times 10^{-3}$ GeV, encuentre su rapidez como fracción de $c$.
+Pista 1: $K=(\gamma -1)mc^2$
+Pista 2: Use la expansión de Taylor$(1+ \alpha x)^r \approx 1+ \alpha rx+...$
+\begin{enumerate}[a)]
+    \item \textcolor{red}{$v/c \approx 0.999 999 999 948$}
+    \item $v/c= 0.9999999$
+    \item $v/c= 0.99999$
+    \item $v/c= 0.999$
+\end{enumerate}
+
+\textbf{Justificación.} De $K=(\gamma-1)m_ec^2$ se sigue que
+\[
+\gamma=1+\frac{50}{0.511\times10^{-3}}\approx9.7848\times10^4.
+\]
+Como $\gamma\gg1$, la expansión $\sqrt{1-\varepsilon}\approx1-\varepsilon/2$ permite escribir
+\[
+\frac{v}{c}=\sqrt{1-\frac{1}{\gamma^2}}
+\approx1-\frac{1}{2\gamma^2}
+\approx1-5.2223\times10^{-11}
+\approx0.999\,999\,999\,948.
+\]
+
+\textbf{5. Creación de muones}
+Un colisionador de electrones y positrones produce muones mediante la reacción
+$e^- + e^+ \rightarrow \mu^- + \mu^+$.
+En el marco del centro de momento($p'= 0$), ¿cuál es la mínima velocidad de los electrones(y positrones) para que se produzca esta reacción (generando un par de muones en reposo), en términos de las masas $m_e$ y $m_\mu$? Pista: Considere lo que debería ocurrir en los límites $m_e= m_\mu$ y $m_e \ll m_\mu$.
+\begin{enumerate}[a)]
+    \item $(1 - \frac{m_\mu}{m_e}) c$
+    \item $(\sqrt{1 - \frac{m_\mu}{m_e}}) c$
+    \item $(\sqrt{1 - \frac{m_e^2}{2m_\mu^2}}) c$
+    \item \textcolor{red}{$(\sqrt{1 - \frac{m_e^2}{m_\mu^2}}) c$}
+\end{enumerate}
+
+\textbf{Justificación.} En el centro de momento, el electrón y el positrón tienen energías iguales. En el umbral, toda la energía inicial corresponde a la energía de reposo de los dos muones:
+\[
+2\gamma m_ec^2=2m_\mu c^2,
+\qquad \gamma=\frac{m_\mu}{m_e},
+\qquad v_{\min}=c\sqrt{1-\frac{m_e^2}{m_\mu^2}}.
+\]
+La expresión da $v_{\min}=0$ si $m_e=m_\mu$ y se aproxima a $c$ si $m_e\ll m_\mu$, como sugieren los límites propuestos.
+
+\textbf{6. Desintegración de un kaón}
+Un mesón K neutro con masa $m_K$ se mueve con una energía cinética $K_K$.
+Decae en un mesón $\pi$ con masa $m_\pi$ y otra partícula X de masa desconocida. El mesón $\pi$ se mueve en la dirección del K original con un moméntum $p_\pi$. Vamos a encontrar la masa de la partícula desconocida $m_X$ a través de las leyes de conservación del 4-moméntum.
+Para esto vamos a aprovechar la simetría del problema. ¿Cómo expresamos la conservación del 4-moméntum total desde el MR propio del mesón K (que llamaremos $S'$)?
+\begin{enumerate}[a)]
+    \item $P'_{antes}= P'_{despues}= p_K; E'_{antes}= E'_{despues}= m_K c^2$
+    \item $P'_{antes}= P'_{despues}= p_K; E'_{antes}= E'_{despues}= E_K$
+    \item \textcolor{red}{$P'_{antes}= P'_{despues}= 0; E'_{antes}= E'_{despues}= m_K c^2$}
+    \item $P'_{antes}= P'_{despues}= 0; E'_{antes}= E'_{despues}= 0$
+\end{enumerate}
+
+\textbf{Justificación.} En el marco propio $S'$, el kaón está en reposo: su momento espacial es cero y su energía es $m_Kc^2$. La conservación del cuatro-momento exige
+\[
+\mathbf{p}'_\pi+\mathbf{p}'_X=\mathbf{0},
+\qquad E'_\pi+E'_X=m_Kc^2.
+\]
+Por tanto, el momento espacial total es cero antes y después del decaimiento, pero la energía total no es cero.
+
+\textbf{7. Desintegración de un kaón}
+Un mesón K neutro(masa $m_K= 497.7$ MeV/c$^2$) se mueve con una energía cinética de $K_K= 77.0$ MeV. Decae en un mesón $\pi$ y otra partícula X de masa desconocida. El mesón $\pi$ se mueve en la dirección del K original con un moméntum $p_\pi$. Vamos a encontrar la masa de la partícula desconocida $m_X$ a través de las leyes de conservación del 4-moméntum.
+Trabajaremos el problema en el MR propio del mesón K($S'$). Por esto debemos transformar $p_\pi$ a $S'$.
+Para usar las Transformaciones de Lorentz, es necesario encontrar $\gamma$ y $\beta$(recuerde que $E= \gamma mc^2$; $p= \beta E$):
+\begin{enumerate}[a)]
+    \item \textcolor{red}{$\gamma \approx 1.1547; \beta \approx 0.5000$}
+    \item $\gamma \approx 0.1547; \beta \approx 0.5000$
+    \item $\gamma \approx 1.1547; \beta \approx 0.995$
+    \item $\gamma \approx 0.1547; \beta \approx 0.995$
+\end{enumerate}
+
+\textbf{Justificación.} La energía total del kaón incluye su energía de reposo:
+\[
+E_K=K_K+m_Kc^2=77.0+497.7=574.7\ \mathrm{MeV}.
+\]
+Entonces,
+\[
+\gamma=\frac{E_K}{m_Kc^2}=\frac{574.7}{497.7}\approx1.1547,
+\qquad \beta=\sqrt{1-\frac{1}{\gamma^2}}\approx0.5000.
+\]
+Al conservar explícitamente los factores de $c$, la relación entre momento y energía es $pc=\beta E$; $p=\beta E$ supone unidades con $c=1$.
+
+\textbf{8. Desintegración de un kaón}
+Un mesón K neutro decae en un mesón $\pi$(masa 139.6 MeV/c$^2$) y otra partícula X de masa desconocida. El mesón $\pi$ se mueve en la dirección del K original con un moméntum $p_\pi= 381.6$ MeV/c. Vamos a encontrar la masa de la partícula desconocida $m_X$ a través de las leyes de conservación del 4-moméntum.
+Las TL al sistema $S'$ son:
+$E'_\pi= \gamma(E_\pi - \beta c p_\pi)$; $p'_\pi= \gamma(p_\pi - \beta E_\pi/c)$
+Esto significa que también se requiere calcular $E_\pi$. Para $\gamma \approx 1.1547$; $\beta \approx 0.5000$, ¿cuál de estas opciones es correcta?
+\begin{enumerate}[a)]
+    \item $E_\pi \approx 381.60$ MeV; $E'_\pi \approx 248.85$ MeV; $p'_\pi \approx 206.00$ MeV/c
+    \item $E_\pi \approx 406.33$ MeV; $E'_\pi \approx 157.22$ MeV; $p'_\pi \approx 206.00$ MeV/c
+    \item \textcolor{red}{$E_\pi \approx 406.33$ MeV; $E'_\pi \approx 248.85$ MeV; $p'_\pi \approx 206.00$ MeV/c}
+    \item $E_\pi \approx 406.33$ MeV; $E'_\pi \approx 157.22$ MeV; $p'_\pi \approx 381.60$ MeV/c
+\end{enumerate}
+
+\textbf{Justificación.} Primero se calcula la energía total del pión con la relación energía--momento:
+\[
+E_\pi=\sqrt{(p_\pi c)^2+(m_\pi c^2)^2}
+=\sqrt{381.6^2+139.6^2}\ \mathrm{MeV}
+\approx406.33\ \mathrm{MeV}.
+\]
+Aplicando el boost al reposo del kaón con los factores indicados,
+\begin{align*}
+E'_\pi&=\gamma(E_\pi-\beta cp_\pi)\approx248.88\ \mathrm{MeV},\\
+p'_\pi c&=\gamma(cp_\pi-\beta E_\pi)\approx206.04\ \mathrm{MeV}.
+\end{align*}
+La opción c) es la correspondiente, aunque sus valores $248.85$ y $206.00$ presentan pequeñas diferencias numéricas respecto al cálculo con los datos dados.
+
+\textbf{9. Desintegración de un kaón}
+Un mesón K neutro(masa $m_K= 497.7$ MeV/c$^2$) decae en un mesón $\pi$ (masa 139.6 MeV/c$^2$) y otra partícula X de masa desconocida que se mueven en direcciones contrarias. Recordando que
+$P'_{antes}= P'_{despues}= 0; E'_{antes}= E'_{despues}= m_K c^2$
+¿Cuál es el moméntum y energía de la partícula X en $S'$? Tenga en cuenta que $p'_\pi \approx 206.00$ MeV/c; $E'_\pi \approx 248.85$ MeV.
+\begin{enumerate}[a)]
+    \item $p'_X \approx 412.00$ MeV/c; $E'_X \approx 248.85$ MeV
+    \item $p'_X \approx 412.00$ MeV/c; $E'_X \approx 248.85$ MeV
+    \item $p'_X \approx 206.00$ MeV/c; $E'_X \approx 487.7$ MeV
+    \item \textcolor{red}{$p'_X \approx 206.00$ MeV/c; $E'_X \approx 248.85$ MeV}
+\end{enumerate}
+
+\textbf{Justificación.} En el reposo del kaón, la conservación del momento obliga a que los productos salgan en sentidos opuestos:
+\[
+\mathbf{p}'_X=-\mathbf{p}'_\pi,
+\qquad |\mathbf{p}'_X|=|\mathbf{p}'_\pi|\approx206.00\ \mathrm{MeV}/c.
+\]
+Usando los valores proporcionados, la conservación de la energía da
+\[
+E'_X=m_Kc^2-E'_\pi=497.7-248.85=248.85\ \mathrm{MeV}.
+\]
+El valor positivo de la opción d) representa la magnitud del momento. Si el eje positivo apunta en la dirección del pión, la componente de momento de X es negativa.

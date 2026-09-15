@@ -1,0 +1,86 @@
+\chapter{Clase Taller 3}
+
+
+\section{Resumen y Apuntes: Transformaciones de Lorentz}
+
+\textbf{1. Boost de Lorentz en el eje x}
+¿Cuáles son las ecuaciones de transformación canónicas para $t'$ y $x'$?
+\begin{enumerate}[a)]
+    \item $t' = \gamma(t + \frac{v}{c^2}x), \quad x' = \gamma(x + vt)$
+    \item \textcolor{red}{$t' = \gamma(t - \frac{v}{c^2}x), \quad x' = \gamma(x - vt)$}
+    \item $t' = \gamma(t - vx), \quad x' = \gamma(x - \frac{v}{c}t)$
+\end{enumerate}
+
+\textbf{Justificación.} Se supone que $S'$ se mueve con velocidad $+v$ respecto a $S$ y que sus orígenes coinciden en $t=t'=0$. El origen de $S'$ sigue $x=vt$, por lo que $x'$ debe ser proporcional a $x-vt$. La invariancia de la velocidad de la luz exige transformar también el tiempo mediante $t'=\gamma(t-vx/c^2)$. Los signos positivos corresponden a la transformación inversa.
+
+\textbf{2. Factor de Lorentz}
+¿Cuál es la expresión correcta para el factor $\gamma$?
+\begin{enumerate}[a)]
+    \item \textcolor{red}{$\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}$}
+    \item $\gamma = \sqrt{1 - v^2/c^2}$
+    \item $\gamma = \frac{1}{1 - v/c}$
+\end{enumerate}
+
+\textbf{Justificación.} Al sustituir las transformaciones de Lorentz en el intervalo, se obtiene
+\[
+c^2t'^2-x'^2=\gamma^2\left(1-\frac{v^2}{c^2}\right)(c^2t^2-x^2).
+\]
+Su invariancia exige $\gamma^2(1-v^2/c^2)=1$. Se elige la raíz positiva para recuperar $\gamma\to1$ cuando $v\to0$.
+
+\textbf{3. Suma relativista de velocidades}
+¿Cuál es la fórmula para sumar dos velocidades $u$ y $v$ en la misma dirección?
+\begin{enumerate}[a)]
+    \item $w = u + v$
+    \item $w = \frac{u + v}{1 - \frac{uv}{c^2}}$
+    \item \textcolor{red}{$w = \frac{u + v}{1 + \frac{uv}{c^2}}$}
+\end{enumerate}
+
+\textbf{Justificación.} Si un objeto tiene velocidad $u=dx'/dt'$ en $S'$ y este marco se mueve con velocidad $v$ respecto a $S$, las transformaciones inversas dan $dx=\gamma(dx'+v\,dt')$ y $dt=\gamma(dt'+v\,dx'/c^2)$. Al dividir,
+\[
+w=\frac{dx}{dt}=\frac{u+v}{1+uv/c^2}.
+\]
+Para velocidades pequeñas se recupera $w\approx u+v$, mientras que para $u=c$ se obtiene $w=c$.
+
+\textbf{4. Intervalo espacio-temporal}
+¿Cuál es la definición del intervalo $\Delta s^2$ (con firma +, -, -, -)?
+\begin{enumerate}[a)]
+    \item $\Delta s^2 = \Delta x^2 + \Delta y^2 + \Delta z^2 - c^2\Delta t^2$
+    \item \textcolor{red}{$\Delta s^2 = c^2\Delta t^2 - \Delta x^2 - \Delta y^2 - \Delta z^2$}
+    \item $\Delta s^2 = c^2\Delta t^2 + \Delta x^2 + \Delta y^2 + \Delta z^2$
+\end{enumerate}
+
+\textbf{Justificación.} Con la signatura $(+,-,-,-)$, la métrica de Minkowski asigna signo positivo a la componente temporal $c\Delta t$ y negativo a las tres componentes espaciales. Por ello,
+\[
+\Delta s^2=c^2\Delta t^2-\Delta x^2-\Delta y^2-\Delta z^2.
+\]
+Esta combinación permanece invariante bajo transformaciones de Lorentz, aunque las separaciones temporales y espaciales cambien por separado.
+
+\textbf{5. Clasificación de eventos: Timelike}
+¿Qué condición cumple un evento clasificado como "Timelike" (temporaloide)?
+\begin{enumerate}[a)]
+    \item \textcolor{red}{$\Delta s^2 > 0$}
+    \item $\Delta s^2 = 0$
+    \item $\Delta s^2 < 0$
+\end{enumerate}
+
+\textbf{Justificación.} La clasificación se refiere a la separación entre dos eventos, no a un evento aislado. Definiendo $\Delta r=\sqrt{\Delta x^2+\Delta y^2+\Delta z^2}$, una separación temporaloide cumple $c|\Delta t|>\Delta r$; por tanto, $\Delta s^2=c^2\Delta t^2-\Delta r^2>0$. Los eventos pueden conectarse mediante una trayectoria con rapidez menor que $c$.
+
+\textbf{6. Clasificación de eventos: Lightlike}
+¿Qué condición cumple un evento clasificado como "Lightlike" (luz)?
+\begin{enumerate}[a)]
+    \item $\Delta s^2 > 0$
+    \item \textcolor{red}{$\Delta s^2 = 0$}
+    \item $\Delta s^2 < 0$
+\end{enumerate}
+
+\textbf{Justificación.} Dos eventos distintos con separación luminosa cumplen $\Delta r=c|\Delta t|$, donde $\Delta r$ es su separación espacial. Así, $\Delta s^2=c^2\Delta t^2-\Delta r^2=0$: una señal luminosa puede recorrer exactamente esa distancia en el intervalo temporal entre ambos eventos.
+
+\textbf{7. Clasificación de eventos: Spacelike}
+¿Qué condición cumple un evento clasificado como "Spacelike" (espacialoide)?
+\begin{enumerate}[a)]
+    \item $\Delta s^2 > 0$
+    \item $\Delta s^2 = 0$
+    \item \textcolor{red}{$\Delta s^2 < 0$}
+\end{enumerate}
+
+\textbf{Justificación.} Una separación espacialoide cumple $\Delta r>c|\Delta t|$, de modo que $\Delta s^2=c^2\Delta t^2-\Delta r^2<0$. Conectar esos eventos requeriría una señal más rápida que la luz (o una transmisión instantánea si $\Delta t=0$), por lo que no pueden estar causalmente conectados.

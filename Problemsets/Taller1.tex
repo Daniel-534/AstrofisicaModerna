@@ -1,0 +1,120 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2cm]{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\title{Taller 1\\[0.3em]\large Astrofísica Moderna}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problema 1}
+
+\subsection{Enunciado}
+Las componentes de la velocidad de un rayo de luz medidas en un marco de referencia inercial $S$ están dadas por $u_x = c \sin\theta \cos\phi$, $u_y = c \sin\theta \sin\phi$ y $u_z = c \cos\theta$. 
+a) Demuestre que la magnitud de la velocidad es $u = c$. 
+b) Utilice las ecuaciones de transformación de velocidad de Lorentz para demostrar que, medido en otro marco de referencia inercial $S'$ que se mueve a velocidad $v$ respecto a $S$, la velocidad de la luz también es $u' = c$, confirmando así el segundo postulado de la relatividad especial.
+
+\subsection{Solución}
+\textbf{Parte a)}
+La magnitud de la velocidad se define como $u = \sqrt{u_x^2 + u_y^2 + u_z^2}$. Sustituimos las componentes dadas:
+$$ u = \sqrt{(c \sin\theta \cos\phi)^2 + (c \sin\theta \sin\phi)^2 + (c \cos\theta)^2} $$
+Factorizamos $c^2$ y agrupamos los términos con $\sin\theta$:
+$$ u = c \sqrt{\sin^2\theta (\cos^2\phi + \sin^2\phi) + \cos^2\theta} $$
+Aplicando la identidad trigonométrica fundamental $\cos^2\phi + \sin^2\phi = 1$:
+$$ u = c \sqrt{\sin^2\theta (1) + \cos^2\theta} = c \sqrt{\sin^2\theta + \cos^2\theta} $$
+Nuevamente, como $\sin^2\theta + \cos^2\theta = 1$, obtenemos el resultado esperado:
+$$ u = c \sqrt{1} = c $$
+
+\textbf{Parte b)}
+Las transformaciones de Lorentz para las componentes de la velocidad desde $S$ hacia $S'$ son:
+$$ u_x' = \frac{u_x - v}{1 - \frac{u_x v}{c^2}}, \quad u_y' = \frac{u_y}{\gamma \left(1 - \frac{u_x v}{c^2}\right)}, \quad u_z' = \frac{u_z}{\gamma \left(1 - \frac{u_x v}{c^2}\right)} $$
+Calculamos el cuadrado de la magnitud de la velocidad en $S'$:
+$$ u'^2 = u_x'^2 + u_y'^2 + u_z'^2 = \frac{(u_x - v)^2 + \frac{u_y^2}{\gamma^2} + \frac{u_z^2}{\gamma^2}}{\left(1 - \frac{u_x v}{c^2}\right)^2} $$
+Recordamos que $\frac{1}{\gamma^2} = 1 - \frac{v^2}{c^2}$ y que, por la parte a), $u_y^2 + u_z^2 = u^2 - u_x^2 = c^2 - u_x^2$. Sustituimos esto en el numerador:
+$$ \text{Numerador} = (u_x - v)^2 + (c^2 - u_x^2)\left(1 - \frac{v^2}{c^2}\right) $$
+Expandimos los productos:
+$$ = u_x^2 - 2u_x v + v^2 + c^2 - v^2 - u_x^2 + \frac{u_x^2 v^2}{c^2} $$
+Cancelamos los términos $u_x^2$ y $v^2$:
+$$ = c^2 - 2u_x v + \frac{u_x^2 v^2}{c^2} $$
+Factorizamos $c^2$ en el resultado:
+$$ = c^2 \left(1 - \frac{2u_x v}{c^2} + \frac{u_x^2 v^2}{c^4}\right) = c^2 \left(1 - \frac{u_x v}{c^2}\right)^2 $$
+Sustituimos este numerador simplificado de vuelta en la expresión de $u'^2$:
+$$ u'^2 = \frac{c^2 \left(1 - \frac{u_x v}{c^2}\right)^2}{\left(1 - \frac{u_x v}{c^2}\right)^2} = c^2 $$
+Por lo tanto, la magnitud de la velocidad en el marco $S'$ es $u' = c$.
+
+\section{Problema 2}
+
+\subsection{Enunciado}
+Aplique las transformaciones de Galileo a la Ley de Gauss para el campo magnético ($\nabla \cdot \mathbf{B} = 0$) para demostrar que dicha ley no es invariante bajo este tipo de transformaciones. Asuma que la densidad de carga $\rho$ y el campo eléctrico $\mathbf{E}$ son invariantes, utilice la definición de densidad de corriente $\mathbf{J} = \rho \mathbf{u}$, y suponga que la ecuación de Ampère-Maxwell se cumple en el marco primado para deducir cómo se transforma $\mathbf{B}'$.
+
+\subsection{Solución}
+Bajo las transformaciones de Galileo ($x' = x - vt$, $y' = y$, $z' = z$, $t' = t$), los operadores diferenciales se transforman como:
+$$ \nabla' = \nabla, \quad \frac{\partial}{\partial t'} = \frac{\partial}{\partial t} - v \frac{\partial}{\partial x} $$
+La densidad de corriente en el marco primado es $\mathbf{J}' = \rho' \mathbf{u}'$. Dado que $\rho' = \rho$ y la velocidad se transforma galileanamente ($\mathbf{u}' = \mathbf{u} - \mathbf{v}$), tenemos:
+$$ \mathbf{J}' = \rho (\mathbf{u} - \mathbf{v}) = \mathbf{J} - \rho \mathbf{v} $$
+Asumimos que la ley de Ampère-Maxwell es válida en el marco $S'$:
+$$ \nabla' \times \mathbf{B}' = \mu_0 \mathbf{J}' + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}'}{\partial t'} $$
+Sustituimos las transformaciones galileanas y $\mathbf{E}' = \mathbf{E}$ en esta ecuación:
+$$ \nabla \times \mathbf{B}' = \mu_0 (\mathbf{J} - \rho \mathbf{v}) + \mu_0 \epsilon_0 \left( \frac{\partial \mathbf{E}}{\partial t} - v \frac{\partial \mathbf{E}}{\partial x} \right) $$
+Reordenamos para agrupar los términos que corresponden a la ley de Ampère-Maxwell en el marco original $S$ ($\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}$):
+$$ \nabla \times \mathbf{B}' = \left( \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t} \right) - \mu_0 \rho \mathbf{v} - \mu_0 \epsilon_0 v \frac{\partial \mathbf{E}}{\partial x} $$
+$$ \nabla \times \mathbf{B}' = \nabla \times \mathbf{B} - \mu_0 \rho \mathbf{v} - \mu_0 \epsilon_0 v \frac{\partial \mathbf{E}}{\partial x} $$
+Para encontrar la transformación de $\mathbf{B}'$, proponemos la relación $\mathbf{B}' = \mathbf{B} - \frac{1}{c^2} \mathbf{v} \times \mathbf{E}$ (donde $c^2 = 1/\mu_0\epsilon_0$). Para verificar si la Ley de Gauss para el magnetismo se mantiene, calculamos la divergencia de $\mathbf{B}'$ en el marco primado:
+$$ \nabla' \cdot \mathbf{B}' = \nabla \cdot \left( \mathbf{B} - \frac{1}{c^2} \mathbf{v} \times \mathbf{E} \right) $$
+Como en el marco $S$ se cumple que $\nabla \cdot \mathbf{B} = 0$, la ecuación se reduce a:
+$$ \nabla' \cdot \mathbf{B}' = - \frac{1}{c^2} \nabla \cdot (\mathbf{v} \times \mathbf{E}) $$
+Aplicamos la identidad vectorial $\nabla \cdot (\mathbf{v} \times \mathbf{E}) = \mathbf{E} \cdot (\nabla \times \mathbf{v}) - \mathbf{v} \cdot (\nabla \times \mathbf{E})$. Dado que $\mathbf{v}$ es una velocidad constante, su rotacional es cero ($\nabla \times \mathbf{v} = 0$). Además, por la ley de Faraday, $\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$. Sustituyendo esto:
+$$ \nabla' \cdot \mathbf{B}' = - \frac{1}{c^2} \left( - \mathbf{v} \cdot \frac{\partial \mathbf{B}}{\partial t} \right) = \frac{1}{c^2} \mathbf{v} \cdot \frac{\partial \mathbf{B}}{\partial t} $$
+Este resultado es distinto de cero en el caso general (siempre que el campo magnético varíe en el tiempo y tenga una componente paralela a la velocidad relativa). Por lo tanto, $\nabla' \cdot \mathbf{B}' \neq 0$, lo que demuestra que la Ley de Gauss para el magnetismo no es invariante bajo transformaciones de Galileo.
+
+\section{Problema 3}
+
+\subsection{Enunciado}
+Considere la desintegración de una partícula $\Lambda^0 \to p + \pi^-$, con masas (en MeV/$c^2$): $m_\Lambda = 1115.683$, $m_p = 938.272$, $m_\pi = 139.570$. Si la partícula $\Lambda^0$ se mueve a la derecha con un factor de Lorentz $\gamma = 3$, calcule la energía total relativista y el moméntum del protón resultante (asumiendo emisión colineal hacia adelante en el marco de reposo).
+
+\subsection{Solución}
+Primero, analizamos la desintegración en el marco de reposo del $\Lambda^0$ (marco del centro de masa). Por conservación de la energía y el momento, los productos de desintegración salen con momentos de igual magnitud $p^*$ en direcciones opuestas.
+La energía del protón en el marco de reposo ($E_p^*$) se obtiene de la relación de conservación $E_\Lambda^* = E_p^* + E_\pi^*$ y la relación invariante $E^2 = (pc)^2 + (mc^2)^2$. Elevando al cuadrado $E_\pi^* = m_\Lambda c^2 - E_p^*$:
+$$ (E_\pi^*)^2 = (m_\Lambda c^2)^2 - 2 m_\Lambda c^2 E_p^* + (E_p^*)^2 $$
+Sustituyendo $(E_\pi^*)^2 = (p^*c)^2 + (m_\pi c^2)^2$ y $(p^*c)^2 = (E_p^*)^2 - (m_p c^2)^2$:
+$$ (E_p^*)^2 - (m_p c^2)^2 + (m_\pi c^2)^2 = (m_\Lambda c^2)^2 - 2 m_\Lambda c^2 E_p^* + (E_p^*)^2 $$
+Despejando $E_p^*$, obtenemos la fórmula estándar para decaimientos de dos cuerpos:
+$$ E_p^* = \frac{m_\Lambda^2 + m_p^2 - m_\pi^2}{2 m_\Lambda} c^2 $$
+Sustituimos los valores numéricos:
+$$ E_p^* = \frac{1115.683^2 + 938.272^2 - 139.570^2}{2 \times 1115.683} = \frac{1244748.56 + 880354.33 - 19479.78}{2231.366} \approx 943.647 \text{ MeV} $$
+El moméntum en el marco de reposo es:
+$$ p^* c = \sqrt{(E_p^*)^2 - (m_p c^2)^2} = \sqrt{943.647^2 - 938.272^2} \approx 100.575 \text{ MeV} $$
+Ahora, transformamos al marco del laboratorio. El $\Lambda^0$ tiene $\gamma = 3$, por lo que su velocidad es $\beta = \sqrt{1 - 1/\gamma^2} = \sqrt{8/9} = \frac{2\sqrt{2}}{3}$. El producto $\gamma \beta = 2\sqrt{2} \approx 2.828$.
+Asumiendo que el protón es emitido en la dirección del movimiento (hacia la derecha, ángulo $\theta^* = 0$ en el marco de reposo), aplicamos las transformaciones de Lorentz inversas para la energía y el momento:
+$$ E_p = \gamma (E_p^* + \beta c p^* \cos\theta^*) = 3(943.647) + 2\sqrt{2}(100.575)(1) $$
+$$ E_p = 2830.941 + 284.469 \approx 3115.41 \text{ MeV} $$
+$$ p_p c = \gamma (c p^* \cos\theta^* + \beta E_p^*) = 3(100.575)(1) + 2\sqrt{2}(943.647) $$
+$$ p_p c = 301.725 + 2669.045 \approx 2970.77 \text{ MeV} $$
+La energía total relativista del protón en el laboratorio es $3115.41 \text{ MeV}$ y su moméntum es $2970.77 \text{ MeV}/c$.
+
+\section{Problema 4}
+
+\subsection{Enunciado}
+Continuando con el problema anterior, considere que la vida media propia de la partícula $\Lambda^0$ es $\tau_0 \simeq 2.63 \times 10^{-10}$ s (de modo que $c\tau_0 \simeq 7.9$ cm). Estime el recorrido medio $\ell = \gamma \beta c \tau_0$ de la $\Lambda^0$ en el laboratorio para $\gamma = 3.0$.
+
+\subsection{Solución}
+El recorrido medio $\ell$ en el marco del laboratorio se calcula multiplicando la velocidad de la partícula en el laboratorio por su tiempo de vida dilatado. La fórmula proporcionada es:
+$$ \ell = \gamma \beta c \tau_0 $$
+Del problema anterior, sabemos que para $\gamma = 3.0$, el factor cinemático es:
+$$ \gamma \beta = 3.0 \times \frac{2\sqrt{2}}{3} = 2\sqrt{2} \approx 2.8284 $$
+El problema nos proporciona directamente el producto de la velocidad de la luz por la vida media en reposo: $c \tau_0 \simeq 7.9 \text{ cm}$.
+Sustituimos estos valores en la ecuación del recorrido medio:
+$$ \ell = (2\sqrt{2}) \times (7.9 \text{ cm}) $$
+$$ \ell \approx 2.8284 \times 7.9 \text{ cm} \approx 22.34 \text{ cm} $$
+Por lo tanto, la partícula $\Lambda^0$ recorre una distancia media de aproximadamente $22.34 \text{ cm}$ en el marco del laboratorio antes de desintegrarse.
+
+\end{document}
