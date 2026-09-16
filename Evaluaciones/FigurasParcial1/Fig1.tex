@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+    \node[font=\small\bfseries] at (0,1.1) {Antes: kaón en reposo};
+    \node[particula] at (0,0) {$K^0$};
+    \node[align=center] at (0,-1) {$\mathbf p_K^*=0$\\$E_K^*=m_Kc^2$};
+    \draw[-{Latex},thick] (1.5,0) -- (3,0) node[midway,above] {decae};
+    \node[font=\small\bfseries] at (6,1.1) {Después: piones opuestos};
+    \node[particula] (menos) at (4.9,0) {$\pi^-$};
+    \node[particula] (mas) at (7.1,0) {$\pi^+$};
+    \draw[movimiento] (menos.west) -- (3.5,0) node[midway,above] {$-p^*$};
+    \draw[movimiento] (mas.east) -- (8.5,0) node[midway,above] {$+p^*$};
+    \node[align=center] at (6,-1) {$\mathbf p_+^*+\mathbf p_-^*=0$\\$E_+^*=E_-^*=m_Kc^2/2$};
+\end{tikzpicture}
+
+{\small Esquema en el reposo del $K^0$ (asterisco). Se elige el eje positivo hacia el $\pi^+$ en este marco; las flechas representan momentos.}

@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \node[font=\small\bfseries] at (1.5,3.9) {Marco inicial $S$};
+    \draw[eje] (-0.5,0) -- (4.4,0) node[right] {$x$};
+    \draw[eje] (0,-0.4) -- (0,3.4) node[above] {$y$};
+    \draw[movimiento] (0,0) -- (3,0) node[midway,below] {$v_D=0.75c$};
+    \draw[movimiento] (0,0) -- (0,2.7) node[midway,left] {$u_y=0.9c$};
+    \node[above] at (3,0) {Diego};
+    \node[right] at (0,2.7) {Elena: $u_x=0$};
+    \node[below left] at (0,0) {$O$};
+    \draw (0.3,0) -- (0.3,0.3) -- (0,0.3);
+    \begin{scope}[xshift=10cm]
+        \node[font=\small\bfseries] at (-0.8,3.9) {Marco de Diego $S'$};
+        \draw[eje] (-3.7,0) -- (1,0) node[right] {$x'$};
+        \draw[eje] (0,-0.4) -- (0,3.4) node[above] {$y'$};
+        \draw[movimiento] (0,0) -- (-3,2.38) node[midway,above right] {$\mathbf u'_E$};
+        \draw[dashed,blue!65!black] (-3,0) -- (-3,2.38) -- (0,2.38);
+        \draw[movimiento] (0,0) -- (-3,0) node[midway,below] {$u'_x=-0.75c$};
+        \draw[movimiento] (0,0) -- (0,2.38);
+        \node[anchor=west,align=left] at (0.15,1.2) {$u'_y=\dfrac{0.9c}{\gamma_D}$};
+        \node[above left] at (-3,2.38) {Elena};
+        \node[below right,align=left] at (0,0) {Diego\\en reposo};
+    \end{scope}
+\end{tikzpicture}
+
+{\small Flechas de velocidad, no de posición. $S'$ se mueve con $+v_D\hat{\mathbf x}$ respecto a $S$; el triángulo de la derecha permite obtener $u'$ a partir de sus componentes.}

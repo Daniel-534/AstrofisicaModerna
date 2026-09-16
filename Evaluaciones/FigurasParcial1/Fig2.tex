@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+    \node[anchor=west,font=\small\bfseries] at (0,1) {Laboratorio: el muón se desplaza};
+    \draw[eje] (-0.5,0) -- (11.5,0) node[right] {$x$};
+    \node[particula] (muon) at (0,0) {$\mu$};
+    \fill[blue!65!black] (10,0) circle (2pt);
+    \draw[movimiento] (muon.east) -- (9.8,0) node[midway,above] {$v=c\sqrt{1-1/30^2}\simeq0.99944c$};
+    \node[align=center] at (0,-0.65) {creación\\$t=0,\ x=0$};
+    \node[align=center] at (10,-0.65) {decaimiento\\$t=\Delta t,\ x=v\Delta t$};
+    \node at (5,-1.35) {Tiempo medio: $\langle\Delta t\rangle=\gamma\tau_0=60\ \mu\mathrm{s}$};
+    \node[anchor=west,font=\small\bfseries] at (0,-2.2) {Reposo del muón: ambos eventos en $x'=0$};
+    \draw[eje] (0,-2.9) -- (11.5,-2.9) node[right] {$t'$};
+    \fill[blue!65!black] (0,-2.9) circle (2pt);
+    \fill[blue!65!black] (10,-2.9) circle (2pt);
+    \node[above] at (0,-2.9) {creación};
+    \node[above] at (10,-2.9) {decaimiento};
+    \node at (5,-3.5) {Tiempo propio medio: $\langle\Delta t'\rangle=\tau_0=2\ \mu\mathrm{s}$};
+\end{tikzpicture}
+
+{\small Arriba se representa el recorrido espacial; abajo, una línea de tiempo, no una trayectoria espacial. Los tiempos de vida son promedios estadísticos.}

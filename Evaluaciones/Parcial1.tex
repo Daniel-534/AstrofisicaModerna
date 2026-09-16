@@ -7,6 +7,16 @@
 \usepackage{enumitem}
 \usepackage{parskip}
 \usepackage{xcolor}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,babel}
+
+\tikzset{
+    eje/.style={-{Latex},thin,gray},
+    movimiento/.style={-{Latex},very thick,blue!65!black},
+    particula/.style={circle,draw=blue!65!black,fill=blue!8,minimum size=8mm},
+    every picture/.style={font=\small}
+}
 
 \setlist[enumerate]{label=\alph*),leftmargin=*,itemsep=0.25em,topsep=0.4em}
 \newcommand{\pregunta}[2]{\section*{Pregunta #1. #2}}
@@ -19,8 +29,6 @@
     {\large Astrofísica Moderna\par}
 \end{center}
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{1}{Luz emitida por una estrella}
 
 Una estrella cercana se aleja de la Tierra con una velocidad de $0.1c$. Parece brillar con un color cercano a una longitud de onda de $290\ \mathrm{nm}$. ¿Cuál es el color que emite la estrella en realidad?
@@ -41,11 +49,7 @@ Una estrella cercana se aleja de la Tierra con una velocidad de $0.1c$. Parece b
 \approx262.3\ \mathrm{nm}.
 \]
 La alternativa c), $263\ \mathrm{nm}$, es la más cercana; ninguna opción coincide exactamente con el resultado calculado.
-\end{minipage}
-\par\bigskip
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{2}{Vida de las partículas de un haz}
 
 Un haz está formado por partículas que tienen una vida de $10^{-8}\ \mathrm{s}$ en reposo. Si el haz viaja a $0.8c$, ¿en qué punto de la línea del haz solo queda una fracción $1/e$ de las partículas restantes?
@@ -58,19 +62,32 @@ Un haz está formado por partículas que tienen una vida de $10^{-8}\ \mathrm{s}
     \item $2.7\ \mathrm{m}$.
 \end{enumerate}
 
-\textbf{Justificación.} Interpretando $10^{-8}\ \mathrm{s}$ como la vida media propia $\tau_0$, la población del haz cumple $N(t)=N_0e^{-t/(\gamma\tau_0)}$. La fracción $N/N_0=1/e$ se alcanza cuando $t=\gamma\tau_0$. Por tanto,
+\textbf{Justificación.} Interpretamos $\tau_0=10^{-8}\ \mathrm{s}$ como el tiempo de vida medio propio (no la semivida). En el laboratorio, este tiempo se dilata por el factor
 \[
-\gamma=\frac{1}{\sqrt{1-0.8^2}}=\frac53,
-\qquad
-\ell=v\gamma\tau_0
-=(0.8)(3\times10^8)\left(\frac53\right)(10^{-8})\ \mathrm{m}
-=4.0\ \mathrm{m}.
+\gamma=\frac{1}{\sqrt{1-v^2/c^2}}
+=\frac{1}{\sqrt{1-0.8^2}}=\frac{1}{0.6}=\frac53.
 \]
-\end{minipage}
-\par\bigskip
+La población de un grupo de partículas que parte de $x=0$ en $t=0$ satisface
+\[
+\frac{N(t)}{N_0}=e^{-t/(\gamma\tau_0)}=\frac1e
+\quad\Longrightarrow\quad
+-\frac{t}{\gamma\tau_0}=-1
+\quad\Longrightarrow\quad
+ t=\gamma\tau_0\approx1.667\times10^{-8}\ \mathrm{s}.
+\]
+Durante ese intervalo, las partículas supervivientes recorren una distancia $\ell=vt$, con la velocidad y el tiempo medidos en el mismo marco, el laboratorio:
+\[
+\begin{aligned}
+v&=0.8c=0.8(3\times10^8\ \mathrm{m/s})=2.4\times10^8\ \mathrm{m/s},\\
+\ell&=v\gamma\tau_0
+=\left(2.4\times10^8\ \frac{\mathrm{m}}{\mathrm{s}}\right)
+\left(\frac53\times10^{-8}\ \mathrm{s}\right)\\
+&=2.4\left(\frac53\right)10^{8-8}\ \mathrm{m}
+=\boxed{4.0\ \mathrm{m}}.
+\end{aligned}
+\]
+Equivalentemente, $N(x)=N_0e^{-x/(v\gamma\tau_0)}$: en $x=\ell$ queda aproximadamente el $36.8$\,\% de las partículas iniciales.
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{3}{Señal de una nave}
 
 Una nave que viaja a $0.6c$ hacia un planeta transmite una señal de $1\ \mathrm{GHz}$. ¿A qué frecuencia está la señal cuando se recibe en el planeta?
@@ -89,11 +106,7 @@ Una nave que viaja a $0.6c$ hacia un planeta transmite una señal de $1\ \mathrm
 =(1\ \mathrm{GHz})\sqrt{\frac{1+0.6}{1-0.6}}
 =2\ \mathrm{GHz}.
 \]
-\end{minipage}
-\par\bigskip
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{4}{Decaimiento de un kaón}
 
 Un $K^0$ de masa $m_K$ y energía $E$ en el marco del laboratorio decae a un $\pi^+$ y a un $\pi^-$, ambos de masa $m_\pi$. Se observa que el $\pi^+$ se emite en la misma dirección en la que venía el $K^0$. ¿Cuál es la velocidad del $\pi^+$ en el marco de referencia de reposo del $K^0$?
@@ -105,6 +118,11 @@ Un $K^0$ de masa $m_K$ y energía $E$ en el marco del laboratorio decae a un $\p
     \item $\displaystyle \frac{2m_\pi}{m_K}c$.
     \item $\displaystyle \left(\sqrt{1-\frac{m_K^2}{m_\pi^2}}\right)c$.
 \end{enumerate}
+
+\begin{figure}[H]
+\centering
+\input{FigurasParcial1/Fig1.tex}
+\end{figure}
 
 \textbf{Justificación.} En el reposo del kaón, los dos piones tienen momentos opuestos y, al tener igual masa, la misma energía. Por conservación de la energía,
 \[
@@ -118,11 +136,7 @@ v_\pi=c\sqrt{1-\frac{1}{\gamma_\pi^2}}
 =c\sqrt{1-\frac{4m_\pi^2}{m_K^2}}.
 \]
 La energía del kaón en el laboratorio no es necesaria para calcular esta rapidez en su marco de reposo.
-\end{minipage}
-\par\bigskip
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{5}{Tiempo de vida de los muones}
 
 Considere un laboratorio en el que se genera un haz de muones cuya energía relativista (no la cinética) es $3\ \mathrm{GeV}$. La masa del muón es aproximadamente $100\ \mathrm{MeV}/c^2$ y su vida media en reposo es de $2\times10^{-6}\ \mathrm{s}$. ¿Cuál es el tiempo de vida de los muones medido por un observador en el marco de referencia del laboratorio?
@@ -135,6 +149,11 @@ Considere un laboratorio en el que se genera un haz de muones cuya energía rela
     \item $20\ \mathrm{ms}$.
 \end{enumerate}
 
+\begin{figure}[H]
+\centering
+\input{FigurasParcial1/Fig2.tex}
+\end{figure}
+
 \textbf{Justificación.} La energía dada es la energía total, $E=\gamma m_\mu c^2$, por lo que
 \[
 \gamma=\frac{3000\ \mathrm{MeV}}{100\ \mathrm{MeV}}=30,
@@ -142,11 +161,7 @@ Considere un laboratorio en el que se genera un haz de muones cuya energía rela
 \tau_{\mathrm{lab}}=\gamma\tau_0
 =30(2\times10^{-6}\ \mathrm{s})=60\ \mu\mathrm{s}.
 \]
-\end{minipage}
-\par\bigskip
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{6}{Movimiento en trayectorias perpendiculares}
 
 Dos motociclistas, Diego y Elena, salen de un punto en común a lo largo de trayectorias perpendiculares. Si la velocidad de Elena es $0.9c$ y la de Diego es $0.75c$, ¿qué tan rápido se aleja Elena de Diego según Diego?
@@ -159,7 +174,18 @@ Dos motociclistas, Diego y Elena, salen de un punto en común a lo largo de tray
     \item $0.825c$.
 \end{enumerate}
 
-\textbf{Justificación.} Tomemos el eje $x$ en la dirección de Diego y el eje $y$ en la de Elena. En el marco inicial, Elena tiene $u_x=0$ y $u_y=0.9c$; el marco de Diego se mueve con $v_D=0.75c$. Al transformar las componentes de la velocidad,
+\begin{figure}[H]
+\centering
+\input{FigurasParcial1/Fig3.tex}
+\end{figure}
+
+\textbf{Justificación.} Tomemos el eje $x$ en la dirección de Diego y el eje $y$ en la de Elena. La figura izquierda da $u_x=0$, $u_y=0.9c$ y $v_D=0.75c$. Para pasar al marco de Diego usamos
+\[
+dx'=\gamma_D(dx-v_D\,dt),\qquad dy'=dy,\qquad
+dt'=\gamma_D\left(dt-\frac{v_D}{c^2}dx\right),
+\qquad \gamma_D=\frac{1}{\sqrt{1-v_D^2/c^2}}.
+\]
+Dividir $dx'$ y $dy'$ entre $dt'$ produce las componentes dibujadas a la derecha:
 \[
 u'_x=\frac{u_x-v_D}{1-u_xv_D/c^2}=-0.75c,
 \qquad
@@ -172,11 +198,7 @@ u'=\sqrt{(u'_x)^2+(u'_y)^2}
 =c\sqrt{0.75^2+0.9^2(1-0.75^2)}
 \approx0.9575c\approx0.96c.
 \]
-\end{minipage}
-\par\bigskip
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{7}{Composición de velocidades entre marcos}
 
 Considere $n$ marcos de referencia moviéndose uno respecto al otro con la misma velocidad relativa $v$, es decir, el segundo sistema se mueve con velocidad $v$ respecto al primero, el tercer sistema se mueve con velocidad $v$ respecto al segundo y así sucesivamente. ¿Cuál de estas fórmulas sería la que correctamente describe la velocidad del sistema $n$ respecto al primer sistema?
@@ -185,25 +207,41 @@ Considere $n$ marcos de referencia moviéndose uno respecto al otro con la misma
     \item $c\cosh\!\left[n\cosh^{-1}(v/c)\right]$.
     \item $c\sinh^{-1}\!\left[n\sinh(v/c)\right]$.
     \item $c\sinh\!\left[n\sinh^{-1}(v/c)\right]$.
-    \item $c\tanh\!\left[n\tanh^{-1}(v/c)\right]$.
+    \item \textcolor{red}{$c\tanh\!\left[n\tanh^{-1}(v/c)\right]$.}
     \item $c\tanh^{-1}\!\left[n\tanh(v/c)\right]$.
 \end{enumerate}
 
-\textbf{Justificación.} Para movimientos colineales en el mismo sentido, definimos la rapidez hiperbólica $\eta=\operatorname{artanh}(v/c)$. La identidad
+\textbf{Justificación.} La opción \textcolor{red}{d)} es la respuesta esperada si $n$ cuenta el número de transformaciones sucesivas, todas colineales y en el mismo sentido. Para mostrarlo, llamemos $S_0$ al marco de partida y $S_k$ al obtenido después de $k$ pasos:
+\[
+S_0\xrightarrow{\ v\ }S_1\xrightarrow{\ v\ }S_2
+\xrightarrow{\ v\ }\cdots\xrightarrow{\ v\ }S_n.
+\]
+Si $V_k$ es la velocidad de $S_k$ respecto a $S_0$, cada nuevo paso se describe mediante la ley relativista de composición de velocidades:
+\[
+V_{k+1}=\frac{V_k+v}{1+V_kv/c^2},\qquad V_0=0.
+\]
+Definiendo $b_k=V_k/c$ y $\beta=v/c$, resulta $b_{k+1}=(b_k+\beta)/(1+b_k\beta)$. No se suman simplemente las velocidades: el denominador evita superar $c$.
+
+Para simplificar esta relación, introducimos la rapidez hiperbólica $\eta$ y escribimos $\beta=\tanh\eta$, es decir, $\eta=\operatorname{artanh}\beta$. Aquí $\tanh^{-1}$ denota la función inversa, no $1/\tanh$. La identidad
 \[
 \tanh(\eta_1+\eta_2)
 =\frac{\tanh\eta_1+\tanh\eta_2}{1+\tanh\eta_1\tanh\eta_2}
 \]
-reproduce la ley relativista de adición de velocidades; por ello, las rapideces hiperbólicas se suman. Entre el primer marco y el marco $n$ hay $n-1$ transformaciones, de modo que
+convierte cada composición de velocidades en una suma de rapideces hiperbólicas. En concreto,
 \[
-\textcolor{red}{v_{n/1}=c\tanh\!\left[(n-1)\operatorname{artanh}(v/c)\right]}.
+\begin{aligned}
+b_1&=\tanh\eta,\qquad b_2=\frac{2\tanh\eta}{1+\tanh^2\eta}=\tanh(2\eta),\\
+b_{k+1}&=\frac{\tanh(k\eta)+\tanh\eta}{1+\tanh(k\eta)\tanh\eta}
+=\tanh[(k+1)\eta].
+\end{aligned}
 \]
-\textcolor{red}{Ninguna alternativa coincide con el enunciado literal.} La opción d) parece ser la pretendida, pero corresponde a $n$ transformaciones sucesivas, no a $n$ marcos contados desde el primero. Por ejemplo, para $n=2$ debe obtenerse $v$.
-\end{minipage}
-\par\bigskip
+Así, después de $n$ transformaciones, la rapidez hiperbólica acumulada es $n\eta$. Al volver a expresar el resultado en términos de la velocidad, obtenemos
+\[
+\textcolor{red}{\boxed{V_n=c\tanh(n\eta)=c\tanh\!\left[n\operatorname{artanh}(v/c)\right]}}
+\qquad\text{(opción d).}
+\]
+Conviene aclarar que, si se cuentan literalmente $n$ marcos, desde $S_1$ hasta $S_n$, hay solamente $n-1$ transformaciones y la velocidad es $v_{n/1}=c\tanh[(n-1)\operatorname{artanh}(v/c)]$. Por ejemplo, entre dos marcos debe dar $v$, no $2v/(1+v^2/c^2)$. Para que d) sea exacta, el enunciado debe decir \emph{$n$ transformaciones sucesivas} o contar los marcos desde $S_0$ hasta $S_n$.
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{8}{Matriz de transformación de Lorentz}
 
 El sistema $B$ viaja con respecto al sistema $A$ a una velocidad constante $\mathbf{v}=\beta c\hat{\mathbf{z}}$. Asumiendo que los orígenes de ambos sistemas coinciden, ¿cuál de las siguientes matrices representa la matriz de transformación de Lorentz de las coordenadas $(ct',x',y',z')$ del sistema $B$ a las coordenadas $(ct,x,y,z)$ del sistema $A$?
@@ -225,31 +263,53 @@ El sistema $B$ viaja con respecto al sistema $A$ a una velocidad constante $\mat
     \end{pmatrix}$.
 \end{enumerate}
 
-{\small\emph{Nota de transcripción: la imagen de esta pregunta está recortada; únicamente se muestran las dos alternativas visibles.}}
 
-\textbf{Justificación.} Como $B$ se mueve con $+\beta c$ a lo largo de $z$ respecto a $A$, la transformación directa es $ct'=\gamma(ct-\beta z)$, $z'=\gamma(z-\beta ct)$. El enunciado solicita la inversa, de $B$ a $A$:
+\textbf{Justificación.} Usamos vectores columna en el orden $(ct,x,y,z)$. El marco $B$ se mueve con $v=+\beta c$ sobre el eje $z$ de $A$, y los orígenes coinciden en $t=t'=0$. La transformación de $A$ a $B$ es
+\[
+ct'=\gamma(ct-\beta z),\qquad z'=\gamma(z-\beta ct),
+\qquad x'=x,\quad y'=y,\qquad
+\gamma=\frac{1}{\sqrt{1-\beta^2}}.
+\]
+Sin embargo, el enunciado pide pasar de las coordenadas primadas de $B$ a las de $A$, por lo que debemos invertir estas relaciones. Para ello, sumamos las ecuaciones anteriores con los factores adecuados:
+\[
+\begin{aligned}
+ct'+\beta z'&=\gamma\bigl[ct-\beta z+\beta z-\beta^2ct\bigr]
+=\gamma(1-\beta^2)ct=\frac{ct}{\gamma},\\
+z'+\beta ct'&=\gamma\bigl[z-\beta ct+\beta ct-\beta^2z\bigr]
+=\gamma(1-\beta^2)z=\frac{z}{\gamma}.
+\end{aligned}
+\]
+Por tanto,
 \[
 ct=\gamma(ct'+\beta z'),
 \qquad z=\gamma(z'+\beta ct'),
 \qquad x=x',\quad y=y'.
 \]
-Por tanto, la matriz correcta es
+Para construir la matriz, escribimos estas relaciones como combinaciones lineales de las coordenadas de entrada. Cada fila contiene los coeficientes de $(ct',x',y',z')$ en la ecuación de la coordenada de salida correspondiente:
 \[
-\textcolor{red}{\Lambda_{B\to A}=
+\begin{aligned}
+ct&=\gamma\,ct'+0\,x'+0\,y'+\gamma\beta\,z',\\
+x&=0\,ct'+1\,x'+0\,y'+0\,z',\\
+y&=0\,ct'+0\,x'+1\,y'+0\,z',\\
+z&=\gamma\beta\,ct'+0\,x'+0\,y'+\gamma\,z'.
+\end{aligned}
+\]
+Así se construye la matriz, sin cambiar el orden de las coordenadas:
+\[
+\begin{pmatrix}ct\\x\\y\\z\end{pmatrix}
+=\underbrace{\textcolor{red}{
 \begin{pmatrix}
 \gamma & 0 & 0 & +\gamma\beta \\
 0 & 1 & 0 & 0 \\
 0 & 0 & 1 & 0 \\
 +\gamma\beta & 0 & 0 & \gamma
-\end{pmatrix}},
-\qquad \gamma=\frac{1}{\sqrt{1-\beta^2}}.
+\end{pmatrix}}}_{\Lambda_{B\to A}}
+\begin{pmatrix}ct'\\x'\\y'\\z'\end{pmatrix}.
 \]
-\textcolor{red}{Ninguna de las dos alternativas visibles es correcta.} La opción a) mezcla $ct$ con $x$, mientras que la b) tiene los signos de la transformación directa, de $A$ a $B$.
-\end{minipage}
-\par\bigskip
+Para comprobar los signos, consideramos el origen de $B$, donde $z'=0$. En ese caso se obtiene $ct=\gamma ct'$ y $z=\gamma\beta ct'$, de modo que $z/t=+\beta c$, como exige el enunciado. Además, si $\beta=0$, la matriz se reduce a la identidad.
 
-\noindent
-\begin{minipage}{\linewidth}
+\textcolor{red}{Ninguna de las dos alternativas visibles es correcta.} La opción a) mezcla $ct$ con $x$, mientras que la b) tiene los signos de la transformación directa, de $A$ a $B$.
+
 \pregunta{9}{Colisión de dos trozos de plastilina}
 
 Un trozo de plastilina cuya masa invariante es $4\ \mathrm{kg}$ viaja a $3/5$ de la velocidad de la luz cuando choca con otro trozo idéntico que viaja en la dirección opuesta con la misma rapidez. Si los dos trozos quedan pegados y no se emite energía en forma de radiación en el proceso, la masa del nuevo trozo será:
@@ -269,11 +329,7 @@ Un trozo de plastilina cuya masa invariante es $4\ \mathrm{kg}$ viaja a $3/5$ de
 \qquad M=2\left(\frac54\right)(4\ \mathrm{kg})=10\ \mathrm{kg}.
 \]
 La energía cinética inicial se convierte en energía interna del cuerpo compuesto y aumenta su masa invariante.
-\end{minipage}
-\par\bigskip
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{10}{Producción de muones en un colisionador}
 
 Un colisionador de electrones y positrones crea muones mediante la reacción
@@ -290,6 +346,11 @@ En el marco del centro de momento ($p'_{\mathrm{Total}}=0$), ¿cuál es la míni
     \item \textcolor{red}{$\displaystyle \left(\sqrt{1-\frac{m_e^2}{m_\mu^2}}\right)c$.}
 \end{enumerate}
 
+\begin{figure}[H]
+\centering
+\input{FigurasParcial1/Fig4.tex}
+\end{figure}
+
 \textbf{Justificación.} En el centro de momento, el electrón y el positrón tienen momentos opuestos y la misma energía. En el umbral de producción, los muones están en reposo, por lo que
 \[
 2\gamma_e m_ec^2=2m_\mu c^2,
@@ -300,11 +361,7 @@ La rapidez mínima de cada partícula incidente es entonces
 v_{\min}=c\sqrt{1-\frac{1}{\gamma_e^2}}
 =c\sqrt{1-\frac{m_e^2}{m_\mu^2}}.
 \]
-\end{minipage}
-\par\bigskip
 
-\noindent
-\begin{minipage}{\linewidth}
 \pregunta{11}{Energía de una partícula relativista}
 
 Una partícula relativista de masa $m$ tiene un moméntum $p=mc$. Su energía es:
@@ -325,7 +382,78 @@ Sustituyendo $p=mc$ y tomando la raíz positiva,
 \[
 E=\sqrt{(mc)^2c^2+m^2c^4}=\sqrt{2}\,mc^2.
 \]
-\end{minipage}
-\par\bigskip
+
+
+\pregunta{12}{Centro de momento de un sistema electrón--fotón}
+
+Un fotón de energía $25\ \mathrm{MeV}$ colisiona frontalmente con un electrón de energía total $50\ \mathrm{MeV}$ en el marco del laboratorio. ¿Cuál es la velocidad del marco del centro de momento total ($P_T'=0$) del sistema electrón--fotón respecto al laboratorio? Para simplificar los cálculos puede asumir que $P_ec\approx E_e$ (¿por qué?).
+
+\begin{enumerate}
+    \item $0.75c$.
+    \item $c/2$.
+    \item \textcolor{red}{$c/3$.}
+    \item $c/4$.
+    \item $c$.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\input{FigurasParcial1/Fig5.tex}
+\end{figure}
+
+\textbf{Justificación.} La energía del electrón es mucho mayor que su energía de reposo, $m_ec^2\approx0.511\ \mathrm{MeV}$; por ello, es ultrarrelativista y
+\[
+P_ec=\sqrt{E_e^2-m_e^2c^4}
+=E_e\sqrt{1-\left(\frac{m_ec^2}{E_e}\right)^2}
+\approx E_e.
+\]
+En el laboratorio, la energía total y la componente del momento total son
+\[
+E_T=E_e+E_\gamma=75\ \mathrm{MeV},\qquad
+P_T=P_e-\frac{E_\gamma}{c}\approx\frac{25\ \mathrm{MeV}}{c}.
+\]
+Para un marco que se mueve con $V_{\mathrm{CM}}$ sobre $x$, la transformación del momento total exige
+\[
+P_T'=\gamma_{\mathrm{CM}}\left(P_T-\frac{V_{\mathrm{CM}}E_T}{c^2}\right)=0
+\quad\Longrightarrow\quad
+\boxed{V_{\mathrm{CM}}=\frac{c^2P_T}{E_T}
+\approx c\,\frac{50-25}{50+25}=\frac{c}{3}}.
+\]
+Así, la opción \textcolor{red}{c)} es correcta dentro de la aproximación indicada, y el movimiento es en el sentido del electrón.
+
+\pregunta{13}{Un pión en reposo en el laboratorio}
+
+Un $K^0$ de masa $m_K$ y energía $E$ en el marco del laboratorio decae a un $\pi^+$ y a un $\pi^-$, ambos de masa $m_\pi$. El $\pi^+$ se observa emitido en la misma dirección que el $K^0$. ¿Cuál debe ser la energía $E$ del $K^0$ para que el $\pi^+$ quede en reposo en el laboratorio? \emph{Pista: considere lo que ocurriría si el $K^0$ estuviera en reposo en el marco de referencia del laboratorio.}
+
+\begin{enumerate}[itemsep=0.3em]
+    \item $\displaystyle \frac{m_\pi^2}{2m_K}c^2$.
+    \item $\displaystyle \frac{m_K}{2}c^2$.
+    \item $\displaystyle \frac{m_\pi}{2}c^2$.
+    \item $\displaystyle \frac{m_K^2+m_\pi^2}{2m_\pi}c^2$.
+    \item \textcolor{red}{$\displaystyle \frac{m_K^2}{2m_\pi}c^2$.}
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\input{FigurasParcial1/Fig6.tex}
+\end{figure}
+
+\textbf{Justificación.} Como sugiere la pista, en el reposo del kaón cada pión tiene energía $E_\pi^*=m_Kc^2/2$ y rapidez
+\[
+u^*=c\sqrt{1-\frac{4m_\pi^2}{m_K^2}}.
+\]
+Si el kaón se mueve en el laboratorio con velocidad $V_K>0$, el $\pi^+$ debe salir hacia atrás en el marco del kaón, con velocidad $-u^*$. La composición de velocidades da
+\[
+v_+=\frac{V_K-u^*}{1-V_Ku^*/c^2}=0
+\quad\Longrightarrow\quad V_K=u^*,
+\qquad
+\gamma_K=\frac{1}{\sqrt{1-V_K^2/c^2}}=\frac{m_K}{2m_\pi}.
+\]
+Por tanto, la energía total requerida es
+\[
+\textcolor{red}{\boxed{E=\gamma_Km_Kc^2=\frac{m_K^2}{2m_\pi}c^2}}
+\qquad\text{(opción e).}
+\]
+Finalmente, conviene precisar que un pión en reposo no tiene dirección de movimiento. La frase del enunciado debe entenderse como el caso límite del movimiento hacia delante en el laboratorio; para frenarlo exactamente, su emisión en el marco del kaón debe ser hacia atrás, como muestra el diagrama.
 
 \end{document}
