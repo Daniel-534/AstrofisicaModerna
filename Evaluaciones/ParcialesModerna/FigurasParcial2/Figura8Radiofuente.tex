@@ -1,0 +1,70 @@
+\begin{center}
+\begin{tikzpicture}[font=\small]
+    \node[font=\bfseries] at (1.8,6.15) {Fuente térmica};
+    \node[font=\bfseries] at (10.15,6.15) {Observador};
+    \node[font=\bfseries,align=center] at (14.45,6.15)
+        {Tamaño aparente\\en el cielo};
+
+    % Fuente extendida y su diámetro físico
+    \draw[draw=orange!75!black,fill=orange!18,line width=1.2pt]
+        (1.8,3.65) ellipse [x radius=0.58,y radius=1.25];
+    \draw[draw=orange!55!black,fill=orange!28]
+        (1.72,4.1) ellipse [x radius=0.31,y radius=0.42];
+    \draw[draw=orange!55!black,fill=orange!30]
+        (1.93,3.35) ellipse [x radius=0.27,y radius=0.49];
+    \draw[draw=orange!55!black,fill=orange!25]
+        (1.65,2.9) ellipse [x radius=0.25,y radius=0.29];
+    \draw[{Stealth}-{Stealth},orange!80!black,thick] (0.7,2.4) -- (0.7,4.9);
+    \node[rotate=90,fill=white,inner sep=2pt] at (0.35,3.65)
+        {tamaño físico};
+
+    % Rayos límite que delimitan la extensión angular de la fuente
+    \draw[blue!70!black,very thick,-{Stealth[length=2.2mm]}]
+        (2.36,4.78) -- (9.78,3.73);
+    \draw[blue!70!black,very thick,-{Stealth[length=2.2mm]}]
+        (2.36,2.52) -- (9.78,3.57);
+    \draw[gray!70,densely dashed] (2.36,3.65) -- (10.05,3.65);
+    \node[blue!65!black,fill=white,inner sep=2pt,rotate=-8]
+        at (5.65,4.34) {rayos límite};
+
+    % Receptor del radiotelescopio
+    \draw[black,line width=1.4pt] (10.05,3.36) -- (10.05,3.94);
+    \fill[blue!70!black] (10.05,3.65) circle (2.2pt);
+    \draw[black,thick] (10.05,3.36) -- (9.82,3.08);
+    \draw[black,thick] (10.05,3.36) -- (10.28,3.08);
+    \draw[black,thick] (9.72,3.08) -- (10.38,3.08);
+    \node[align=center,text width=3cm] at (10.05,2.45)
+        {Radiotelescopio};
+
+    % Ángulo aparente subtendido por la fuente
+    \fill[orange!18] (9.28,3.76) -- (10.0,3.65) -- (9.28,3.54) -- cycle;
+    \node[orange!80!black,fill=white,inner sep=1.5pt] at (9.03,3.65)
+        {$\theta$};
+    \node[align=center,text width=2.5cm] at (8.35,4.35)
+        {extensión\\angular};
+
+    % Proyección del campo angular observado
+    \draw[gray!60,densely dashed] (10.25,3.91) -- (13.35,4.55);
+    \draw[gray!60,densely dashed] (10.25,3.39) -- (13.35,2.75);
+    \draw[draw=blue!65!black,fill=blue!5,line width=1pt]
+        (14.45,3.65) circle (1.08);
+    \draw[draw=orange!75!black,fill=orange!28,line width=1pt]
+        (14.45,3.65) ellipse [x radius=0.66,y radius=0.48];
+    \draw[orange!75!black,thick] (13.85,3.65) -- (15.05,3.65);
+    \draw[orange!75!black,thick] (14.45,3.2) -- (14.45,4.1);
+    \node[font=\bfseries,fill=white,inner sep=2pt] at (14.45,3.65)
+        {$\Omega$};
+    \node[align=center,text width=3.8cm] at (14.45,1.95)
+        {región de cielo cubierta\\por la radiofuente};
+
+    % Distancia entre la fuente y el observador
+    \draw[gray!65] (2.36,3.55) -- (2.36,1.08);
+    \draw[gray!65] (10.05,3.08) -- (10.05,1.08);
+    \draw[{Stealth}-{Stealth},gray!75!black,thick] (2.36,1.28) -- (10.05,1.28);
+    \node[fill=white,inner sep=3pt] at (6.2,1.28)
+        {distancia fuente--observador};
+
+    \node[align=center,text width=15.5cm,font=\footnotesize] at (8.5,0.25)
+        {La radiofuente ocupa un tamaño angular finito en el cielo; el radiotelescopio recibe radiación proveniente de toda esa región.};
+\end{tikzpicture}
+\end{center}

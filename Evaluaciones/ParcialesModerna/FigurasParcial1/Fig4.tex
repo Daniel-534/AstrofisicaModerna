@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+    \node[font=\small\bfseries] at (2,1.1) {Antes: centro de momento};
+    \node[particula] (electron) at (0,0) {$e^-$};
+    \node[particula] (positron) at (4,0) {$e^+$};
+    \draw[movimiento] (electron.east) -- (1.8,0) node[midway,above] {$+p$};
+    \draw[movimiento] (positron.west) -- (2.2,0) node[midway,above] {$-p$};
+    \node[align=center] at (2,-1) {$\mathbf p_{\mathrm{tot}}=0$\\$E_{\mathrm{in}}=2\gamma_e m_ec^2$};
+    \draw[-{Latex},thick] (5,0) -- (6.5,0) node[midway,above] {reacción};
+    \node[font=\small\bfseries] at (9,1.1) {Umbral: muones en reposo};
+    \node[particula] at (8,0) {$\mu^-$};
+    \node[particula] at (10,0) {$\mu^+$};
+    \node[align=center] at (9,-1) {$\mathbf p_{\mu^-}=\mathbf p_{\mu^+}=0$\\$E_{\mathrm{fin}}=2m_\mu c^2$};
+\end{tikzpicture}
+
+{\small En el umbral, toda la energía inicial se destina a la energía de reposo del par. Los muones se dibujan separados solo para distinguirlos, no para indicar movimiento.}

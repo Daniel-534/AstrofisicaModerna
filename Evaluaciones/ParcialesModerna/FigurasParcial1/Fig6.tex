@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+    \node[font=\small\bfseries] at (5,1.1) {Reposo del kaón: piones con momentos opuestos};
+    \node[particula] (pionMasTrece) at (3,0) {$\pi^+$};
+    \node[particula] (pionMenosTrece) at (7,0) {$\pi^-$};
+    \draw[movimiento] (pionMasTrece.west) -- (0.5,0) node[midway,above] {$-p^*$};
+    \draw[movimiento] (pionMenosTrece.east) -- (9.5,0) node[midway,above] {$+p^*$};
+    \node at (5,-0.7) {$E_+^*=E_-^*=m_Kc^2/2$};
+    \node[font=\small\bfseries] at (5,-1.65) {Laboratorio: el kaón inicial se mueve hacia $+x$};
+    \node[particula] at (3,-2.6) {$\pi^+$};
+    \node[particula] (pionLabTrece) at (7,-2.6) {$\pi^-$};
+    \draw[movimiento] (pionLabTrece.east) -- (10,-2.6) node[midway,above] {$P_K$};
+    \node[align=center] at (3,-3.5) {$p_+=0$\\$E_+=m_\pi c^2$};
+    \node[align=center] at (8,-3.5) {$p_-=P_K$\\$E_-=E-m_\pi c^2$};
+\end{tikzpicture}
+
+{\small El movimiento del kaón compensa exactamente la velocidad hacia atrás del $\pi^+$ en el marco de reposo del kaón (asterisco).}

@@ -1,0 +1,50 @@
+\begin{center}
+\begin{tikzpicture}[font=\small]
+    \node[font=\bfseries] at (7.9,6.2)
+        {Fotones atravesando un cubo de gas uniforme};
+
+    \path[draw=blue!45,fill=blue!7]
+        (5.3,2.3) -- (10.3,2.3) -- (10.3,5.3) -- (5.3,5.3) -- cycle;
+    \path[draw=blue!45,fill=blue!12]
+        (9.1,1.6) -- (10.3,2.3) -- (10.3,5.3) -- (9.1,4.6) -- cycle;
+    \path[draw=blue!45,fill=blue!16]
+        (4.1,4.6) -- (9.1,4.6) -- (10.3,5.3) -- (5.3,5.3) -- cycle;
+    \path[draw=blue!65!black,fill=blue!5,line width=1pt]
+        (4.1,1.6) -- (9.1,1.6) -- (9.1,4.6) -- (4.1,4.6) -- cycle;
+    \draw[blue!65!black,thick] (4.1,1.6) -- (5.3,2.3);
+    \draw[blue!65!black,thick] (5.3,2.3) -- (10.3,2.3);
+    \draw[blue!65!black,thick] (10.3,2.3) -- (10.3,5.3);
+    \draw[blue!65!black,thick] (9.1,4.6) -- (10.3,5.3);
+    \draw[blue!65!black,thick] (5.3,5.3) -- (10.3,5.3);
+    \draw[blue!65!black,thick] (4.1,4.6) -- (5.3,5.3);
+
+    \draw[blue!75!black,thick,-{Stealth[length=2.2mm]}]
+        (0.35,2.05) -- (12.0,2.05);
+    \draw[blue!75!black,thick,-{Stealth[length=2.2mm]}]
+        (0.35,3.05) -- (12.0,3.05);
+    \draw[blue!75!black,thick,-{Stealth[length=2.2mm]}]
+        (0.35,4.05) -- (12.0,4.05);
+    \node[blue!70!black,fill=white,inner sep=2pt] at (1.65,4.55)
+        {fotones incidentes};
+
+    \foreach \x/\y in {4.8/2.5,5.1/4.0,5.7/3.3,6.2/2.1,6.7/4.2,7.1/2.8,7.8/3.8,8.5/2.4,8.6/4.2,9.0/3.3,9.7/2.6,9.8/4.5}
+        \fill[gray!70!black] (\x,\y) circle (2.1pt);
+    \node[fill=white,inner sep=2pt] at (5.5,4.35)
+        {gas uniforme, densidad $n$};
+
+    \draw[orange!85!black,dashed,thick] (7.35,3.05) circle (0.32);
+    \fill[orange!85!black] (7.35,3.05) circle (2.2pt);
+    \draw[orange!85!black,thick] (7.6,3.32) -- (11.5,4.55);
+    \node[align=left,fill=white,inner sep=2pt] at (13.35,4.75)
+        {sección eficaz\\$\sigma=5.7\times10^{-18}\ \mathrm{cm^2}$};
+    \node[align=center,text width=3.0cm] at (13.45,3.25)
+        {profundidad óptica\\$\tau=1.61$};
+    \draw[gray!65,densely dashed] (10.55,3.05) -- (12.0,3.05);
+
+    \draw[gray!65] (4.1,1.6) -- (4.1,0.82);
+    \draw[gray!65] (9.1,1.6) -- (9.1,0.82);
+    \draw[{Stealth}-{Stealth},gray!75!black,thick] (4.1,1.02) -- (9.1,1.02);
+    \node[fill=white,inner sep=3pt] at (6.6,1.02)
+        {trayecto dentro del gas: $L=50\ \mathrm{cm}$};
+\end{tikzpicture}
+\end{center}

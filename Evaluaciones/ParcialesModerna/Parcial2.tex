@@ -1,0 +1,506 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=authoryear,sorting=nyt]{biblatex}
+\addbibresource{Parcial2.bib}
+
+\setlist[enumerate]{label=\alph*),leftmargin=*,itemsep=0.25em,topsep=0.4em}
+\newcommand{\pregunta}[2]{\section*{Pregunta #1}\textbf{#2}\par}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries Parcial 2\par}
+    \medskip
+    {\large Astrofísica Moderna\par}
+\end{center}
+
+\pregunta{1}{Brillo aparente y distancia}
+
+El Sol es aproximadamente $1.6\times10^{13}$ veces más brillante que las estrellas más débiles visibles a simple vista. ¿A qué distancia, en unidades astronómicas, se encontraría una estrella de tipo solar si apenas fuera visible a simple vista? ¿Cuál sería esa distancia en años luz?
+
+\begin{enumerate}
+    \item $D_{\star}=1.6\times10^{12}\ \mathrm{AU}=2.5\times10^8$ años luz.
+    \item $D_{\star}=1.6\times10^6\ \mathrm{AU}=25.3$ años luz.
+    \item \textcolor{red}{$D_{\star}=4\times10^6\ \mathrm{AU}=63.26$ años luz.}
+\end{enumerate}
+
+\textbf{Desarrollo.} Partimos de la relación entre el flujo $F$, la luminosidad $L$ y la distancia $d$:
+\[
+F=\frac{L}{4\pi d^2}.
+\]
+Para el Sol y para una estrella de tipo solar, respectivamente, se tiene
+\[
+F_\odot=\frac{L_\odot}{4\pi d_\odot^2},
+\qquad
+F_\star=\frac{L_\star}{4\pi d_\star^2}.
+\]
+Al dividir estas expresiones, los factores $4\pi$ se cancelan. Además, como la estrella tiene la misma luminosidad que el Sol, $L_\star=L_\odot$, de modo que
+\[
+\frac{F_\odot}{F_\star}
+=\frac{L_\odot}{L_\star}\frac{d_\star^2}{d_\odot^2}
+=\frac{d_\star^2}{d_\odot^2}.
+\]
+El enunciado indica que $F_\odot/F_\star=1.6\times10^{13}$. Aislamos la razón de distancias tomando la raíz cuadrada en ambos lados:
+\[
+\left(\frac{d_\star}{d_\odot}\right)^2=1.6\times10^{13}
+\quad\Longrightarrow\quad
+d_\star=d_\odot\sqrt{1.6\times10^{13}}.
+\]
+Con $d_\odot=1\ \mathrm{AU}$ resulta
+\[
+d_\star=(1\ \mathrm{AU})\sqrt{1.6\times10^{13}}
+\approx4.0\times10^6\ \mathrm{AU}.
+\]
+Finalmente, usando $1\ \mathrm{ly}\approx63\,241\ \mathrm{AU}$,
+\[
+d_\star\approx\frac{4.0\times10^6\ \mathrm{AU}}{63\,241\ \mathrm{AU/ly}}
+\approx63.25\ \mathrm{ly}.
+\]
+La opción correcta es \textbf{c)}. \parencite[Sec. 7.3.1, p. 233]{chaparro2026}
+
+\pregunta{2}{Distancia relativa entre Sirio y Polaris}
+
+Sirio es 22 veces más luminosa que el Sol, mientras que Polaris (la Estrella Polar) es 2350 veces más luminosa que el Sol. Sirio se observa 23 veces más brillante que Polaris. ¿Cuál es la distancia de Polaris en comparación con la distancia de Sirio?
+
+\begin{enumerate}
+    \item $D_{\mathrm{Polaris}}=15D_{\mathrm{Sirio}}$.
+    \item \textcolor{red}{$D_{\mathrm{Polaris}}=50D_{\mathrm{Sirio}}$.}
+    \item $D_{\mathrm{Polaris}}=34D_{\mathrm{Sirio}}$.
+    \item $D_{\mathrm{Polaris}}=71.5D_{\mathrm{Sirio}}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Para cada estrella, el flujo observado es $F=L/(4\pi d^2)$. Al formar el cociente de Polaris y Sirio,
+\[
+\frac{F_{\mathrm{Polaris}}}{F_{\mathrm{Sirio}}}
+=\frac{L_{\mathrm{Polaris}}}{L_{\mathrm{Sirio}}}
+\frac{d_{\mathrm{Sirio}}^2}{d_{\mathrm{Polaris}}^2}.
+\]
+Despejamos la razón de distancias multiplicando por $d_{\mathrm{Polaris}}^2$ y dividiendo por $F_{\mathrm{Polaris}}/F_{\mathrm{Sirio}}$:
+\[
+\left(\frac{d_{\mathrm{Polaris}}}{d_{\mathrm{Sirio}}}\right)^2
+=\frac{L_{\mathrm{Polaris}}}{L_{\mathrm{Sirio}}}
+\frac{F_{\mathrm{Sirio}}}{F_{\mathrm{Polaris}}}.
+\]
+Como $L_{\mathrm{Polaris}}/L_{\mathrm{Sirio}}=2350/22$ y $F_{\mathrm{Sirio}}/F_{\mathrm{Polaris}}=23$, al tomar la raíz positiva obtenemos
+\[
+\frac{d_{\mathrm{Polaris}}}{d_{\mathrm{Sirio}}}
+=\sqrt{\frac{2350}{22}(23)}\approx49.6.
+\]
+La opción correcta es \textbf{b)}, aproximadamente 50 veces. \parencite[Sec. 7.3.1, p. 233]{chaparro2026}
+
+\pregunta{3}{Magnitud absoluta y luminosidad}
+
+El Sol tiene una magnitud absoluta de $4.8$, mientras que Polaris tiene una magnitud absoluta de $-3.6$. ¿Cuántas veces es más luminosa Polaris que el Sol?
+
+\begin{enumerate}
+    \item $1.2$.
+    \item $2.5\times10^8$.
+    \item \textcolor{red}{$2500$.}
+    \item $8.4$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Partimos de la definición de magnitud aparente, $m=-2.5\log_{10}F+C$, donde $F$ es el flujo observado y $C$ es una constante de referencia. La magnitud absoluta $M$ es la magnitud que tendría el objeto si se observara a una distancia fija de $10\ \mathrm{pc}$. Por eso, al comparar el Sol y Polaris en términos de magnitud absoluta, ambos flujos corresponden a la misma distancia:
+\[
+M_\odot-M_{\mathrm{Polaris}}
+=-2.5\log_{10}F_\odot+C+2.5\log_{10}F_{\mathrm{Polaris}}-C
+=2.5\log_{10}\left(\frac{F_{\mathrm{Polaris}}}{F_\odot}\right).
+\]
+Como $F=L/(4\pi d^2)$ y las dos magnitudes absolutas se definen a la misma distancia $d=10\ \mathrm{pc}$, al dividir los flujos se cancelan $4\pi d^2$:
+\[
+\frac{F_{\mathrm{Polaris}}}{F_\odot}
+=\frac{L_{\mathrm{Polaris}}/(4\pi d^2)}{L_\odot/(4\pi d^2)}
+=\frac{L_{\mathrm{Polaris}}}{L_\odot}.
+\]
+Por tanto, se obtiene la relación entre la diferencia de magnitudes absolutas y la razón de luminosidades:
+\[
+M_\odot-M_{\mathrm{Polaris}}
+=2.5\log_{10}\left(\frac{L_{\mathrm{Polaris}}}{L_\odot}\right).
+\]
+Restamos las magnitudes dadas y dividimos ambos lados entre $2.5$:
+\[
+4.8-(-3.6)=2.5\log_{10}\left(\frac{L_{\mathrm{Polaris}}}{L_\odot}\right)
+\quad\Longrightarrow\quad
+\log_{10}\left(\frac{L_{\mathrm{Polaris}}}{L_\odot}\right)=\frac{8.4}{2.5}=3.36.
+\]
+Aplicando la potencia de base 10 a ambos lados,
+\[
+\frac{L_{\mathrm{Polaris}}}{L_\odot}=10^{3.36}\approx2.29\times10^3.
+\]
+La opción más cercana es \textbf{c)} ($2500$). \parencite[Sec. 7.3.3.1, pp. 244--246]{chaparro2026}
+
+\pregunta{4}{Magnitud aparente de dos estrellas no resueltas}
+
+Dos estrellas idénticas, no resueltas y a la misma distancia tienen cada una una magnitud aparente $m=12.00$. Como sus flujos se suman, ¿cuál es la magnitud aparente total del sistema?
+
+\begin{enumerate}
+    \item $m_{\mathrm{tot}}=6$.
+    \item \textcolor{red}{$m_{\mathrm{tot}}=11.25$.}
+    \item $m_{\mathrm{tot}}=24$.
+    \item $m_{\mathrm{tot}}=120$.
+    \item $m_{\mathrm{tot}}=-12$.
+\end{enumerate}
+
+\textbf{Desarrollo.} La magnitud se relaciona con el flujo mediante $m=-2.5\log_{10}F+C$. Al duplicarse el flujo,
+\[
+m_{\mathrm{tot}}-m_1=-2.5\log_{10}\left(\frac{F_{\mathrm{tot}}}{F_1}\right)
+=-2.5\log_{10}2\approx-0.7526,
+\]
+por lo que $m_{\mathrm{tot}}=12.00-0.7526\approx11.25$. La opción correcta es \textbf{b)}. \parencite[Sec. 7.3.3, pp. 243--244]{chaparro2026}
+
+\pregunta{5}{Ley de Stefan--Boltzmann: luminosidad de la Tierra}
+
+Suponiendo que la Tierra emite como un cuerpo negro, ¿cuál es su luminosidad si su radio es $6.378\times10^6\ \mathrm{m}$ y su temperatura promedio es $288\ \mathrm{K}$? Use $\sigma=5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}$.
+
+\begin{enumerate}
+    \item $2.45\times10^{17}\ \mathrm{W}$.
+    \item \textcolor{red}{$1.99\times10^{17}\ \mathrm{W}$.}
+    \item $2.01\times10^{15}\ \mathrm{W}$.
+    \item $2.93\times10^{17}\ \mathrm{W}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} La potencia total emitida es el flujo de Stefan--Boltzmann por el área de la superficie:
+\[
+L=4\pi R^2\sigma T^4
+=4\pi(6.378\times10^6\ \mathrm{m})^2(5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}})(288\ \mathrm{K})^4
+\approx1.99\times10^{17}\ \mathrm{W}.
+\]
+La opción correcta es \textbf{b)}. \parencite[Sec. 9.3, pp. 282--285]{chaparro2026}
+
+\pregunta{6}{Ley de Stefan--Boltzmann: potencia emitida por el cuerpo humano}
+
+La temperatura corporal es aproximadamente $37\ ^\circ\mathrm{C}$. Si una superficie corporal expuesta de $0.25\ \mathrm{m^2}$ se comporta como un cuerpo negro, ¿cuánta potencia térmica emite?
+
+\begin{enumerate}
+    \item $52.4\ \mathrm{W}$.
+    \item \textcolor{red}{$131\ \mathrm{W}$.}
+    \item $262\ \mathrm{W}$.
+    \item $524\ \mathrm{W}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Convertimos la temperatura a kelvin y aplicamos $P=A\sigma T^4$:
+\[
+P=(0.25\ \mathrm{m^2})(5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}})(310.15\ \mathrm{K})^4
+\approx131\ \mathrm{W}.
+\]
+La opción correcta es \textbf{b)}. \parencite[Sec. 9.3, pp. 282--285]{chaparro2026}
+
+\pregunta{7}{Ley de Stefan--Boltzmann: cambio de luminosidad con la temperatura}
+
+Un objeto de radio constante $R=R_\odot$ aumenta su temperatura de $6000\ \mathrm{K}$ a $9000\ \mathrm{K}$. ¿Por qué factor aumenta su luminosidad?
+
+\begin{enumerate}
+    \item $0.12$.
+    \item $2$.
+    \item $4$.
+    \item \textcolor{red}{$5.06$.}
+    \item $16$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Por la ley de Stefan--Boltzmann, $L=4\pi R^2\sigma T^4$. Como el radio no cambia, $L\propto T^4$, así que
+\[
+\frac{L_f}{L_i}=\left(\frac{T_f}{T_i}\right)^4
+=\left(\frac{9000}{6000}\right)^4=5.0625\approx5.06.
+\]
+La opción correcta es \textbf{d)}. \parencite[Sec. 9.3, pp. 282--285]{chaparro2026}
+
+\pregunta{8}{Ley de Wien: temperatura de la Tierra}
+
+Los cuerpos planetarios, como la Tierra, también irradian energía con un pico de longitud de onda que sigue la ley de Wien. Si la temperatura promedio de la superficie terrestre es de $288\ \mathrm{K}$, ¿a qué longitud de onda se encuentra el pico del espectro de la Tierra?
+
+Use la constante de Wien $b=2.9\times10^6\ \mathrm{nm\,K}$.
+
+\begin{enumerate}
+    \item $13\,400\ \mathrm{nm}$.
+    \item $12\,560\ \mathrm{nm}$.
+    \item \textcolor{red}{$10\,069\ \mathrm{nm}$.}
+    \item $14\,940\ \mathrm{nm}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} La ley de desplazamiento de Wien establece
+\[
+\lambda_{\mathrm{pico}}T=b.
+\]
+Para despejar la longitud de onda, dividimos ambos lados entre $T$:
+\[
+\lambda_{\mathrm{pico}}=\frac{b}{T}
+=\frac{2.9\times10^6\ \mathrm{nm\,K}}{288\ \mathrm{K}}
+\approx1.0069\times10^4\ \mathrm{nm}.
+\]
+La opción correcta es \textbf{c)}. \parencite[Sec. 9.4, p. 286]{chaparro2026}
+
+\pregunta{9}{Ley de Wien: nebulosa de Orión}
+
+Algunas zonas de la nebulosa de Orión emiten radiación de cuerpo negro cuyo pico se encuentra en la longitud de onda $\lambda_{\mathrm{pico}}=0.29\ \mu\mathrm{m}$. ¿Cuál es la temperatura de estas zonas?
+
+Use la constante de Wien $b=2.9\times10^6\ \mathrm{nm\,K}=2.9\times10^3\ \mu\mathrm{m\,K}$.
+
+\begin{enumerate}
+    \item $15\,000\ \mathrm{K}$.
+    \item \textcolor{red}{$10\,000\ \mathrm{K}$.}
+    \item $7\,500\ \mathrm{K}$.
+    \item $20\,000\ \mathrm{K}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Partimos de $\lambda_{\mathrm{pico}}T=b$. Dividimos ambos lados entre $\lambda_{\mathrm{pico}}$ para aislar $T$:
+\[
+T=\frac{b}{\lambda_{\mathrm{pico}}}
+=\frac{2.9\times10^3\ \mu\mathrm{m\,K}}{0.29\ \mu\mathrm{m}}
+=10\,000\ \mathrm{K}.
+\]
+La opción correcta es \textbf{b)}. \parencite[Sec. 9.4, p. 286]{chaparro2026}
+
+\pregunta{10}{Ley de Wien: temperatura de una estrella}
+
+¿Cuál es la temperatura de la superficie de una estrella cuyo espectro tiene un pico en la longitud de onda $290\ \mathrm{nm}$?
+
+Use la constante de Wien $b=2.9\times10^6\ \mathrm{nm\,K}$.
+
+\begin{enumerate}
+    \item $100\,000\ \mathrm{K}$.
+    \item $1\,000\ \mathrm{K}$.
+    \item $5\,000\ \mathrm{K}$.
+    \item \textcolor{red}{$10\,000\ \mathrm{K}$.}
+\end{enumerate}
+
+\textbf{Desarrollo.} La ley de Wien es $\lambda_{\mathrm{pico}}T=b$. Despejamos $T$ dividiendo ambos lados entre $\lambda_{\mathrm{pico}}$ y sustituimos los valores:
+\[
+T=\frac{b}{\lambda_{\mathrm{pico}}}
+=\frac{2.9\times10^6\ \mathrm{nm\,K}}{290\ \mathrm{nm}}
+=10\,000\ \mathrm{K}.
+\]
+La opción correcta es \textbf{d)}. \parencite[Sec. 9.4, p. 286]{chaparro2026}
+
+\pregunta{11}{Ley de Wien: polvo caliente}
+
+La ley de Wien relaciona la temperatura de un objeto con la longitud de onda máxima de su radiación. Para polvo a una temperatura de $100\ \mathrm{K}$, ¿cuál es la longitud de onda del pico de emisión?
+
+Use la constante de Wien $b=2.9\times10^6\ \mathrm{nm\,K}=2.9\times10^3\ \mu\mathrm{m\,K}$.
+
+\begin{enumerate}
+    \item \textcolor{red}{$29\ \mu\mathrm{m}$.}
+    \item $24\ \mu\mathrm{m}$.
+    \item $13.5\ \mu\mathrm{m}$.
+    \item $26.3\ \mu\mathrm{m}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Partimos de $\lambda_{\mathrm{pico}}T=b$. Dividimos ambos lados entre $T$ para despejar la longitud de onda:
+\[
+\lambda_{\mathrm{pico}}=\frac{b}{T}
+=\frac{2.9\times10^3\ \mu\mathrm{m\,K}}{100\ \mathrm{K}}
+=29\ \mu\mathrm{m}.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 9.4, p. 286]{chaparro2026}
+
+\pregunta{12}{Ley de Wien: temperatura del Sol}
+
+El espectro del Sol tiene un pico en una longitud de onda aproximada de $500\ \mathrm{nm}$. ¿Cuál es su temperatura? Use la constante de Wien $b=2.9\times10^6\ \mathrm{nm\,K}$.
+
+\begin{enumerate}
+    \item $5700\ \mathrm{K}$.
+    \item $5690\ \mathrm{K}$.
+    \item $5890\ \mathrm{K}$.
+    \item \textcolor{red}{$5800\ \mathrm{K}$.}
+\end{enumerate}
+
+\textbf{Desarrollo.} De $\lambda_{\mathrm{pico}}T=b$,
+\[
+T=\frac{b}{\lambda_{\mathrm{pico}}}
+=\frac{2.9\times10^6\ \mathrm{nm\,K}}{500\ \mathrm{nm}}
+=5800\ \mathrm{K}.
+\]
+La opción correcta es \textbf{d)}. \parencite[Sec. 9.4, pp. 286--287]{chaparro2026}
+
+\pregunta{13}{Ley de Wien: gas en una región de formación estelar}
+
+Una región de formación estelar tiene una temperatura típica de $8000\ \mathrm{K}$. ¿A qué longitud de onda se encuentra el pico de su emisión? Use $b=2.9\times10^6\ \mathrm{nm\,K}$.
+
+\begin{enumerate}
+    \item \textcolor{red}{$362.5\ \mathrm{nm}$.}
+    \item $450\ \mathrm{nm}$.
+    \item $390.4\ \mathrm{nm}$.
+    \item $410.2\ \mathrm{nm}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Aplicamos la ley de Wien:
+\[
+\lambda_{\mathrm{pico}}=\frac{b}{T}
+=\frac{2.9\times10^6\ \mathrm{nm\,K}}{8000\ \mathrm{K}}
+=362.5\ \mathrm{nm}.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 9.4, pp. 286--287]{chaparro2026}
+
+\pregunta{14}{Temperatura de una radiofuente}
+
+Una observación de radio a una longitud de onda de $6\ \mathrm{cm}$ indica que una radiofuente térmica tiene un ángulo sólido de $7.18\times10^{-6}\ \mathrm{sr}$. Además, se mide una densidad de flujo de $350\ \mathrm{Jy}$. ¿Cuál es la temperatura de la fuente? Suponga válida la aproximación de Rayleigh--Jeans.
+
+\begin{enumerate}
+    \item $127.2\ \mathrm{K}$.
+    \item $3210\ \mathrm{K}$.
+    \item \textcolor{red}{$63.6\ \mathrm{K}$.}
+    \item $23.1\ \mathrm{K}$.
+\end{enumerate}
+
+\input{FigurasParcial2/Figura8Radiofuente.tex}
+
+\textbf{Desarrollo.} La ley de Rayleigh--Jeans relaciona la intensidad específica con la temperatura de brillo:
+\[
+I_\nu=\frac{2k_BT_b\nu^2}{c^2}.
+\]
+El flujo integrado sobre el ángulo sólido de la fuente es $S_\nu=I_\nu\Omega$. Sustituimos esta expresión para $I_\nu$:
+\[
+S_\nu=\frac{2k_BT_b\nu^2}{c^2}\,\Omega.
+\]
+Para aislar $T_b$, multiplicamos ambos lados por $c^2$ y dividimos entre $2k_B\nu^2\Omega$:
+\[
+\nu=\frac{c}{\lambda}=5.0\times10^9\ \mathrm{Hz},\qquad
+T_b=\frac{S_\nu c^2}{2k_B\nu^2\Omega}.
+\]
+La frecuencia se obtiene de $\nu=c/\lambda$; además, $350\ \mathrm{Jy}=350\times10^{-26}\ \mathrm{W\,m^{-2}\,Hz^{-1}}$. Al sustituir en unidades SI:
+\[
+T_b=\frac{(350\times10^{-26})(2.998\times10^8)^2}
+{2(1.381\times10^{-23})(5.0\times10^9)^2(7.18\times10^{-6})}
+\approx63.6\ \mathrm{K},
+\]
+La opción correcta es \textbf{c)}. \parencite[Sec. 9.7, p. 297; Sec. 10.3.1, pp. 327--328]{chaparro2026}
+
+\pregunta{15}{Temperatura de una resistencia caliente}
+
+Una resistencia caliente emite como un cuerpo negro. Un sensor mide una intensidad específica $I_\nu=1.46\times10^{-25}\ \mathrm{erg\,s^{-1}\,cm^{-2}\,Hz^{-1}\,sr^{-1}}$ a la frecuencia $\nu=3.33\times10^{14}\ \mathrm{Hz}$. ¿Cuál es la temperatura de la resistencia?
+
+\begin{enumerate}
+    \item $528\ \mathrm{K}$.
+    \item $16\,000\ \mathrm{K}$.
+    \item $4230\ \mathrm{K}$.
+    \item \textcolor{red}{$322\ \mathrm{K}$.}
+\end{enumerate}
+
+\textbf{Desarrollo.} Usamos la ley de Planck para la intensidad específica y despejamos $T$:
+\[
+I_\nu=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/(k_BT)}-1},
+\qquad
+T=\frac{h\nu}{k_B\ln\!\left(1+\frac{2h\nu^3}{c^2I_\nu}\right)}.
+\]
+Con $h=6.626\times10^{-27}\ \mathrm{erg\,s}$, $k_B=1.381\times10^{-16}\ \mathrm{erg\,K^{-1}}$ y $c=2.998\times10^{10}\ \mathrm{cm\,s^{-1}}$, resulta $T\approx321.75\ \mathrm{K}$.
+La opción correcta es \textbf{d)}. \parencite[Sec. 10.1, pp. 308--310]{chaparro2026}
+
+\pregunta{16}{Luminosidad de una radiofuente}
+
+Una radiofuente a $20\ \mathrm{Mpc}$ se observa con una densidad de flujo de $20\ \mathrm{Jy}$ en un ancho de banda de $250\ \mathrm{kHz}$. Suponiendo emisión isotrópica y densidad de flujo aproximadamente constante en esa banda, ¿cuál es su luminosidad total dentro de ella?
+
+\begin{enumerate}
+    \item $1.1\times10^{21}\ \mathrm{W}$.
+    \item $9.2\times10^{33}\ \mathrm{W}$.
+    \item $5.5\times10^{25}\ \mathrm{W}$.
+    \item \textcolor{red}{$2.4\times10^{29}\ \mathrm{W}$.}
+\end{enumerate}
+
+\textbf{Desarrollo.} La luminosidad integrada en la banda es $L=4\pi D^2S_\nu\Delta\nu$. Con $D=20\ \mathrm{Mpc}=6.17\times10^{23}\ \mathrm{m}$, $S_\nu=20\ \mathrm{Jy}=2.0\times10^{-25}\ \mathrm{W\,m^{-2}\,Hz^{-1}}$ y $\Delta\nu=2.50\times10^5\ \mathrm{Hz}$:
+\[
+L=4\pi(6.17\times10^{23}\ \mathrm{m})^2(2.0\times10^{-25}\ \mathrm{W\,m^{-2}\,Hz^{-1}})(2.50\times10^5\ \mathrm{Hz})
+\approx2.4\times10^{29}\ \mathrm{W}.
+\]
+La opción correcta es \textbf{d)}. \parencite[Sec. 10.3.1, pp. 327--328]{chaparro2026}
+
+\pregunta{17}{Radio fiducial de extinción}
+
+Si la extinción depende de la longitud de onda como $\lambda^{-1}$, ¿qué valor tendría el radio fiducial?
+
+\begin{enumerate}
+    \item \textcolor{red}{$4$.}
+    \item $0.25$.
+    \item $0.1$.
+    \item $3.1$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Interpretamos el «radio fiducial» como el parámetro fiducial $R_V=A_V/(A_B-A_V)$, donde $A_B$ y $A_V$ son las extinciones (en magnitudes) en las bandas estándar $B$ y $V$, y $A_B-A_V=E(B-V)$ es el exceso de color. Sus longitudes de onda efectivas aproximadas son $\lambda_B=440\ \mathrm{nm}$ y $\lambda_V=550\ \mathrm{nm}$; no son valores de extinción. Como $A_\lambda=C/\lambda$, la constante $C$ se cancela en la razón:
+\[
+\frac{A_B}{A_V}=\frac{\lambda_V}{\lambda_B}=\frac{550}{440}=1.25,
+\qquad
+R_V=\frac{1}{A_B/A_V-1}=\frac{1}{1.25-1}=4.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 12.3.1, pp. 383--385]{chaparro2026}
+
+\pregunta{18}{Extinción selectiva y enrojecimiento}
+
+El pico observado del espectro de una estrella está en $\lambda_{\max}=700\ \mathrm{nm}$, aunque sin extinción se esperaría en $500\ \mathrm{nm}$. Si este desplazamiento al rojo se debe a extinción interestelar, ¿qué relación entre la extinción $A_\lambda$ (medida en magnitudes) y la longitud de onda lo explica?
+
+\begin{enumerate}
+    \item La estrella es intrínsecamente más fría.
+    \item La estrella es una gigante roja.
+    \item La estrella es una supernova de tipo Ia.
+    \item $A_{\lambda_1}>A_{\lambda_2}$ cuando $\lambda_1>\lambda_2$.
+    \item \textcolor{red}{$A_{\lambda_1}>A_{\lambda_2}$ cuando $\lambda_1<\lambda_2$.}
+\end{enumerate}
+
+\textbf{Desarrollo.} La extinción interestelar es mayor a longitudes de onda cortas; así, se atenúa más la luz azul que la roja y el máximo observado se desplaza hacia longitudes de onda mayores. Por tanto, para $\lambda_1<\lambda_2$ se cumple $A_{\lambda_1}>A_{\lambda_2}$. La opción correcta es \textbf{e)}. \parencite[Sec. 12.3.1, pp. 383--385]{chaparro2026}
+
+\pregunta{19}{Densidad numérica de un gas}
+
+Un cubo de gas tiene una profundidad óptica $\tau=1.61$ a cierta frecuencia. La sección eficaz para la interacción entre los fotones de esa frecuencia y las partículas del gas es $\sigma=5.7\times10^{-18}\ \mathrm{cm^2}$. Si el cubo tiene $50\ \mathrm{cm}$ de longitud y una densidad uniforme, ¿cuál es la densidad numérica de las partículas?
+
+\begin{enumerate}
+    \item $1.14\times10^{15}\ \mathrm{cm^{-3}}$.
+    \item $0.87\times10^{15}\ \mathrm{cm^{-3}}$.
+    \item \textcolor{red}{$5.65\times10^{15}\ \mathrm{cm^{-3}}$.}
+    \item $3.51\times10^{15}\ \mathrm{cm^{-3}}$.
+\end{enumerate}
+
+\input{FigurasParcial2/Figura10Gas.tex}
+
+\textbf{Desarrollo.} La profundidad óptica a lo largo de una trayectoria se calcula como $\tau=\int n\sigma\,ds$. En este problema, la densidad $n$ y la sección eficaz $\sigma$ son constantes y la longitud del trayecto es $L$, así que la integral se reduce a
+\[
+\tau=n\sigma L.
+\]
+Dividimos ambos lados entre $\sigma L$ para despejar la densidad numérica:
+\[
+n=\frac{\tau}{\sigma L}
+=\frac{1.61}{(5.7\times10^{-18}\ \mathrm{cm^2})(50\ \mathrm{cm})}
+\approx5.65\times10^{15}\ \mathrm{cm^{-3}}.
+\]
+La opción correcta es \textbf{c)}. \parencite[Sec. 13.3.1, pp. 394--395]{chaparro2026}
+
+\pregunta{20}{Función fuente de un gas}
+
+Un haz de luz con intensidad específica inicial
+\[
+I_{\nu,0}=5.0\times10^{-8}\ \mathrm{erg\,s^{-1}\,cm^{-2}\,Hz^{-1}\,sr^{-1}}
+\]
+y frecuencia $5.0\times10^{14}\ \mathrm{Hz}$ incide sobre un cubo de gas. En el lado opuesto, un detector que opera a la misma frecuencia mide
+\[
+I_{\nu}=3.0\times10^{-8}\ \mathrm{erg\,s^{-1}\,cm^{-2}\,Hz^{-1}\,sr^{-1}}.
+\]
+Si la profundidad óptica del cubo es $\tau=1.61$, ¿cuál es la función fuente $S_{\nu}$ del gas? Exprese la respuesta en $\mathrm{erg\,s^{-1}\,cm^{-2}\,Hz^{-1}\,sr^{-1}}$.
+
+\begin{enumerate}
+    \item $0.6\times10^{-8}$.
+    \item \textcolor{red}{$2.4\times10^{-8}$.}
+    \item $8.0\times10^{-8}$.
+    \item $2.0\times10^{-8}$.
+\end{enumerate}
+
+\input{FigurasParcial2/Figura11Transferencia.tex}
+
+\textbf{Desarrollo.} Para un medio uniforme, la intensidad de salida satisface
+\[
+I_\nu=I_{\nu,0}e^{-\tau}+S_\nu(1-e^{-\tau}).
+\]
+Restamos $I_{\nu,0}e^{-\tau}$ a ambos lados y luego dividimos entre $1-e^{-\tau}$ para aislar la función fuente:
+\[
+S_\nu=\frac{I_\nu-I_{\nu,0}e^{-\tau}}{1-e^{-\tau}}
+=\frac{3.0-5.0e^{-1.61}}{1-e^{-1.61}}\times10^{-8}\approx2.50\times10^{-8}\ \mathrm{erg\,s^{-1}\,cm^{-2}\,Hz^{-1}\,sr^{-1}}.
+\]
+La opción más cercana es \textbf{b)} ($2.4\times10^{-8}$); ninguna alternativa coincide exactamente con el valor calculado. \parencite[Sec. 13.7, pp. 403--405]{chaparro2026}
+
+\printbibliography[title={Referencia}]
+
+\end{document}
