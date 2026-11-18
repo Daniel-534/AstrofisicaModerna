@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{contour}
+\usepackage{float}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{bibliography.bib}
+\contourlength{1.2pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\baselineskip}
+
+\title{Astrofísica Moderna\\[0.4em]
+\large Experimento de Stern--Gerlach}
+\author{Daniel Soto Villada}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Experimento de Stern--Gerlach}
+\input{FigurasClaseTaller3/electron_componentes.tex}
+\input{FigurasClaseTaller3/montaje_stern_gerlach.tex}
+\begin{enumerate}
+    \item Al focalizar un haz de átomos de plata en un imán inhomogéneo, ¿qué patrón se observa en la pantalla?
+    \begin{itemize}
+        \item (A) Una mancha continua.
+        \item \textcolor{red}{(B) Dos manchas discretas.}
+        \item (C) Tres manchas simétricas.
+        \item (D) Ninguna desviación.
+    \end{itemize}
+    \textit{Solución.} Clásicamente, las orientaciones aleatorias del momento magnético producirían un continuo de desviaciones. En el experimento se observan dos componentes discretas, asociadas a los dos valores permitidos de la proyección del momento magnético sobre el eje del imán. La respuesta es \textbf{(B)} (véase la Fig. \ref{fig:sg-apparatus}). \parencite[Sec. 18.2, pp. 581--582]{chaparro2026}
+
+    \item La aparición de solo dos manchas en el experimento de Stern--Gerlach indica que la componente del espín electrónico sobre el eje $z$:
+    \begin{itemize}
+        \item (A) Es puramente orbital.
+        \item (B) Se alinea con cualquier ángulo y produce un continuo de valores.
+        \item (C) Depende de la velocidad de los átomos.
+        \item \textcolor{red}{(D) Está cuantizada: $S_z=\pm\hbar/2$.}
+    \end{itemize}
+    \textit{Solución.} El sistema es de espín $1/2$, por lo que una medición de la componente $S_z$ solo puede dar los valores $+\hbar/2$ o $-\hbar/2$. Estos dos resultados explican las dos manchas observadas. La respuesta es \textbf{(D)} (véase la Fig. \ref{fig:electron-sg}). \parencite[Sec. 18.2, pp. 582--583]{chaparro2026}
+
+    \item En un átomo de plata, la componente $\mu_z$ del momento magnético es proporcional a:
+    \begin{itemize}
+        \item (A) La masa del átomo.
+        \item (B) El campo magnético externo.
+        \item (C) La densidad de átomos del haz.
+        \item \textcolor{red}{(D) La componente $S_z$ del espín del electrón de valencia no apareado.}
+    \end{itemize}
+    \textit{Solución.} El átomo de plata tiene sus capas internas cerradas y un electrón de valencia no apareado. Su momento angular orbital neto es cero, de modo que el momento magnético relevante se debe al espín de ese electrón. En particular, $\boldsymbol{\mu}_e=-g_e\mu_B\mathbf{S}/\hbar$, con $\mu_B=e\hbar/(2m_e)$; por ello, $\mu_z$ es proporcional a $S_z$ (con signo opuesto para el electrón). La respuesta es \textbf{(D)} (véase la Fig. \ref{fig:electron-sg}). \parencite[Sec. 18.2, pp. 581--583]{chaparro2026}
+
+    \item Si el gradiente del campo magnético del aparato Stern--Gerlach está dirigido según $x$, ¿en cuántos componentes se separa el haz de átomos de plata?
+    \begin{itemize}
+        \item \textcolor{red}{(A) En dos componentes, $S_x=+\hbar/2$ y $S_x=-\hbar/2$.}
+        \item (B) En cinco componentes.
+        \item (C) En una franja central.
+        \item (D) En un continuo clásico.
+    \end{itemize}
+    \textit{Solución.} El gradiente en $x$ mide la proyección del espín sobre ese eje. Para un sistema de espín $1/2$, los únicos resultados posibles son $S_x=\pm\hbar/2$, por lo que aparecen dos componentes. La respuesta es \textbf{(A)} (véase la Fig. \ref{fig:sg-x}). \parencite[Secs. 18.2.1 y 18.2.3, pp. 583--585, 593--595]{chaparro2026}
+    \input{FigurasClaseTaller3/analizador_sg_x.tex}
+
+    \item Se bloquea el canal $S_z=-\hbar/2$ y se deja pasar el canal $S_z=+\hbar/2$ de un primer aparato $SG_z$. El haz transmitido entra en un segundo aparato $SG_z$. ¿Cuántos haces salen del segundo aparato?
+    \begin{itemize}
+        \item (A) Una distribución continua.
+        \item (B) Tres haces.
+        \item (C) Dos haces $S_z=\pm\hbar/2$ de igual intensidad.
+        \item \textcolor{red}{(D) Un solo haz $S_z=+\hbar/2$.}
+    \end{itemize}
+    \textit{Solución.} El primer aparato, junto con el bloqueo del canal negativo, prepara el haz en un estado propio de $S_z$ con valor $+\hbar/2$. Una nueva medición sobre el mismo eje da ese mismo valor, así que el segundo aparato no divide el haz. La respuesta es \textbf{(D)} (véase la Fig. \ref{fig:secuencia-sg}). \parencite[Sec. 18.2.1, pp. 583--584]{chaparro2026}
+
+    \item Se selecciona el canal $S_z=+\hbar/2$ de un aparato $SG_z$ y se envía a un aparato $SG_x$. ¿Cuántos haces resultan en la salida de $SG_x$?
+    \begin{itemize}
+        \item (A) Una distribución continua.
+        \item (B) Tres haces.
+        \item \textcolor{red}{(C) Dos haces $S_x=\pm\hbar/2$ de igual intensidad.}
+        \item (D) Un solo haz $S_x=+\hbar/2$.
+    \end{itemize}
+    \textit{Solución.} El estado con $S_z=+\hbar/2$ es una superposición de los estados propios de $S_x$, con amplitudes de igual magnitud. Por la regla de Born, cada resultado $S_x=+\hbar/2$ y $S_x=-\hbar/2$ tiene probabilidad $1/2$. La respuesta es \textbf{(C)} (véase la Fig. \ref{fig:secuencia-sg}). \parencite[Secs. 18.2.1, 18.2.3 y 18.2.4, pp. 584, 593--596]{chaparro2026}
+
+    \item En la secuencia $SG_z\to SG_x\to SG_z$, se selecciona el canal $S_x=+\hbar/2$ del segundo aparato. ¿Cuántos haces salen del tercer aparato $SG_z$?
+    \begin{itemize}
+        \item (A) Una distribución continua.
+        \item (B) Tres haces.
+        \item \textcolor{red}{(C) Dos haces $S_z=\pm\hbar/2$ de igual intensidad.}
+        \item (D) Un solo haz $S_z=+\hbar/2$.
+    \end{itemize}
+    \textit{Solución.} Al seleccionar $S_x=+\hbar/2$, el haz queda preparado en un estado propio de $S_x$, que es una superposición equiprobable de los estados $S_z=+\hbar/2$ y $S_z=-\hbar/2$. El tercer aparato produce ambos haces con igual intensidad. La respuesta es \textbf{(C)} (véase la Fig. \ref{fig:secuencia-sg}). \parencite[Secs. 18.2.1, 18.2.3 y 18.2.4, pp. 585, 593--596]{chaparro2026}
+
+    \item En la secuencia $SG_z\to SG_x\to SG_z$, el tercer aparato vuelve a mostrar ambos resultados $S_z=\pm\hbar/2$, aunque el primero había seleccionado $S_z=+\hbar/2$. Esto ilustra:
+    \begin{itemize}
+        \item (A) La conservación de $S_z$ a través de cualquier medición.
+        \item \textcolor{red}{(B) La no conmutatividad de $S_x$ y $S_z$.}
+        \item (C) La ley de Faraday.
+        \item (D) La dualidad onda-partícula.
+    \end{itemize}
+    \textit{Solución.} Las componentes del espín sobre ejes distintos son observables incompatibles: $[\hat S_x,\hat S_z]\ne0$. Medir y seleccionar un resultado de $S_x$ modifica la preparación anterior de $S_z$; al medir $S_z$ de nuevo, aparecen ambos resultados. La respuesta es \textbf{(B)} (véase la Fig. \ref{fig:secuencia-sg}). \parencite[Sec. 18.2.5, p. 597]{chaparro2026}
+    \input{FigurasClaseTaller3/secuencia_stern_gerlach.tex}
+
+    \item ¿Qué ocurre al colocar dos polarizadores lineales cruzados, uno con eje de transmisión $x$ y otro con eje $y$, uno después del otro?
+    \begin{itemize}
+        \item (A) No se modifica la polarización.
+        \item (B) Se duplica la intensidad.
+        \item (C) Se transmite luz en $y$ aunque el primer filtro la haya cancelado.
+        \item \textcolor{red}{(D) Se bloquea toda la luz.}
+    \end{itemize}
+    \textit{Solución.} Los ejes $x$ y $y$ son perpendiculares. La luz que sale del primer polarizador está polarizada en $x$ y su componente sobre el eje $y$ es nula; por tanto, el segundo polarizador no transmite luz. La respuesta es \textbf{(D)} (véase la Fig. \ref{fig:polarizadores}). \parencite[Sec. 18.2.2, pp. 586--589]{chaparro2026}
+
+    \item Se coloca un polarizador con eje de transmisión a $45^\circ$ entre dos polarizadores cruzados, orientados en $x$ y $y$. ¿Qué ocurre?
+    \begin{itemize}
+        \item (A) No se modifica la polarización ni la intensidad.
+        \item (B) Se duplica la intensidad.
+        \item \textcolor{red}{(C) Se transmite una fracción no nula de luz a través del polarizador final en $y$.}
+        \item (D) Se bloquea toda la luz, igual que sin el filtro intermedio.
+    \end{itemize}
+    \textit{Solución.} El filtro intermedio proyecta la polarización en una dirección que tiene componentes tanto en $x$ como en $y$. Por la ley de Malus, el primer filtro intermedio transmite la mitad de la intensidad y el filtro final transmite la mitad de esa cantidad: $I_{\mathrm{salida}}=I_{\mathrm{entrada}}\cos^2(45^\circ)\cos^2(45^\circ)=I_{\mathrm{entrada}}/4$. Por ello, se transmite luz aunque los polarizadores inicial y final estén cruzados. La respuesta es \textbf{(C)} (véase la Fig. \ref{fig:polarizadores}). \parencite[Sec. 18.2.2, pp. 588--592]{chaparro2026}
+    \input{FigurasClaseTaller3/polarizadores.tex}
+
+    \item El estado $|S_x;+\rangle$ expresado como combinación de los estados $|S_z;+\rangle$ y $|S_z;-\rangle$ tiene coeficientes:
+    \begin{itemize}
+        \item (A) $1$ y $0$.
+        \item (B) $1/2$ y $1/2$.
+        \item \textcolor{red}{(C) $1/\sqrt{2}$ y $1/\sqrt{2}$.}
+        \item (D) Complejos arbitrarios.
+    \end{itemize}
+    \textit{Solución.} En la base de autoestados de $S_z$, el estado con espín positivo en $x$ es
+    \[
+        |S_x;+\rangle=\frac{1}{\sqrt{2}}|S_z;+\rangle+\frac{1}{\sqrt{2}}|S_z;-\rangle.
+    \]
+    Por tanto, los dos coeficientes son $1/\sqrt{2}$ y $1/\sqrt{2}$. La respuesta es \textbf{(C)} (véase la Fig. \ref{fig:superposicion-spin}). \parencite[Sec. 18.2.3, pp. 594--595]{chaparro2026}
+    \input{FigurasClaseTaller3/superposicion_spin.tex}
+\end{enumerate}
+
+\printbibliography[title={Referencias}]
+
+\end{document}

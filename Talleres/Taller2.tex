@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2cm]{geometry}
+
+% Core packages
+\usepackage{amsmath,amssymb}
+\usepackage{tikz-cd}
+\usepackage{multicol}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{bibliography.bib}
+
+% Paragraphs
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1\baselineskip}
+
+\title{Taller 2\\[0.5em]
+\large Astrofísica Moderna\\
+Universidad de Antioquia}
+\author{Daniel Soto Villada}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item La radiofuente Cas A tiene una densidad de flujo de $3110\,\mathrm{Jy}$ a una frecuencia de $1\,\mathrm{GHz}$ en un intervalo de frecuencia (ancho de banda) de $100\,\mathrm{MHz}$.\\
+    a) Si observamos esta fuente con un radiotelescopio de área colectora de $100\,\mathrm{m}^2$, ¿cuánta energía detectaremos en 1 segundo?\\
+    b) Cas A es aproximadamente una fuente circular con un diámetro angular de unos 3 minutos de arco. ¿Cuál es la intensidad media de la fuente a una frecuencia de $1\,\mathrm{GHz}$?\\
+    Nota: Dé sus respuestas en cgs.
+
+    \textit{Solución.} Suponiendo que la densidad de flujo es aproximadamente constante en el ancho de banda, convertimos
+    \[
+        F_\nu=3110\,\mathrm{Jy}=3.11\times10^{-20}\,\mathrm{erg\,s^{-1}\,cm^{-2}\,Hz^{-1}}.
+    \]
+    Para $A=100\,\mathrm{m^2}=10^6\,\mathrm{cm^2}$, $\Delta\nu=100\,\mathrm{MHz}=10^8\,\mathrm{Hz}$ y $t=1\,\mathrm{s}$, la energía recibida es
+    \[
+        E=F_\nu\Delta\nu At=(3.11\times10^{-20})(10^8)(10^6)(1)
+        =3.11\times10^{-6}\,\mathrm{erg}.
+    \]
+    El radio angular de Cas A es $1.5\,\mathrm{arcmin}=4.36\times10^{-4}\,\mathrm{rad}$, por lo que, aproximando la fuente como un disco uniforme, $\Omega\simeq\pi(4.36\times10^{-4})^2=5.98\times10^{-7}\,\mathrm{sr}$. Así, la intensidad media es
+    \[
+        \bar I_\nu=\frac{F_\nu}{\Omega}=5.20\times10^{-14}\,\mathrm{erg\,s^{-1}\,cm^{-2}\,Hz^{-1}\,sr^{-1}}.
+    \]
+    \parencite[Secs. 7.3.1.2, pp. 236--238; Sec. 8.1, pp. 255--260]{chaparro2026}
+
+    \item Una estrella tiene magnitud aparente observada $m_{\mathrm{obs}} = 12.0$ y se encuentra a $500\,\mathrm{pc}$. Si el enrojecimiento interestelar provoca una extinción de $A_V = 0.8\,\mathrm{mag}$:
+    \begin{itemize}
+        \item Calcule la magnitud real (sin extinción):
+        \[
+            m_{\mathrm{real}} = m_{\mathrm{obs}} - A_V
+        \]
+        \item Halle su magnitud absoluta.
+    \end{itemize}
+    \textit{Solución.} Corregimos la magnitud aparente por extinción:
+    \[
+        m_{V,0}=m_{V,\mathrm{obs}}-A_V=12.0-0.8=11.2.
+    \]
+    Con el módulo de distancia, $m_{V,0}-M_V=5\log_{10}(d/10\,\mathrm{pc})$,
+    \[
+        M_V=11.2-5\log_{10}(500/10)=2.71\,\mathrm{mag}.
+    \]
+    \parencite[Sec. 7.3.3, pp. 241--248; Sec. 12.2.1, pp. 378--379]{chaparro2026}
+
+    \item Una estrella tiene magnitudes aparentes $B = 8.75$ y $V = 7.90$, y se encuentra a una distancia de $100\,\mathrm{pc}$.
+    \begin{itemize}
+        \item Calcule el índice de color $(B - V)$.
+        \item Estime la temperatura efectiva usando la aproximación que vimos en clase.
+        \item Determine su magnitud absoluta $M_V$ y discuta su tipo espectral aproximado.
+    \end{itemize}
+    \textit{Solución.} El índice de color es
+    \[
+        B-V=8.75-7.90=0.85.
+    \]
+    Usando la aproximación color--temperatura del texto,
+    \[
+        T_{\mathrm{eff}}\simeq\frac{7090\,\mathrm{K}}{(B-V)+0.71}
+        =\frac{7090}{1.56}\,\mathrm{K}\simeq4.54\times10^3\,\mathrm{K}.
+    \]
+    Suponiendo despreciable la extinción, el módulo de distancia para $100\,\mathrm{pc}$ es $5\log_{10}(100/10)=5$, de modo que
+    \[
+        M_V=7.90-5=2.90\,\mathrm{mag}.
+    \]
+    Esta temperatura corresponde aproximadamente a una estrella de tipo K tardío, alrededor de K4--K5. \parencite[Sec. 7.3.3, pp. 241--248; Sec. 11.1.2, pp. 337--340; Secs. 11.2 y 11.5.1, pp. 340--350, 360--361]{chaparro2026}
+
+    \item Un rayo de radiación atraviesa un medio puramente absorbente con coeficiente de absorción constante $\kappa_\nu = 0.2\,\mathrm{cm}^{-1}$ y sin emisión ($j_\nu = 0$). La intensidad incidente en $s = 0$ es $I_\nu(0) = 5.0\,\mathrm{W\,m^{-2}\,Hz^{-1}\,sr^{-1}}$.
+    \begin{itemize}
+        \item Escriba la ecuación de transferencia radiativa:
+        \[
+            \frac{dI_\nu}{ds} = -\kappa_\nu I_\nu.
+        \]
+        \item Resuélvala para $I_\nu(s)$.
+        \item Calcule $I_\nu$ después de atravesar 10 cm de material.
+    \end{itemize}
+    \textit{Solución.} Integramos la ecuación de transferencia con $j_\nu=0$ y la condición inicial dada:
+    \[
+        I_\nu(s)=I_\nu(0)e^{-\kappa_\nu s}.
+    \]
+    A los $10\,\mathrm{cm}$, $\tau_\nu=\kappa_\nu s=(0.2)(10)=2$, así que
+    \[
+        I_\nu(10\,\mathrm{cm})=5.0e^{-2}\simeq0.677\,\mathrm{W\,m^{-2}\,Hz^{-1}\,sr^{-1}}.
+    \]
+    \parencite[Secs. 13.3 y 13.7, pp. 391--405]{chaparro2026}
+
+    \item Una estrella tiene una temperatura $T = 7000\,\mathrm{K}$. La observamos a través del medio interestelar (ISM), el cual produce una extinción de $A_B = 5\,\mathrm{mag}$ en la banda $B$ ($\lambda_B = 440\,\mathrm{nm}$). Supongamos que la ley de extinción sigue la dependencia
+    \[
+        A_\lambda \propto \lambda^{-1}.
+    \]
+    \begin{itemize}
+        \item ¿Cuál sería la frecuencia (o longitud de onda) del pico observado del espectro, antes y después de considerar la extinción?
+        \item ¿Cómo cambiaría el color aparente de la estrella respecto a su color intrínseco?
+        \item ¿Cuál sería su magnitud de extinción en $V$ ($A_V$) según la ley dada?
+        \item ¿Cuál sería el exceso de color $E(B - V)$?
+        \item ¿A qué distancia aproximada podría encontrarse la estrella?
+    \end{itemize}
+    \textit{Solución.} Suponemos que el espectro intrínseco es aproximadamente de cuerpo negro. El máximo de la distribución por unidad de longitud de onda se obtiene con la ley de Wien:
+    \[
+        \lambda_{\max,\mathrm{int}}=\frac{2.898\times10^{-3}\,\mathrm{m\,K}}{7000\,\mathrm{K}}
+        =414\,\mathrm{nm}.
+    \]
+    Después de la extinción, el flujo espectral observado es
+    \[
+        F_{\lambda,\mathrm{obs}}=B_\lambda(T)10^{-0.4A_\lambda},
+        \qquad A_\lambda=5\frac{440\,\mathrm{nm}}{\lambda}.
+    \]
+    Definimos $x=hc/(\lambda k_BT)$; el máximo de esta distribución satisface
+    \[
+        \frac{5}{x}-\frac{1}{1-e^{-x}}-q=0,
+        \qquad q=0.4\ln(10)A_B\frac{\lambda_B k_BT}{hc}\simeq0.986.
+    \]
+    La solución numérica es $x\simeq2.397$, que corresponde a $\lambda_{\max,\mathrm{obs}}\simeq857\,\mathrm{nm}$, en el infrarrojo cercano. La frecuencia $c/\lambda$ en el máximo de $F_\lambda$ cambia de $7.24\times10^{14}\,\mathrm{Hz}$ a $3.50\times10^{14}\,\mathrm{Hz}$. El máximo de $F_\nu$ no coincide con $c/\lambda_{\max}$: antes de la extinción está en $4.12\times10^{14}\,\mathrm{Hz}$ (raíz $x\simeq2.821$), mientras que después satisface $3/x-1/(1-e^{-x})-q=0$, con $x\simeq1.259$, y queda en $1.84\times10^{14}\,\mathrm{Hz}$.
+
+    Tomando $\lambda_V\simeq550\,\mathrm{nm}$,
+    \[
+        A_V=A_B\frac{\lambda_B}{\lambda_V}=5\frac{440}{550}=4.0\,\mathrm{mag},
+        \qquad E(B-V)=A_B-A_V=1.0\,\mathrm{mag}.
+    \]
+    Por tanto, $(B-V)_{\mathrm{obs}}=(B-V)_0+1.0\,\mathrm{mag}$: el color aparente es más rojo. Con el valor medio aproximado $a_V\simeq1\,\mathrm{mag\,kpc^{-1}}$, $d\simeq A_V/a_V\simeq4\,\mathrm{kpc}$. Esta distancia es solo orientativa, pues la cantidad de polvo varía con la línea de visión. \parencite[Secs. 9.4, pp. 286--287; Sec. 10.1, pp. 308--320; Secs. 12.2--12.3.1, pp. 375--385]{chaparro2026}
+    \end{enumerate}
+
+\printbibliography[title={Referencias}]
+
+\end{document}
