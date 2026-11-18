@@ -11,3 +11,5 @@
 *.out
 *.toc
 *.synctex
+*.bcf
+*.run.xml
