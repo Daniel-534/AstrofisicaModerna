@@ -1,0 +1,297 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=authoryear,sorting=nyt]{biblatex}
+\addbibresource{bibliography.bib}
+
+\setlist[enumerate]{label=\alph*),leftmargin=*,itemsep=0.25em,topsep=0.4em}
+\newcommand{\pregunta}[2]{\section*{Pregunta #1}\textbf{#2}\par}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries Parcial 3\par}
+    \medskip
+    {\large Astrofísica Moderna\par}
+\end{center}
+
+\pregunta{1}{Corrimiento al rojo de la línea de 21 cm}
+
+Una galaxia lejana se encuentra a redshift $z=2$. ¿Cuál es la longitud de onda observada de la línea de transición hiperfina del hidrógeno, cuya longitud de onda en reposo es $21\ \mathrm{cm}$?
+
+\begin{enumerate}
+    \item \textcolor{red}{$63\ \mathrm{cm}$.}
+    \item $7\ \mathrm{cm}$.
+    \item $10.5\ \mathrm{cm}$.
+    \item $21\ \mathrm{cm}$.
+    \item $42\ \mathrm{cm}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} El redshift relaciona las longitudes de onda observada y emitida mediante
+\[
+1+z=\frac{\lambda_{\mathrm{obs}}}{\lambda_{\mathrm{reposo}}}.
+\]
+Despejamos la longitud de onda observada y sustituimos $z=2$ y $\lambda_{\mathrm{reposo}}=21\ \mathrm{cm}$:
+\[
+\lambda_{\mathrm{obs}}=(1+z)\lambda_{\mathrm{reposo}}
+=(1+2)(21\ \mathrm{cm})=63\ \mathrm{cm}.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 4.1.2, pp. 107--108]{chaparro2026}
+
+\pregunta{2}{Razón entre radios de Bohr}
+
+En el modelo de Bohr del átomo de hidrógeno, $a_1$ y $a_2$ son los radios de las capas orbitales $n=1$ y $n=2$, respectivamente. ¿Cuál es la razón $a_2/a_1$?
+
+\begin{enumerate}
+    \item \textcolor{red}{$4$.}
+    \item $1/2$.
+    \item $1$.
+    \item $2$.
+    \item $8$.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\input{FigurasParcial3/FiguraRadiosBohr.tex}
+\caption{Representación de las órbitas cuantizadas con radios $a_1=a_0$ y $a_2=4a_0$.}
+\end{figure}
+
+\textbf{Desarrollo.} Según la cuantización de Bohr, los radios permitidos cumplen $a_n=a_0n^2$. Así, para $n=1$ y $n=2$,
+\[
+\frac{a_2}{a_1}=\frac{a_0(2)^2}{a_0(1)^2}=4.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 15.5, ec. (15.7), pp. 501--502]{chaparro2026}
+
+\pregunta{3}{Límite del modelo de Bohr}
+
+El modelo de Bohr es inconsistente con la imagen moderna de la mecánica cuántica porque no puede predecir cuál de las siguientes situaciones:
+
+\begin{enumerate}
+    \item \textcolor{red}{El comportamiento ondulatorio de la materia.}
+    \item El momento angular del átomo está cuantizado.
+    \item El electrón está confinado en distintas capas asociadas a alguna energía.
+    \item Los niveles de energía varían como $1/n^2$, donde $n$ es el número cuántico principal.
+    \item El electrón no perderá energía al orbitar el núcleo.
+\end{enumerate}
+
+\textbf{Desarrollo.} El modelo de Bohr y la teoría cuántica vieja describen órbitas y niveles discretos, pero no incorporan el comportamiento ondulatorio de la materia. La descripción ondulatoria asociada a de Broglie forma parte de la teoría cuántica moderna; por ello, la opción correcta es \textbf{a)}. \parencite[Sec. 15.10, pp. 518--520; Sec. 16.3.1, pp. 540--541]{chaparro2026}
+
+\pregunta{4}{Energía cinética en el efecto fotoeléctrico}
+
+Luz de longitud de onda $500\ \mathrm{nm}$ incide sobre sodio, cuya función de trabajo es $2.28\ \mathrm{eV}$. ¿Cuál es la energía cinética máxima de los electrones expulsados?
+
+\begin{enumerate}
+    \item \textcolor{red}{$0.20\ \mathrm{eV}$.}
+    \item $0.03\ \mathrm{eV}$.
+    \item $0.6\ \mathrm{eV}$.
+    \item $1.3\ \mathrm{eV}$.
+    \item $2.0\ \mathrm{eV}$.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\input{FigurasParcial3/FiguraFotoelectrico.tex}
+\caption{Balance energético de un electrón expulsado por efecto fotoeléctrico.}
+\end{figure}
+
+\textbf{Desarrollo.} La ecuación fotoeléctrica de Einstein establece que la energía cinética máxima es la energía del fotón menos la función de trabajo:
+\[
+K_{\max}=\frac{hc}{\lambda}-\phi.
+\]
+Usamos $hc\approx1240\ \mathrm{eV\,nm}$:
+\[
+K_{\max}=\frac{1240\ \mathrm{eV\,nm}}{500\ \mathrm{nm}}-2.28\ \mathrm{eV}
+=2.48\ \mathrm{eV}-2.28\ \mathrm{eV}
+=0.20\ \mathrm{eV}.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 16.1, pp. 521--523]{chaparro2026}
+
+\pregunta{5}{Evidencia cuántica del efecto fotoeléctrico}
+
+¿El efecto fotoeléctrico proporciona evidencia experimental directa de cuál de las siguientes propiedades de la luz?
+
+\begin{enumerate}
+    \item \textcolor{red}{Únicamente la II.}
+    \item Únicamente la I.
+    \item I y II.
+    \item II y III.
+    \item I, II y III.
+\end{enumerate}
+
+\textbf{Enunciados.}
+\begin{enumerate}[label=\Roman*.,leftmargin=*]
+    \item La luz tiene dos estados de polarización linealmente independientes.
+    \item La luz lleva energía proporcional a su frecuencia.
+    \item La luz viaja a una velocidad constante $c$ en el vacío.
+\end{enumerate}
+
+\textbf{Desarrollo.} La explicación del efecto fotoeléctrico requiere que la energía de cada fotón sea $E_\gamma=h\nu$. Así se explica que la energía cinética máxima de los electrones dependa de la frecuencia de la luz y no de su intensidad. Por ello, el efecto da evidencia directa del enunciado II, pero no prueba por sí mismo I ni III. La opción correcta es \textbf{a)}. \parencite[Sec. 16.1, pp. 521--523; Sec. 16.3.1, pp. 540--541]{chaparro2026}
+
+\pregunta{6}{Nodos en el centro de un pozo infinito}
+
+Para una partícula en un pozo de potencial unidimensional e infinitamente profundo, ¿para qué estados se anula la densidad de probabilidad en el centro del pozo?
+
+\begin{enumerate}
+    \item \textcolor{red}{Los estados con $n$ par ($n=2,4,6,\ldots$).}
+    \item Los estados con $n$ impar ($n=1,3,5,\ldots$).
+    \item Únicamente el estado base ($n=1$).
+    \item Cualquier estado ($n=1,2,3,\ldots$).
+    \item Todos los estados excepto el estado base.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\input{FigurasParcial3/FiguraPozoInfinito.tex}
+\caption{Función de onda $n=2$ y densidad de probabilidad en un pozo infinito; el centro es un nodo.}
+\end{figure}
+
+\textbf{Desarrollo.} Si el pozo se extiende de $x=0$ a $x=L$, las autofunciones normalizadas son
+\[
+\psi_n(x)=\sqrt{\frac{2}{L}}\sin\!\left(\frac{n\pi x}{L}\right).
+\]
+En el centro, $x=L/2$, la función de onda es proporcional a $\sin(n\pi/2)$, que vale cero para $n$ par. Como la densidad de probabilidad es $|\psi_n|^2$, también se anula allí para esos estados. La opción correcta es \textbf{a)}. \parencite[Sec. 19.2, ecs. (19.13)--(19.19), pp. 627--628]{chaparro2026}
+
+\pregunta{7}{Radio de Bohr para un sistema ligado gravitacionalmente}
+
+Suponga que un electrón y un neutrón forman un estado ligado por gravedad, en vez de por atracción electrostática. Sea $G$ la constante de gravitación de Newton y $m_e$ y $m_n$ las masas del electrón y del neutrón. Bajo la aproximación $m_e\ll m_n$, ¿cuál es el radio de Bohr de este sistema?
+
+\begin{enumerate}
+    \item \textcolor{red}{$\displaystyle\frac{\hbar^2}{Gm_e^2m_n}$.}
+    \item $\displaystyle\frac{\hbar^2}{Gm_em_n}$.
+    \item $\displaystyle\frac{\hbar^2}{Gm_em_n^2}$.
+    \item $\displaystyle\frac{\hbar^2G}{m_em_n}$.
+    \item $\displaystyle\frac{\hbar^2m_e}{Gm_n^3}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} En la coordenada relativa del problema de dos cuerpos, la masa que entra en la ecuación de Schrödinger es $\mu=m_em_n/(m_e+m_n)$. La solución hidrogenoide da un radio de Bohr $a_0=\hbar^2/(\mu\alpha)$ cuando el potencial es $V(r)=-\alpha/r$. Para la interacción gravitacional, $\alpha=Gm_em_n$, de modo que
+\[
+a_g=\frac{\hbar^2}{\mu Gm_em_n}.
+\]
+Con $m_e\ll m_n$, se cumple $\mu\approx m_e$ y resulta
+\[
+a_g\approx\frac{\hbar^2}{Gm_e^2m_n}.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 20.2, pp. 661--662; Sec. 20.4, ec. (20.68), p. 675]{chaparro2026}
+
+\pregunta{8}{Energía de enlace del ion $\mathrm{Li}^{++}$}
+
+¿Cuál es la energía de enlace del electrón en el nivel $n=1$ de un ion de litio doblemente ionizado, $\mathrm{Li}^{++}$?
+
+\begin{enumerate}
+    \item \textcolor{red}{$122.4\ \mathrm{eV}$.}
+    \item $1.51\ \mathrm{eV}$.
+    \item $13.6\ \mathrm{eV}$.
+    \item $40.8\ \mathrm{eV}$.
+    \item $1102\ \mathrm{eV}$.
+\end{enumerate}
+
+\textbf{Desarrollo.} El ion $\mathrm{Li}^{++}$ es hidrogenoide y tiene carga nuclear $Z=3$. El espectro hidrogenoide tiene niveles $E_n=-13.6\,\mathrm{eV}\,Z^2/n^2$ en la aproximación de núcleo pesado. La energía de enlace es la magnitud $|E_1|$; para $Z=3$ y $n=1$,
+\[
+E_{\mathrm{enlace}}=|E_1|=13.6\times\frac{3^2}{1^2}\ \mathrm{eV}=122.4\ \mathrm{eV}.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 20.4, ec. (20.69), pp. 675--676]{chaparro2026}
+
+\pregunta{9}{Escalamiento de la energía de enlace en un átomo hidrogenoide}
+
+Considere un átomo similar al hidrógeno en el que una partícula de masa $2m_e$ y carga de magnitud $2e$ orbita un protón. Suponiendo que la masa del protón es mucho mayor que la de la partícula orbitante, ¿cuál es la energía de enlace de este átomo en términos de la energía de enlace $E$ del hidrógeno ordinario?
+
+\begin{enumerate}
+    \item \textcolor{red}{$8E$.}
+    \item $E/2$.
+    \item $E$.
+    \item $2E$.
+    \item $4E$.
+\end{enumerate}
+
+\textbf{Desarrollo.} La ecuación de dos cuerpos reduce el problema a una partícula con masa reducida $\mu=m_1m_2/(m_1+m_2)$; para niveles hidrogenoides, $|E_n|\propto\mu Z^2/n^2$. En el estado fundamental, la nueva partícula tiene $Z=2$ y, al ser $m_p\gg2m_e$, masa reducida $\mu_{\mathrm{nuevo}}\approx2m_e$, mientras que para el hidrógeno ordinario $\mu_{\mathrm H}\approx m_e$. Por tanto,
+\[
+\frac{E_{\mathrm{nuevo}}}{E_{\mathrm H}}
+=\frac{\mu_{\mathrm{nuevo}}}{\mu_{\mathrm H}}\left(\frac{2}{1}\right)^2
+\approx2\times4=8.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 20.2, pp. 661--662; Sec. 20.4, ec. (20.69), pp. 675--676]{chaparro2026}
+
+\pregunta{10}{Probabilidad radial de una partícula en tres dimensiones}
+
+Una partícula en tres dimensiones tiene la función de onda radial normalizada
+\[
+R(r)=
+\begin{cases}
+0, & 0\leq r\leq a,\\
+\sqrt{a}/r^2, & r>a.
+\end{cases}
+\]
+¿Cuál es la probabilidad de encontrarla entre $r=a$ y $r=2a$?
+
+\begin{enumerate}
+    \item \textcolor{red}{$1/2$.}
+    \item $1/3$.
+    \item $\sqrt{1/2}$.
+    \item $\sqrt{1/3}$.
+    \item $1$.
+\end{enumerate}
+
+\textbf{Desarrollo.} La densidad de probabilidad radial es $P(r)=r^2|R(r)|^2$. Para $r>a$, la función dada produce $P(r)=a/r^2$. Por tanto, la fracción de probabilidad entre $a$ y $2a$ es
+\[
+\frac{\displaystyle\int_a^{2a}P(r)\,dr}{\displaystyle\int_a^{\infty}P(r)\,dr}
+=\frac{\displaystyle\int_a^{2a}a r^{-2}\,dr}{\displaystyle\int_a^{\infty}a r^{-2}\,dr}
+=\frac{1/2}{1}=\frac12.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 20.5, ecs. (20.77)--(20.79), pp. 679--680]{chaparro2026}
+
+\pregunta{11}{Radio más probable del estado $2p$ del hidrógeno}
+
+La función de onda radial del estado $2p$ del hidrógeno es
+\[
+R_{21}(r)=\frac{1}{\sqrt{24}}a_0^{-5/2}r\,e^{-r/(2a_0)},
+\]
+donde $a_0$ es el radio de Bohr. ¿Cuál es el valor más probable del radio $r$ en ese estado?
+
+\begin{enumerate}
+    \item \textcolor{red}{$4a_0$.}
+    \item $a_0/2$.
+    \item $a_0$.
+    \item $2a_0$.
+    \item $6a_0$.
+\end{enumerate}
+
+\textbf{Desarrollo.} Según la densidad de probabilidad radial $P_{n\ell}(r)=r^2|R_{n\ell}(r)|^2$, para el estado $2p$ se obtiene $P_{21}(r)\propto r^4e^{-r/a_0}$. El máximo radial satisface
+\[
+\frac{d}{dr}\ln P_{21}(r)=\frac{4}{r}-\frac{1}{a_0}=0
+\quad\Longrightarrow\quad r=4a_0.
+\]
+La opción correcta es \textbf{a)}. \parencite[Sec. 20.4, ec. (20.67), pp. 675--676; Sec. 20.5, ecs. (20.77)--(20.78), pp. 679--680]{chaparro2026}
+
+\pregunta{12}{Transición hiperfina por inversión del espín}
+
+En el estado fundamental del hidrógeno, los espines del electrón y del protón pasan de estar alineados a anti-alineados. ¿Cómo se denomina esta transición?
+
+\begin{enumerate}
+    \item \textcolor{red}{Transición hiperfina.}
+    \item Efecto Compton.
+    \item Emisión estimulada.
+    \item Relación de incertidumbre.
+    \item Efecto túnel.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\input{FigurasParcial3/FiguraHiperfina.tex}
+\caption{Esquema de la transición entre los niveles hiperfinos $F=1$ y $F=0$ del hidrógeno.}
+\end{figure}
+
+\textbf{Desarrollo.} La interacción magnética entre los espines del electrón y del protón separa el estado fundamental en un triplete con espines alineados ($F=1$) y un singlete con espines anti-alineados ($F=0$). La transición entre estos niveles es un volteo de espín (spin-flip) y corresponde a la transición hiperfina de 21 cm. La opción correcta es \textbf{a)}. \parencite[Sec. 20.7, ecs. (20.82)--(20.84), pp. 683--689]{chaparro2026}
+
+\printbibliography[title={Referencia}]
+
+\end{document}

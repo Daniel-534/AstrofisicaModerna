@@ -1,0 +1,19 @@
+\begin{tikzpicture}[font=\small,scale=1.15,transform shape]
+    \draw[thick] (0,-2.05) -- (0,0.95);
+    \draw[thick] (4,-2.05) -- (4,0.95);
+    \draw[-{Latex},gray!70!black] (0,0) -- (4.4,0) node[right] {$x$};
+    \draw[blue!70!black,very thick,domain=0:4,samples=100]
+        plot (\x,{0.68*sin(90*\x)});
+    \draw[red!70!black,dashed] (2,-2.0) -- (2,0.85);
+    \fill[red!70!black] (2,0) circle (2pt);
+    \node[anchor=east] at (-0.12,0.55) {$\psi_2(x)$};
+    \node[anchor=east] at (-0.12,-1.45) {$|\psi_2(x)|^2$};
+    \draw[-{Latex},gray!70!black] (0,-1.6) -- (4.4,-1.6);
+    \draw[red!70!black,very thick,domain=0:4,samples=100]
+        plot (\x,{-1.6+0.62*(sin(90*\x))^2});
+    \fill[red!70!black] (2,-1.6) circle (2pt);
+    \node[below] at (0,-1.62) {$0$};
+    \node[below] at (2,-1.62) {$L/2$};
+    \node[below] at (4,-1.62) {$L$};
+    \node[red!70!black,anchor=west] at (2.1,0.38) {nodo};
+\end{tikzpicture}

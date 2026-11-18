@@ -1,0 +1,11 @@
+\begin{tikzpicture}[font=\small,scale=1.05,transform shape]
+    \path[draw=gray!70!black,fill=gray!15,thick] (-1.3,-0.5) rectangle (1.15,0.5);
+    \node at (-0.05,-0.25) {metal};
+    \draw[-{Latex},very thick,blue!70!black] (-3.25,0.05) -- (-1.35,0.05)
+        node[midway,above] {fotón $h\nu$};
+    \draw[-{Latex},very thick,red!70!black] (1.1,0.08) -- (3.05,1.0)
+        node[pos=0.72,above,sloped] {electrón $e^-$};
+    \draw[gray!65,dashed] (1.15,-0.62) -- (1.15,0.72);
+    \node[rotate=90,fill=white,inner sep=1pt] at (1.15,-0.03) {superficie};
+    \node[align=center] at (-0.15,-1.08) {$h\nu=\phi+K_{\max}$\qquad($h\nu>\phi$)};
+\end{tikzpicture}
