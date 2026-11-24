@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2cm]{geometry}
+
+% Core packages
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{multicol}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{bibliography.bib}
+
+% Paragraphs
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1\baselineskip}
+
+\title{Taller 3\\[0.5em]
+\large Astrofísica Moderna\\
+Universidad de Antioquia}
+\author{Daniel Soto Villada}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item Un electrón en la atmósfera de una enana blanca está confinado a una capa de espesor $\Delta x = 2.0 \times 10^{-10}\,\mathrm{m}$. Utilice el principio de incertidumbre para estimar la incertidumbre mínima en el momento $\Delta p$. Convierta $\Delta p$ en una energía cinética mínima $K_{\min}$ y compárela con $k_B T$ para $T = 1.0 \times 10^5\,\mathrm{K}$.
+
+    \textit{Solución.} Usamos la relación de incertidumbre $\Delta x\,\Delta p\geq\hbar/2$. La incertidumbre mínima se obtiene al tomar la igualdad:
+    \[
+        \Delta p_{\min}=\frac{\hbar}{2\Delta x}
+        =\frac{1.055\times10^{-34}\,\mathrm{J\,s}}
+        {2(2.0\times10^{-10}\,\mathrm{m})}
+        =2.64\times10^{-25}\,\mathrm{kg\,m\,s^{-1}}.
+    \]
+    Como $\Delta p_{\min}/m_e\simeq2.9\times10^5\,\mathrm{m\,s^{-1}}\ll c$, es consistente usar la expresión no relativista $K=(\Delta p)^2/(2m_e)$. Así,
+    \[
+        K_{\min}=3.82\times10^{-20}\,\mathrm{J}=0.238\,\mathrm{eV},
+        \qquad k_BT=(1.381\times10^{-23})(1.0\times10^5)
+        =1.38\times10^{-18}\,\mathrm{J}=8.62\,\mathrm{eV}.
+    \]
+    Por tanto, $K_{\min}/(k_BT)\simeq2.76\times10^{-2}$: la energía mínima asociada a la localización es aproximadamente el $2.8\%$ de la energía térmica $k_BT$. \parencite[Secs. 16.4, pp. 545--546; 18.5, p. 606]{chaparro2026}
+    \input{FigurasTaller3/incertidumbre.tex}
+
+    \item Se observa una línea de una nebulosa planetaria en $486.1\,\mathrm{nm}$. Demuestre que la línea pertenece a la serie de Balmer e identifique los números cuánticos de la transición $n_i \to n_f$. Calcule la energía del fotón en eV. (Constante de Rydberg $R_\infty = 1.097 \times 10^7\,\mathrm{m}^{-1}$.)
+
+    \textit{Solución.} Para las líneas del hidrógeno,
+    \[
+        \frac{1}{\lambda}=R_\infty\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right),
+        \qquad n_i>n_f.
+    \]
+    La serie de Balmer corresponde a $n_f=2$. Para la transición $4\to2$,
+    \[
+        \lambda_{4\to2}=\frac{1}{R_\infty(1/2^2-1/4^2)}
+        =\frac{16}{3R_\infty}=486.2\,\mathrm{nm},
+    \]
+    en acuerdo con los $486.1\,\mathrm{nm}$ observados; por ello, $n_i=4$ y $n_f=2$ (línea H$\beta$). La energía del fotón es
+    \[
+        E_\gamma=\frac{hc}{\lambda}
+        =\frac{(4.136\times10^{-15}\,\mathrm{eV\,s})(2.998\times10^8\,\mathrm{m\,s^{-1}})}
+        {486.1\times10^{-9}\,\mathrm{m}}
+        =2.55\,\mathrm{eV}.
+    \]
+    \parencite[Secs. 15.5--15.6, pp. 496, 503]{chaparro2026}
+    \input{FigurasTaller3/serie_balmer.tex}
+
+    \item Un fotón de rayos X de energía inicial $1.0 \times 10^5\,\mathrm{eV}$ que viaja en la dirección $+x$ incide sobre un electrón libre en reposo. El fotón se dispersa en ángulo recto en la dirección $+y$. Encuentre las componentes del impulso del electrón que retrocede.
+
+    \textit{Solución.} La conservación relativista de energía y momento en la dispersión Compton da, para un ángulo $\theta$ entre los fotones incidente y dispersado,
+    \[
+        E'_\gamma=\frac{E_\gamma}{1+(E_\gamma/m_ec^2)(1-\cos\theta)}.
+    \]
+    Aquí $\theta=90^\circ$ y $m_ec^2=511\,\mathrm{keV}$, por lo que $E'_\gamma=83.6\,\mathrm{keV}$. Por conservación del momento, el impulso del electrón es la diferencia entre los impulsos de los fotones:
+    \[
+        p_{e,x}=\frac{E_\gamma}{c}=1.00\times10^5\,\mathrm{eV}/c,
+        \qquad
+        p_{e,y}=-\frac{E'_\gamma}{c}=-8.36\times10^4\,\mathrm{eV}/c.
+    \]
+    Así, $\vec p_e=(1.00\times10^5\,\hat{x}-8.36\times10^4\,\hat{y})\,\mathrm{eV}/c$. El signo negativo indica que el electrón retrocede en dirección $-y$. \parencite[Secs. 16.2--16.2.1, pp. 525--528]{chaparro2026}
+    \input{FigurasTaller3/dispersion_compton.tex}
+
+    \item En el efecto Sunyaev--Zel'dovich térmico (efecto Compton inverso), un cúmulo de galaxias rico contiene un medio intracumular (ICM) de gas totalmente ionizado y caliente con el que interactúan fotones del fondo cósmico de microondas (CMB). Suponga que la población de electrones tiene una temperatura $T_e = 8\,\mathrm{keV}$ y una densidad uniforme $n_e = 3.0 \times 10^{-3}\,\mathrm{cm}^{-3}$ a lo largo de un camino $L = 1.0\,\mathrm{Mpc}$ que atraviesa el centro del cúmulo. Considere que cada fotón gana una energía
+    \[
+        \left\langle \frac{\Delta E}{E} \right\rangle = \frac{k_B T_e}{m_e c^2}
+    \]
+    luego de cada colisión con un electrón.
+    \begin{enumerate}
+        \item[(a)] Demuestre que el parámetro Compton térmico que cuantifica la ganancia total a lo largo de la línea de visión
+        \[
+            y = \frac{\Delta E}{E} = \left\langle \frac{\Delta E}{E} \right\rangle \times P(\text{colisión})
+        \]
+        viene dado por
+        \[
+            y = \frac{k_B T_e}{m_e c^2}\,\sigma_T \int n_e\,d\ell,
+        \]
+        y calcule su valor para el cúmulo. (Aquí $\sigma_T = 6.65 \times 10^{-29}\,\mathrm{m}^2$ es la sección eficaz de interacción electrón-fotón (dispersión Thomson).)
+
+        \textit{Solución.} La probabilidad de dispersión a lo largo de la trayectoria está determinada por la profundidad óptica $\tau=\sigma_T\int n_e\,d\ell$. Como $\tau\ll1$, la probabilidad de una colisión es $P(\text{colisión})\simeq\tau$. Al multiplicarla por la ganancia media por colisión dada en el enunciado,
+        \[
+            y=\left\langle\frac{\Delta E}{E}\right\rangle P(\text{colisión})
+            =\frac{k_BT_e}{m_ec^2}\,\sigma_T\int n_e\,d\ell.
+        \]
+        Para los valores del cúmulo, $k_BT_e/(m_ec^2)=8/511=1.57\times10^{-2}$, $n_e=3.0\times10^3\,\mathrm{m}^{-3}$ y $L=3.086\times10^{22}\,\mathrm{m}$. Entonces
+        \[
+            \tau=\sigma_T n_eL=6.16\times10^{-3},
+            \qquad y=(1.57\times10^{-2})(6.16\times10^{-3})
+            =9.64\times10^{-5}.
+        \]
+        \parencite[Sec. 16.2.2, pp. 532--533]{chaparro2026}
+
+        \item[(b)] En longitudes de onda milimétricas, la dependencia completa en frecuencia de la variación de la intensidad relativa se aproxima por la función
+        \[
+            \frac{\Delta I(\nu)}{I_0(\nu)} = y\left[x\coth\left(\frac{x}{2}\right)-4\right],
+            \qquad
+            x = \frac{h\nu}{k_B T_{\mathrm{CMB}}}.
+        \]
+        Evalúe la variación fraccionaria de intensidad $\Delta I/I_0$ en $\nu = 150\,\mathrm{GHz}$ e indique si la señal del CMB se observa en emisión o en absorción a dicha frecuencia.
+
+        \textit{Solución.} Tomamos $T_{\mathrm{CMB}}=2.725\,\mathrm{K}$. Entonces,
+        \[
+            x=\frac{h\nu}{k_BT_{\mathrm{CMB}}}=2.642,
+            \qquad x\coth(x/2)-4=-0.953.
+        \]
+        Con el valor de $y$ obtenido en (a),
+        \[
+            \frac{\Delta I}{I_0}=y[-0.953]=-9.18\times10^{-5}.
+        \]
+        El signo negativo indica una disminución de intensidad: a $150\,\mathrm{GHz}$ se observa un decremento o absorción del CMB por el efecto SZ térmico. \parencite[Sec. 16.2.2, pp. 532--533]{chaparro2026}
+        \input{FigurasTaller3/efecto_sz.tex}
+    \end{enumerate}
+
+    \item Para un átomo de H ¿Cuál es la probabilidad de encontrar al electrón entre $r = 0$ y $r = a_0$ para el nivel $n = 2$ comparando los niveles $l = 0$ y $l = 1$?
+
+    \textit{Solución.} La probabilidad radial entre $r_1$ y $r_2$ es $\int_{r_1}^{r_2}r^2|R_{n\ell}(r)|^2\,dr$. Para $n=2$, las funciones radiales normalizadas son
+    \[
+        R_{20}(r)=\frac{1}{2\sqrt{2}\,a_0^{3/2}}\left(2-\frac{r}{a_0}\right)e^{-r/(2a_0)},
+        \qquad
+        R_{21}(r)=\frac{1}{2\sqrt{6}\,a_0^{3/2}}\frac{r}{a_0}e^{-r/(2a_0)}.
+    \]
+    Con $u=r/a_0$, para los dos estados se obtiene
+    \[
+        P_{2s}(0\leq r\leq a_0)=\frac18\int_0^1u^2(2-u)^2e^{-u}\,du
+        =1-\frac{21}{8e}\simeq0.0343,
+    \]
+    \[
+        P_{2p}(0\leq r\leq a_0)=\frac1{24}\int_0^1u^4e^{-u}\,du
+        =1-\frac{65}{24e}\simeq0.00366.
+    \]
+    Por tanto, dentro de $a_0$ la probabilidad para $\ell=0$ es aproximadamente $9.38$ veces la de $\ell=1$. \parencite[Sec. 20.4, pp. 675--676; Sec. 20.5, pp. 679--680]{chaparro2026}
+    \input{FigurasTaller3/probabilidad_radial.tex}
+
+    \item Asumiendo un modelo hidrogenoide, calcule la longitud de onda de la transición fundamental $n = 2 \to 1$ para el Fe e identifique el rango del espectro electromagnético correspondiente.
+    \[
+        A_{21} = 6.3 \times 10^8\,\mathrm{s}^{-1}.
+    \]
+    \textit{Solución.} Para un ion hidrogenoide, $1/\lambda=R_\infty Z^2(1/n_f^2-1/n_i^2)$. Tomamos $Z=26$ para el hierro y $n_i=2$, $n_f=1$:
+    \[
+        \frac{1}{\lambda}= (1.097\times10^7\,\mathrm{m}^{-1})(26)^2\left(1-\frac14\right)
+        =5.56\times10^9\,\mathrm{m}^{-1},
+        \qquad \lambda=1.80\times10^{-10}\,\mathrm{m}=0.180\,\mathrm{nm}.
+    \]
+    Corresponde a un fotón de rayos X. El coeficiente $A_{21}$ no interviene en el cálculo de la longitud de onda; describe la probabilidad de transición espontánea por unidad de tiempo. \parencite[Sec. 15.5, p. 496; Sec. 20.4, pp. 675--676]{chaparro2026}
+    \input{FigurasTaller3/fe_hidrogenoide.tex}
+\end{enumerate}
+
+\printbibliography[title={Referencias}]
+
+\end{document}
